@@ -1,7 +1,9 @@
+import Heading1 from "../../components/Heading1/index";
+
 const Today = () => {
 	return (
 		<div>
-			<h1>Today</h1>
+			<Heading1>Today</Heading1>
 		</div>
 	);
 };
