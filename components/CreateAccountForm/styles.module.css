@@ -4,5 +4,16 @@
 }
 
 .form input {
-  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: 34px;
+  margin-right: 34px;
+  height: 50px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.formInput {
+  background: none;
+  padding-left: 8px;
 }

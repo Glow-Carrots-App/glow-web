@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 const CreateAccount = () => {
   return (
     <div className={styles.container}>
-      <Heading1>Create Account!</Heading1>
+      <Heading1>Create Account</Heading1>
       <CreateAccountForm />
       <p>
         Already have an account? <a>Sign in</a>
