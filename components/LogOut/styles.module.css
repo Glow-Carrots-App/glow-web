@@ -1,0 +1,14 @@
+.container {
+  margin: 25px 34px 25px 34px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 34px;
+}
+
+.buttonContainer button {
+  height: 35px;
+  width: 120px;
+}
