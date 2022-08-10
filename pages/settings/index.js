@@ -1,7 +1,9 @@
+import Heading1 from "../../components/Heading1/index.js";
+
 const Settings = () => {
   return (
     <div>
-      <h1>Settings</h1>
+      <Heading1>Settings</Heading1>
     </div>
   );
 };
