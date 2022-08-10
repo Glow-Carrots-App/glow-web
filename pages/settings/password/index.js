@@ -1,4 +1,4 @@
-import Heading1 from "../../components/Heading1/index";
+import Heading1 from "../../../components/Heading1/index";
 
 const Password = () => {
   return (
