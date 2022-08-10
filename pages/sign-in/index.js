@@ -1,7 +1,9 @@
+import Heading1 from '../../components/Heading1';
+
 const SignIn = () => {
   return (
     <div>
-      <h1>Sign-in</h1>
+      <Heading1>Sign-in</Heading1>
     </div>
   );
 };
