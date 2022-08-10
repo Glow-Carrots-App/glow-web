@@ -1,7 +1,9 @@
+import Heading1 from "../../components/Heading1/index";
+
 const CreateAccount = () => {
 	return (
 		<div>
-			<h1>Create Account</h1>
+			<Heading1>Create Account</Heading1>
 		</div>
 	);
 };
