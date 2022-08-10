@@ -8,7 +8,7 @@ const CreateAccount = () => {
     <div className={styles.container}>
       <Heading1>Create Account</Heading1>
       <CreateAccountForm />
-      <p>
+      <p className={styles.signinText}>
         Already have an account? <a>Sign in</a>
       </p>
     </div>
