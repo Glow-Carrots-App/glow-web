@@ -1,7 +1,9 @@
+import Heading1 from "../../components/Heading1/index";
+
 const Profile = () => {
   return (
     <div>
-      <h1>Profile</h1>
+      <Heading1>Profile</Heading1>
     </div>
   );
 };
