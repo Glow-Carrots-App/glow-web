@@ -1,7 +1,9 @@
+import Heading1 from "../../components/Heading1/index";
+
 const Eat = () => {
 	return (
 		<div>
-			<h1>What are you eating?</h1>
+			<Heading1>What are you eating?</Heading1>
 		</div>
 	);
 };
