@@ -1,0 +1,14 @@
+.container {
+  height: 100vh;
+  text-align: center;
+}
+
+.settingsBtn {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  border-width: 1px;
+}

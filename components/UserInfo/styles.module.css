@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  margin: 32px 34px 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 8px;
+}
+
+.firstNameText {
+  font-size: larger;
+}
+
+.joinDateText {
+  font-size: small;
+}
+
+.avatarContainer {
+  height: 100px;
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: rgb(214, 214, 214);
+}
