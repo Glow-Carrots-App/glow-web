@@ -1,11 +1,16 @@
 .container {
   display: flex;
   flex-direction: column;
-  border: 1px solid grey;
   margin: 32px 34px;
-  border-radius: 4px;
+  gap: 32px;
 }
 
 .statsHeading {
   text-align: left;
+  font-size: larger;
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
 }
