@@ -21,8 +21,20 @@ const ChangePasswordForm = () => {
         name="confirmNewPassword"
         placeholder="Confirm New Password"
       />
-      <input type="button" name="cancelPassword" value="Cancel" />
-      <input type="submit" name="savePassword" value="Save" />
+      <div className={styles.signInButtonPair}>
+        <input
+          className={styles.signInButtons}
+          type="button"
+          name="cancelPassword"
+          value="Cancel"
+        />
+        <input
+          className={styles.signInButtons}
+          type="submit"
+          name="savePassword"
+          value="Save"
+        />
+      </div>
     </form>
   );
 };
