@@ -11,9 +11,9 @@ const CreateAccountPage = () => {
       <Heading1>Create Account</Heading1>
       <CreateAccountForm />
       <p className={styles.signinText}>
-        Already have an account?{" "}
+        Already have an account?
         <Link href="/sign-in">
-          <a>Sign in</a>
+          <a> Test</a>
         </Link>
       </p>
     </div>
