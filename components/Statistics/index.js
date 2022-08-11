@@ -7,7 +7,7 @@ const Statistics = () => {
     <div className={styles.container}>
       <text className={styles.statsHeading}>Statistics</text>
       <div className={styles.statsRow}>
-        <StatsCard title="DayStreak" />
+        <StatsCard title="Day Streak" />
         <StatsCard title="Carrots" />
       </div>
       <div className={styles.statsRow}>
