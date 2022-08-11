@@ -12,9 +12,16 @@
   border-width: 0 0 2px;
 }
 
-.signInButton {
+.signInButtonPair {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+}
+
+.signInButtons {
   background-color: grey;
   height: 50px;
+  width: 179px;
   border-radius: 4px;
   border: none;
 }

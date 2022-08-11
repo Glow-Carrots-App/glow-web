@@ -1,11 +1,14 @@
-import Heading1 from "../../../components/Heading1/index";
+import Heading1 from "../../../components/Heading1";
+import ChangePasswordForm from "../../../components/ChangePasswordForm";
+import styles from "./styles.module.css";
 
-const Password = () => {
+const PasswordPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Heading1>Password</Heading1>
+      <ChangePasswordForm></ChangePasswordForm>
     </div>
   );
 };
 
-export default Password;
+export default PasswordPage;

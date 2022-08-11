@@ -1,4 +1,3 @@
-import Heading1 from "../Heading1";
 import styles from "./styles.module.css";
 
 const SignInForm = () => {
