@@ -6,7 +6,7 @@ const SignInForm = () => {
     <form className={styles.container}>
       <input type="text" className={styles.signInFields} placeholder="Email" />
       <input
-        type="text"
+        type="password"
         className={styles.signInFields}
         placeholder="Password"
       />
