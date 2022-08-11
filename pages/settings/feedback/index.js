@@ -1,11 +1,16 @@
-import Heading1 from "../../../components/Heading1/index";
+import FeedbackForm from "../../../components/FeedbackForm";
+import Heading1 from "../../../components/Heading1";
 
-const Feedback = () => {
+import styles from "./styles.module.css";
+
+const FeedbackPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Heading1>Feedback</Heading1>
+      <p>Send us your feedback!</p>
+      <FeedbackForm />
     </div>
   );
 };
 
-export default Feedback;
+export default FeedbackPage;
