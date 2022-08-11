@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Heading2 from "../Heading2";
 
 import styles from "./styles.module.css";
@@ -13,8 +15,16 @@ const ChangeGoalForm = () => {
         <Heading2>healthy foods daily!</Heading2>
       </div>
       <div className={styles.buttonContainer}>
-        <button>Cancel</button>
-        <button>Submit</button>
+        <Link href="/settings">
+          <a>
+            <button>Cancel</button>
+          </a>
+        </Link>
+        <Link href="/settings">
+          <a>
+            <button>Submit</button>
+          </a>
+        </Link>
       </div>
     </div>
   );
