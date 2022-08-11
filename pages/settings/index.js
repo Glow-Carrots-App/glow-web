@@ -1,11 +1,13 @@
-import Heading1 from "../../components/Heading1/index.js";
+import SettingsInputs from "../../components/SettingsInputs";
+import Heading1 from "../../components/Heading1";
 
-const Settings = () => {
+const SettingsPage = () => {
   return (
     <div>
       <Heading1>Settings</Heading1>
+      <SettingsInputs></SettingsInputs>
     </div>
   );
 };
 
-export default Settings;
+export default SettingsPage;
