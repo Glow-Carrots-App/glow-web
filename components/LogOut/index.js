@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import Heading2 from "../Heading2";
+
 import styles from "./styles.module.css";
 
 const LogOut = () => {
@@ -6,8 +9,12 @@ const LogOut = () => {
     <div className={styles.container}>
       <Heading2>Are you sure you want to log out?</Heading2>
       <div className={styles.buttonContainer}>
-        <button>Cancel</button>
-        <button>Logout</button>
+        <Link href="/settings">
+          <button>Cancel</button>
+        </Link>
+        <Link href="/sign-in">
+          <button>Logout</button>
+        </Link>
       </div>
     </div>
   );

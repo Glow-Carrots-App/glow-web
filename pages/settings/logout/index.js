@@ -1,5 +1,6 @@
 import Heading1 from "../../../components/Heading1";
 import LogOut from "../../../components/LogOut";
+
 import styles from "./styles.module.css";
 
 const LogOutPage = () => {
