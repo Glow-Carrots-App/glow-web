@@ -3,7 +3,7 @@ import CreateAccountForm from "../../components/CreateAccountForm";
 
 import styles from "./styles.module.css";
 
-const CreateAccount = () => {
+const CreateAccountPage = () => {
   return (
     <div className={styles.container}>
       <Heading1>Create Account</Heading1>
@@ -15,4 +15,4 @@ const CreateAccount = () => {
   );
 };
 
-export default CreateAccount;
+export default CreateAccountPage;

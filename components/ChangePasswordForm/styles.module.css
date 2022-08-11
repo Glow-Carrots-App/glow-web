@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 34px;
+  margin-right: 34px;
+  gap: 25px;
+}
+
+.signInFields {
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.signInButton {
+  background-color: grey;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+}
