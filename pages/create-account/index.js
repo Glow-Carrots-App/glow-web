@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Heading1 from "../../components/Heading1";
 import CreateAccountForm from "../../components/CreateAccountForm";
 
