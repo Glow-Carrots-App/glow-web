@@ -7,7 +7,7 @@ const SignIn = () => {
     <div className={styles.container}>
       <Heading1>GLOW</Heading1>
       <SignInForm></SignInForm>
-      <p>Don't have an account? Sign Up</p>
+      <p className={styles.signInText}>Don't have an account? Sign Up</p>
     </div>
   );
 };

@@ -6,3 +6,7 @@
   height: 100vh;
   gap: 25px;
 }
+
+.signInText {
+  font-size: small;
+}
