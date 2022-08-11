@@ -1,5 +1,6 @@
 .container {
-  margin: 25px 34px 25px 34px;
+  margin: 25px auto 25px auto;
+  max-width: 310px;
 }
 
 .buttonContainer {
