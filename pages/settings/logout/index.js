@@ -2,7 +2,7 @@ import Heading1 from "../../../components/Heading1";
 import LogOut from "../../../components/LogOut";
 import styles from "./styles.module.css";
 
-const Logout = () => {
+const LogOutPage = () => {
   return (
     <div className={styles.container}>
       <Heading1>Log Out</Heading1>
@@ -11,4 +11,4 @@ const Logout = () => {
   );
 };
 
-export default Logout;
+export default LogOutPage;
