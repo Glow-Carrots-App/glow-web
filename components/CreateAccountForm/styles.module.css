@@ -23,4 +23,5 @@
 .inputButton {
   border-radius: 4px;
   max-width: 307px;
+  border: none;
 }
