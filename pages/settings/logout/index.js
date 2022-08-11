@@ -1,5 +1,5 @@
-import Heading1 from "../../../components/Heading1/index.js";
-import LogOut from "../../../components/LogOut/index.js";
+import Heading1 from "../../../components/Heading1";
+import LogOut from "../../../components/LogOut";
 import styles from "./styles.module.css";
 
 const Logout = () => {
