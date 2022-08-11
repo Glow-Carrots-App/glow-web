@@ -8,9 +8,7 @@
 .form input {
   margin-top: 25px;
   height: 50px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  border-width: 0 0 2px;
   width: 100%;
 }
 
