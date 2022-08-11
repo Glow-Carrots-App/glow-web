@@ -12,4 +12,5 @@
 .buttonContainer button {
   height: 35px;
   width: 135px;
+  border: none;
 }
