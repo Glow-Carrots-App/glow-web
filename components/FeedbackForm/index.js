@@ -3,10 +3,20 @@ import styles from "./styles.module.css";
 const FeedbackForm = () => {
   return (
     <form className={styles.container}>
-      <label>Subject</label>
-      <input type="text" name="subjectText" placeholder="Type here" />
-      <label>Message</label>
-      <textarea type="text" name="messageText" placeholder="Type here" />
+      <label for="subject">Subject</label>
+      <input
+        id="subject"
+        type="text"
+        name="subjectText"
+        placeholder="Type here"
+      />
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        type="text"
+        name="messageText"
+        placeholder="Type here"
+      />
       <div className={styles.feedbackButtonPair}>
         <input
           className={styles.feedbackButtons}

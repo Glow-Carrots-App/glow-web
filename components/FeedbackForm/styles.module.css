@@ -24,22 +24,6 @@
   font-family: Arial;
 }
 
-/* .subjectField {
-  height: 50px;
-  border-width: 1px;
-  border-radius: 4px;
-  padding-left: 8px;
-} */
-
-/* .messageField {
-  height: 200px;
-  border-width: 1px;
-  border-radius: 4px;
-  padding-left: 8px;
-  padding-top: 9px;
-  font-family: Arial;
-} */
-
 .feedbackButtonPair {
   display: flex;
   justify-content: center;

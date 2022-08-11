@@ -8,7 +8,7 @@ const FeedbackPage = () => {
     <div className={styles.container}>
       <Heading1>Feedback</Heading1>
       <p>Send us your feedback!</p>
-      <FeedbackForm></FeedbackForm>
+      <FeedbackForm />
     </div>
   );
 };
