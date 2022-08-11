@@ -5,21 +5,20 @@
   margin: 0 34px;
 }
 
-.form input {
+.formInput {
+  background: none;
+  max-width: 500px;
+  padding-left: 8px;
   margin-top: 25px;
   height: 50px;
   border-width: 0 0 2px;
   width: 100%;
 }
 
-.formInput {
-  background: none;
-  max-width: 500px;
-  padding-left: 8px;
-}
-
 .inputButton {
-  border-radius: 4px;
-  max-width: 307px;
   border: none;
+  border-radius: 4px;
+  width: 307px;
+  margin-top: 25px;
+  height: 50px;
 }
