@@ -1,11 +1,16 @@
-import Heading1 from "../../components/Heading1/index";
+import Heading1 from "../../components/Heading1";
+import UserInfo from "../../components/UserInfo";
 
-const Profile = () => {
+import styles from "./styles.module.css";
+
+const ProfilePage = () => {
   return (
-    <div>
+    <div className={styles.container}>
+      <button className={styles.settingsBtn}>S</button>
       <Heading1>Profile</Heading1>
+      <UserInfo />
     </div>
   );
 };
 
-export default Profile;
+export default ProfilePage;
