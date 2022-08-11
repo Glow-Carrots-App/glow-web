@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./styles.module.css";
 
 const FeedbackForm = () => {
@@ -18,18 +20,26 @@ const FeedbackForm = () => {
         placeholder="Type here"
       />
       <div className={styles.feedbackButtonPair}>
-        <input
-          className={styles.feedbackButtons}
-          type="button"
-          name="cancelMessage"
-          value="Cancel"
-        />
-        <input
-          className={styles.feedbackButtons}
-          type="submit"
-          name="submitMessage"
-          value="Submit"
-        />
+        <Link href="/settings">
+          <a>
+            <input
+              className={styles.feedbackButtons}
+              type="button"
+              name="cancelMessage"
+              value="Cancel"
+            />
+          </a>
+        </Link>
+        <Link href="/settings">
+          <a>
+            <input
+              className={styles.feedbackButtons}
+              type="submit"
+              name="submitMessage"
+              value="Submit"
+            />
+          </a>
+        </Link>
       </div>
     </form>
   );
