@@ -10,10 +10,14 @@ const DeleteAccount = () => {
       <Heading2>Are you sure you want to delete your account?</Heading2>
       <div className={styles.buttonContainer}>
         <Link href="/settings">
-          <button>Cancel</button>
+          <a>
+            <button>Cancel</button>
+          </a>
         </Link>
         <Link href="/sign-in">
-          <button>Delete</button>
+          <a>
+            <button>Delete</button>
+          </a>
         </Link>
       </div>
     </div>
