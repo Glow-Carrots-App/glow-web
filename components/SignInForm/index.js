@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./styles.module.css";
 
 const SignInForm = () => {
@@ -9,7 +11,15 @@ const SignInForm = () => {
         className={styles.signInFields}
         placeholder="Password"
       />
-      <input type="submit" value="Sign In" className={styles.signInButton} />
+      <Link href="/today">
+        <a>
+          <input
+            type="submit"
+            value="Sign In"
+            className={styles.signInButton}
+          />
+        </a>
+      </Link>
       <input
         type="submit"
         value="Sign In With Google"
