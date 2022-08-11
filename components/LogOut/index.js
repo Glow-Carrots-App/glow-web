@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Heading2 from "../Heading2";
+
 import styles from "./styles.module.css";
 
 const LogOut = () => {
