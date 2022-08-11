@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 34px 0;
   text-align: left;
 }
 
@@ -36,6 +35,7 @@
 }
 
 .buttonContainer {
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 11px;
