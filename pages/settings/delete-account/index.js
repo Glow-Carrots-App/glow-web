@@ -1,5 +1,6 @@
 import Heading1 from "../../../components/Heading1/index.js";
 import DeleteAccount from "../../../components/DeleteAccount";
+
 import styles from "./styles.module.css";
 
 const DeleteAccountPage = () => {

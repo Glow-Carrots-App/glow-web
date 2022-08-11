@@ -10,10 +10,14 @@ const LogOut = () => {
       <Heading2>Are you sure you want to log out?</Heading2>
       <div className={styles.buttonContainer}>
         <Link href="/settings">
-          <button>Cancel</button>
+          <a>
+            <button>Cancel</button>
+          </a>
         </Link>
         <Link href="/sign-in">
-          <button>Logout</button>
+          <a>
+            <button>Logout</button>
+          </a>
         </Link>
       </div>
     </div>

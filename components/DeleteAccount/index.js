@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import Heading2 from "../Heading2";
+
 import styles from "./styles.module.css";
 
 const DeleteAccount = () => {
@@ -6,8 +9,16 @@ const DeleteAccount = () => {
     <div className={styles.container}>
       <Heading2>Are you sure you want to delete your account?</Heading2>
       <div className={styles.buttonContainer}>
-        <button>Cancel</button>
-        <button>Delete</button>
+        <Link href="/settings">
+          <a>
+            <button>Cancel</button>
+          </a>
+        </Link>
+        <Link href="/sign-in">
+          <a>
+            <button>Delete</button>
+          </a>
+        </Link>
       </div>
     </div>
   );
