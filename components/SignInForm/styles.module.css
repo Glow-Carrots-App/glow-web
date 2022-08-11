@@ -9,9 +9,7 @@
 
 .signInFields {
   height: 50px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border-width: 0 0 2px;
 }
 
 .signInButton {
