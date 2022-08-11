@@ -17,13 +17,13 @@ const CreateAccountForm = () => {
       />
       <input
         className={styles.formInput}
-        type="text"
+        type="password"
         name="password"
         placeholder="Password"
       />
       <input
         className={styles.formInput}
-        type="text"
+        type="password"
         name="confirmPassword"
         placeholder="Confirm Password"
       />
