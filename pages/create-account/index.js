@@ -1,5 +1,5 @@
-import Heading1 from "../../components/Heading1/index";
-import CreateAccountForm from "../../components/CreateAccountForm/index";
+import Heading1 from "../../components/Heading1";
+import CreateAccountForm from "../../components/CreateAccountForm";
 
 import styles from "./styles.module.css";
 
