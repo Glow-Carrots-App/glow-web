@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 34px 0;
+  text-align: left;
+}
+
+.container input {
+  margin: 12px 0 25px;
+  height: 50px;
+  border-width: 1px;
+  border-radius: 4px;
+  padding-left: 8px;
+}
+
+.container textarea {
+  margin: 12px 0 25px;
+  height: 200px;
+  border-width: 1px;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-top: 9px;
+  font-family: Arial;
+}
+
+/* .subjectField {
+  height: 50px;
+  border-width: 1px;
+  border-radius: 4px;
+  padding-left: 8px;
+} */
+
+/* .messageField {
+  height: 200px;
+  border-width: 1px;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-top: 9px;
+  font-family: Arial;
+} */
+
+.feedbackButtonPair {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+}
+
+.feedbackButtons {
+  background-color: grey;
+  height: 50px;
+  width: 179px;
+  border-radius: 4px;
+  border: none;
+}
