@@ -1,9 +1,12 @@
-import Heading1 from "../../../components/Heading1/index.js";
+import Heading1 from "../../../components/Heading1";
+import LogOut from "../../../components/LogOut";
+import styles from "./styles.module.css";
 
 const Logout = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Heading1>Log Out</Heading1>
+      <LogOut />
     </div>
   );
 };
