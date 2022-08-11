@@ -1,6 +1,6 @@
 import Heading1 from "../../components/Heading1";
-import styles from "./styles.module.css";
 import SignInForm from "../../components/SignInForm";
+import styles from "./styles.module.css";
 
 const SignIn = () => {
   return (
