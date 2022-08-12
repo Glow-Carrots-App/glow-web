@@ -4,8 +4,8 @@ const TodayInfo = () => {
   return (
     <div className={styles.container}>
       <div className={styles.goalContainer}>
-        <div className={styles.colorWheel} />
-        <text className={styles.goalCompletion}>4/10 Foods</text>
+        <div />
+        <p>4/10 Foods</p>
       </div>
       <div className={styles.listContainer}>
         <ul className={styles.foodList}>

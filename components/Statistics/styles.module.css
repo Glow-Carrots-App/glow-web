@@ -8,6 +8,7 @@
 .statsHeading {
   text-align: left;
   font-size: larger;
+  margin: 0;
 }
 
 .statsRow {
