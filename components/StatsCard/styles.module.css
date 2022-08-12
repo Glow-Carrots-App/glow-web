@@ -6,7 +6,8 @@
   border-radius: 3px;
 }
 
-.statContainer p {
+.statContainer > p {
   font-size: small;
+  text-align: left;
   margin: 0;
 }

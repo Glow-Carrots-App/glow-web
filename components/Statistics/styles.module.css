@@ -5,7 +5,7 @@
   gap: 32px;
 }
 
-.container p {
+.container > p {
   text-align: left;
   font-size: larger;
   margin: 0;
