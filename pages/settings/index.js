@@ -1,6 +1,7 @@
 import SettingsTopInfo from "../../components/SettingsTopInfo";
 import SettingsInputs from "../../components/SettingsInputs";
 import Heading1 from "../../components/Heading1";
+import BottomTabs from "../../components/BottomTabs";
 
 import styles from "./styles.module.css";
 
@@ -11,6 +12,7 @@ const SettingsPage = () => {
       <Heading1>Settings</Heading1>
       <SettingsTopInfo />
       <SettingsInputs />
+      <BottomTabs />
     </div>
   );
 };

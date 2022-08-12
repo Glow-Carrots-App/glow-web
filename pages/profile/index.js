@@ -2,6 +2,7 @@ import Heading1 from "../../components/Heading1";
 import UserInfo from "../../components/UserInfo";
 import Statistics from "../../components/Statistics";
 import ColorBreakdown from "../../components/ColorBreakdown";
+import BottomTabs from "../../components/BottomTabs";
 
 import styles from "./styles.module.css";
 
@@ -13,6 +14,7 @@ const ProfilePage = () => {
       <UserInfo />
       <Statistics />
       <ColorBreakdown />
+      <BottomTabs />
     </div>
   );
 };
