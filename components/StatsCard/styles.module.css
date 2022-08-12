@@ -1,7 +1,12 @@
 .container {
   border: 1px solid rgb(177, 177, 177);
   width: 45%;
-  height: 75px;
+  height: 64px;
   background-color: rgb(210, 210, 210);
   border-radius: 3px;
+  text-align: left;
+}
+
+.container text {
+  font-size: small;
 }

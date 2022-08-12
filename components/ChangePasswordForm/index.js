@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./styles.module.css";
 
 const ChangePasswordForm = () => {
@@ -22,18 +24,26 @@ const ChangePasswordForm = () => {
         placeholder="Confirm New Password"
       />
       <div className={styles.signInButtonPair}>
-        <input
-          className={styles.signInButtons}
-          type="button"
-          name="cancelPassword"
-          value="Cancel"
-        />
-        <input
-          className={styles.signInButtons}
-          type="submit"
-          name="savePassword"
-          value="Save"
-        />
+        <Link href="/settings">
+          <a>
+            <input
+              className={styles.signInButtons}
+              type="button"
+              name="cancelPassword"
+              value="Cancel"
+            />
+          </a>
+        </Link>
+        <Link href="/settings">
+          <a>
+            <input
+              className={styles.signInButtons}
+              type="submit"
+              name="savePassword"
+              value="Save"
+            />
+          </a>
+        </Link>
       </div>
     </form>
   );
