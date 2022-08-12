@@ -21,7 +21,7 @@ const SignInForm = () => {
         </a>
       </Link>
       <input
-        type="submit"
+        type="button"
         value="Sign In With Google"
         className={styles.signInButton}
       />
