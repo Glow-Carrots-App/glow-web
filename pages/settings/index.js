@@ -1,11 +1,15 @@
-import Heading1 from "../../components/Heading1/index.js";
+import SettingsInputs from "../../components/SettingsInputs";
+import Heading1 from "../../components/Heading1";
 
-const Settings = () => {
+import styles from "./styles.module.css";
+
+const SettingsPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Heading1>Settings</Heading1>
+      <SettingsInputs />
     </div>
   );
 };
 
-export default Settings;
+export default SettingsPage;
