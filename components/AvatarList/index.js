@@ -1,4 +1,4 @@
-import AvatarContainer from "../AvatarContainer";
+import AvatarListItem from "../AvatarListItem";
 
 import styles from "./styles.module.css";
 
@@ -7,14 +7,14 @@ const AvatarList = () => {
     <div className={styles.container}>
       <div className={styles.avatarsContainer}>
         <div className={styles.avatarColumn}>
-          <AvatarContainer>A</AvatarContainer>
-          <AvatarContainer>B</AvatarContainer>
-          <AvatarContainer>C</AvatarContainer>
+          <AvatarListItem>A</AvatarListItem>
+          <AvatarListItem>B</AvatarListItem>
+          <AvatarListItem>C</AvatarListItem>
         </div>
         <div className={styles.avatarColumn}>
-          <AvatarContainer>D</AvatarContainer>
-          <AvatarContainer>E</AvatarContainer>
-          <AvatarContainer>F</AvatarContainer>
+          <AvatarListItem>D</AvatarListItem>
+          <AvatarListItem>E</AvatarListItem>
+          <AvatarListItem>F</AvatarListItem>
         </div>
       </div>
       <div className={styles.buttonContainer}>

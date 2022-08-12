@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const AvatarContainer = ({ children }) => {
+const AvatarListItem = ({ children }) => {
   return (
     <div className={styles.container}>
       <p>{children}</p>
@@ -8,4 +8,4 @@ const AvatarContainer = ({ children }) => {
   );
 };
 
-export default AvatarContainer;
+export default AvatarListItem;
