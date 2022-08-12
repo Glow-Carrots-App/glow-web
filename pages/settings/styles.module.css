@@ -12,6 +12,5 @@
 
 .doneLink {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  inset: 20px 20px auto auto;
 }
