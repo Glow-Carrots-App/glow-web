@@ -8,3 +8,8 @@
 .container label {
   text-align: left;
 }
+
+.doneLink {
+  text-align: right;
+  margin: 34px 34px 0 0;
+}
