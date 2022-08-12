@@ -7,7 +7,7 @@ const SettingsPage = () => {
   return (
     <div className={styles.container}>
       <Heading1>Settings</Heading1>
-      <SettingsInputs></SettingsInputs>
+      <SettingsInputs />
     </div>
   );
 };
