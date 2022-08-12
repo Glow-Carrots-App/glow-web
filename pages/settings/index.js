@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import SettingsTopInfo from "../../components/SettingsTopInfo";
 import SettingsInputs from "../../components/SettingsInputs";
 import SettingsButtons from "../../components/SettingsButtons";
@@ -9,7 +11,9 @@ import styles from "./styles.module.css";
 const SettingsPage = () => {
   return (
     <div className={styles.container}>
-      <p className={styles.doneLink}>Done</p>
+      <Link href="/profile">
+        <a className={styles.doneLink}>Done</a>
+      </Link>
       <Heading1>Settings</Heading1>
       <SettingsTopInfo />
       <SettingsInputs />
