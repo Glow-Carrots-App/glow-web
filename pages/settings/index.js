@@ -1,9 +1,11 @@
 import SettingsInputs from "../../components/SettingsInputs";
 import Heading1 from "../../components/Heading1";
 
+import styles from "./styles.module.css";
+
 const SettingsPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Heading1>Settings</Heading1>
       <SettingsInputs></SettingsInputs>
     </div>
