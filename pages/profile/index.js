@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Heading1 from "../../components/Heading1";
 import UserInfo from "../../components/UserInfo";
 import Statistics from "../../components/Statistics";
@@ -9,7 +11,9 @@ import styles from "./styles.module.css";
 const ProfilePage = () => {
   return (
     <div className={styles.container}>
-      <button className={styles.settingsBtn}>S</button>
+      <Link href="/settings">
+        <a className={styles.settingsBtn}>S</a>
+      </Link>
       <Heading1>Profile</Heading1>
       <UserInfo />
       <Statistics />
