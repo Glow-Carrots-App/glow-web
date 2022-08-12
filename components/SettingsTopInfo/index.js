@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 import styles from "./styles.module.css";
 
 const SettingsTopInfo = () => {
   return (
     <div className={styles.container}>
       <p className={styles.yourProfile}>Your Profile</p>
-      <div className={styles.avatarContainer}>Avatar</div>
+      <Link href="/settings/change-avatar">
+        <a className={styles.avatarContainer}>Avatar</a>
+      </Link>
     </div>
   );
 };
