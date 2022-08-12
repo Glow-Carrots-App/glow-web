@@ -1,0 +1,18 @@
+.subheading {
+  text-align: left;
+  margin: auto auto 0 34px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  background-color: grey;
+  border-radius: 4px;
+  margin: auto 34px;
+  height: 50px;
+}
+
+.color {
+  line-height: 50px;
+  flex-basis: calc(100% / 6);
+}
