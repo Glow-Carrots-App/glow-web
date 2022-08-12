@@ -1,11 +1,19 @@
+import Link from "next/link";
+
 import styles from "./styles.module.css";
 
 const BottomTabs = () => {
   return (
     <div className={styles.container}>
-      <div>Today</div>
-      <div>Add</div>
-      <div>Profile</div>
+      <Link href="/today">
+        <a>Today</a>
+      </Link>
+      <Link href="/eat">
+        <a>Add</a>
+      </Link>
+      <Link href="/profile">
+        <a>Profile</a>
+      </Link>
     </div>
   );
 };
