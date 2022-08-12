@@ -15,10 +15,12 @@
 
 .firstNameText {
   font-size: larger;
+  margin: 0;
 }
 
 .joinDateText {
   font-size: small;
+  margin: 0;
 }
 
 .avatarContainer {

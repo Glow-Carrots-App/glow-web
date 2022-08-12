@@ -5,9 +5,10 @@
   gap: 16px;
 }
 
-.breakdownHeader {
+.container p {
   text-align: left;
   font-size: larger;
+  margin: 0;
 }
 
 .progressBar {

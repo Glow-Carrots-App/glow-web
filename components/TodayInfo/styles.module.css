@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 34px 0;
+}
+
+.goalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.goalContainer div {
+  border: 1px solid grey;
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  background-color: rgb(215, 215, 215);
+}
+
+.listContainer {
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 3px;
+  padding: 16px;
+  height: 144px;
+}
+
+.foodList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: small;
+}

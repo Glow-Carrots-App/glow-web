@@ -1,12 +1,13 @@
-.container {
+.statContainer {
   border: 1px solid rgb(177, 177, 177);
   width: 45%;
   height: 64px;
   background-color: rgb(210, 210, 210);
   border-radius: 3px;
-  text-align: left;
 }
 
-.container text {
+.statContainer > p {
   font-size: small;
+  text-align: left;
+  margin: 0;
 }
