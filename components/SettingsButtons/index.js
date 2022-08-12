@@ -9,6 +9,9 @@ const SettingsButtons = () => {
         Edit Daily Goal
       </LargeLinkedButton>
       <LargeLinkedButton href="/settings/feedback">Feedback</LargeLinkedButton>
+      <LargeLinkedButton href="/settings/password">
+        Change Password
+      </LargeLinkedButton>
       <LargeLinkedButton href="/settings/logout">Log Out</LargeLinkedButton>
       <LargeLinkedButton href="/settings/delete-account">
         Delete Account
