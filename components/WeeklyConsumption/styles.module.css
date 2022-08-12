@@ -1,0 +1,15 @@
+.container {
+  margin: 0 34px;
+}
+
+.container p {
+  text-align: left;
+  font-size: larger;
+}
+
+.barChart {
+  border: 1px solid grey;
+  border-radius: 3px;
+  background-color: rgb(215, 215, 215);
+  height: 200px;
+}
