@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import SmallLinkedButton from "../SmallLinkedButton";
+
 import styles from "./styles.module.css";
 
 const ChangePasswordForm = () => {
@@ -24,16 +26,7 @@ const ChangePasswordForm = () => {
         placeholder="Confirm New Password"
       />
       <div className={styles.signInButtonPair}>
-        <Link href="/settings">
-          <a>
-            <input
-              className={styles.signInButtons}
-              type="button"
-              name="cancelPassword"
-              value="Cancel"
-            />
-          </a>
-        </Link>
+        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <Link href="/settings">
           <a>
             <input

@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import SmallLinkedButton from "../SmallLinkedButton";
+
 import styles from "./styles.module.css";
 
 const FeedbackForm = () => {
@@ -20,16 +22,7 @@ const FeedbackForm = () => {
         placeholder="Type here"
       />
       <div className={styles.feedbackButtonPair}>
-        <Link href="/settings">
-          <a>
-            <input
-              className={styles.feedbackButtons}
-              type="button"
-              name="cancelMessage"
-              value="Cancel"
-            />
-          </a>
-        </Link>
+        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <Link href="/settings">
           <a>
             <input

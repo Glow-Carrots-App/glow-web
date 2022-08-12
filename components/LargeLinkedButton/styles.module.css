@@ -1,0 +1,11 @@
+.largeButton {
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  padding: 1px 6px;
+  background-color: grey;
+  height: 50px;
+  width: 307px;
+  border-radius: 4px;
+  border: none;
+}

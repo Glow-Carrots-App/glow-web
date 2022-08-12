@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import Heading2 from "../Heading2";
+import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
@@ -15,16 +14,8 @@ const ChangeGoalForm = () => {
         <Heading2>healthy foods daily!</Heading2>
       </div>
       <div className={styles.buttonContainer}>
-        <Link href="/settings">
-          <a>
-            <button>Cancel</button>
-          </a>
-        </Link>
-        <Link href="/settings">
-          <a>
-            <button>Submit</button>
-          </a>
-        </Link>
+        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
+        <SmallLinkedButton href="/settings">Submit</SmallLinkedButton>
       </div>
     </div>
   );
