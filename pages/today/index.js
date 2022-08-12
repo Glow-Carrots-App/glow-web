@@ -1,9 +1,13 @@
-import Heading1 from "../../components/Heading1/index";
+import Heading1 from "../../components/Heading1";
+import TodayInfo from "../../components/TodayInfo";
+
+import styles from "./styles.module.css";
 
 const Today = () => {
   return (
-    <div>
-      <Heading1>Today!</Heading1>
+    <div className={styles.container}>
+      <Heading1>Today</Heading1>
+      <TodayInfo />
     </div>
   );
 };

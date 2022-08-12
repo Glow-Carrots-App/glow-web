@@ -2,21 +2,23 @@ import styles from "./styles.module.css";
 
 const TodayInfo = () => {
   return (
-    <div>
-      <div>
-        <div>ColorWheel</div>
-        <text>4/10 Foods</text>
+    <div className={styles.container}>
+      <div className={styles.goalContainer}>
+        <div className={styles.colorWheel} />
+        <text className={styles.goalCompletion}>4/10 Foods</text>
       </div>
-      <div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+      <div className={styles.listContainer}>
+        <ul className={styles.foodList}>
+          <li>Kale</li>
+          <li>Lettuce</li>
+          <li>Apple</li>
+          <li>Blueberry</li>
+          <li>Plum</li>
+          <li>Banana</li>
         </ul>
       </div>
     </div>
   );
 };
+
+export default TodayInfo;
