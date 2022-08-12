@@ -2,8 +2,8 @@ import styles from "./styles.module.css";
 
 const StatsCard = ({ title }) => {
   return (
-    <div className={styles.container}>
-      <p>{title}</p>
+    <div className={styles.statContainer}>
+      <p className={styles.title}>{title}</p>
     </div>
   );
 };
