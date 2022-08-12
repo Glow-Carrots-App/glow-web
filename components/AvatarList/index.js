@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import AvatarListItem from "../AvatarListItem";
+import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
@@ -20,16 +19,8 @@ const AvatarList = () => {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        <Link href="/settings">
-          <a>
-            <button>Cancel</button>
-          </a>
-        </Link>
-        <Link href="/settings">
-          <a>
-            <button>Save</button>
-          </a>
-        </Link>
+        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
+        <SmallLinkedButton href="/settings">Save</SmallLinkedButton>
       </div>
     </div>
   );
