@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 34px 0;
+}
+
+.yourProfile {
+  font-size: larger;
+  margin: 0;
+}
+
+.avatarContainer {
+  height: 100px;
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: rgb(214, 214, 214);
+}
