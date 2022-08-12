@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-items: center;
   text-align: center;
+  margin-top: 34px;
 }
 
 .container label {
@@ -10,6 +11,13 @@
 }
 
 .doneLink {
-  text-align: right;
-  margin: 34px 34px 0 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
+
+/* position: absolute;
+height: 24px;
+width: 24px;
+top: 20px;
+right: 20px; */
