@@ -1,4 +1,6 @@
 import Heading1 from "../../components/Heading1";
+import ColorFilter from "../../components/ColorFilter";
+import SearchFoodsList from "../../components/SearchFoodsList";
 import BottomTabs from "../../components/BottomTabs";
 
 import styles from "./styles.module.css";
