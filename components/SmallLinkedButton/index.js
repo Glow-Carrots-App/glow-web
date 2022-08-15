@@ -3,16 +3,18 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.module.css";
 
-const SmallLinkedButton = ({ children, href }) => {
+const SmallLinkedButton = ({ children, href, onClick = () => {} }) => {
   return (
     <Link href={href}>
-      <a className={styles.smallButton}>{children}</a>
+      <a className={styles.smallButton} onClick={onClick}>
+        {children}
+      </a>
     </Link>
   );
 };
 
 SmallLinkedButton.propTypes = {
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
 };
 
 export default SmallLinkedButton;
