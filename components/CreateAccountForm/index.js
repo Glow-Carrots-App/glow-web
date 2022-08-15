@@ -1,10 +1,8 @@
-import Link from "next/link";
-
 import styles from "./styles.module.css";
 
 const CreateAccountForm = () => {
   return (
-    <form className={styles.form}>
+    <form className={styles.form} action="/today" method="post">
       <input
         className={styles.formInput}
         type="text"
@@ -29,11 +27,7 @@ const CreateAccountForm = () => {
         name="confirmPassword"
         placeholder="Confirm Password"
       />
-      <Link href="/today">
-        <a>
-          <input type="submit" value="Sign Up" className={styles.inputButton} />
-        </a>
-      </Link>
+      <input type="submit" value="Sign Up" className={styles.inputButton} />
     </form>
   );
 };

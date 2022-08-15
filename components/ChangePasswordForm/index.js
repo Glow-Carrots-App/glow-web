@@ -1,12 +1,10 @@
-import Link from "next/link";
-
 import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
 const ChangePasswordForm = () => {
   return (
-    <form className={styles.container}>
+    <form className={styles.container} action="/settings" mode="post">
       <input
         className={styles.signInFields}
         type="password"
@@ -27,16 +25,12 @@ const ChangePasswordForm = () => {
       />
       <div className={styles.signInButtonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <Link href="/settings">
-          <a>
-            <input
-              className={styles.signInButtons}
-              type="submit"
-              name="savePassword"
-              value="Save"
-            />
-          </a>
-        </Link>
+        <input
+          className={styles.signInButtons}
+          type="submit"
+          name="savePassword"
+          value="Save"
+        />
       </div>
     </form>
   );

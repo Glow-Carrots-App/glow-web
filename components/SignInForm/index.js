@@ -1,25 +1,16 @@
-import Link from "next/link";
-
 import styles from "./styles.module.css";
 
 const SignInForm = () => {
   return (
-    <form className={styles.container}>
+    <form className={styles.container} action="today" method="post">
       <input type="text" className={styles.signInFields} placeholder="Email" />
       <input
         type="password"
         className={styles.signInFields}
         placeholder="Password"
       />
-      <Link href="/today">
-        <a>
-          <input
-            type="submit"
-            value="Sign In"
-            className={styles.signInButton}
-          />
-        </a>
-      </Link>
+      <input type="submit" value="Sign In" className={styles.signInButton} />
+
       <input
         type="button"
         value="Sign In With Google"

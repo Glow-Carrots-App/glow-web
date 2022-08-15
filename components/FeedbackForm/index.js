@@ -1,12 +1,10 @@
-import Link from "next/link";
-
 import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
 const FeedbackForm = () => {
   return (
-    <form className={styles.container}>
+    <form className={styles.container} action="/settings" mode="post">
       <label for="subject">Subject</label>
       <input
         id="subject"
@@ -23,16 +21,12 @@ const FeedbackForm = () => {
       />
       <div className={styles.feedbackButtonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <Link href="/settings">
-          <a>
-            <input
-              className={styles.feedbackButtons}
-              type="submit"
-              name="submitMessage"
-              value="Submit"
-            />
-          </a>
-        </Link>
+        <input
+          className={styles.feedbackButtons}
+          type="submit"
+          name="submitMessage"
+          value="Submit"
+        />
       </div>
     </form>
   );
