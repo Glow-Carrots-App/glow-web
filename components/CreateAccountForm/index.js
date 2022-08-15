@@ -8,14 +8,16 @@ import styles from "./styles.module.css";
 const CreateAccountForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleCreateAccount = () => {
+  const handleCreateAccount = (e) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log("SUCCESS", user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log("ERROR", errorMessage);
       });
   };
 
