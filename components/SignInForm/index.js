@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { signInWithEmailAndPassword } from "firebase/auth";
 
-import { auth } from "../../firebase.js";
+import { useAuth } from "../../context/AuthContext.js";
 
 import styles from "./styles.module.css";
 
@@ -11,18 +10,16 @@ const SignInForm = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleSignIn = (e) => {
+  const { login } = useAuth();
+
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log(email, password);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        router.push("/today");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+    try {
+      await login(email, password);
+      router.push("/today");
+    } catch (error) {
+      console.log("Login failed", error);
+    }
   };
 
   return (
