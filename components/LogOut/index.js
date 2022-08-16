@@ -7,14 +7,15 @@ import { useAuth } from "../../context/AuthContext";
 import styles from "./styles.module.css";
 
 const LogOut = () => {
-  const { auth, logout } = useAuth();
+  const { user, logout } = useAuth();
+  console.log(user);
   const router = useRouter();
 
   const handleLogOut = async (e) => {
     e.preventDefault();
 
     try {
-      await logout(auth);
+      await logout(user);
       router.push("/sign-in");
     } catch (err) {
       console.log(err);
