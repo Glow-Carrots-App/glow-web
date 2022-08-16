@@ -1,5 +1,3 @@
-import Heading2 from "../Heading2";
-
 import styles from "./styles.module.css";
 
 const ColorFilter = () => {
@@ -8,8 +6,10 @@ const ColorFilter = () => {
     <>
       <p className={styles.subheading}>Filter by Color: </p>
       <div className={styles.container}>
-        {colors.map((color) => (
-          <div className={styles.color}>{color}</div>
+        {colors.map((color, index) => (
+          <div className={styles.color} key={index + styles.color}>
+            {color}
+          </div>
         ))}
       </div>
     </>

@@ -5,14 +5,14 @@ import styles from "./styles.module.css";
 const FeedbackForm = () => {
   return (
     <form className={styles.container} action="/settings" mode="post">
-      <label for="subject">Subject</label>
+      <label htmlFor="subject">Subject</label>
       <input
         id="subject"
         type="text"
         name="subjectText"
         placeholder="Type here"
       />
-      <label for="message">Message</label>
+      <label htmlFor="message">Message</label>
       <textarea
         id="message"
         type="text"
