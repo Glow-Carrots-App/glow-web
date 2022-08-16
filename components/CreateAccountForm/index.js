@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 
 const CreateAccountForm = () => {
   const { signup } = useAuth();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
