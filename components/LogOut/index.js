@@ -1,30 +1,33 @@
-import { signOut } from "firebase/auth";
-
 import Heading2 from "../Heading2";
 import SmallLinkedButton from "../SmallLinkedButton";
-import { auth } from "../../firebase";
+import { useAuth } from "../../context/AuthContext";
 
 import styles from "./styles.module.css";
+import { useRouter } from "next/router";
 
 const LogOut = () => {
-  const handleLogOut = () => {
-    signOut(auth)
-      .then(() => {
-        console.log("LOGOUT SUCCESSFUL");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const { auth, logout } = useAuth();
+  const router = useRouter();
+
+  const handleLogOut = async (e) => {
+    e.preventDefault();
+
+    try {
+      await logout(auth);
+      router.push("/sign-in");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
     <div className={styles.container}>
       <Heading2>Are you sure you want to log out?</Heading2>
       <div className={styles.buttonContainer}>
-        <SmallLinkedButton href="/settings" onClick={handleLogOut}>
-          Cancel
-        </SmallLinkedButton>
-        <SmallLinkedButton href="/sign-in">Logout</SmallLinkedButton>
+        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
+        <a className={styles.smallButton} onClick={handleLogOut}>
+          Log Out
+        </a>
       </div>
     </div>
   );
