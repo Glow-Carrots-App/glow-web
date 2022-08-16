@@ -1,9 +1,10 @@
+import { useRouter } from "next/router";
+
 import Heading2 from "../Heading2";
 import SmallLinkedButton from "../SmallLinkedButton";
 import { useAuth } from "../../context/AuthContext";
 
 import styles from "./styles.module.css";
-import { useRouter } from "next/router";
 
 const LogOut = () => {
   const { auth, logout } = useAuth();
