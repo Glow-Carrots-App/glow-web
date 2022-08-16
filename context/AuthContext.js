@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  deleteUser,
 } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -14,7 +15,6 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log("inside context provider", user);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -46,8 +46,15 @@ export const AuthContextProvider = ({ children }) => {
     await signOut(auth);
   };
 
+  const deleteAccount = async () => {
+    setUser(null);
+    await deleteUser(auth);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, signup, logout }}>
+    <AuthContext.Provider
+      value={{ user, login, signup, logout, deleteAccount }}
+    >
       {loading ? null : children}
     </AuthContext.Provider>
   );

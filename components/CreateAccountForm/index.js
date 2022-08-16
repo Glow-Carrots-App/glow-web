@@ -6,8 +6,7 @@ import { useAuth } from "../../context/AuthContext.js";
 import styles from "./styles.module.css";
 
 const CreateAccountForm = () => {
-  const { user, signup } = useAuth();
-  console.log(user);
+  const { signup } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,14 +14,12 @@ const CreateAccountForm = () => {
 
   const handleCreateAccount = async (e) => {
     e.preventDefault();
-
     try {
       await signup(email, password);
       router.push("/today");
     } catch (err) {
       console.log(err);
     }
-    console.log(email, password);
   };
 
   return (
