@@ -7,7 +7,7 @@ const ColorFilter = () => {
       <p className={styles.subheading}>Filter by Color: </p>
       <div className={styles.container}>
         {colors.map((color, index) => (
-          <div className={styles.color} key={index}>
+          <div className={styles.color} key={index + styles.color}>
             {color}
           </div>
         ))}
