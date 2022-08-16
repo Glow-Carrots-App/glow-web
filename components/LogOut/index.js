@@ -8,7 +8,6 @@ import styles from "./styles.module.css";
 
 const LogOut = () => {
   const { user, logout } = useAuth();
-  console.log(user);
   const router = useRouter();
 
   const handleLogOut = async (e) => {

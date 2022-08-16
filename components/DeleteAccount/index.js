@@ -8,7 +8,6 @@ import styles from "./styles.module.css";
 
 const DeleteAccount = () => {
   const { user, deleteAccount } = useAuth();
-  console.log(user);
   const router = useRouter();
 
   const handleDelete = async (e) => {

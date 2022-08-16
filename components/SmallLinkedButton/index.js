@@ -12,7 +12,7 @@ const SmallLinkedButton = ({ children, href }) => {
 };
 
 SmallLinkedButton.propTypes = {
-  href: PropTypes.string,
+  href: PropTypes.string.isRequired,
 };
 
 export default SmallLinkedButton;
