@@ -6,6 +6,7 @@
 }
 
 .container p {
+  color: var(--purple-dark);
   text-align: left;
   font-size: larger;
   margin: 0;
