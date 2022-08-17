@@ -5,6 +5,7 @@
   text-align: center;
   height: 100vh;
   gap: 25px;
+  background: var(--landing-gradient);
 }
 
 .signInText {
