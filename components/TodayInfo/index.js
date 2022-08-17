@@ -9,12 +9,12 @@ const TodayInfo = () => {
       </div>
       <div className={styles.listContainer}>
         <ul className={styles.foodList}>
-          <li>Kale</li>
-          <li>Lettuce</li>
-          <li>Apple</li>
-          <li>Blueberry</li>
-          <li>Plum</li>
-          <li>Banana</li>
+          <li className={styles.green}>Kale</li>
+          <li className={styles.tan}>Onion</li>
+          <li className={styles.red}>Apple</li>
+          <li className={styles.blue}>Blueberry</li>
+          <li className={styles.orange}>Orange</li>
+          <li className={styles.yellow}>Banana</li>
         </ul>
       </div>
     </div>
