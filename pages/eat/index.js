@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 const Eat = () => {
   return (
     <div className={styles.container}>
-      <Heading1>What are you eating</Heading1>
+      <Heading1>What are you eating?</Heading1>
       <ColorFilter />
       <SearchFoodsList />
       <BottomTabs />
