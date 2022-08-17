@@ -12,6 +12,11 @@
   padding-left: 8px;
   margin-top: 15px;
   background: none;
+  border-color: black;
+}
+
+.container > input::placeholder {
+  color: black;
 }
 
 .backgroundImage {
