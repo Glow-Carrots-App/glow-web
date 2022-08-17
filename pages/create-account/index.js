@@ -13,7 +13,7 @@ const CreateAccountPage = () => {
       <p className={styles.signinText}>
         Already have an account?
         <Link href="/sign-in">
-          <a> Sign In</a>
+          <a className={styles.signInLink}> Sign In</a>
         </Link>
       </p>
     </div>
