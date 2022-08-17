@@ -13,7 +13,7 @@ const SignIn = () => {
       <p className={styles.signInText}>
         Don't have an account?
         <Link href="/create-account">
-          <a> Sign Up</a>
+          <a className={styles.signUpLink}> Sign Up</a>
         </Link>
       </p>
     </div>
