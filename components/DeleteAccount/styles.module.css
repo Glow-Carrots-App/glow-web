@@ -9,14 +9,6 @@
   margin-top: 34px;
 }
 
-/* .buttonContainer button {
-  height: 35px;
-  width: 149px;
-  border: none;
-  border-radius: 4px;
-  background-color: grey;
-} */
-
 .buttonPair {
   display: flex;
   justify-content: center;
