@@ -19,10 +19,10 @@ const FeedbackForm = () => {
         name="messageText"
         placeholder="Type here"
       />
-      <div className={styles.feedbackButtonPair}>
+      <div className={styles.buttonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <input
-          className={styles.feedbackButtons}
+          className={styles.submitButton}
           type="submit"
           name="submitMessage"
           value="Submit"
