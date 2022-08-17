@@ -1,9 +1,9 @@
 .statContainer {
-  border: 1px solid rgb(177, 177, 177);
   width: 45%;
-  height: 64px;
-  background-color: rgb(210, 210, 210);
+  height: 72px;
+  background-color: var(--card-background-purple);
   border-radius: 3px;
+  box-shadow: 1px 1px 4px grey;
 }
 
 .statContainer > p {

@@ -1,4 +1,5 @@
 import StatsCard from "../StatsCard";
+import Heading2 from "../Heading2";
 
 import styles from "./styles.module.css";
 
