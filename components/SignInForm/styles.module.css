@@ -8,11 +8,17 @@
 
 .signInFields {
   height: 50px;
-  border-width: 0 0 2px;
+  border-width: 0 0 1px;
+  border-color: black;
+}
+
+.signInFields::placeholder {
+  color: black;
 }
 
 .signInButton {
-  background-color: grey;
+  background-color: #573d8d;
+  color: white;
   height: 50px;
   width: 307px;
   border-radius: 4px;
