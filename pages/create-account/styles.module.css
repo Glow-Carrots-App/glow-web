@@ -4,6 +4,7 @@
   text-align: center;
   justify-content: center;
   height: 100vh;
+  background-image: var(--landing-gradient);
 }
 
 .signinText {
