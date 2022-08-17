@@ -5,8 +5,10 @@
 }
 
 .container input {
+  background: none;
   height: 50px;
   border-width: 0 0 1px;
+  border-color: black;
 }
 
 .container label ~ label {
