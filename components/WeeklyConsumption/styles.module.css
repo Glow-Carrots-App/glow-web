@@ -5,6 +5,7 @@
 .container p {
   text-align: left;
   font-size: larger;
+  color: var(--purple-dark);
 }
 
 .barChart {
