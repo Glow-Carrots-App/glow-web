@@ -6,27 +6,27 @@ const ChangePasswordForm = () => {
   return (
     <form className={styles.container} action="/settings" mode="post">
       <input
-        className={styles.signInFields}
+        className={styles.passwordFields}
         type="password"
         name="oldPassword"
         placeholder="Old Password"
       />
       <input
-        className={styles.signInFields}
+        className={styles.passwordFields}
         type="password"
         name="newPassword"
         placeholder="New Password"
       />
       <input
-        className={styles.signInFields}
+        className={styles.passwordFields}
         type="password"
         name="confirmNewPassword"
         placeholder="Confirm New Password"
       />
-      <div className={styles.signInButtonPair}>
+      <div className={styles.passwordButtonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <input
-          className={styles.signInButtons}
+          className={styles.passwordButton}
           type="submit"
           name="savePassword"
           value="Save"
