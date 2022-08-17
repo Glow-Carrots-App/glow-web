@@ -1,7 +1,6 @@
 .smallButton {
-  line-height: 50px;
+  line-height: 45px;
   display: inline-block;
-  text-align: center;
   padding: 1px 6px;
   background-color: grey;
   height: 50px;

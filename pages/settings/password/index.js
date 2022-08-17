@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 const PasswordPage = () => {
   return (
     <div className={styles.container}>
-      <Heading1>Password</Heading1>
+      <Heading1>Change Password</Heading1>
       <ChangePasswordForm></ChangePasswordForm>
     </div>
   );
