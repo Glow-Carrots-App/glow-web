@@ -17,8 +17,8 @@ a {
 }
 
 :root {
-  --btn-purple-light: #8178e9;
-  --btn-purple-dark: #573d8d;
+  --purple-light: #8178e9;
+  --purple-dark: #573d8d;
   --card-background-purple: #f1ecff;
   --filter-red: -#f94d4d;
   --filter-orange: #fd8f52;
