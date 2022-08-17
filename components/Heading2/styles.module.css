@@ -1,5 +1,5 @@
 .heading2 {
-  color: #573d8d;
+  color: var(--purple-dark);
   font-size: 20px;
   font-weight: 400;
 }
