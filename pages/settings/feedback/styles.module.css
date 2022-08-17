@@ -8,4 +8,5 @@
 
 .container p {
   margin-top: -14px;
+  color: var(--purple-dark);
 }

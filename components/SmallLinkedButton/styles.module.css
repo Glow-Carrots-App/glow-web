@@ -2,11 +2,11 @@
   line-height: 45px;
   display: inline-block;
   padding: 1px 6px;
-  background-color: grey;
   height: 50px;
   width: 148px;
   border-radius: 4px;
   border: none;
   color: white;
-  background-color: #8178e9;
+  background-color: var(--purple-light);
+  text-align: center;
 }
