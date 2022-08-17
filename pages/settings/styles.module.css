@@ -11,6 +11,7 @@
 }
 
 .doneLink {
+  font-weight: bolder;
   position: absolute;
-  inset: 20px 20px auto auto;
+  inset: 15px 15px auto auto;
 }
