@@ -49,7 +49,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const deleteAccount = async () => {
     setUser(null);
-    await deleteUser(auth);
+    await deleteUser(auth.currentUser);
   };
 
   return (
