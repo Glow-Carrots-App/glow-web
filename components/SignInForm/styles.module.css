@@ -12,6 +12,10 @@
   border-color: black;
 }
 
+.signInFields::placeholder {
+  color: black;
+}
+
 .signInButton {
   background-color: #573d8d;
   color: white;
