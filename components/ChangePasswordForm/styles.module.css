@@ -24,7 +24,7 @@
 }
 
 .passwordButton {
-  background-color: #8178e9;
+  background-color: var(--purple-light);
   color: white;
   height: 50px;
   width: 148px;

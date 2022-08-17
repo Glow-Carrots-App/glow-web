@@ -17,7 +17,7 @@ const ColorFilter = () => {
           <div
             className={styles.color}
             style={{ backgroundColor: color }}
-            key={index + styles.color}
+            key={index + color}
           />
         ))}
       </div>
