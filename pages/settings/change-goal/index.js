@@ -6,8 +6,11 @@ import styles from "./styles.module.css";
 const ChangeGoal = () => {
   return (
     <div className={styles.container}>
-      <Heading1>Change Goal</Heading1>
-      <p>How many healthy foods do you want to eat each day?</p>
+      <Heading1>Daily Goal</Heading1>
+      <p>
+        How many healthy foods <br />
+        do you want to eat each day?
+      </p>
       <ChangeGoalForm />
     </div>
   );

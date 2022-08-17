@@ -8,5 +8,6 @@
 }
 
 .container p {
-  font-size: large;
+  color: var(--purple-dark);
+  font-size: medium;
 }
