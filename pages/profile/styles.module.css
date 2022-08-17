@@ -1,5 +1,7 @@
 .container {
   text-align: center;
+  padding-top: 17px;
+  height: 100vh;
 }
 
 .settingsBtn {
