@@ -7,7 +7,7 @@ import { useAuth } from "../../context/AuthContext";
 import styles from "./styles.module.css";
 
 const DeleteAccount = () => {
-  const { user, deleteAccount } = useAuth();
+  const { deleteAccount } = useAuth();
   const router = useRouter();
 
   const handleDelete = async (e) => {
