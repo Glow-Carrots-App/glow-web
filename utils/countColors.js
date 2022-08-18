@@ -37,6 +37,8 @@ export default function countColors(foods) {
     { count: 0, color: "total" },
   ];
 
+  console.log("IN COUNT COLORS", foods);
+
   foods.forEach((item) => {
     switch (item.color) {
       case "red":

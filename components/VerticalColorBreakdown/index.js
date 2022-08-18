@@ -2,39 +2,21 @@ import countColors from "../../utils/countColors";
 
 import styles from "./styles.module.css";
 
-const VerticalColorBreakdown = () => {
-  let lifetimeFood = [
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "orange", fillHex: "#fd8f52" },
-    { color: "orange", fillHex: "#fd8f52" },
-    { color: "yellow", fillHex: "#f9c449" },
-    { color: "yellow", fillHex: "#f9c449" },
-    { color: "yellow", fillHex: "#f9c449" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "white", fillHex: "#f2edcf" },
-  ];
+const VerticalColorBreakdown = ({ arr, width }) => {
+  console.log("IN VERTICAL BREAKDOWN", arr);
+  let colorCount = countColors(arr);
 
-  let colorCount = countColors(lifetimeFood);
+  if (!colorCount) {
+    return <div className={styles.progressBar}>_</div>;
+  }
+
   let percentages = colorCount.map(
     (color) => (100 * color.count) / colorCount[6].count + "%"
   );
   colorCount.forEach((count, index) => (count.percentage = percentages[index]));
 
   return (
-    <div className={styles.progressBar}>
+    <div className={styles.progressBar} style={{ width: width }}>
       {colorCount.map((color, index) => {
         if (index === 6) {
           return null;

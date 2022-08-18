@@ -27,8 +27,8 @@
 
 .barChartContainer {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  margin: 12px 12px;
-  gap: 16px;
-  height: 85%;
+  margin: 12px 4px;
+  height: 90%;
 }
