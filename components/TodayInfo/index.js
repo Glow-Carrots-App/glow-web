@@ -1,6 +1,15 @@
 import styles from "./styles.module.css";
 
 const TodayInfo = () => {
+  const foodList = [
+    { product: "Kale", textColor: "#479d45" },
+    { product: "Onion", textColor: "#97906e" },
+    { product: "Apple", textColor: "#f94d4d" },
+    { product: "Blueberry", textColor: "#7471e7" },
+    { product: "Orange", textColor: "#fd8f52" },
+    { product: "Banana", textColor: "#ffbb1c" },
+  ];
+
   return (
     <div className={styles.container}>
       <div className={styles.goalContainer}>
@@ -9,12 +18,11 @@ const TodayInfo = () => {
       </div>
       <div className={styles.listContainer}>
         <ul className={styles.foodList}>
-          <li className={styles.green}>Kale</li>
-          <li className={styles.tan}>Onion</li>
-          <li className={styles.red}>Apple</li>
-          <li className={styles.blue}>Blueberry</li>
-          <li className={styles.orange}>Orange</li>
-          <li className={styles.yellow}>Banana</li>
+          {foodList.map((food, index) => (
+            <li style={{ color: food.textColor }} key={index + food.product}>
+              {food.product}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

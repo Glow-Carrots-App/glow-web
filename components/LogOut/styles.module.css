@@ -14,7 +14,7 @@
   display: inline-block;
   text-align: center;
   padding: 1px 6px;
-  background-color: #8178e9;
+  background-color: var(--purple-light);
   color: white;
   font-size: medium;
   height: 50px;

@@ -26,5 +26,5 @@
   border-radius: 4px;
   border: none;
   color: white;
-  background-color: #8178e9;
+  background-color: var(--purple-light);
 }

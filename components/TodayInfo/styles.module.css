@@ -33,27 +33,3 @@
   padding: 0;
   font-size: small;
 }
-
-.red {
-  color: var(--list-red);
-}
-
-.orange {
-  color: var(--list-orange);
-}
-
-.yellow {
-  color: var(--list-yellow);
-}
-
-.green {
-  color: var(--list-green);
-}
-
-.blue {
-  color: var(--list-blue);
-}
-
-.tan {
-  color: var(--list-tan);
-}

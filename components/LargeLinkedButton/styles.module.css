@@ -3,7 +3,7 @@
   display: inline-block;
   text-align: center;
   padding: 1px 6px;
-  background-color: #8178e9;
+  background-color: var(--purple-light);
   height: 50px;
   width: 307px;
   border-radius: 4px;
