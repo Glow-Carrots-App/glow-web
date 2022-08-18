@@ -2,15 +2,33 @@
   margin: 0 34px;
 }
 
-.container p {
-  text-align: left;
-  font-size: larger;
-  color: var(--purple-dark);
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.buttonContainer > button {
+  width: 70px;
+  height: 35px;
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 1px 1px 0px;
+  border-radius: 4px;
+  background-color: #f0ebff;
 }
 
 .barChart {
-  border: 1px solid grey;
-  border-radius: 3px;
-  background-color: rgb(215, 215, 215);
   height: 200px;
+  border: 1px solid rgb(215, 215, 215);
+  border-radius: 0px;
+  background-color: #dad3ef;
+}
+
+.barChartContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 12px;
+  gap: 16px;
+  height: 85%;
 }
