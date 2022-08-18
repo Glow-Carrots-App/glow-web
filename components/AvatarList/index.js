@@ -12,60 +12,24 @@ import salad from "../../public/avatars/salad.png";
 import styles from "./styles.module.css";
 
 const AvatarList = () => {
+  const avatars1 = [babyFood, cookingPot, foodContainer];
+  const avatars2 = [food, camp, salad];
   return (
     <div className={styles.container}>
       <div className={styles.avatarsContainer}>
         <div className={styles.avatarColumn}>
-          <AvatarListItem>
-            <Image
-              src={babyFood}
-              alt="Picture of the author"
-              width="75px"
-              height="75px"
-            />
-          </AvatarListItem>
-          <AvatarListItem>
-            <Image
-              src={cookingPot}
-              alt="Picture of the author"
-              width="75px"
-              height="75px"
-            />
-          </AvatarListItem>
-          <AvatarListItem>
-            <Image
-              src={foodContainer}
-              alt="Picture of the author"
-              width="75px"
-              height="75px"
-            />
-          </AvatarListItem>
+          {avatars1.map((avatar, index) => (
+            <AvatarListItem key={avatar + index}>
+              <Image src={avatar} width="75px" height="75px" />
+            </AvatarListItem>
+          ))}
         </div>
         <div className={styles.avatarColumn}>
-          <AvatarListItem>
-            <Image
-              src={food}
-              alt="Picture of the author"
-              width="75px"
-              height="75px"
-            />
-          </AvatarListItem>
-          <AvatarListItem>
-            <Image
-              src={camp}
-              alt="Picture of the author"
-              width="75px"
-              height="75px"
-            />
-          </AvatarListItem>
-          <AvatarListItem>
-            <Image
-              src={salad}
-              alt="Picture of the author"
-              width="75px"
-              height="75px"
-            />
-          </AvatarListItem>
+          {avatars2.map((avatar, index) => (
+            <AvatarListItem key={avatar + index}>
+              <Image src={avatar} width="75px" height="75px" />
+            </AvatarListItem>
+          ))}
         </div>
       </div>
       <div className={styles.buttonContainer}>
