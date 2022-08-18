@@ -31,7 +31,7 @@ const ColorBreakdown = () => {
         {colorArr.map((color, index, arr) => (
           <div
             className={styles.progressItem}
-            style={{ backgroundColor: color, width: 500 / arr.length }}
+            style={{ backgroundColor: color, width: 10000 / arr.length }}
             key={index + color}
           />
         ))}
