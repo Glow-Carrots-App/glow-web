@@ -20,12 +20,14 @@
 }
 
 .backgroundImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 270px;
   width: 100%;
-  border: 1px solid grey;
   margin: 20px 0 30px;
   border-radius: 3px;
-  background-color: lightgray;
+  opacity: 0.5;
 }
 
 .buttons {
