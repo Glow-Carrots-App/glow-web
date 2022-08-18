@@ -1,32 +1,32 @@
-import Image from "next/image";
-
 import SmallLinkedButton from "../SmallLinkedButton";
-import babyFood from "../../public/avatars/baby-food.png";
-import cookingPot from "../../public/avatars/cooking-pot.png";
-import foodContainer from "../../public/avatars/food-container.png";
-import food from "../../public/avatars/food.png";
-import camp from "../../public/avatars/camp.png";
-import salad from "../../public/avatars/salad.png";
 
 import styles from "./styles.module.css";
 
 const AvatarList = () => {
-  const avatars1 = [babyFood, cookingPot, foodContainer];
-  const avatars2 = [food, camp, salad];
+  const avatars1 = [
+    "/avatars/baby-food.png",
+    "/avatars/cooking-pot.png",
+    "/avatars/food-container.png",
+  ];
+  const avatars2 = [
+    "/avatars/food.png",
+    "/avatars/camp.png",
+    "/avatars/salad.png",
+  ];
   return (
     <div className={styles.container}>
       <div className={styles.avatarList}>
         <div className={styles.avatarColumn}>
           {avatars1.map((avatar, index) => (
             <div className={styles.avatarListItem} key={avatar + index}>
-              <Image src={avatar} width="75px" height="75px" />
+              <img src={avatar} className={styles.avatar} />
             </div>
           ))}
         </div>
         <div className={styles.avatarColumn}>
           {avatars2.map((avatar, index) => (
             <div className={styles.avatarListItem} key={avatar + index}>
-              <Image src={avatar} width="75px" height="75px" />
+              <img src={avatar} className={styles.avatar} />
             </div>
           ))}
         </div>

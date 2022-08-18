@@ -1,24 +1,20 @@
 import styles from "./styles.module.css";
 
 const ColorFilter = () => {
-  const colors = [
-    "#f94d4d",
-    "#fd8f52",
-    "#f9c449",
-    "#6aab9c",
-    "#4b37a8",
-    "#f2edcf",
+  const icons = [
+    "/colorIcons/red.png",
+    "/colorIcons/yellow.png",
+    "/colorIcons/orange.png",
+    "/colorIcons/green.png",
+    "/colorIcons/purple.png",
+    "/colorIcons/white.png",
   ];
   return (
     <>
       <p className={styles.subheading}>Filter by Color: </p>
       <div className={styles.container}>
-        {colors.map((color, index) => (
-          <div
-            className={styles.color}
-            style={{ backgroundColor: color }}
-            key={index + color}
-          />
+        {icons.map((icon, index) => (
+          <img key={index + icon} className={styles.icon} src={icon} />
         ))}
       </div>
     </>
