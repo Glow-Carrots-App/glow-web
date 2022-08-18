@@ -12,12 +12,7 @@ const SettingsTopInfo = () => {
       <Heading2 className={styles.yourHeading2rofile}>Your Profile</Heading2>
       <Link href="/settings/change-avatar">
         <a className={styles.avatarContainer}>
-          <Image
-            src={food}
-            alt="Picture of the author"
-            width="70px"
-            height="70px"
-          />
+          <Image src={food} width="70px" height="70px" />
         </a>
       </Link>
     </div>

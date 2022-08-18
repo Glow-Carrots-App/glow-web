@@ -13,12 +13,7 @@ const UserInfo = () => {
         <p className={styles.joinDateText}>Joined April 2022</p>
       </div>
       <div className={styles.avatarContainer}>
-        <Image
-          src={food}
-          alt="Picture of the author"
-          width="70px"
-          height="70px"
-        />
+        <Image src={food} width="70px" height="70px" />
       </div>
     </div>
   );
