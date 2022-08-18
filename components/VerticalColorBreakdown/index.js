@@ -2,8 +2,7 @@ import countColors from "../../utils/countColors";
 
 import styles from "./styles.module.css";
 
-const VerticalColorBreakdown = ({ arr, width }) => {
-  console.log("IN VERTICAL BREAKDOWN", arr);
+const VerticalColorBreakdown = ({ arr, width, height }) => {
   let colorCount = countColors(arr);
 
   if (!colorCount) {
@@ -16,7 +15,10 @@ const VerticalColorBreakdown = ({ arr, width }) => {
   colorCount.forEach((count, index) => (count.percentage = percentages[index]));
 
   return (
-    <div className={styles.progressBar} style={{ width: width }}>
+    <div
+      className={styles.progressBar}
+      style={{ width: width, maxHeight: height }}
+    >
       {colorCount.map((color, index) => {
         if (index === 6) {
           return null;

@@ -1,27 +1,23 @@
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
 import sampleFoodData from "../../sampleData/sampleFoodData";
-import lastSevenDays from "../../utils/lastSevenDays";
-import lastThirtyDays from "../../utils/lastThirtyDays";
 import filterByDate from "../../utils/filterByDate";
+import createHeightPercentages from "../../utils/createHeightPercentages";
 
 import styles from "./styles.module.css";
 import { useState } from "react";
 
-const WeeklyConsumption = () => {
+const ConsumptionHistory = () => {
   let [days, setDays] = useState(7);
   let [width, setWidth] = useState("16px");
 
-  let thirtyDays = lastThirtyDays(sampleFoodData);
-
-  let verticalArr = [];
+  let dayArrays = [];
+  let lengths = [];
   for (let i = 0; i < days; i++) {
-    verticalArr.push(
-      <VerticalColorBreakdown
-        arr={filterByDate(thirtyDays, new Date(), i)}
-        width={width}
-      />
-    );
+    dayArrays.push(filterByDate(sampleFoodData, new Date(), i));
+    lengths.push(dayArrays[i].length);
   }
+
+  let percentages = createHeightPercentages(lengths);
 
   return (
     <div className={styles.container}>
@@ -52,10 +48,18 @@ const WeeklyConsumption = () => {
         </button>
       </div>
       <div className={styles.barChart}>
-        <div className={styles.barChartContainer}>{verticalArr}</div>
+        <div className={styles.barChartContainer}>
+          {dayArrays.map((day, i) => (
+            <VerticalColorBreakdown
+              arr={filterByDate(day, new Date(), i)}
+              width={width}
+              height={percentages[i]}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default WeeklyConsumption;
+export default ConsumptionHistory;
