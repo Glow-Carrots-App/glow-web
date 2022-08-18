@@ -1,5 +1,5 @@
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
-import sampleFoodData from "../../sampleData/sampleFoodData";
+import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
 import filterByDate from "../../utils/filterByDate";
 import createHeightPercentages from "../../utils/createHeightPercentages";
 
@@ -12,8 +12,9 @@ const ConsumptionHistory = () => {
 
   let dayArrays = [];
   let lengths = [];
+
   for (let i = 0; i < days; i++) {
-    dayArrays.push(filterByDate(sampleFoodData, new Date(), i));
+    dayArrays.push(filterByDate(SAMPLE_FOOD_DATA, new Date(), i));
     lengths.push(dayArrays[i].length);
   }
 
@@ -51,6 +52,7 @@ const ConsumptionHistory = () => {
         <div className={styles.barChartContainer}>
           {dayArrays.map((day, i) => (
             <VerticalColorBreakdown
+              key={`${day} + ${i}`}
               arr={filterByDate(day, new Date(), i)}
               width={width}
               height={percentages[i]}

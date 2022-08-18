@@ -1,4 +1,4 @@
-const sampleFoodData = [
+const SAMPLE_FOOD_DATA = [
   {
     product: "Strawberry",
     color: "red",
@@ -372,4 +372,4 @@ const sampleFoodData = [
   },
 ];
 
-export default sampleFoodData;
+export default SAMPLE_FOOD_DATA;
