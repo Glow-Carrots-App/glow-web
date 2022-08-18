@@ -11,9 +11,12 @@
 }
 
 .avatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 85px;
   width: 85px;
   border: 1px solid gray;
   border-radius: 50%;
-  background-color: rgb(214, 214, 214);
+  background-color: white;
 }
