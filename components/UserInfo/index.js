@@ -1,7 +1,4 @@
 import Heading2 from "../Heading2";
-import Image from "next/image";
-
-import food from "../../public/avatars/food.png";
 
 import styles from "./styles.module.css";
 
@@ -13,7 +10,7 @@ const UserInfo = () => {
         <p className={styles.joinDateText}>Joined April 2022</p>
       </div>
       <div className={styles.avatarContainer}>
-        <Image src={food} width="70px" height="70px" />
+        <img src="/avatars/camp.png" className={styles.image} />
       </div>
     </div>
   );
