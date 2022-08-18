@@ -1,8 +1,12 @@
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
+import sampleFoodData from "../../sampleData/sampleFoodData";
+import lastSevenDays from "../../utils/lastSevenDays";
 
 import styles from "./styles.module.css";
 
 const WeeklyConsumption = () => {
+  let sevenDays = lastSevenDays(sampleFoodData);
+  console.log(sevenDays);
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>

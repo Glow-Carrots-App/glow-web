@@ -1,33 +1,10 @@
 import countColors from "../../utils/countColors";
+import sampleFoodData from "../../sampleData/sampleFoodData";
 
 import styles from "./styles.module.css";
 
 const ColorBreakdown = () => {
-  let lifetimeFood = [
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "red", fillHex: "#f94d4d" },
-    { color: "orange", fillHex: "#fd8f52" },
-    { color: "orange", fillHex: "#fd8f52" },
-    { color: "yellow", fillHex: "#f9c449" },
-    { color: "yellow", fillHex: "#f9c449" },
-    { color: "yellow", fillHex: "#f9c449" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "green", fillHex: "#6aab9c" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "purple", fillHex: "#4b37a8" },
-    { color: "white", fillHex: "#f2edcf" },
-  ];
-
-  let colorCount = countColors(lifetimeFood);
+  let colorCount = countColors(sampleFoodData);
   let percentages = colorCount.map(
     (color) => (100 * color.count) / colorCount[6].count + "%"
   );
