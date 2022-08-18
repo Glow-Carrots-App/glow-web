@@ -18,18 +18,16 @@ const ColorBreakdown = () => {
     { color: "green", fillHex: "#6aab9c" },
     { color: "green", fillHex: "#6aab9c" },
     { color: "green", fillHex: "#6aab9c" },
-    { color: "blue", fillHex: "#4b37a8" },
-    { color: "blue", fillHex: "#4b37a8" },
-    { color: "blue", fillHex: "#4b37a8" },
-    { color: "blue", fillHex: "#4b37a8" },
-    { color: "blue", fillHex: "#4b37a8" },
-    { color: "blue", fillHex: "#4b37a8" },
-    { color: "tan", fillHex: "#f2edcf" },
+    { color: "purple", fillHex: "#4b37a8" },
+    { color: "purple", fillHex: "#4b37a8" },
+    { color: "purple", fillHex: "#4b37a8" },
+    { color: "purple", fillHex: "#4b37a8" },
+    { color: "purple", fillHex: "#4b37a8" },
+    { color: "purple", fillHex: "#4b37a8" },
+    { color: "white", fillHex: "#f2edcf" },
   ];
 
   let colorCount = countColors(lifetimeFood);
-  console.log(colorCount);
-
   let percentages = colorCount.map(
     (color) => (100 * color.count) / colorCount[6].count + "%"
   );

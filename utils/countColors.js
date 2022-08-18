@@ -25,12 +25,12 @@ export default function countColors(foods) {
     },
     {
       count: 0,
-      color: "blue",
+      color: "purple",
       fillHex: "#4b37a8",
     },
     {
       count: 0,
-      color: "tan",
+      color: "white",
       fillHex: "#f2edcf",
     },
     { count: 0, color: "total" },
@@ -50,10 +50,10 @@ export default function countColors(foods) {
       case "green":
         colorCounts[3].count++;
         break;
-      case "blue":
+      case "purple":
         colorCounts[4].count++;
         break;
-      case "tan":
+      case "white":
         colorCounts[5].count++;
         break;
     }
