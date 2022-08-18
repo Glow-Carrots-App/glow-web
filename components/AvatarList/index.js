@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import AvatarListItem from "../AvatarListItem";
 import SmallLinkedButton from "../SmallLinkedButton";
 import babyFood from "../../public/avatars/baby-food.png";
 import cookingPot from "../../public/avatars/cooking-pot.png";
@@ -16,19 +15,19 @@ const AvatarList = () => {
   const avatars2 = [food, camp, salad];
   return (
     <div className={styles.container}>
-      <div className={styles.avatarsContainer}>
+      <div className={styles.avatarList}>
         <div className={styles.avatarColumn}>
           {avatars1.map((avatar, index) => (
-            <AvatarListItem key={avatar + index}>
+            <div className={styles.avatarListItem} key={avatar + index}>
               <Image src={avatar} width="75px" height="75px" />
-            </AvatarListItem>
+            </div>
           ))}
         </div>
         <div className={styles.avatarColumn}>
           {avatars2.map((avatar, index) => (
-            <AvatarListItem key={avatar + index}>
+            <div className={styles.avatarListItem} key={avatar + index}>
               <Image src={avatar} width="75px" height="75px" />
-            </AvatarListItem>
+            </div>
           ))}
         </div>
       </div>
