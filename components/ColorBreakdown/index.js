@@ -24,14 +24,17 @@ const ColorBreakdown = () => {
     "#4b37a8",
     "#f2edcf",
   ];
+
+  let percentage = 100 / colorArr.length + "%";
+
   return (
     <div className={styles.container}>
       <p>Total Color Breakdown</p>
       <div className={styles.progressBar}>
-        {colorArr.map((color, index, arr) => (
+        {colorArr.map((color, index) => (
           <div
             className={styles.progressItem}
-            style={{ backgroundColor: color, width: 10000 / arr.length }}
+            style={{ backgroundColor: color, width: percentage }}
             key={index + color}
           />
         ))}
