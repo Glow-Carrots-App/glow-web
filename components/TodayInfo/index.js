@@ -54,13 +54,17 @@ const TodayInfo = () => {
           break;
       }
       if (data[6].y > 0) {
-        console.log(data[6].y);
         data[6].y--;
       }
     });
   };
 
   dataUpdate(todayEaten);
+
+  let currentCount = todayEaten.length - 1;
+  let user = {
+    dailyGoal: 4,
+  };
 
   return (
     <div className={styles.container}>
@@ -72,8 +76,13 @@ const TodayInfo = () => {
             innerRadius={100}
             data={data}
           />
+          {currentCount >= user.dailyGoal && (
+            <img className={styles.carrot} src="/stats/goldenCarrot.png" />
+          )}
         </div>
-        <p>4/10 Foods</p>
+        <p>
+          {currentCount}/{user.dailyGoal} Foods
+        </p>
       </div>
       <div className={styles.listContainer}>
         <ul className={styles.foodList}>
