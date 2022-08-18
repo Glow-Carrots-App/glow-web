@@ -1,9 +1,9 @@
 import styles from "./styles.module.css";
 
-const StatsCard = ({ title }) => {
+const StatsCard = ({ children }) => {
   return (
     <div className={styles.statContainer}>
-      <p>{title}</p>
+      <p>{children}</p>
     </div>
   );
 };

@@ -8,12 +8,12 @@ const Statistics = () => {
     <div className={styles.container}>
       <p>Statistics</p>
       <div className={styles.statsRow}>
-        <StatsCard title="Day Streak" />
-        <StatsCard title="Carrots" />
+        <StatsCard>{"Day Streak"}</StatsCard>
+        <StatsCard>{"Carrots"}</StatsCard>
       </div>
       <div className={styles.statsRow}>
-        <StatsCard title="Highest Color" />
-        <StatsCard title="Lowest Color" />
+        <StatsCard>{"Highest Color"}</StatsCard>
+        <StatsCard>{"Lowest Color"}</StatsCard>
       </div>
     </div>
   );
