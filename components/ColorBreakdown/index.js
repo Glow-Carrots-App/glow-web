@@ -3,7 +3,7 @@ import countColors from "../../utils/countColors";
 import styles from "./styles.module.css";
 
 const ColorBreakdown = () => {
-  let colorArr = [
+  let lifetimeFood = [
     { color: "red", fillHex: "#f94d4d" },
     { color: "red", fillHex: "#f94d4d" },
     { color: "red", fillHex: "#f94d4d" },
@@ -27,7 +27,9 @@ const ColorBreakdown = () => {
     { color: "tan", fillHex: "#f2edcf" },
   ];
 
-  let colorCount = countColors(colorArr);
+  let colorCount = countColors(lifetimeFood);
+  console.log(colorCount);
+
   let percentages = colorCount.map(
     (color) => (100 * color.count) / colorCount[6].count + "%"
   );
@@ -37,13 +39,21 @@ const ColorBreakdown = () => {
     <div className={styles.container}>
       <p>Total Color Breakdown</p>
       <div className={styles.progressBar}>
-        {colorCount.map((color, index) => (
-          <div
-            key={color + index}
-            className={styles.progressItem}
-            style={{ backgroundColor: color.fillHex, width: color.percentage }}
-          />
-        ))}
+        {colorCount.map((color, index) => {
+          if (index === 6) {
+            return null;
+          }
+          return (
+            <div
+              key={color + index}
+              className={styles.progressItem}
+              style={{
+                backgroundColor: color.fillHex,
+                width: color.percentage,
+              }}
+            />
+          );
+        })}
       </div>
     </div>
   );
