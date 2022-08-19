@@ -24,13 +24,13 @@ a {
   --filter-orange: #fd8f52;
   --filter-yellow: #f9c449;
   --filter-green: #6aab9c;
-  --filter-blue: #4b37a8;
-  --filter-tan: #f2edcf;
+  --filter-purple: #4b37a8;
+  --filter-white: #f2edcf;
   --list-red: #f94d4d;
   --list-orange: #fd8f52;
   --list-yellow: #ffbb1c;
   --list-green: #479d45;
-  --list-blue: #7471e7;
-  --list-tan: #97906e;
+  --list-purple: #7471e7;
+  --list-white: #97906e;
   --landing-gradient: linear-gradient(-45deg, white, #573d8d);
 }
