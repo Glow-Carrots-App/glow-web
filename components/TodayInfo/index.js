@@ -1,25 +1,59 @@
+import { VictoryPie } from "victory";
+
+import populateDonutChartData from "../../utils/populateDonutChartData";
+
 import styles from "./styles.module.css";
 
 const TodayInfo = () => {
-  const foodList = [
-    { product: "Kale", textColor: "#479d45" },
-    { product: "Onion", textColor: "#97906e" },
-    { product: "Apple", textColor: "#f94d4d" },
-    { product: "Blueberry", textColor: "#7471e7" },
-    { product: "Orange", textColor: "#fd8f52" },
-    { product: "Banana", textColor: "#ffbb1c" },
+  const today = [
+    "#f94d4d",
+    "#fd8f52",
+    "#ffbb1c",
+    "#97906e",
+    "#479d45",
+    "#7471e7",
+    "#f1ecff",
   ];
+  const todayEaten = [
+    { product: "Strawberry", color: "red", fillHex: "#f94d4d" },
+    { product: "Strawberry", color: "red", fillHex: "#f94d4d" },
+    { product: "Banana", color: "yellow", fillHex: "#ffbb1c" },
+    { product: "Orange", color: "orange", fillHex: "#fd8f52" },
+    { product: "Banana", color: "yellow", fillHex: "#ffbb1c" },
+    { product: "Onion", color: "white", fillHex: "#97906e" },
+    { product: "Scallions", color: "green", fillHex: "#479d45" },
+    { product: "Blueberry", color: "blue", fillHex: "#7471e7" },
+  ];
+
+  let currentCount = todayEaten.length;
+  let user = {
+    dailyGoal: 30,
+  };
+
+  const todaysData = populateDonutChartData(todayEaten, user.dailyGoal);
 
   return (
     <div className={styles.container}>
       <div className={styles.goalContainer}>
-        <div />
-        <p>4/10 Foods</p>
+        <div>
+          <VictoryPie
+            colorScale={today}
+            padAngle={({ datum }) => datum}
+            innerRadius={100}
+            data={todaysData}
+          />
+          {currentCount >= user.dailyGoal && (
+            <img className={styles.carrot} src="/stats/goldenCarrot.png" />
+          )}
+        </div>
+        <p>
+          {currentCount}/{user.dailyGoal} Foods
+        </p>
       </div>
       <div className={styles.listContainer}>
         <ul className={styles.foodList}>
-          {foodList.map((food, index) => (
-            <li style={{ color: food.textColor }} key={index + food.product}>
+          {todayEaten.map((food, index) => (
+            <li style={{ color: food.fillHex }} key={index + food.product}>
               {food.product}
             </li>
           ))}
