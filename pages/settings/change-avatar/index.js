@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 const ChangeAvatar = () => {
   return (
     <div className={styles.container}>
-      <Heading1>Change Avatar</Heading1>
+      <Heading1>Change Your Avatar</Heading1>
       <AvatarList />
       <BottomTabs />
     </div>
