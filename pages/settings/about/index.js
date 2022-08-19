@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import Heading1 from "../../../components/Heading1/index";
+import BottomTabs from "../../../components/BottomTabs/index";
 
 import styles from "./styles.module.css";
 
@@ -6,6 +9,9 @@ const AboutUs = () => {
   return (
     <div className={styles.container}>
       <Heading1>About Glow</Heading1>
+      <Link href="/settings">
+        <a className={styles.doneLink}>Done</a>
+      </Link>
       <p>
         Glow is a food tracker app inspired by the Rainbow Diet and science
         linking nutrition to the colors of natural foods.
@@ -19,6 +25,7 @@ const AboutUs = () => {
         <a href="https://www.flaticon.com/authors/freepik"> Freepik</a> from
         <a href="https://www.flaticon.com/"> www.flaticon.com</a>.
       </p>
+      <BottomTabs />
     </div>
   );
 };

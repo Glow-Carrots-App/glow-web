@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  margin: 0px 34px 0px;
+  margin: 0 34px;
   padding-top: 17px;
 }
 
@@ -12,9 +12,13 @@
   color: var(--purple-dark);
   font-size: medium;
   text-align: left;
-  font-size: medium;
 }
 
 .container a {
   color: black;
+}
+
+.doneLink {
+  position: absolute;
+  inset: 15px 15px auto auto;
 }
