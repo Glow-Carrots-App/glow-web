@@ -1,5 +1,4 @@
 import { useState } from "react";
-import dayjs from "dayjs";
 
 import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
