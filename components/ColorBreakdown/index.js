@@ -4,7 +4,7 @@ import sampleFoodData from "../../sampleData/sampleFoodData";
 import styles from "./styles.module.css";
 
 const ColorBreakdown = () => {
-  let colorCount = countColors([]);
+  let colorCount = countColors(sampleFoodData);
   let percentages = colorCount
     ? colorCount.map((color) => (100 * color.count) / colorCount[6].count + "%")
     : null;
