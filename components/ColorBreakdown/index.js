@@ -19,7 +19,6 @@ const ColorBreakdown = () => {
       <div className={styles.progressBar}>
         {colorCount ? (
           colorCount.map((color, index) => {
-            console.log(color);
             if (index === 6 || color.count === 0) {
               return null;
             }
