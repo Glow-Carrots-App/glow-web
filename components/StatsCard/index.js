@@ -1,9 +1,13 @@
 import styles from "./styles.module.css";
 
-const StatsCard = ({ children }) => {
+const StatsCard = ({ src, title, data }) => {
   return (
     <div className={styles.statContainer}>
-      <p>{children}</p>
+      <div className={styles.topRow}>
+        <img className={styles.icon} src={src} style={{ height: "28px" }} />
+        <span>{title}</span>
+      </div>
+      <p>{data}</p>
     </div>
   );
 };
