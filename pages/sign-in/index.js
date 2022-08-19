@@ -8,7 +8,10 @@ import styles from "./styles.module.css";
 const SignIn = () => {
   return (
     <div className={styles.container}>
-      <Heading1>GLOW</Heading1>
+      <div className={styles.heading}>
+        <Heading1>GLOW</Heading1>
+        <img src="/stats/goldenCarrot.png" className={styles.image} />
+      </div>
       <SignInForm />
       <p className={styles.signInText}>
         Don't have an account?
