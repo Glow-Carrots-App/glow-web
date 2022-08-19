@@ -1,0 +1,20 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  margin: 0px 34px 0px;
+  padding-top: 17px;
+}
+
+.container p {
+  color: var(--purple-dark);
+  font-size: medium;
+  text-align: left;
+  font-size: medium;
+}
+
+.container a {
+  color: black;
+}
