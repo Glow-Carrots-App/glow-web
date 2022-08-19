@@ -9,15 +9,15 @@ const VerticalColorBreakdown = ({ arr, width, height }) => {
     return <div className={styles.progressBar}>_</div>;
   }
 
-  let percentages = colorCount.map(
-    (color) => (100 * color.count) / colorCount[6].count + "%"
+  colorCount.forEach(
+    (count) =>
+      (count.percentage = (100 * count.count) / colorCount[6].count + "%")
   );
-  colorCount.forEach((count, index) => (count.percentage = percentages[index]));
 
   return (
     <div
       className={styles.progressBar}
-      style={{ width: width, maxHeight: height }}
+      style={{ width: width, height: height }}
     >
       {colorCount.map((color, index) => {
         if (index === 6) {
