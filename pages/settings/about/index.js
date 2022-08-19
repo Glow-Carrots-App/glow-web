@@ -10,7 +10,7 @@ const AboutUs = () => {
     <div className={styles.container}>
       <Heading1>About Glow</Heading1>
       <Link href="/settings">
-        <a className={styles.doneLink}>Done</a>
+        <a className={styles.doneLink}>Back</a>
       </Link>
       <p>
         Glow is a food tracker app inspired by the Rainbow Diet and science

@@ -7,16 +7,22 @@ const AvatarList = () => {
     "/avatars/baby-food.png",
     "/avatars/cooking-pot.png",
     "/avatars/food-container.png",
+    "/avatars/pie.png",
+    "/avatars/pot.png",
+    "/avatars/smoothie.png",
   ];
   const avatars2 = [
-    "/avatars/food.png",
+    "/avatars/noodle.png",
     "/avatars/camp.png",
     "/avatars/salad.png",
+    "/avatars/leftover.png",
+    "/avatars/birthday-cake.png",
+    "/avatars/tropical-fruit.png",
   ];
   return (
     <div className={styles.container}>
       <div className={styles.avatarList}>
-        <div className={styles.avatarColumn}>
+        <div>
           {avatars1.map((avatar, index) => (
             <div className={styles.avatarListItem} key={avatar + index}>
               <img src={avatar} className={styles.avatar} />
