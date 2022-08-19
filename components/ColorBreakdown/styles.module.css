@@ -5,7 +5,7 @@
   gap: 16px;
 }
 
-.container p {
+.container > p {
   color: var(--purple-dark);
   text-align: left;
   font-size: larger;
@@ -22,4 +22,9 @@
   display: inline-block;
   height: 101%;
   border: none;
+}
+
+.emptyBar {
+  line-height: 60px;
+  margin: auto;
 }

@@ -20,7 +20,7 @@ const VerticalColorBreakdown = ({ arr, width, height }) => {
       style={{ width: width, height: height }}
     >
       {colorCount.map((color, index) => {
-        if (index === 6) {
+        if (index === 6 || color.count === 0) {
           return null;
         }
         return (
