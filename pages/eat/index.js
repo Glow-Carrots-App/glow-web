@@ -11,7 +11,7 @@ const Eat = () => {
       <Heading1>What are you eating?</Heading1>
       <ColorFilter />
       <SearchFoodsList />
-      <BottomTabs />
+      <BottomTabs isEat={true} />
     </div>
   );
 };
