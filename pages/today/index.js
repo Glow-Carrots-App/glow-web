@@ -11,7 +11,7 @@ const Today = () => {
       <Heading1>Today</Heading1>
       <TodayInfo />
       <ConsumptionHistory />
-      <BottomTabs isToday={true} />
+      <BottomTabs />
     </div>
   );
 };

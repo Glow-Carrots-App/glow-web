@@ -22,7 +22,7 @@ const ProfilePage = () => {
       <UserInfo />
       <Statistics />
       <ColorBreakdown />
-      <BottomTabs isProfile={true} />
+      <BottomTabs />
     </div>
   );
 };
