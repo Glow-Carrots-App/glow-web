@@ -1,13 +1,13 @@
 import styles from "./styles.module.css";
 
-const StatsCard = ({ src, title, data }) => {
+const StatsCard = ({ src, title, data, color = "#573d8d" }) => {
   return (
     <div className={styles.statContainer}>
       <div className={styles.topRow}>
         <img className={styles.icon} src={src} style={{ height: "28px" }} />
         <span>{title}</span>
       </div>
-      <p>{data}</p>
+      <p style={{ color: color }}>{data}</p>
     </div>
   );
 };

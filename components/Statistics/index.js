@@ -7,23 +7,32 @@ import pickHighIcon from "../../utils/pickHighIcon";
 import styles from "./styles.module.css";
 
 const DUMMY_LIFETIME = [
-  { product: "apple", color: "red" },
-  { product: "strawberry", color: "red" },
-  { product: "orange", color: "orange" },
-  { product: "lettuce", color: "green" },
-  { product: "onion", color: "white" },
-  { product: "apple", color: "red" },
+  { product: "apple", color: "red", textHex: "#f94d4d" },
+  { product: "strawberry", color: "red", textHex: "#f94d4d" },
+  { product: "orange", color: "orange", textHex: "#fd8f52" },
+  { product: "lettuce", color: "green", textHex: "#479d45" },
+  { product: "lettuce", color: "green", textHex: "#479d45" },
+  { product: "lettuce", color: "green", textHex: "#479d45" },
+  { product: "onion", color: "white", textHex: "#97906e" },
+  { product: "banana", color: "yellow", textHex: "#ffbb1c" },
 ];
 
 const Statistics = () => {
   const lowestColor = checkLowestColor(DUMMY_LIFETIME);
   const highestColor = checkHighestColor(DUMMY_LIFETIME);
+  console.log(lowestColor);
 
   const userDayStreak = 20;
   const userGoldenCarrots = 40;
 
   const lowIcon = pickLowIcon(lowestColor);
   const highIcon = pickHighIcon(highestColor);
+
+  const capatalizeString = (string) =>
+    string.charAt(0).toUpperCase() + string.slice(1);
+
+  const lowestColorData = capatalizeString(lowestColor.color);
+  const highestColorData = capatalizeString(highestColor.color);
 
   return (
     <div className={styles.container}>
@@ -44,12 +53,14 @@ const Statistics = () => {
         <StatsCard
           src={highIcon}
           title="Highest Color"
-          data={highestColor.color}
+          data={highestColorData}
+          color={highestColor.textHex}
         />
         <StatsCard
           src={lowIcon}
           title="Lowest Color"
-          data={lowestColor.color}
+          data={lowestColorData}
+          color={lowestColor.textHex}
         />
       </div>
     </div>
