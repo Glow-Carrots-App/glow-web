@@ -1,14 +1,9 @@
-import formatStringToDate from "./formatStringToDate";
-import formatDateToString from "./formatDateToString";
+import dayjs from "dayjs";
 
-export default function filterByDate(array, date, daysBehind) {
-  let dateToCompare =
-    formatStringToDate(formatDateToString(date)).getTime() -
-    daysBehind * 86400000;
+export default function filterByDate(array, daysBehind) {
+  let dateToCompare = dayjs().subtract(daysBehind, "day");
   const filteredArr = array.filter((item) => {
-    let itemDate = formatStringToDate(item.date).getTime();
-    return itemDate === dateToCompare;
+    return dateToCompare.isSame(item.date, "day");
   });
-
   return filteredArr;
 }

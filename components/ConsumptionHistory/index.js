@@ -1,4 +1,5 @@
 import { useState } from "react";
+import dayjs from "dayjs";
 
 import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
@@ -15,7 +16,7 @@ const ConsumptionHistory = () => {
   let lengths = [];
 
   for (let i = 0; i < days; i++) {
-    dayArrays.push(filterByDate(SAMPLE_FOOD_DATA, new Date(), i));
+    dayArrays.push(filterByDate(SAMPLE_FOOD_DATA, i));
     lengths.push(dayArrays[i].length);
   }
 
@@ -57,10 +58,10 @@ const ConsumptionHistory = () => {
       </div>
       <div className={styles.barChart}>
         <div className={styles.barChartContainer}>
-          {dayArrays.map((day, i) => (
+          {dayArrays.map((day, i, arr) => (
             <VerticalColorBreakdown
               key={`${day} + ${i}`}
-              arr={filterByDate(day, new Date(), i)}
+              arr={arr[i]}
               width={width}
               height={percentages[i]}
             />
