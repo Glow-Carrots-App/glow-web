@@ -6,7 +6,7 @@ const SearchFoodsList = ({ data }) => {
       {data.map((food, i) => {
         return (
           <button className={styles.foodBtn} key={food.textHex + i}>
-            {food.product}
+            {food.productSearch}
           </button>
         );
       })}

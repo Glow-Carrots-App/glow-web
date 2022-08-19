@@ -10,6 +10,7 @@
   align-items: center;
   margin: 16px 34px 0;
   height: 50px;
+  width: 100%;
 }
 
 .color {
@@ -21,4 +22,11 @@
 .icon {
   height: 35px;
   width: 35px;
+}
+
+.iconHighlight {
+  height: 35px;
+  width: 35px;
+  border: 1px solid #f9c449;
+  border-radius: 50%;
 }

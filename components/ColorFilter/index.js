@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const ColorFilter = () => {
+const ColorFilter = ({ selectedColor, handleSelectedColor }) => {
   const icons = [
     "/colorIcons/red.png",
     "/colorIcons/yellow.png",
@@ -14,7 +14,16 @@ const ColorFilter = () => {
       <p className={styles.subheading}>Filter by Color: </p>
       <div className={styles.container}>
         {icons.map((icon, index) => (
-          <img key={index + icon} className={styles.icon} src={icon} />
+          <img
+            key={index + icon}
+            onClick={() => handleSelectedColor(icon.slice(12, -4))}
+            className={
+              selectedColor === icon.slice(12, -4)
+                ? styles.iconHighlight
+                : styles.icon
+            }
+            src={icon}
+          />
         ))}
       </div>
     </>
