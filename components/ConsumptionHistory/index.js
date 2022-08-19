@@ -15,7 +15,7 @@ const ConsumptionHistory = () => {
   let lengths = [];
 
   for (let i = 0; i < days; i++) {
-    dayArrays.push(filterByDate(SAMPLE_FOOD_DATA, new Date(), i));
+    dayArrays.push(filterByDate(SAMPLE_FOOD_DATA, i));
     lengths.push(dayArrays[i].length);
   }
 
@@ -60,7 +60,7 @@ const ConsumptionHistory = () => {
           {dayArrays.map((day, i) => (
             <VerticalColorBreakdown
               key={`${day} + ${i}`}
-              arr={filterByDate(day, new Date(), i)}
+              arr={day}
               width={width}
               height={percentages[i]}
             />
