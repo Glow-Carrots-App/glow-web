@@ -1,5 +1,7 @@
 import { VictoryPie } from "victory";
 
+import populateDonutChartData from "../../utils/populateDonutChartData";
+
 import styles from "./styles.module.css";
 
 const TodayInfo = () => {
@@ -12,16 +14,8 @@ const TodayInfo = () => {
     "#7471e7",
     "#f1ecff",
   ];
-  const data = [
-    { x: " ", y: 0 },
-    { x: " ", y: 0 },
-    { x: " ", y: 0 },
-    { x: " ", y: 0 },
-    { x: " ", y: 0 },
-    { x: " ", y: 0 },
-    { x: " ", y: 10 },
-  ];
   const todayEaten = [
+    { product: "Strawberry", color: "red", fillHex: "#f94d4d" },
     { product: "Strawberry", color: "red", fillHex: "#f94d4d" },
     { product: "Banana", color: "yellow", fillHex: "#ffbb1c" },
     { product: "Orange", color: "orange", fillHex: "#fd8f52" },
@@ -31,40 +25,12 @@ const TodayInfo = () => {
     { product: "Blueberry", color: "blue", fillHex: "#7471e7" },
   ];
 
-  const dataUpdate = (foodArr) => {
-    foodArr.forEach((food) => {
-      switch (food.color) {
-        case "red":
-          data[0].y++;
-          break;
-        case "orange":
-          data[1].y++;
-          break;
-        case "yellow":
-          data[2].y++;
-          break;
-        case "white":
-          data[3].y++;
-          break;
-        case "green":
-          data[4].y++;
-          break;
-        case "blue":
-          data[5].y++;
-          break;
-      }
-      if (data[6].y > 0) {
-        data[6].y--;
-      }
-    });
-  };
-
-  dataUpdate(todayEaten);
-
-  let currentCount = todayEaten.length - 1;
+  let currentCount = todayEaten.length;
   let user = {
-    dailyGoal: 4,
+    dailyGoal: 30,
   };
+
+  const todaysData = populateDonutChartData(todayEaten, user.dailyGoal);
 
   return (
     <div className={styles.container}>
@@ -74,7 +40,7 @@ const TodayInfo = () => {
             colorScale={today}
             padAngle={({ datum }) => datum}
             innerRadius={100}
-            data={data}
+            data={todaysData}
           />
           {currentCount >= user.dailyGoal && (
             <img className={styles.carrot} src="/stats/goldenCarrot.png" />
