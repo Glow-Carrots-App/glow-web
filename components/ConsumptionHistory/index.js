@@ -1,10 +1,11 @@
-import VerticalColorBreakdown from "../VerticalColorBreakdown";
+import { useState } from "react";
+
 import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
+import VerticalColorBreakdown from "../VerticalColorBreakdown";
 import filterByDate from "../../utils/filterByDate";
 import createHeightPercentages from "../../utils/createHeightPercentages";
 
 import styles from "./styles.module.css";
-import { useState } from "react";
 
 const ConsumptionHistory = () => {
   let [days, setDays] = useState(7);
@@ -28,6 +29,8 @@ const ConsumptionHistory = () => {
             setDays(7);
             setWidth("16px");
           }}
+          className={styles.button}
+          disabled={days === 7}
         >
           7 days
         </button>
@@ -36,6 +39,8 @@ const ConsumptionHistory = () => {
             setDays(14);
             setWidth("8px");
           }}
+          className={styles.button}
+          disabled={days === 14}
         >
           14 days
         </button>
@@ -44,6 +49,8 @@ const ConsumptionHistory = () => {
             setDays(30);
             setWidth("4px");
           }}
+          className={styles.button}
+          disabled={days === 30}
         >
           30 days
         </button>

@@ -9,13 +9,18 @@
   margin: 24px 0;
 }
 
-.buttonContainer > button {
+.button {
   width: 70px;
   height: 35px;
   border: 1px solid rgb(215, 215, 215);
-  box-shadow: 1px 1px 0px;
+  /* box-shadow: 1px 1px 0px; */
   border-radius: 4px;
   background-color: #f0ebff;
+}
+
+.button:disabled {
+  color: black;
+  box-shadow: 1px 1px 4px var(--filter-blue);
 }
 
 .barChart {
