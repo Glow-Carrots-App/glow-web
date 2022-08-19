@@ -1,0 +1,11 @@
+.progressBar {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+}
+
+.progressItem {
+  align-self: center;
+  justify-self: center;
+  width: 110%;
+}
