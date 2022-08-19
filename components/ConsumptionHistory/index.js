@@ -57,10 +57,10 @@ const ConsumptionHistory = () => {
       </div>
       <div className={styles.barChart}>
         <div className={styles.barChartContainer}>
-          {dayArrays.map((day, i, arr) => (
+          {dayArrays.map((day, i) => (
             <VerticalColorBreakdown
               key={`${day} + ${i}`}
-              arr={arr[i]}
+              arr={day}
               width={width}
               height={percentages[i]}
             />
