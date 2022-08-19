@@ -25,3 +25,9 @@
   height: 70px;
   width: 70px;
 }
+
+.pen {
+  position: absolute;
+  top: 70px;
+  right: 40px;
+}
