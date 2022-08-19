@@ -5,7 +5,6 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Heading2 from "../Heading2";
 
 import styles from "./styles.module.css";
-import { Circle } from "victory";
 
 const SettingsTopInfo = () => {
   return (
