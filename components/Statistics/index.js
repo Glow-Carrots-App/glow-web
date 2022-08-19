@@ -20,7 +20,6 @@ const DUMMY_LIFETIME = [
 const Statistics = () => {
   const lowestColor = checkLowestColor(DUMMY_LIFETIME);
   const highestColor = checkHighestColor(DUMMY_LIFETIME);
-  console.log(lowestColor);
 
   const userDayStreak = 20;
   const userGoldenCarrots = 40;
