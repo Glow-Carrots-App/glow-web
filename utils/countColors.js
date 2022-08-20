@@ -6,8 +6,8 @@ export default function countColors(foods) {
     {
       count: 0,
       color: "red",
-      fillHex: "#f94d4d",
-      textHex: "#f94d4d",
+      fillHex: "#fc7790",
+      textHex: "#fc7790",
     },
     {
       count: 0,
@@ -18,26 +18,26 @@ export default function countColors(foods) {
     {
       count: 0,
       color: "yellow",
-      fillHex: "#f9c449",
+      fillHex: "#f3e28d",
       textHex: "#ffbb1c",
     },
     {
       count: 0,
+      color: "white",
+      fillHex: "#fef2d1",
+      textHex: "#97906e",
+    },
+    {
+      count: 0,
       color: "green",
-      fillHex: "#6aab9c",
+      fillHex: "#63dd92",
       textHex: "#479d45",
     },
     {
       count: 0,
       color: "purple",
-      fillHex: "#4b37a8",
+      fillHex: "#9a7dcc",
       textHex: "#7471e7",
-    },
-    {
-      count: 0,
-      color: "white",
-      fillHex: "#f2edcf",
-      textHex: "#97906e",
     },
     { count: 0, color: "total" },
   ];
@@ -53,13 +53,13 @@ export default function countColors(foods) {
       case "yellow":
         colorCounts[2].count++;
         break;
-      case "green":
+      case "white":
         colorCounts[3].count++;
         break;
-      case "purple":
+      case "green":
         colorCounts[4].count++;
         break;
-      case "white":
+      case "purple":
         colorCounts[5].count++;
         break;
     }

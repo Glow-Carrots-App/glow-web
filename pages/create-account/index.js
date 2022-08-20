@@ -8,7 +8,10 @@ import styles from "./styles.module.css";
 const CreateAccountPage = () => {
   return (
     <div className={styles.container}>
-      <Heading1>Create Account</Heading1>
+      <div className={styles.heading}>
+        <Heading1>Create Account</Heading1>
+        <img src="/stats/goldenCarrot.png" className={styles.image} />
+      </div>
       <CreateAccountForm />
       <p className={styles.signinText}>
         Already have an account?

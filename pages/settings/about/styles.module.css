@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  margin: 0 34px;
+  padding-top: 34px;
+}
+
+.container p {
+  color: var(--purple-dark);
+  font-size: medium;
+  text-align: left;
+}
+
+.container a {
+  color: black;
+}
+
+.doneLink {
+  position: absolute;
+  inset: 15px 15px auto auto;
+}
+
+.banana {
+  position: absolute;
+  opacity: 60%;
+  transform: rotate(70deg);
+  bottom: 20px;
+}
