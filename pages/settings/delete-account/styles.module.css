@@ -6,6 +6,16 @@
   text-align: center;
 }
 
-.avocado {
+.avocado1 {
+  position: absolute;
+  top: -120px;
+  right: 0px;
+  opacity: 60%;
+  transform: rotate(180deg);
+}
+
+.avocado2 {
+  position: absolute;
+  bottom: -20px;
   opacity: 60%;
 }
