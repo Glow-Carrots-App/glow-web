@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  width: 28%;
+  width: 35%;
   max-height: 306px;
   overflow: scroll;
 }
@@ -13,7 +13,7 @@
 .foodBtn {
   text-align: left;
   min-height: 34px;
-  width: 92%;
+  width: 95%;
   padding-left: 8px;
   background: none;
   border: none;
