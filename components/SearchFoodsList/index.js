@@ -1,11 +1,19 @@
 import styles from "./styles.module.css";
 
-const SearchFoodsList = ({ data }) => {
+const SearchFoodsList = ({ setSelectedFood, onBlur, data, setSearchInput }) => {
   return (
     <div className={styles.listContainer}>
       {data.map((food, i) => {
         return (
-          <button className={styles.foodBtn} key={food.textHex + i}>
+          <button
+            onMouseDown={() => {
+              setSearchInput(food.productSearch);
+              setSelectedFood(food);
+              onBlur();
+            }}
+            className={styles.foodBtn}
+            key={food.textHex + i}
+          >
             {food.productSearch}
           </button>
         );

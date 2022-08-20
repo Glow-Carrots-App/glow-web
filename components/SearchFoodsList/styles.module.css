@@ -1,20 +1,24 @@
 .listContainer {
   position: fixed;
-  top: 215px;
+  top: 216px;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-self: flex-start;
+  width: 28%;
+  max-height: 306px;
+  overflow: scroll;
 }
 
 .foodBtn {
   text-align: left;
-  margin: 0 37px;
-  height: 34px;
-  border: 0.5px solid;
+  min-height: 34px;
+  width: 92%;
   padding-left: 8px;
+  background: none;
+  border: none;
 }
 
 .foodBtn:hover {
-  background-color: #ffffff;
+  background-color: white;
 }

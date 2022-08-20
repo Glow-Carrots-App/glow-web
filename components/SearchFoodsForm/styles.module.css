@@ -30,6 +30,11 @@
   opacity: 0.5;
 }
 
+.backgroundImage > img {
+  width: 185px;
+  height: 185px;
+}
+
 .buttons {
   display: flex;
   gap: 11px;

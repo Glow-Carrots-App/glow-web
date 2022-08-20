@@ -1,8 +1,6 @@
 import { useState } from "react";
-import Image from "next/image";
 
 import SmallLinkedButton from "../SmallLinkedButton";
-import eatImg from "../../public/eatBackground/eatBackground.png";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
 
@@ -63,11 +61,58 @@ const DUMMY_LIFETIME = [
     color: "yellow",
     textHex: "#ffbb1c",
   },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
+  {
+    product: "banana",
+    productSearch: "Banana",
+    color: "yellow",
+    textHex: "#ffbb1c",
+  },
 ];
 
 const SearchFoodsForm = () => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
+  const [focused, setFocused] = useState(false);
+  const [selectedFood, setSelectedFood] = useState(null);
+
+  const onFocus = () => setFocused(true);
+  const onBlur = () => setFocused(false);
 
   const onChange = (e) => {
     setSearchInput(e.target.value);
@@ -75,12 +120,19 @@ const SearchFoodsForm = () => {
 
   const handleSelectedColor = (color) => {
     color === selectedColor ? setSelectedColor(null) : setSelectedColor(color);
-    console.log(selectedColor);
   };
 
-  const filteredFood = DUMMY_LIFETIME.filter((food) =>
-    food.productSearch.toLowerCase().includes(searchInput.toLowerCase())
-  );
+  const filteredFood = !selectedColor
+    ? DUMMY_LIFETIME.filter((food) =>
+        food.productSearch.toLowerCase().includes(searchInput.toLowerCase())
+      )
+    : DUMMY_LIFETIME.filter(
+        (food) =>
+          food.productSearch
+            .toLowerCase()
+            .includes(searchInput.toLowerCase()) && food.color === selectedColor
+      );
+  console.log(selectedFood);
 
   return (
     <div className={styles.container}>
@@ -93,10 +145,19 @@ const SearchFoodsForm = () => {
         placeholder="Search food"
         onChange={onChange}
         value={searchInput}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
-      {searchInput !== "" && <SearchFoodsList data={filteredFood} />}
+      {focused && (
+        <SearchFoodsList
+          setSelectedFood={setSelectedFood}
+          onBlur={onBlur}
+          data={filteredFood}
+          setSearchInput={setSearchInput}
+        />
+      )}
       <div className={styles.backgroundImage}>
-        <Image src={eatImg} width="185px" height="185px" />
+        <img src="/eatBackground/eatBackground.png" />
       </div>
       <div className={styles.buttons}>
         <SmallLinkedButton href="/today">Cancel</SmallLinkedButton>
