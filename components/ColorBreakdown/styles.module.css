@@ -13,7 +13,7 @@
 }
 
 .progressBar {
-  border: 2px solid var(--purple-dark);
+  border: 1px solid var(--purple-dark);
   border-radius: 3px;
   height: 64px;
 }

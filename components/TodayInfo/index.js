@@ -6,13 +6,13 @@ import styles from "./styles.module.css";
 
 const TodayInfo = () => {
   const today = [
-    "#f94d4d",
+    "#fc7790",
     "#fd8f52",
-    "#ffbb1c",
-    "#97906e",
-    "#479d45",
-    "#7471e7",
-    "#f1ecff",
+    "#f3e28d",
+    "#fef2d1",
+    "#63dd92",
+    "#9a7dcc",
+    "#d1d0d0",
   ];
   const todayEaten = [
     { product: "Strawberry", color: "red", fillHex: "#f94d4d" },
