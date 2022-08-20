@@ -132,7 +132,6 @@ const SearchFoodsForm = () => {
             .toLowerCase()
             .includes(searchInput.toLowerCase()) && food.color === selectedColor
       );
-  console.log(selectedFood);
 
   return (
     <div className={styles.container}>
