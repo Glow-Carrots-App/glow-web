@@ -2,10 +2,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   margin: 0 34px;
-  padding-top: 17px;
+  padding-top: 34px;
 }
 
 .container p {
@@ -21,4 +21,11 @@
 .doneLink {
   position: absolute;
   inset: 15px 15px auto auto;
+}
+
+.banana {
+  position: absolute;
+  opacity: 60%;
+  transform: rotate(70deg);
+  bottom: 20px;
 }

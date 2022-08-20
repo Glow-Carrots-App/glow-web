@@ -4,6 +4,7 @@
   justify-items: center;
   text-align: center;
   padding-top: 17px;
+  height: 100vh;
 }
 
 .container label {

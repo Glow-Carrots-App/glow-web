@@ -12,6 +12,7 @@ const AboutUs = () => {
       <Link href="/settings">
         <a className={styles.doneLink}>Back</a>
       </Link>
+      <img src="/pageBackgrounds/banana.png" className={styles.banana} />
       <p>
         Glow is a food tracker app inspired by the Rainbow Diet and science
         linking nutrition to the colors of natural foods.

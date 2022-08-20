@@ -10,3 +10,13 @@
   margin-top: -14px;
   color: var(--purple-dark);
 }
+
+.artichoke {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(180deg);
+  opacity: 60%;
+}

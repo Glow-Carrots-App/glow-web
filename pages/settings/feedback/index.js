@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 const FeedbackPage = () => {
   return (
     <div className={styles.container}>
+      <img src="/pageBackgrounds/artichoke.png" className={styles.artichoke} />
       <Heading1>Feedback</Heading1>
       <p>Send us your feedback!</p>
       <FeedbackForm />

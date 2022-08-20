@@ -8,6 +8,14 @@ const LogOutPage = () => {
   return (
     <div className={styles.container}>
       <Heading1>Log Out</Heading1>
+      <img
+        src="/pageBackgrounds/watermelon.png"
+        className={styles.watermelon1}
+      />
+      <img
+        src="/pageBackgrounds/watermelon.png"
+        className={styles.watermelon2}
+      />
       <LogOut />
       <BottomTabs />
     </div>

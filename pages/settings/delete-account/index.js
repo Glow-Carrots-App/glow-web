@@ -9,6 +9,8 @@ const DeleteAccountPage = () => {
     <div className={styles.container}>
       <Heading1>Delete Account</Heading1>
       <DeleteAccount />
+      <img src="/pageBackgrounds/avocado.png" className={styles.avocado1} />
+      <img src="/pageBackgrounds/avocado.png" className={styles.avocado2} />
       <BottomTabs />
     </div>
   );

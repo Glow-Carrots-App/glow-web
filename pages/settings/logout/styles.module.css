@@ -5,3 +5,23 @@
   justify-content: center;
   text-align: center;
 }
+
+.watermelon1 {
+  position: absolute;
+  top: -50px;
+  right: 10px;
+  height: 230px;
+  width: 230px;
+  opacity: 60%;
+  transform: rotate(150deg);
+}
+
+.watermelon2 {
+  position: absolute;
+  bottom: -50px;
+  right: 10px;
+  height: 230px;
+  width: 230px;
+  opacity: 60%;
+  transform: rotate(-30deg);
+}
