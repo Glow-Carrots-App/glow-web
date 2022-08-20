@@ -9,6 +9,7 @@ const PasswordPage = () => {
     <div className={styles.container}>
       <Heading1>Change Password</Heading1>
       <ChangePasswordForm />
+      <img src="/pageBackgrounds/passion-fruit.png" className={styles.fruit} />
       <BottomTabs />
     </div>
   );

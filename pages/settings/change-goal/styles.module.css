@@ -11,3 +11,12 @@
   color: var(--purple-dark);
   font-size: medium;
 }
+
+.berry {
+  position: absolute;
+  top: -20px;
+  left: -60px;
+  height: 200px;
+  width: 200px;
+  opacity: 60%;
+}

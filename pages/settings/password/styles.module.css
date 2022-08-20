@@ -2,6 +2,15 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 40px;
   text-align: center;
+}
+
+.fruit {
+  position: absolute;
+  bottom: 40px;
+  height: 230px;
+  width: 230px;
+  opacity: 60%;
 }

@@ -8,6 +8,7 @@ const ChangeGoal = () => {
   return (
     <div className={styles.container}>
       <Heading1>Daily Goal</Heading1>
+      <img src="/pageBackgrounds/berries.png" className={styles.berry} />
       <p>
         How many healthy foods <br />
         do you want to eat each day?
