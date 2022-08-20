@@ -1,36 +1,24 @@
-.container {
+.listContainer {
+  position: fixed;
+  top: 216px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 34px;
+  align-self: flex-start;
+  width: 35%;
+  max-height: 306px;
+  overflow: scroll;
 }
 
-.container > input {
-  border-width: 0 0 1px;
-  width: 100%;
-  height: 50px;
+.foodBtn {
+  text-align: left;
+  min-height: 34px;
+  width: 95%;
   padding-left: 8px;
-  margin-top: 15px;
   background: none;
-  border-color: black;
+  border: none;
 }
 
-.container > input::placeholder {
-  color: black;
-}
-
-.backgroundImage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 270px;
-  width: 100%;
-  margin: 20px 0 30px;
-  border-radius: 3px;
-  opacity: 0.5;
-}
-
-.buttons {
-  display: flex;
-  gap: 11px;
+.foodBtn:hover {
+  background-color: white;
 }

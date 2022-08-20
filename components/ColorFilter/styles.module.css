@@ -10,6 +10,7 @@
   align-items: center;
   margin: 16px 34px 0;
   height: 50px;
+  width: 100%;
 }
 
 .color {
@@ -21,4 +22,23 @@
 .icon {
   height: 35px;
   width: 35px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+}
+
+.iconHighlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(187, 172, 214);
+  border: 1px solid var(--purple-dark);
+  border-radius: 50%;
 }
