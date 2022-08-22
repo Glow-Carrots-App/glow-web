@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const ColorFilter = ({ selectedColor, handleSelectedColor }) => {
+const ColorFilter = ({ selectedColor, setSelectedColor }) => {
   const icons = [
     "/colorIcons/red.png",
     "/colorIcons/yellow.png",
@@ -9,6 +9,11 @@ const ColorFilter = ({ selectedColor, handleSelectedColor }) => {
     "/colorIcons/purple.png",
     "/colorIcons/white.png",
   ];
+
+  const handleSelectedColor = (color) => {
+    color === selectedColor ? setSelectedColor(null) : setSelectedColor(color);
+  };
+
   return (
     <>
       <p className={styles.subheading}>Filter by Color: </p>

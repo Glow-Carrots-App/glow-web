@@ -1,6 +1,7 @@
 const SAMPLE_FOOD_DATA = [
   {
     product: "Strawberry",
+    productSearch: "Strawberry",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -8,6 +9,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Cabbage",
+    productSearch: "Cabbage (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -15,6 +17,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Pepper",
+    productSearch: "Pepper (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -22,6 +25,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Strawberry",
+    productSearch: "Strawberry",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -29,6 +33,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Kale",
+    productSearch: "Kale",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -36,6 +41,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Lettuce",
+    productSearch: "Lettuce (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -43,6 +49,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Cabbage",
+    productSearch: "Cabbage (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -50,6 +57,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Pepper",
+    productSearch: "Pepper (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -57,6 +65,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Banana",
+    productSearch: "Banana",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -64,6 +73,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Bell Pepper",
+    productSearch: "Bell Pepper (Orange)",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -71,6 +81,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Beet",
+    productSearch: "Beet",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -78,6 +89,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Apple",
+    productSearch: "Apple (Red)",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -85,6 +97,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mango",
+    productSearch: "Mango",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -92,6 +105,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Eggplant",
+    productSearch: "Eggplant",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -99,6 +113,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Kumquat",
+    productSearch: "Kumquat",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -106,6 +121,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Kumquat",
+    productSearch: "Kumquat",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -113,6 +129,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Lettuce",
+    productSearch: "Lettuce (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -120,6 +137,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mango",
+    productSearch: "Mango",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -127,6 +145,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Squash",
+    productSearch: "Squash (Yellow)",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -134,6 +153,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Carrot",
+    productSearch: "Carrot (Yellow)",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -141,6 +161,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Onion",
+    productSearch: "Onion (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -148,6 +169,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Eggplant",
+    productSearch: "Eggplant",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -155,6 +177,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Blackberry",
+    productSearch: "Blackberry",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -162,6 +185,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Cabbage",
+    productSearch: "Cabbage (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -169,6 +193,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Onion",
+    productSearch: "Onion (White)",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -176,6 +201,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mango",
+    productSearch: "Mango",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -183,6 +209,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Radish",
+    productSearch: "Radish (White)",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -190,6 +217,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mushroom",
+    productSearch: "Mushroom",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -197,6 +225,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Strawberry",
+    productSearch: "Strawberry",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -204,6 +233,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Kale",
+    productSearch: "Kale",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -211,6 +241,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Lettuce",
+    productSearch: "Lettuce (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -218,6 +249,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Cabbage",
+    productSearch: "Cabbage (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -225,6 +257,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Pepper",
+    productSearch: "Pepper (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -232,6 +265,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Banana",
+    productSearch: "Banana",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -239,6 +273,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Bell Pepper",
+    productSearch: "Bell Pepper (Orange)",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -246,6 +281,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Beet",
+    productSearch: "Beet",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -253,6 +289,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Apple",
+    productSearch: "Apple (Red)",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -260,6 +297,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mango",
+    productSearch: "Mango",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -267,6 +305,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Eggplant",
+    productSearch: "Eggplant",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -274,6 +313,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Kumquat",
+    productSearch: "Kumquat",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -281,6 +321,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Kumquat",
+    productSearch: "Kumquat",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -288,6 +329,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Lettuce",
+    productSearch: "Lettuce (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -295,6 +337,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mango",
+    productSearch: "Mango",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -302,6 +345,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Squash",
+    productSearch: "Squash (Yellow)",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -309,6 +353,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Carrot",
+    productSearch: "Carrot (Yellow)",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -316,6 +361,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Onion",
+    productSearch: "Onion (Green)",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
@@ -323,6 +369,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Eggplant",
+    productSearch: "Eggplant",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -330,6 +377,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Blackberry",
+    productSearch: "Blackberry",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -337,6 +385,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Cabbage",
+    productSearch: "Cabbage (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -344,6 +393,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Onion",
+    productSearch: "Onion (White)",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -351,6 +401,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mango",
+    productSearch: "Mango",
     color: "orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
@@ -358,6 +409,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Radish",
+    productSearch: "Radish (White)",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -365,6 +417,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Mushroom",
+    productSearch: "Mushroom",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",

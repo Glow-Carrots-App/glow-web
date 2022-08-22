@@ -1,6 +1,6 @@
 .subheading {
-  text-align: left;
-  margin: auto auto 0 34px;
+  align-self: flex-start;
+  margin: 10px 0 0;
   color: var(--purple-dark);
 }
 
