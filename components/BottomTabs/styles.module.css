@@ -12,6 +12,16 @@
   margin: 12px 34px;
 }
 
-.sideIcon {
-  height: 32px;
+@media (min-width: 768px) {
+  .container {
+    height: 120px;
+    justify-content: space-around;
+  }
+  .fontAwesomeSide {
+    height: 60px;
+  }
+
+  .fontAwesomeCenter {
+    height: 80px;
+  }
 }

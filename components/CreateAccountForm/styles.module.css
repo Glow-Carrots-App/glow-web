@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 34px;
 }
 
 .formInput {
@@ -28,4 +27,13 @@
   width: 307px;
   margin-top: 25px;
   height: 50px;
+}
+
+@media (min-width: 768px) {
+  .inputButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 596px;
+  }
 }
