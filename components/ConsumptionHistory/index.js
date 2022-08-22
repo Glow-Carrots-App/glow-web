@@ -9,7 +9,6 @@ import styles from "./styles.module.css";
 
 const ConsumptionHistory = () => {
   let [days, setDays] = useState(7);
-  let [width, setWidth] = useState("16px");
 
   let dayArrays = [];
   let lengths = [];
@@ -27,7 +26,6 @@ const ConsumptionHistory = () => {
         <button
           onClick={() => {
             setDays(7);
-            setWidth("16px");
           }}
           className={styles.button}
           disabled={days === 7}
@@ -37,7 +35,6 @@ const ConsumptionHistory = () => {
         <button
           onClick={() => {
             setDays(14);
-            setWidth("8px");
           }}
           className={styles.button}
           disabled={days === 14}
@@ -47,7 +44,6 @@ const ConsumptionHistory = () => {
         <button
           onClick={() => {
             setDays(30);
-            setWidth("4px");
           }}
           className={styles.button}
           disabled={days === 30}
@@ -61,7 +57,7 @@ const ConsumptionHistory = () => {
             <VerticalColorBreakdown
               key={`${day} + ${i}`}
               arr={day}
-              width={width}
+              days={days}
               height={percentages[i]}
             />
           ))}
