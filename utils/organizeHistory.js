@@ -13,7 +13,7 @@ export default function organizeHistory(lifetimeArr, days) {
     history.lengths.push(history.dayArrays[i].length);
   }
 
-  history.percentages = createHeightPercentages(lengths);
+  history.percentages = createHeightPercentages(history.lengths);
 
   return history;
 }
