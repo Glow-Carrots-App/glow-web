@@ -8,38 +8,44 @@ export default function countColors(foods) {
       color: "red",
       fillHex: "#fc7790",
       textHex: "#fc7790",
+      percentage: "",
     },
     {
       count: 0,
       color: "orange",
       fillHex: "#fd8f52",
       textHex: "#fd8f52",
+      percentage: "",
     },
     {
       count: 0,
       color: "yellow",
       fillHex: "#f3e28d",
       textHex: "#ffbb1c",
+      percentage: "",
     },
     {
       count: 0,
       color: "white",
       fillHex: "#fef2d1",
       textHex: "#97906e",
+      percentage: "",
     },
     {
       count: 0,
       color: "green",
       fillHex: "#63dd92",
       textHex: "#479d45",
+      percentage: "",
     },
     {
       count: 0,
       color: "purple",
       fillHex: "#9a7dcc",
       textHex: "#7471e7",
+      percentage: "",
     },
-    { count: 0, color: "total" },
+    { count: 0, color: "total", percentage: "" },
   ];
 
   foods.forEach((item) => {
@@ -64,6 +70,13 @@ export default function countColors(foods) {
         break;
     }
   });
+
   colorCounts[6].count = foods.length;
+
+  colorCounts.forEach(
+    (color) =>
+      (color.percentage = (100 * color.count) / colorCounts[6].count + "%")
+  );
+
   return colorCounts;
 }
