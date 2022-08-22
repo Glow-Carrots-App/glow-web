@@ -1,7 +1,7 @@
 const SAMPLE_FOOD_DATA = [
   {
     product: "Strawberry",
-    productSearch: "Starwberry",
+    productSearch: "Strawberry",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -25,7 +25,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Strawberry",
-    productSearch: "Starwberry",
+    productSearch: "Strawberry",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -225,7 +225,7 @@ const SAMPLE_FOOD_DATA = [
   },
   {
     product: "Strawberry",
-    productSearch: "Starwberry",
+    productSearch: "Strawberry",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",

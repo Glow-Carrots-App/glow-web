@@ -3,7 +3,7 @@ import { useState } from "react";
 import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
-import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
+import SAMPLE_FOOD_DB from "../../sampleData/sampleFoodDB";
 
 import styles from "./styles.module.css";
 
@@ -14,10 +14,10 @@ const SearchFoodsForm = () => {
   const [selectedFood, setSelectedFood] = useState(null);
 
   const filteredFood = !selectedColor
-    ? SAMPLE_FOOD_DATA.filter((food) =>
+    ? SAMPLE_FOOD_DB.filter((food) =>
         food.productSearch.toLowerCase().includes(searchInput.toLowerCase())
       )
-    : SAMPLE_FOOD_DATA.filter(
+    : SAMPLE_FOOD_DB.filter(
         (food) =>
           food.productSearch
             .toLowerCase()

@@ -9,7 +9,7 @@ const SearchFoodsList = ({
 }) => {
   return (
     <div className={styles.listContainer}>
-      {data.map((food, i) => {
+      {data.map((food) => {
         return (
           <div
             onMouseDown={() => {
@@ -19,7 +19,7 @@ const SearchFoodsList = ({
               setFocused(false);
             }}
             className={styles.foodBtn}
-            key={food.textHex + i}
+            key={food.productSearch}
           >
             <div
               style={{ backgroundColor: food.textHex }}
