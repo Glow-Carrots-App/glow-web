@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 310px;
 }
 
 .buttonPair {
@@ -23,4 +22,13 @@
   border: none;
   color: white;
   background-color: var(--purple-light);
+}
+
+@media (min-width: 768px) {
+  .smallButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 278px;
+  }
 }

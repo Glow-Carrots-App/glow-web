@@ -15,6 +15,7 @@
 @media (min-width: 768px) {
   .container {
     height: 120px;
+    justify-content: space-around;
   }
   .fontAwesomeSide {
     height: 60px;
