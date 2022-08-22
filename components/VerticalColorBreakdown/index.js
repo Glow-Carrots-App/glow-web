@@ -12,11 +12,9 @@ const VerticalColorBreakdown = ({ arr, days, height }) => {
   let className;
   if (days === 7) {
     className = styles.progressBar7;
-  }
-  if (days === 14) {
+  } else if (days === 14) {
     className = styles.progressBar14;
-  }
-  if (days === 30) {
+  } else {
     className = styles.progressBar30;
   }
 
