@@ -1,21 +1,32 @@
 import styles from "./styles.module.css";
 
-const SearchFoodsList = ({ setSelectedFood, onBlur, data, setSearchInput }) => {
+const SearchFoodsList = ({
+  setSelectedColor,
+  setSelectedFood,
+  setFocused,
+  data,
+  setSearchInput,
+}) => {
   return (
     <div className={styles.listContainer}>
       {data.map((food, i) => {
         return (
-          <button
+          <div
             onMouseDown={() => {
               setSearchInput(food.productSearch);
               setSelectedFood(food);
-              onBlur();
+              setSelectedColor(null);
+              setFocused(false);
             }}
             className={styles.foodBtn}
             key={food.textHex + i}
           >
+            <div
+              style={{ backgroundColor: food.textHex }}
+              className={styles.colorDot}
+            />
             {food.productSearch}
-          </button>
+          </div>
         );
       })}
     </div>

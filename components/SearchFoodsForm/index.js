@@ -3,107 +3,9 @@ import { useState } from "react";
 import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
+import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
 
 import styles from "./styles.module.css";
-
-const DUMMY_LIFETIME = [
-  {
-    product: "apple",
-    productSearch: "Apple (Red)",
-    color: "red",
-    textHex: "#f94d4d",
-  },
-  {
-    product: "apple",
-    productSearch: "Apple (Green)",
-    color: "green",
-    textHex: "#479d45",
-  },
-  {
-    product: "strawberry",
-    productSearch: "Strawberry",
-    color: "red",
-    textHex: "#f94d4d",
-  },
-  {
-    product: "orange",
-    productSearch: "Orange",
-    color: "orange",
-    textHex: "#fd8f52",
-  },
-  {
-    product: "lettuce",
-    productSearch: "Lettuce (Green)",
-    color: "green",
-    textHex: "#479d45",
-  },
-  {
-    product: "lettuce",
-    productSearch: "Lettuce (Purple)",
-    color: "purple",
-    textHex: "#7471e7",
-  },
-  {
-    product: "onion",
-    productSearch: "Onion (White)",
-    color: "white",
-    textHex: "#97906e",
-  },
-  {
-    product: "onion",
-    productSearch: "Onion (Yellow)",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-  {
-    product: "banana",
-    productSearch: "Banana",
-    color: "yellow",
-    textHex: "#ffbb1c",
-  },
-];
 
 const SearchFoodsForm = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -111,22 +13,11 @@ const SearchFoodsForm = () => {
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
 
-  const onFocus = () => setFocused(true);
-  const onBlur = () => setFocused(false);
-
-  const onChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const handleSelectedColor = (color) => {
-    color === selectedColor ? setSelectedColor(null) : setSelectedColor(color);
-  };
-
   const filteredFood = !selectedColor
-    ? DUMMY_LIFETIME.filter((food) =>
+    ? SAMPLE_FOOD_DATA.filter((food) =>
         food.productSearch.toLowerCase().includes(searchInput.toLowerCase())
       )
-    : DUMMY_LIFETIME.filter(
+    : SAMPLE_FOOD_DATA.filter(
         (food) =>
           food.productSearch
             .toLowerCase()
@@ -137,24 +28,27 @@ const SearchFoodsForm = () => {
     <div className={styles.container}>
       <ColorFilter
         selectedColor={selectedColor}
-        handleSelectedColor={handleSelectedColor}
+        setSelectedColor={setSelectedColor}
       />
       <input
         type="text"
         placeholder="Search food"
-        onChange={onChange}
+        onChange={(e) => setSearchInput(e.target.value)}
         value={searchInput}
-        onFocus={onFocus}
-        onBlur={onBlur}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
       />
-      {focused && (
-        <SearchFoodsList
-          setSelectedFood={setSelectedFood}
-          onBlur={onBlur}
-          data={filteredFood}
-          setSearchInput={setSearchInput}
-        />
-      )}
+      <div className={styles.blockContainer}>
+        {(focused || selectedColor) && (
+          <SearchFoodsList
+            setSelectedColor={setSelectedColor}
+            setSelectedFood={setSelectedFood}
+            setFocused={setFocused}
+            data={filteredFood}
+            setSearchInput={setSearchInput}
+          />
+        )}
+      </div>
       <div className={styles.backgroundImage}>
         <img src="/eatBackground/eatBackground.png" />
       </div>
