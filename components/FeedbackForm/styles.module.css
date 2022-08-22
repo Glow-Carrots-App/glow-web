@@ -50,3 +50,12 @@
   color: white;
   font-size: medium;
 }
+
+@media (min-width: 768px) {
+  .submitButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 278px;
+  }
+}

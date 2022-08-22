@@ -8,8 +8,9 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
   return (
     <div className={styles.container}>
       <Link href="/today">
-        <a className={styles.sideIcon}>
+        <a>
           <FontAwesomeIcon
+            className={styles.fontAwesomeSide}
             icon={faSun}
             size="2x"
             color={isToday ? "#907ac4" : "#cac4d8"}
@@ -19,6 +20,7 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
       <Link href="/eat">
         <a>
           <FontAwesomeIcon
+            className={styles.fontAwesomeCenter}
             icon={faPlus}
             size="3x"
             color={isEat ? "#ffdb4b" : "#cac4d8"}
@@ -26,8 +28,9 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
         </a>
       </Link>
       <Link href="/profile">
-        <a className={styles.sideIcon}>
+        <a>
           <FontAwesomeIcon
+            className={styles.fontAwesomeSide}
             icon={faUser}
             size="2x"
             color={isProfile ? "#907ac4" : "#cac4d8"}

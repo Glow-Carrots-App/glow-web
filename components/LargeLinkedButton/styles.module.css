@@ -10,3 +10,12 @@
   border: none;
   color: white;
 }
+
+@media (min-width: 768px) {
+  .largeButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 596px;
+  }
+}

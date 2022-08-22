@@ -27,7 +27,7 @@ const TodayInfo = () => {
 
   let currentCount = todayEaten.length;
   let user = {
-    dailyGoal: 30,
+    dailyGoal: 8,
   };
 
   const todaysData = populateDonutChartData(todayEaten, user.dailyGoal);
