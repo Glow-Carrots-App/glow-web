@@ -2,23 +2,14 @@ import { useState } from "react";
 
 import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
-import filterByDate from "../../utils/filterByDate";
-import createHeightPercentages from "../../utils/createHeightPercentages";
+import organizeHistory from "../../utils/organizeHistory";
 
 import styles from "./styles.module.css";
 
 const ConsumptionHistory = () => {
   let [days, setDays] = useState(7);
 
-  let dayArrays = [];
-  let lengths = [];
-
-  for (let i = 0; i < days; i++) {
-    dayArrays.push(filterByDate(SAMPLE_FOOD_DATA, i));
-    lengths.push(dayArrays[i].length);
-  }
-
-  let percentages = createHeightPercentages(lengths);
+  let history = organizeHistory(SAMPLE_FOOD_DATA, days);
 
   return (
     <div className={styles.container}>
@@ -53,12 +44,12 @@ const ConsumptionHistory = () => {
       </div>
       <div className={styles.barChart}>
         <div className={styles.barChartContainer}>
-          {dayArrays.map((day, i) => (
+          {history.dayArrays.map((day, i) => (
             <VerticalColorBreakdown
               key={`${day} + ${i}`}
               arr={day}
               days={days}
-              height={percentages[i]}
+              height={history.percentages[i]}
             />
           ))}
         </div>
