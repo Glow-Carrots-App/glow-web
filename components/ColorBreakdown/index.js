@@ -5,13 +5,6 @@ import styles from "./styles.module.css";
 
 const ColorBreakdown = () => {
   let colorCount = countColors(sampleFoodData);
-  let percentages = colorCount
-    ? colorCount.map((color) => (100 * color.count) / colorCount[6].count + "%")
-    : null;
-  colorCount &&
-    colorCount.forEach(
-      (count, index) => (count.percentage = percentages[index])
-    );
 
   return (
     <div className={styles.container}>
