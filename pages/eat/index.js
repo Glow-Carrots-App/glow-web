@@ -9,7 +9,7 @@ const Eat = () => {
     <div className={styles.container}>
       <Heading1>What are you eating?</Heading1>
       <SearchFoodsForm />
-      <BottomTabs />
+      <BottomTabs isEat={true} />
     </div>
   );
 };
