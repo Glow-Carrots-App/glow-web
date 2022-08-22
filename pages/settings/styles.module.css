@@ -1,9 +1,12 @@
 .container {
+  position: relative;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-items: center;
   text-align: center;
-  padding-top: 17px;
+  overflow-y: scroll;
+  padding: 34px;
 }
 
 .container label {
@@ -12,5 +15,5 @@
 
 .doneLink {
   position: absolute;
-  inset: 15px 15px auto auto;
+  inset: 20px 20px auto auto;
 }

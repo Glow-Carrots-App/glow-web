@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   max-width: 640px;
-  margin: 0 34px;
 }
 
 .container > input {

@@ -4,8 +4,8 @@
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  margin: 0 34px;
-  padding-top: 34px;
+  padding: 34px;
+  position: relative;
 }
 
 .container p {
@@ -20,7 +20,7 @@
 
 .doneLink {
   position: absolute;
-  inset: 15px 15px auto auto;
+  inset: 20px 20px auto auto;
 }
 
 .banana {

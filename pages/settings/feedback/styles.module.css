@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 34px;
+  position: relative;
 }
 
 .container p {

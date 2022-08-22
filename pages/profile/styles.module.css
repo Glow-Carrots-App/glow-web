@@ -1,7 +1,8 @@
 .container {
+  position: relative;
   text-align: center;
-  padding-top: 17px;
   height: 100vh;
+  padding: 34px;
 }
 
 .settingsBtn {

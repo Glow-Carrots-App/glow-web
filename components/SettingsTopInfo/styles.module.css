@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 34px 0;
 }
 
 .yourProfile {
@@ -11,6 +10,7 @@
 }
 
 .avatarContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +28,6 @@
 
 .pen {
   position: absolute;
-  top: 70px;
-  right: 40px;
+  top: 0;
+  right: 0;
 }

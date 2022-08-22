@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin: 25px auto 25px auto; */
-  /* max-width: 310px; */
+  max-width: 310px;
 }
 
 .buttonPair {
   display: flex;
   justify-content: center;
   gap: 11px;
+  margin-top: 16px;
 }
 
 .smallButton {
@@ -33,7 +33,4 @@
     height: 92px;
     width: 278px;
   }
-  /* .container {
-    margin: 0 86px;
-  } */
 }

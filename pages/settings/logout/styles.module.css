@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  position: relative;
+  padding: 34px;
 }
 
 .watermelon1 {

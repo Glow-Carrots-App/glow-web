@@ -1,7 +1,6 @@
 .container {
   display: flex;
   justify-content: space-between;
-  margin: 24px 34px 0;
 }
 
 .goalContainer {
