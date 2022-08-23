@@ -81,4 +81,7 @@
   .container textarea::placeholder {
     font-size: 24px;
   }
+  .buttonPair {
+    gap: 40px;
+  }
 }
