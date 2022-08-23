@@ -1,10 +1,10 @@
 import countColors from "../../utils/countColors";
-import sampleFoodData from "../../sampleData/sampleFoodData";
+import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
 const ColorBreakdown = () => {
-  let colorCount = countColors(sampleFoodData);
+  let colorCount = countColors(SAMPLE_FOOD_DATA);
 
   return (
     <div className={styles.container}>
