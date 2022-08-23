@@ -33,3 +33,15 @@
   margin: 12px 4px;
   height: 90%;
 }
+
+@media (min-width: 768px) {
+  .button {
+    width: 120px;
+    height: 55px;
+    font-size: 20px;
+  }
+
+  .barChart {
+    height: 300px;
+  }
+}

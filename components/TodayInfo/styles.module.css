@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .goalContainer {
@@ -43,4 +43,29 @@
   top: 63px;
   left: 66px;
   height: 55px;
+}
+
+@media (min-width: 768px) {
+  .goalContainer div {
+    width: 280px;
+    height: 280px;
+  }
+
+  .goalContainer p {
+    font-size: 24px;
+  }
+
+  .carrot {
+    top: 95px;
+    left: 95px;
+    height: 80px;
+  }
+
+  .listContainer {
+    height: 280px;
+  }
+
+  .foodList {
+    font-size: 24px;
+  }
 }
