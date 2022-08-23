@@ -3,7 +3,7 @@ import checkHighestColor from "../../utils/checkHighestColor";
 import checkLowestColor from "../../utils/checkLowestColor";
 import pickLowIcon from "../../utils/pickLowIcon";
 import pickHighIcon from "../../utils/pickHighIcon";
-import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
+import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
