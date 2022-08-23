@@ -34,4 +34,11 @@
   .container {
     padding: 86px;
   }
+  .signInText {
+    font-size: 24px;
+  }
+
+  .signUpLink {
+    font-size: 24px;
+  }
 }
