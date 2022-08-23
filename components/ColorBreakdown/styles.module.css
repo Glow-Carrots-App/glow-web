@@ -27,3 +27,16 @@
   line-height: 60px;
   margin: auto;
 }
+
+@media (min-width: 768px) {
+  .container {
+    gap: 24px;
+  }
+  .container > p {
+    font-size: 28px;
+  }
+
+  .progressBar {
+    height: 120px;
+  }
+}

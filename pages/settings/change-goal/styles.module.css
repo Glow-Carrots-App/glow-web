@@ -4,12 +4,6 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 34px;
-}
-
-.container p {
-  color: var(--purple-dark);
-  font-size: medium;
 }
 
 .berry {
@@ -19,4 +13,10 @@
   height: 200px;
   width: 200px;
   opacity: 60%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
 }

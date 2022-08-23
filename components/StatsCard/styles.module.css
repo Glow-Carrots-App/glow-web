@@ -26,3 +26,28 @@
 .icon {
   height: 28px;
 }
+
+@media (min-width: 768px) {
+  .statContainer {
+    height: 110px;
+  }
+
+  .topRow {
+    padding: 4px 0 0 4px;
+  }
+
+  .topRow > span {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  .statContainer > p {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 300;
+  }
+
+  .icon {
+    height: 50px;
+  }
+}

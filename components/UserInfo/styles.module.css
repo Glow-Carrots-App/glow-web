@@ -1,11 +1,11 @@
 .container {
   display: flex;
   justify-content: space-between;
-  border-radius: 4px;
   margin: 24px 0;
+  position: relative;
 }
 
-.text {
+.textContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,4 +31,30 @@
 .image {
   height: 70px;
   width: 70px;
+}
+
+.settingsBtn {
+  position: absolute;
+  top: -70px;
+  right: 0px;
+}
+
+@media (min-width: 768px) {
+  .joinDateText {
+    font-size: 24px;
+  }
+  .avatarContainer {
+    height: 140px;
+    width: 140px;
+  }
+  .image {
+    height: 115px;
+    width: 115px;
+  }
+
+  .settingsBtn {
+    font-size: 32px;
+    top: -100px;
+    right: -20px;
+  }
 }
