@@ -6,3 +6,9 @@
   text-align: center;
   padding: 34px;
 }
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
+}
