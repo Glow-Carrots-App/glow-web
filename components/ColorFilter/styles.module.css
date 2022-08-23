@@ -21,7 +21,6 @@
 
 .icon {
   height: 35px;
-  width: 35px;
 }
 
 .iconContainer {
@@ -41,4 +40,22 @@
   background-color: rgb(187, 172, 214);
   border: 1px solid var(--purple-dark);
   border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .icon {
+    height: 55px;
+  }
+  .iconContainer {
+    height: 80px;
+    width: 80px;
+  }
+  .iconHighlight {
+    height: 80px;
+    width: 80px;
+  }
+  .subheading {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 }
