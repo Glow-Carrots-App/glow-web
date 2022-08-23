@@ -56,6 +56,10 @@ const updateTodayEaten = async (id, foodObj) => {
   // await firestoreFunction(id, foodObj)
 };
 
+const clearTodayEaten = async (id) => {
+  // await firestoreFunction(id)
+};
+
 // const user = getUser(id);
 // let { goldenCarrots } = user;
 // updateGoldenCarrots(goldenCarrots);
