@@ -1,4 +1,5 @@
 import Heading1 from "../../../components/Heading1/index";
+import Heading2 from "../../../components/Heading2";
 import ChangeGoalForm from "../../../components/ChangeGoalForm";
 import BottomTabs from "../../../components/BottomTabs/index";
 
@@ -9,10 +10,10 @@ const ChangeGoal = () => {
     <div className={styles.container}>
       <Heading1>Daily Goal</Heading1>
       <img src="/pageBackgrounds/berries.png" className={styles.berry} />
-      <p>
+      <Heading2>
         How many healthy foods <br />
         do you want to eat each day?
-      </p>
+      </Heading2>
       <ChangeGoalForm />
       <BottomTabs />
     </div>
