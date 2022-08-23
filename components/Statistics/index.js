@@ -9,11 +9,13 @@ import styles from "./styles.module.css";
 const DUMMY_LIFETIME = [
   { product: "apple", color: "red", textHex: "#f94d4d" },
   { product: "strawberry", color: "red", textHex: "#f94d4d" },
+  { product: "strawberry", color: "red", textHex: "#f94d4d" },
+  { product: "strawberry", color: "red", textHex: "#f94d4d" },
   { product: "orange", color: "orange", textHex: "#fd8f52" },
   { product: "lettuce", color: "green", textHex: "#479d45" },
   { product: "lettuce", color: "green", textHex: "#479d45" },
   { product: "lettuce", color: "green", textHex: "#479d45" },
-  { product: "onion", color: "white", textHex: "#97906e" },
+  // { product: "onion", color: "white", textHex: "#97906e" },
   { product: "banana", color: "yellow", textHex: "#ffbb1c" },
 ];
 
