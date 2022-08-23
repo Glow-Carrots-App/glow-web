@@ -6,7 +6,7 @@
 
 .formInput {
   background: none;
-  max-width: 500px;
+  max-width: 307px;
   padding-left: 8px;
   margin-top: 25px;
   height: 50px;
@@ -35,5 +35,14 @@
     font-size: 24px;
     height: 92px;
     width: 596px;
+  }
+
+  .formInput {
+    max-width: 596px;
+    height: 92px;
+  }
+
+  .formInput::placeholder {
+    font-size: 24px;
   }
 }
