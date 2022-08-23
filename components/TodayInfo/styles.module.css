@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .goalContainer {
@@ -27,7 +27,7 @@
   padding: 8px 16px;
   border: 1px solid rgb(176, 176, 176);
   border-radius: 3px;
-  box-shadow: 1px 1px 2px grey;
+  box-shadow: 1px 1px 2px rgb(167, 163, 192);
   overflow: scroll;
 }
 
@@ -43,4 +43,31 @@
   top: 63px;
   left: 66px;
   height: 55px;
+}
+
+@media (min-width: 768px) {
+  .goalContainer div {
+    width: 280px;
+    height: 280px;
+  }
+
+  .goalContainer p {
+    font-size: 24px;
+  }
+
+  .carrot {
+    top: 95px;
+    left: 95px;
+    height: 80px;
+  }
+
+  .listContainer {
+    height: 240px;
+    width: 178px;
+    border-radius: 8px;
+  }
+
+  .foodList {
+    font-size: 24px;
+  }
 }

@@ -25,7 +25,7 @@ export default function populateDonutChartData(foodArr, userGoal) {
       case "green":
         data[4].y++;
         break;
-      case "blue":
+      case "purple":
         data[5].y++;
         break;
     }
