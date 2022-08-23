@@ -296,8 +296,8 @@ const masterFoodLibrary = [
     date: null,
   },
   {
-    product: "Acai",
-    productSearch: "Acai",
+    product: "Açai",
+    productSearch: "Açai",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
