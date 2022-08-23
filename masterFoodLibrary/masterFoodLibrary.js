@@ -848,16 +848,8 @@ const masterFoodLibrary = [
     date: null,
   },
   {
-    product: "Coconut",
-    productSearch: "Onion (White)",
-    color: "white",
-    textHex: "#97906E",
-    fillHex: "#F2EDCF",
-    date: null,
-  },
-  {
     product: "Almond",
-    productSearch: "Almon",
+    productSearch: "Almond",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -1043,14 +1035,6 @@ const masterFoodLibrary = [
   {
     product: "Pineapple",
     productSearch: "Pineapple",
-    color: "yellow",
-    textHex: "#FFBB1C",
-    fillHex: "#F9C449",
-    date: null,
-  },
-  {
-    product: "Apricot",
-    productSearch: "Apricot",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
