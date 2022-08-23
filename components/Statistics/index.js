@@ -3,23 +3,13 @@ import checkHighestColor from "../../utils/checkHighestColor";
 import checkLowestColor from "../../utils/checkLowestColor";
 import pickLowIcon from "../../utils/pickLowIcon";
 import pickHighIcon from "../../utils/pickHighIcon";
+import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
 
 import styles from "./styles.module.css";
 
-const DUMMY_LIFETIME = [
-  { product: "apple", color: "red", textHex: "#f94d4d" },
-  { product: "strawberry", color: "red", textHex: "#f94d4d" },
-  { product: "orange", color: "orange", textHex: "#fd8f52" },
-  { product: "lettuce", color: "green", textHex: "#479d45" },
-  { product: "lettuce", color: "green", textHex: "#479d45" },
-  { product: "lettuce", color: "green", textHex: "#479d45" },
-  { product: "onion", color: "white", textHex: "#97906e" },
-  { product: "banana", color: "yellow", textHex: "#ffbb1c" },
-];
-
 const Statistics = () => {
-  const lowestColor = checkLowestColor(DUMMY_LIFETIME);
-  const highestColor = checkHighestColor(DUMMY_LIFETIME);
+  const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
+  const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
 
   const userDayStreak = 20;
   const userGoldenCarrots = 40;
