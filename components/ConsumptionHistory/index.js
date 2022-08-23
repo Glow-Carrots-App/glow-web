@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SAMPLE_FOOD_DATA from "../../sampleData/sampleFoodData";
+import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
 import filterByDate from "../../utils/filterByDate";
 import createHeightPercentages from "../../utils/createHeightPercentages";
