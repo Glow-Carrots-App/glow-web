@@ -321,7 +321,7 @@ const masterFoodLibrary = [
   },
   {
     product: "Artichoke",
-    productSearch: "Artichoke, Purple",
+    productSearch: "Artichoke (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
@@ -489,7 +489,7 @@ const masterFoodLibrary = [
   },
   {
     product: "Cherry",
-    productSearch: "Cherry, Red",
+    productSearch: "Cherry (Red)",
     color: "red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
@@ -1066,7 +1066,7 @@ const masterFoodLibrary = [
   },
   {
     product: "Honeydew",
-    productSearch: "HoneyDew",
+    productSearch: "Honey Dew",
     color: "green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
