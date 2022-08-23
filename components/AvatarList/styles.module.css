@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  margin-top: 24px;
+  margin: 24px 0;
 }
 
 .buttonContainer {
