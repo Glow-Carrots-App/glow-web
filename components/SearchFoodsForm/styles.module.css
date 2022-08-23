@@ -55,4 +55,7 @@
   .backgroundImage > img {
     height: 280px;
   }
+  .buttons {
+    gap: 40px;
+  }
 }
