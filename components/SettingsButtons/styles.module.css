@@ -5,3 +5,10 @@
   margin: 15px 0 60px;
   gap: 15px;
 }
+
+@media (min-width: 768px) {
+  .container {
+    margin: 35px 0 60px;
+    gap: 24px;
+  }
+}
