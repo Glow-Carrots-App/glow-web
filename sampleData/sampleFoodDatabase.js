@@ -849,7 +849,7 @@ const SAMPLE_FOOD_DB = [
   },
   {
     product: "Coconut",
-    productSearch: "Onion (White)",
+    productSearch: "Coconut",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
