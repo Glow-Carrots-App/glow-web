@@ -321,7 +321,7 @@ const SAMPLE_FOOD_DB = [
   },
   {
     product: "Artichoke",
-    productSearch: "Artichoke, Purple",
+    productSearch: "Artichoke (Purple)",
     color: "purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
