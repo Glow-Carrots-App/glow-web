@@ -43,6 +43,7 @@ const ConsumptionHistory = () => {
         </button>
       </div>
       <div className={styles.barChart}>
+        <div className={styles.barChartImg} />
         <div className={styles.barChartContainer}>
           {history.dayArrays.map((day, i) => (
             <VerticalColorBreakdown
