@@ -19,7 +19,6 @@
   padding: 1px 6px;
   background-color: var(--purple-light);
   color: white;
-  font-size: medium;
   height: 50px;
   width: 148px;
   border-radius: 4px;
@@ -27,6 +26,9 @@
 }
 
 @media (min-width: 768px) {
+  .buttonPair {
+    gap: 40px;
+  }
   .smallButton {
     line-height: 92px;
     font-size: 24px;
