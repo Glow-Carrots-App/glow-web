@@ -3,7 +3,8 @@ import { useState } from "react";
 import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
-import SAMPLE_FOOD_DB from "../../sampleData/sampleFoodDB";
+import masterFoodLibrary from "../../masterFoodLibrary/masterFoodLibrary";
+import alphabetizeFoods from "../../utils/alphabetizeFoods";
 
 import styles from "./styles.module.css";
 
@@ -13,17 +14,18 @@ const SearchFoodsForm = () => {
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
 
+  const alphabetizedFoods = alphabetizeFoods(masterFoodLibrary);
+
   const filteredFood = !selectedColor
-    ? SAMPLE_FOOD_DB.filter((food) =>
+    ? alphabetizedFoods.filter((food) =>
         food.productSearch.toLowerCase().includes(searchInput.toLowerCase())
       )
-    : SAMPLE_FOOD_DB.filter(
+    : alphabetizedFoods.filter(
         (food) =>
           food.productSearch
             .toLowerCase()
             .includes(searchInput.toLowerCase()) && food.color === selectedColor
       );
-
   return (
     <div className={styles.container}>
       <ColorFilter
