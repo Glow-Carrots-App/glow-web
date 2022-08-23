@@ -25,6 +25,9 @@
 }
 
 @media (min-width: 768px) {
+  .buttonPair {
+    gap: 40px;
+  }
   .smallButton {
     line-height: 92px;
     font-size: 24px;

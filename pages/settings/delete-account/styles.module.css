@@ -22,3 +22,18 @@
   bottom: -20px;
   opacity: 60%;
 }
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
+
+  .avocado1 {
+    height: 400px;
+    width: 400px;
+  }
+  .avocado2 {
+    height: 350px;
+    width: 350px;
+  }
+}
