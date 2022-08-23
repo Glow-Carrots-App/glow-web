@@ -633,7 +633,7 @@ const SAMPLE_FOOD_DB = [
   },
   {
     product: "Apricot",
-    productSearch: "Apricot (Yellow)",
+    productSearch: "Apricot (White)",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
@@ -857,7 +857,7 @@ const SAMPLE_FOOD_DB = [
   },
   {
     product: "Almond",
-    productSearch: "Almon",
+    productSearch: "Almond",
     color: "white",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
@@ -1043,14 +1043,6 @@ const SAMPLE_FOOD_DB = [
   {
     product: "Pineapple",
     productSearch: "Pineapple",
-    color: "yellow",
-    textHex: "#FFBB1C",
-    fillHex: "#F9C449",
-    date: null,
-  },
-  {
-    product: "Apricot",
-    productSearch: "Apricot",
     color: "yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
