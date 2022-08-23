@@ -16,12 +16,12 @@ const AboutUs = () => {
       <p>
         Glow is a food tracker app inspired by the Rainbow Diet and science
         linking nutrition to the colors of natural foods.
-      </p>
-      <p>
+        <br />
+        <br />
         This app is intended for all ages. It is not indended to treat,
         diagnose, prevent, or cure diseases.
-      </p>
-      <p>
+        <br />
+        <br />
         Icons are made by
         <a href="https://www.flaticon.com/authors/freepik"> Freepik</a> from
         <a href="https://www.flaticon.com/"> www.flaticon.com</a>.
