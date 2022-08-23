@@ -40,6 +40,7 @@
   .formInput {
     max-width: 596px;
     height: 92px;
+    font-size: 24px;
   }
 
   .formInput::placeholder {
