@@ -22,3 +22,18 @@
   transform: rotate(180deg);
   opacity: 60%;
 }
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
+
+  .container p {
+    font-size: 24px;
+  }
+
+  .artichoke {
+    height: 225px;
+    width: 225px;
+  }
+}
