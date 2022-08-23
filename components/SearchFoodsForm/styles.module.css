@@ -36,11 +36,26 @@
 }
 
 .backgroundImage > img {
-  width: 185px;
   height: 185px;
 }
 
 .buttons {
   display: flex;
   gap: 11px;
+}
+
+@media (min-width: 768px) {
+  .container > input {
+    height: 92px;
+    font-size: 24px;
+  }
+  .backgroundImage {
+    height: 325px;
+  }
+  .backgroundImage > img {
+    height: 280px;
+  }
+  .buttons {
+    gap: 40px;
+  }
 }
