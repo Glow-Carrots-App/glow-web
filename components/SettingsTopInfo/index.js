@@ -9,7 +9,10 @@ import styles from "./styles.module.css";
 const SettingsTopInfo = () => {
   return (
     <div className={styles.container}>
-      <Heading2 className={styles.yourHeading2rofile}>Your Profile</Heading2>
+      <Link href="/profile">
+        <a className={styles.doneLink}>Done</a>
+      </Link>
+      <Heading2>Your Profile</Heading2>
       <Link href="/settings/change-avatar">
         <a className={styles.avatarContainer}>
           <img src="/avatars/camp.png" className={styles.image} />
