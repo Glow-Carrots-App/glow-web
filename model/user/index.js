@@ -18,6 +18,7 @@ import { db } from "../../firebase.js";
 import {
   collection,
   getDoc,
+  setDoc,
   addDoc,
   updateDoc,
   deleteDoc,
@@ -31,8 +32,9 @@ class UserModel {
     // await firestoreFunction(id)
   };
 
-  createUser = async (newUser) => {
-    return await addDoc(userCollectionRef, newUser);
+  createUser = async (newUser, uid) => {
+    // return await addDoc(userCollectionRef, newUser);
+    return await setDoc(doc(db, "users", uid), newUser);
   };
 
   updateName = async (id, newName /*string*/) => {

@@ -21,6 +21,7 @@ const CreateAccountForm = () => {
 
     try {
       const { user } = await signup(email, password);
+
       const newUser = {
         avatar: "/avatars/camp.png",
         dailyGoal: {
@@ -34,7 +35,8 @@ const CreateAccountForm = () => {
         joinDate: dayjs().format("MM/DD/YYYY"),
         uid: user.uid,
       };
-      await UserModel.createUser(newUser);
+
+      await UserModel.createUser(newUser, user.uid);
       router.push("/today");
     } catch (err) {
       console.log(err);
