@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   deleteUser,
+  updatePassword,
+  updateEmail,
 } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -18,11 +20,11 @@ export const AuthContextProvider = ({ children }) => {
   console.log(authedUser);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (authedUser) => {
-      if (authedUser) {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
         setAuthedUser({
-          uid: authedUser.uid,
-          email: authedUser.email,
+          uid: user.uid,
+          email: user.email,
         });
       } else {
         setAuthedUser(null);
@@ -51,9 +53,26 @@ export const AuthContextProvider = ({ children }) => {
     await deleteUser(auth.currentUser);
   };
 
+  const changePassword = async (newPassword) => {
+    await updatePassword(auth.currentUser, newPassword);
+  };
+
+  const changeEmail = async (newEmail) => {
+    await updateEmail(auth.currentUser, newEmail);
+  };
+
   return (
     <AuthContext.Provider
-      value={{ authedUser, loading, login, signup, logout, deleteAccount }}
+      value={{
+        authedUser,
+        loading,
+        login,
+        signup,
+        logout,
+        deleteAccount,
+        changePassword,
+        changeEmail,
+      }}
     >
       {loading ? null : children}
     </AuthContext.Provider>
