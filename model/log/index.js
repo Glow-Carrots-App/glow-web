@@ -16,6 +16,10 @@ const createFoodEntry = async (foodObj) => {
   // await firestoreFunction(foodObj)
 };
 
+const getCurrentDay = async (userId) => {
+  // await fireStoreFunction(userId, 1)
+};
+
 const get7DayHistory = async (userId) => {
   // await firestoreFunction(userId, 7)
 };
