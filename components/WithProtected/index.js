@@ -17,7 +17,7 @@ const WithProtected = ({ children }) => {
   if (loading || !authedUser) {
     return <Loading />;
   }
-  return { children };
+  return <>{children}</>;
 };
 
 export default WithProtected;

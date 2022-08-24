@@ -22,7 +22,7 @@ export const AuthContextProvider = ({ children }) => {
       if (authedUser) {
         setAuthedUser({
           uid: authedUser.uid,
-          email: user.email,
+          email: authedUser.email,
         });
       } else {
         setAuthedUser(null);
