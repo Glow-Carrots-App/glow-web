@@ -24,9 +24,9 @@ const DeleteAccount = () => {
   return (
     <div className={styles.container}>
       <Heading2>Are you sure you want to delete your account?</Heading2>
-      <div className={styles.buttonContainer}>
+      <div className={styles.buttonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <a className={styles.smallButton} onClick={handleDelete}>
+        <a className={styles.smallButton} onClick={() => handleDelete(e)}>
           Delete Account
         </a>
       </div>

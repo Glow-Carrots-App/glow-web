@@ -1,0 +1,11 @@
+.heading2 {
+  color: var(--purple-dark);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .heading2 {
+    font-size: 30px;
+  }
+}

@@ -1,19 +1,42 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 0 34px;
   gap: 16px;
 }
 
-.container p {
+.container > p {
+  color: var(--purple-dark);
   text-align: left;
   font-size: larger;
   margin: 0;
 }
 
 .progressBar {
-  border: 1px solid rgb(168, 168, 168);
+  border: 1px solid var(--purple-dark);
   border-radius: 3px;
   height: 64px;
-  background-color: rgb(211, 211, 211);
+}
+
+.progressItem {
+  display: inline-block;
+  height: 101%;
+  border: none;
+}
+
+.emptyBar {
+  line-height: 60px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 24px;
+  }
+  .container > p {
+    font-size: 28px;
+  }
+
+  .progressBar {
+    height: 120px;
+  }
 }

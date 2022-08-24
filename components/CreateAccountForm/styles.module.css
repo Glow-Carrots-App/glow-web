@@ -2,24 +2,48 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 34px;
 }
 
 .formInput {
   background: none;
-  max-width: 500px;
+  max-width: 307px;
   padding-left: 8px;
   margin-top: 25px;
   height: 50px;
-  border-width: 0 0 2px;
+  border-width: 0 0 1px;
   width: 100%;
+  border-color: black;
+}
+
+.formInput::placeholder {
+  color: black;
 }
 
 .inputButton {
-  background-color: grey;
+  background-color: var(--purple-dark);
+  color: white;
   border: none;
   border-radius: 4px;
   width: 307px;
   margin-top: 25px;
   height: 50px;
+}
+
+@media (min-width: 768px) {
+  .inputButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 596px;
+  }
+
+  .formInput {
+    max-width: 596px;
+    height: 92px;
+    font-size: 24px;
+  }
+
+  .formInput::placeholder {
+    font-size: 24px;
+  }
 }

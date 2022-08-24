@@ -20,14 +20,11 @@ const ProfilePage = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <Link href="/settings">
-        <a className={styles.settingsBtn}>S</a>
-      </Link>
       <Heading1>Profile</Heading1>
       <UserInfo />
       <Statistics />
       <ColorBreakdown />
-      <BottomTabs />
+      <BottomTabs isProfile={true} />
     </div>
   );
 };

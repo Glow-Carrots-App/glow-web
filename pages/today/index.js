@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import Heading1 from "../../components/Heading1";
 import TodayInfo from "../../components/TodayInfo";
-import WeeklyConsumption from "../../components/WeeklyConsumption";
+import ConsumptionHistory from "../../components/ConsumptionHistory";
 import BottomTabs from "../../components/BottomTabs";
 import { useAuth } from "../../context/AuthContext";
 
@@ -20,8 +20,8 @@ const Today = () => {
     <div className={styles.container}>
       <Heading1>Today</Heading1>
       <TodayInfo />
-      <WeeklyConsumption />
-      <BottomTabs />
+      <ConsumptionHistory />
+      <BottomTabs isToday={true} />
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import LargeLinkedButton from "../LargeLinkedButton";
 
 import styles from "./styles.module.css";
@@ -16,6 +18,7 @@ const SettingsButtons = () => {
       <LargeLinkedButton href="/settings/delete-account">
         Delete Account
       </LargeLinkedButton>
+      <LargeLinkedButton href="/settings/about">About Glow</LargeLinkedButton>
     </div>
   );
 };

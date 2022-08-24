@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px 0 100px;
-  gap: 19px;
+  margin: 15px 0 60px;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 35px 0 60px;
+    gap: 24px;
+  }
 }

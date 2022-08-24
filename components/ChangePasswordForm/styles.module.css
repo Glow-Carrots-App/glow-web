@@ -2,26 +2,59 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 34px;
-  margin-right: 34px;
+  align-items: center;
   gap: 25px;
+  padding-top: 24px;
 }
 
-.signInFields {
+.passwordFields {
   height: 50px;
-  border-width: 0 0 2px;
+  width: 307px;
+  border-width: 0 0 1px;
+  border-color: black;
+  background: none;
 }
 
-.signInButtonPair {
+.passwordFields::placeholder {
+  color: black;
+}
+
+.passwordButtonPair {
   display: flex;
   justify-content: center;
   gap: 11px;
 }
 
-.signInButtons {
-  background-color: grey;
+.passwordButton {
+  background-color: var(--purple-light);
+  color: white;
   height: 50px;
-  width: 149px;
+  width: 148px;
   border-radius: 4px;
   border: none;
+  font-size: medium;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 30px;
+  }
+  .passwordFields {
+    height: 92px;
+    width: 596px;
+    font-size: 24px;
+  }
+
+  .passwordFields::placeholder {
+    font-size: 24px;
+  }
+  .passwordButtonPair {
+    gap: 40px;
+  }
+  .passwordButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 278px;
+  }
 }

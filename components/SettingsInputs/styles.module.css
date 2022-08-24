@@ -1,14 +1,28 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 34px;
+  margin: 16px 0;
+  width: 307px;
 }
 
-.container input {
+.settingsInput {
+  background: none;
   height: 50px;
   border-width: 0 0 1px;
+  border-color: black;
 }
 
 .container label ~ label {
   margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 596px;
+  }
+
+  .settingsInput {
+    height: 92px;
+    font-size: 24px;
+  }
 }

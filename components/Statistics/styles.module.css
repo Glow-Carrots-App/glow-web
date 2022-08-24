@@ -1,11 +1,12 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 32px 34px;
+  margin: 32px 0;
   gap: 32px;
 }
 
 .container > p {
+  color: var(--purple-dark);
   text-align: left;
   font-size: larger;
   margin: 0;
@@ -14,4 +15,10 @@
 .statsRow {
   display: flex;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .container > p {
+    font-size: 28px;
+  }
 }

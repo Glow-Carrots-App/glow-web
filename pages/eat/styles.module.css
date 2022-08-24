@@ -1,3 +1,11 @@
 .container {
   text-align: center;
+  height: 100vh;
+  padding: 34px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
 }

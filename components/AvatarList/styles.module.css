@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  margin-top: 24px;
+  margin: 24px 0;
 }
 
 .buttonContainer {
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   gap: 11px;
-  margin-top: 24px;
+  margin: 14px 0;
 }
 
 .buttonContainer button {
@@ -22,15 +22,64 @@
   border: none;
 }
 
-.avatarsContainer {
+.avatarList {
   display: flex;
   height: 350px;
   justify-content: space-around;
   margin-bottom: 24px;
+  overflow: scroll;
 }
 
-.avatarColumn {
+.avatarListItem {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(177, 177, 177);
+  width: 104px;
+  height: 104px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.avatarListItemSelected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ffdb4b;
+  width: 104px;
+  height: 104px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.avatar {
+  height: 75px;
+  width: 75px;
+}
+
+@media (min-width: 768px) {
+  .buttonContainer {
+    gap: 40px;
+  }
+
+  .avatarList {
+    height: 550px;
+  }
+
+  .avatarListItem {
+    height: 170px;
+    width: 170px;
+  }
+
+  .avatarListItemSelected {
+    height: 170px;
+    width: 170px;
+  }
+
+  .avatar {
+    height: 130px;
+    width: 130px;
+  }
 }

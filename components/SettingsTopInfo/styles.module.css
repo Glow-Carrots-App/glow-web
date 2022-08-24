@@ -1,19 +1,59 @@
 .container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 34px 0;
-}
-
-.yourProfile {
-  font-size: larger;
-  margin: 0;
+  width: 307px;
 }
 
 .avatarContainer {
-  height: 100px;
-  width: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  width: 85px;
   border: 1px solid gray;
   border-radius: 50%;
-  background-color: rgb(214, 214, 214);
+  background-color: white;
+}
+
+.image {
+  height: 70px;
+  width: 70px;
+}
+
+.pen {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.doneLink {
+  position: absolute;
+  inset: -60px 0px auto auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 596px;
+  }
+  .avatarContainer {
+    height: 140px;
+    width: 140px;
+  }
+
+  .image {
+    height: 115px;
+    width: 115px;
+  }
+
+  .pen {
+    font-size: 32px;
+  }
+
+  .doneLink {
+    font-size: 24px;
+    inset: -90px 0px auto auto;
+  }
 }

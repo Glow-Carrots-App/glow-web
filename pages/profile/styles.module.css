@@ -1,13 +1,11 @@
 .container {
   text-align: center;
+  height: 100vh;
+  padding: 34px;
 }
 
-.settingsBtn {
-  position: absolute;
-  height: 24px;
-  width: 24px;
-  top: 20px;
-  right: 20px;
-  border: 1px solid grey;
-  border-radius: 50%;
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
 }

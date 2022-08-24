@@ -20,9 +20,6 @@ const SettingsPage = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <Link href="/profile">
-        <a className={styles.doneLink}>Done</a>
-      </Link>
       <Heading1>Settings</Heading1>
       <SettingsTopInfo />
       <SettingsInputs />

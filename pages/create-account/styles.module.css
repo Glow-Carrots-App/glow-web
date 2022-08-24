@@ -4,8 +4,49 @@
   text-align: center;
   justify-content: center;
   height: 100vh;
+  background-image: var(--landing-gradient);
+  padding: 34px;
 }
 
 .signinText {
-  font-size: small;
+  font-size: 16px;
+  color: black;
+}
+
+.signInLink {
+  font-size: 16px;
+  color: #573d8d;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  margin: 5px 0 0 7px;
+  opacity: 0.8;
+  height: 25px;
+  width: 25px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
+  .signinText {
+    font-size: 24px;
+    color: black;
+  }
+
+  .signInLink {
+    font-size: 24px;
+    color: #573d8d;
+  }
+
+  .image {
+    margin: 5px 0 0 12px;
+    height: 40px;
+    width: 40px;
+  }
 }

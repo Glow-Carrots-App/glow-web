@@ -1,0 +1,48 @@
+.progressBar {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+}
+.progressBar7 {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  width: 16px;
+}
+
+.progressBar14 {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  width: 8px;
+}
+
+.progressBar30 {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  width: 4px;
+}
+
+.progressItem {
+  align-self: center;
+  justify-self: center;
+  width: 110%;
+}
+
+@media (min-width: 768px) {
+  .progressBar {
+    font-size: 22px;
+  }
+  .progressBar7 {
+    width: 32px;
+  }
+
+  .progressBar14 {
+    width: 16px;
+  }
+
+  .progressBar30 {
+    width: 8px;
+  }
+}

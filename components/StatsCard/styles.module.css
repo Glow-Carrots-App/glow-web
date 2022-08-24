@@ -1,13 +1,53 @@
 .statContainer {
-  border: 1px solid rgb(177, 177, 177);
   width: 45%;
-  height: 64px;
-  background-color: rgb(210, 210, 210);
-  border-radius: 3px;
+  height: 72px;
+  background-color: var(--card-background-purple);
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px grey;
+}
+
+.topRow {
+  display: flex;
+  padding: 2px 0 0 2px;
+}
+
+.topRow > span {
+  font-size: small;
+  padding: 5px;
+  font-weight: 500;
 }
 
 .statContainer > p {
-  font-size: small;
-  text-align: left;
   margin: 0;
+  font-size: x-large;
+  font-weight: 300;
+}
+
+.icon {
+  height: 28px;
+}
+
+@media (min-width: 768px) {
+  .statContainer {
+    height: 110px;
+  }
+
+  .topRow {
+    padding: 4px 0 0 4px;
+  }
+
+  .topRow > span {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  .statContainer > p {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 300;
+  }
+
+  .icon {
+    height: 50px;
+  }
 }

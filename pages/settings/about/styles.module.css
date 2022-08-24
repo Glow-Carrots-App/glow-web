@@ -1,0 +1,48 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 34px;
+  position: relative;
+}
+
+.container p {
+  color: var(--purple-dark);
+  font-size: medium;
+}
+
+.container a {
+  color: black;
+}
+
+.doneLink {
+  position: absolute;
+  inset: 30px 30px auto auto;
+}
+
+.banana {
+  position: absolute;
+  opacity: 60%;
+  transform: rotate(70deg);
+  bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
+
+  .container p {
+    font-size: xx-large;
+  }
+
+  .doneLink {
+    font-size: 24px;
+  }
+
+  .banana {
+    height: 400px;
+  }
+}

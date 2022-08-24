@@ -3,9 +3,19 @@
   display: inline-block;
   text-align: center;
   padding: 1px 6px;
-  background-color: grey;
+  background-color: var(--purple-light);
   height: 50px;
   width: 307px;
   border-radius: 4px;
   border: none;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .largeButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 596px;
+  }
 }

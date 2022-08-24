@@ -4,5 +4,11 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin: 0 34px;
+  padding: 34px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 86px;
+  }
 }

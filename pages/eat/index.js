@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import Heading1 from "../../components/Heading1";
-import ColorFilter from "../../components/ColorFilter";
-import SearchFoodsList from "../../components/SearchFoodsList";
+import SearchFoodsForm from "../../components/SearchFoodsForm";
 import BottomTabs from "../../components/BottomTabs";
 import { useAuth } from "../../context/AuthContext";
 
@@ -18,10 +17,9 @@ const Eat = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <Heading1>What are you eating</Heading1>
-      <ColorFilter />
-      <SearchFoodsList />
-      <BottomTabs />
+      <Heading1>What are you eating?</Heading1>
+      <SearchFoodsForm />
+      <BottomTabs isEat={true} />
     </div>
   );
 };
