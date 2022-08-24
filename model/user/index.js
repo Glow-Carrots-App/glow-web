@@ -1,6 +1,18 @@
 // USER DB MODEL
 // import firestore
 
+// individual user
+// user = {
+//     uid: ""
+//     firstName: “Robby”,
+//     email: “robby@gmail.com”,
+//     joinDate: “2020-04-31”,
+//     avatar: fileLocation,
+//     dailyGoal: {amount: 10, isComplete: false},
+//     dayStreak: 20,
+//     goldenCarrots: 40,
+//     }
+
 const getUser = async (id /*string*/) => {
   // await firestoreFunction(id)
 };
@@ -18,7 +30,7 @@ const updateEmail = async (id, newEmail /*string*/) => {
 };
 
 const updateGoldenCarrots = async (id, goldenCarrots /*number*/) => {
-  goldenCarrots = goldenCarrots + 1;
+  //   goldenCarrots = goldenCarrots + 1;
   // await firestoreFunction(id, goldenCarrots)
 };
 
@@ -27,15 +39,14 @@ const createUserJoinDate = async (id, joinDate /*string*/) => {
 };
 
 const incrementDayStreak = async (id, currentDayStreak) => {
-  currentDayStreak = currentDayStreak + 1;
+  //   currentDayStreak = currentDayStreak + 1;
   // await firestoreFunction(id, currentDayStreak)
 };
 
 const clearDayStreak = async (id, isGoalComplete) => {
-  if (!isGoalComplete) {
-    let currentDayStreak = 0;
-    // await firestoreFunction(id, currentDayStreak)
-  }
+  //   if (!isGoalComplete) {
+  // await firestoreFunction(id, 0)
+  //   }
 };
 
 const updateDailyGoal = async (id, dailyGoal) => {
@@ -45,21 +56,3 @@ const updateDailyGoal = async (id, dailyGoal) => {
 const updateAvatar = async (id, avatarPath) => {
   // await firestoreFunction(id, avatarPath)
 };
-
-//lifetime eaten(???)
-const updateLast30Days = async (id, foodObj) => {
-  // await firestoreFunction(id, foodObj)
-};
-
-//today eaten(???)
-const updateTodayEaten = async (id, foodObj) => {
-  // await firestoreFunction(id, foodObj)
-};
-
-const clearTodayEaten = async (id) => {
-  // await firestoreFunction(id)
-};
-
-// const user = getUser(id);
-// let { goldenCarrots } = user;
-// updateGoldenCarrots(goldenCarrots);
