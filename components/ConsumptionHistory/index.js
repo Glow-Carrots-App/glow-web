@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useAuth } from "../../context/AuthContext";
 import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
 import organizeHistory from "../../utils/organizeHistory";
@@ -8,6 +9,10 @@ import styles from "./styles.module.css";
 
 const ConsumptionHistory = ({ uid }) => {
   let [days, setDays] = useState(7);
+
+  const {
+    authedUser: { uid },
+  } = useAuth();
 
   let history = organizeHistory(SAMPLE_FOOD_DATA, days);
 

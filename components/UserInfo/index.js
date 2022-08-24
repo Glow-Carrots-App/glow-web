@@ -2,11 +2,15 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 
+import { useAuth } from "../../context/AuthContext";
 import Heading2 from "../Heading2";
 
 import styles from "./styles.module.css";
 
-const UserInfo = ({ uid }) => {
+const UserInfo = () => {
+  const {
+    authedUser: { uid },
+  } = useAuth();
   return (
     <div className={styles.container}>
       <Link href="/settings">
