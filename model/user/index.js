@@ -47,7 +47,7 @@ const updateAvatar = async (id, avatarPath) => {
 };
 
 //lifetime eaten(???)
-const updateLifetimeEaten = async (id, foodObj) => {
+const updateLast30Days = async (id, foodObj) => {
   // await firestoreFunction(id, foodObj)
 };
 
