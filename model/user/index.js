@@ -33,7 +33,6 @@ class UserModel {
   };
 
   createUser = async (newUser, uid) => {
-    // return await addDoc(userCollectionRef, newUser);
     return await setDoc(doc(db, "users", uid), newUser);
   };
 

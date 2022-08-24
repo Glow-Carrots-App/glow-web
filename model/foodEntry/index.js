@@ -12,26 +12,44 @@
 //     date: "",
 //   }
 
-const createFoodEntry = async (foodObj) => {
-  // await firestoreFunction(foodObj)
-};
+import { db } from "../../firebase.js";
 
-const getCurrentDay = async (userId) => {
-  // await fireStoreFunction(userId, 1)
-};
+import {
+  collection,
+  getDoc,
+  setDoc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
-const get7DayHistory = async (userId) => {
-  // await firestoreFunction(userId, 7)
-};
+const foodEntryCollectionRef = collection(db, "foodEntries");
 
-const get14DayHistory = async (userId) => {
-  // await firestoreFunction(userId, 14)
-};
+class FoodEntryModel {
+  createFoodEntry = async (foodObj) => {
+    return await addDoc(foodEntryCollectionRef, foodObj);
+  };
 
-const get30DayHistory = async (userId) => {
-  // await firestoreFunction(userId, 30)
-};
+  getCurrentDay = async (userId) => {
+    // await fireStoreFunction(userId, 1)
+  };
 
-const getLifetimeHistory = async (userId) => {
-  // await firestoreFunction(userId)
-};
+  get7DayHistory = async (userId) => {
+    // await firestoreFunction(userId, 7)
+  };
+
+  get14DayHistory = async (userId) => {
+    // await firestoreFunction(userId, 14)
+  };
+
+  get30DayHistory = async (userId) => {
+    // await firestoreFunction(userId, 30)
+  };
+
+  getLifetimeHistory = async (userId) => {
+    // await firestoreFunction(userId)
+  };
+}
+
+export default new FoodEntryModel();
