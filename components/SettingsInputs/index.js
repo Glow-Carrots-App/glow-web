@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const SettingsInputs = () => {
+const SettingsInputs = ({ uid }) => {
   return (
     <form className={styles.container}>
       <label htmlFor="text">Name</label>

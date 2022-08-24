@@ -1,8 +1,12 @@
+import { useAuth } from "../../context/AuthContext";
 import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
 const ChangePasswordForm = () => {
+  const {
+    authedUser: { uid },
+  } = useAuth();
   return (
     <form className={styles.container} action="/settings" mode="post">
       <input

@@ -6,7 +6,7 @@ import organizeHistory from "../../utils/organizeHistory";
 
 import styles from "./styles.module.css";
 
-const ConsumptionHistory = () => {
+const ConsumptionHistory = ({ uid }) => {
   let [days, setDays] = useState(7);
 
   let history = organizeHistory(SAMPLE_FOOD_DATA, days);

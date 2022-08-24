@@ -6,7 +6,7 @@ import Heading2 from "../Heading2";
 
 import styles from "./styles.module.css";
 
-const UserInfo = () => {
+const UserInfo = ({ uid }) => {
   return (
     <div className={styles.container}>
       <Link href="/settings">

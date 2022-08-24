@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useAuth } from "../../context/AuthContext";
 import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
@@ -13,6 +14,10 @@ const SearchFoodsForm = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
+
+  const {
+    authedUser: { uid },
+  } = useAuth();
 
   const alphabetizedFoods = alphabetizeFoods(masterFoodLibrary);
 

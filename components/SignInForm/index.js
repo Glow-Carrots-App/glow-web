@@ -23,7 +23,7 @@ const SignInForm = () => {
   };
 
   return (
-    <form className={styles.container} onSubmit={handleSignIn}>
+    <form className={styles.container} onSubmit={(e) => handleSignIn(e)}>
       <input
         type="text"
         className={styles.signInFields}

@@ -1,11 +1,16 @@
 import { useState } from "react";
 
+import { useAuth } from "../../context/AuthContext";
 import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
 const AvatarList = () => {
   const [selectedAvatar, setSelectedAvatar] = useState("/avatars/salad.png");
+
+  const {
+    authedUser: { uid },
+  } = useAuth();
 
   const avatars1 = [
     "/avatars/salad.png",

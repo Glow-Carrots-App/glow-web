@@ -24,7 +24,11 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <form className={styles.form} method="post" onSubmit={handleCreateAccount}>
+    <form
+      className={styles.form}
+      method="post"
+      onSubmit={(e) => handleCreateAccount(e)}
+    >
       <input
         className={styles.formInput}
         type="text"
