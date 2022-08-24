@@ -1,6 +1,11 @@
+import { useAuth } from "../../context/AuthContext";
+
 import styles from "./styles.module.css";
 
-const SettingsInputs = ({ uid }) => {
+const SettingsInputs = () => {
+  const {
+    authedUser: { uid },
+  } = useAuth();
   return (
     <form className={styles.container}>
       <label htmlFor="text">Name</label>
