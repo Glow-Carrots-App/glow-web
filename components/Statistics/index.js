@@ -1,3 +1,4 @@
+import { useAuth } from "../../context/AuthContext";
 import StatsCard from "../StatsCard";
 import checkHighestColor from "../../utils/checkHighestColor";
 import checkLowestColor from "../../utils/checkLowestColor";
@@ -7,7 +8,11 @@ import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const Statistics = ({ uid }) => {
+const Statistics = () => {
+  const {
+    authedUser: { uid },
+  } = useAuth();
+
   const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
   const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
 

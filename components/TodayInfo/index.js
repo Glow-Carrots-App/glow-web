@@ -1,11 +1,13 @@
 import { VictoryPie } from "victory";
 
+import { useAuth } from "../../context/AuthContext";
+
 import populateDonutChartData from "../../utils/populateDonutChartData";
 import TODAY_SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const TodayInfo = ({ uid }) => {
+const TodayInfo = () => {
   const today = [
     "#fc7790",
     "#fd8f52",
@@ -15,6 +17,10 @@ const TodayInfo = ({ uid }) => {
     "#9a7dcc",
     "#d1d0d0",
   ];
+
+  const {
+    authedUser: { uid },
+  } = useAuth();
 
   let currentCount = TODAY_SAMPLE_FOOD_DATA.length;
   let user = {
