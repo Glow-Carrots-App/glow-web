@@ -1,0 +1,7 @@
+.loadingContainer {
+  height: 100vh;
+  padding: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
