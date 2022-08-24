@@ -1,6 +1,8 @@
 import { useState } from "react";
+import dayjs from "dayjs";
 
 import { useAuth } from "../../context/AuthContext";
+import FoodEntryModel from "../../model/foodEntry";
 import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
@@ -31,6 +33,29 @@ const SearchFoodsForm = () => {
             .toLowerCase()
             .includes(searchInput.toLowerCase()) && food.color === selectedColor
       );
+
+  const handleEatFood = (e) => {
+    e.preventDefault();
+
+    if (!selectedFood) {
+      return;
+    }
+
+    const newFood = {
+      ...selectedFood,
+      date: dayjs().format("MM/DD/YYYY"),
+      uid,
+    };
+
+    try {
+      FoodEntryModel.createFoodEntry(newFood);
+      setSearchInput("");
+      setSelectedFood(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <ColorFilter
@@ -61,7 +86,13 @@ const SearchFoodsForm = () => {
       </div>
       <div className={styles.buttons}>
         <SmallLinkedButton href="/today">Cancel</SmallLinkedButton>
-        <SmallLinkedButton href="/today">Save</SmallLinkedButton>
+        <input
+          className={styles.addButton}
+          type="submit"
+          name="submitMessage"
+          value="Add"
+          onClick={(e) => handleEatFood(e)}
+        />
       </div>
     </div>
   );
