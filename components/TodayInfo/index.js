@@ -7,7 +7,7 @@ import TODAY_SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const TodayInfo = ({ uid }) => {
+const TodayInfo = () => {
   const today = [
     "#fc7790",
     "#fd8f52",

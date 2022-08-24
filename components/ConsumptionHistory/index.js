@@ -7,7 +7,7 @@ import organizeHistory from "../../utils/organizeHistory";
 
 import styles from "./styles.module.css";
 
-const ConsumptionHistory = ({ uid }) => {
+const ConsumptionHistory = () => {
   let [days, setDays] = useState(7);
 
   const {
