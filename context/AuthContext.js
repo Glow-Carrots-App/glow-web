@@ -13,19 +13,19 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [authedUser, setAuthedUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(user);
+  console.log(authedUser);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser({
-          uid: user.uid,
+    const unsubscribe = onAuthStateChanged(auth, (authedUser) => {
+      if (authedUser) {
+        setAuthedUser({
+          uid: authedUser.uid,
           email: user.email,
         });
       } else {
-        setUser(null);
+        setAuthedUser(null);
       }
       setLoading(false);
     });
@@ -42,18 +42,18 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    setUser(null);
+    setAuthedUser(null);
     await signOut(auth);
   };
 
   const deleteAccount = async () => {
-    setUser(null);
+    setAuthedUser(null);
     await deleteUser(auth.currentUser);
   };
 
   return (
     <AuthContext.Provider
-      value={{ user, login, signup, logout, deleteAccount }}
+      value={{ authedUser, loading, login, signup, logout, deleteAccount }}
     >
       {loading ? null : children}
     </AuthContext.Provider>
