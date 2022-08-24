@@ -1,5 +1,3 @@
-import alphabetizeFoods from "../../utils/alphabetizeFoods";
-
 import styles from "./styles.module.css";
 
 const SearchFoodsList = ({

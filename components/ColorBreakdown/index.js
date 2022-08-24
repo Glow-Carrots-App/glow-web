@@ -3,7 +3,7 @@ import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const ColorBreakdown = () => {
+const ColorBreakdown = ({ uid }) => {
   let colorCount = countColors(SAMPLE_FOOD_DATA);
 
   return (

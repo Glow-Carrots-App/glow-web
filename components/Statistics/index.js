@@ -7,7 +7,7 @@ import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const Statistics = () => {
+const Statistics = ({ uid }) => {
   const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
   const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
 

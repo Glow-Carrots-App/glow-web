@@ -1,8 +1,13 @@
+import { useAuth } from "../../context/AuthContext";
 import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
 const FeedbackForm = () => {
+  const {
+    authedUser: { uid, email },
+  } = useAuth();
+
   return (
     <form className={styles.container} action="/settings" mode="post">
       <label htmlFor="subject">Subject</label>

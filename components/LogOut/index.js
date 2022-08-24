@@ -7,14 +7,14 @@ import { useAuth } from "../../context/AuthContext";
 import styles from "./styles.module.css";
 
 const LogOut = () => {
-  const { user, logout } = useAuth();
+  const { authedUser, logout } = useAuth();
   const router = useRouter();
 
   const handleLogOut = async (e) => {
     e.preventDefault();
 
     try {
-      await logout(user);
+      await logout(authedUser);
       router.push("/sign-in");
     } catch (err) {
       console.log(err);
@@ -26,7 +26,7 @@ const LogOut = () => {
       <Heading2>Are you sure you want to log out?</Heading2>
       <div className={styles.buttonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <a className={styles.smallButton} onClick={handleLogOut}>
+        <a className={styles.smallButton} onClick={(e) => handleLogOut(e)}>
           Log Out
         </a>
       </div>
