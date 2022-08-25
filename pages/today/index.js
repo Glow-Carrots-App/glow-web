@@ -13,6 +13,8 @@ import styles from "./styles.module.css";
 
 const Today = () => {
   const [currentDay, setCurrentDay] = useState([]);
+  const [foodHistory, setFoodHistory] = useState([]);
+
   const { authedUser } = useAuth();
   const uid = authedUser?.uid ? authedUser.uid : null;
 
@@ -22,8 +24,15 @@ const Today = () => {
         return;
       }
       const today = dayjs().format("YYYY/MM/DD");
+      const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
       const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
+      const foodHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
+        uid,
+        today,
+        dateToCompare
+      );
       setCurrentDay(currentDayResponse);
+      setFoodHistory(foodHistoryResponse);
     }
     fetchData();
   }, []);
@@ -33,7 +42,7 @@ const Today = () => {
       <div className={styles.container}>
         <Heading1>Today</Heading1>
         <TodayInfo currentDay={currentDay} />
-        <ConsumptionHistory />
+        <ConsumptionHistory foodHistory={foodHistory} />
         <BottomTabs isToday={true} />
       </div>
     </WithProtected>

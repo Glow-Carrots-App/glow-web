@@ -1,31 +1,6 @@
-// FOOD ENTRY DB MODEL
-// import firestore
-
-// individual food entry
-// foodEntry = {
-//     id: 123,
-//     userId: ldf,
-//     product: green,
-//     productSearch: Asparagus,
-//     textHex: "",
-//     fillHex: "",
-//     date: "",
-//   }
-
 import { db } from "../../firebase.js";
 
-import {
-  collection,
-  query,
-  where,
-  getDoc,
-  getDocs,
-  setDoc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
 
 const foodEntriesRef = collection(db, "foodEntries");
 
@@ -46,16 +21,19 @@ class FoodEntryModel {
     return currentDay;
   };
 
-  get7DayHistory = async (userId) => {
-    // await firestoreFunction(userId, 7)
-  };
-
-  get14DayHistory = async (userId) => {
-    // await firestoreFunction(userId, 14)
-  };
-
-  get30DayHistory = async (userId) => {
-    // await firestoreFunction(userId, 30)
+  getThirtyDayHistory = async (userId, today, dateToCompare) => {
+    let thirtyDayHistorySnapshot = await getDocs(
+      query(
+        foodEntriesRef,
+        where("uid", "==", userId),
+        where("date", "<=", today),
+        where("date", ">=", dateToCompare)
+      )
+    );
+    let thirtyDayHistory = thirtyDayHistorySnapshot.docs.map((doc) =>
+      doc.data()
+    );
+    return thirtyDayHistory;
   };
 
   getLifetimeHistory = async (userId) => {

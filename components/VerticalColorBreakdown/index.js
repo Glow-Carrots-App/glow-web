@@ -2,17 +2,17 @@ import countColors from "../../utils/countColors";
 
 import styles from "./styles.module.css";
 
-const VerticalColorBreakdown = ({ arr, days, height }) => {
-  let colorCount = countColors(arr);
+const VerticalColorBreakdown = ({ day, numberOfDays, height }) => {
+  let colorCount = countColors(day);
 
   if (!colorCount) {
     return <div className={styles.progressBar}>_</div>;
   }
 
   let className;
-  if (days === 7) {
+  if (numberOfDays === 7) {
     className = styles.progressBar7;
-  } else if (days === 14) {
+  } else if (numberOfDays === 14) {
     className = styles.progressBar14;
   } else {
     className = styles.progressBar30;
