@@ -1,29 +1,10 @@
-import { useEffect, useState } from "react";
-import dayjs from "dayjs";
 import { VictoryPie } from "victory";
 
-import { useAuth } from "../../context/AuthContext";
-import FoodEntryModel from "../../model/foodEntry";
 import populateDonutChartData from "../../utils/populateDonutChartData";
 
 import styles from "./styles.module.css";
 
-const TodayInfo = () => {
-  const [currentDay, setCurrentDay] = useState([]);
-
-  const {
-    authedUser: { uid },
-  } = useAuth();
-
-  useEffect(() => {
-    async function fetchData() {
-      const today = dayjs().format("YYYY/MM/DD");
-      const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
-      setCurrentDay(currentDayResponse);
-    }
-    fetchData();
-  }, []);
-
+const TodayInfo = ({ currentDay }) => {
   let user = {
     dailyGoal: 8,
   };
