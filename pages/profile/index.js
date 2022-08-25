@@ -41,7 +41,7 @@ const ProfilePage = () => {
     <WithProtected>
       <div className={styles.container}>
         <Heading1>Profile</Heading1>
-        <UserInfo />
+        <UserInfo user={user} />
         <Statistics user={user} />
         <ColorBreakdown />
         <BottomTabs isProfile={true} />
