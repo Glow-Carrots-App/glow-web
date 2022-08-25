@@ -37,7 +37,13 @@ class FoodEntryModel {
   };
 
   getLifetimeHistory = async (userId) => {
-    // await firestoreFunction(userId)
+    const lifetimeHistorySnapshot = await getDocs(
+      query(foodEntriesRef, where("uid", "==", userId))
+    );
+    const lifetimeHistory = lifetimeHistorySnapshot.docs.map((doc) =>
+      doc.data()
+    );
+    return lifetimeHistory;
   };
 }
 

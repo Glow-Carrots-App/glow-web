@@ -1,15 +1,9 @@
-import { useAuth } from "../../context/AuthContext";
-
 import countColors from "../../utils/countColors";
-import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const ColorBreakdown = () => {
-  const {
-    authedUser: { uid },
-  } = useAuth();
-  let colorCount = countColors(SAMPLE_FOOD_DATA);
+const ColorBreakdown = ({ lifetimeFoodHistory }) => {
+  let colorCount = countColors(lifetimeFoodHistory);
 
   return (
     <div className={styles.container}>

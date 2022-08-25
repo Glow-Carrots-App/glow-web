@@ -12,6 +12,8 @@ const pickHighIcon = (highestColor) => {
       return "/colorIcons/purple.png";
     case "white":
       return "/colorIcons/white.png";
+    case "":
+      return "/colorIcons/sad.png";
   }
 };
 
