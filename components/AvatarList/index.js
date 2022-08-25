@@ -19,8 +19,8 @@ const AvatarList = () => {
   const avatars1 = [
     "/avatars/salad.png",
     "/avatars/cooking-pot.png",
-    "/avatars/food-container.png",
-    "/avatars/pie.png",
+    "/avatars/tupper.png",
+    "/avatars/water-bottle.png",
     "/avatars/pot.png",
     "/avatars/smoothie.png",
   ];
