@@ -43,7 +43,7 @@ const SettingsPage = () => {
         <SettingsTopInfo user={user} />
         <SettingsInputs user={user} />
         <SettingsButtons />
-        <BottomTabs isProfile="true" />
+        <BottomTabs />
       </div>
     </WithProtected>
   );
