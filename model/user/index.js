@@ -36,6 +36,10 @@ class UserModel {
     return await setDoc(doc(db, "users", uid), newUser);
   };
 
+  deleteUser = async (uid) => {
+    // await firestoreFunction(uid)
+  };
+
   updateName = async (id, newName /*string*/) => {
     // await firestoreFunction(id, newName)
   };
@@ -47,10 +51,6 @@ class UserModel {
   updateGoldenCarrots = async (id, goldenCarrots /*number*/) => {
     //   goldenCarrots = goldenCarrots + 1;
     // await firestoreFunction(id, goldenCarrots)
-  };
-
-  createUserJoinDate = async (id, joinDate /*string*/) => {
-    // await firestoreFunction(id, joinDate)
   };
 
   incrementDayStreak = async (id, currentDayStreak) => {
