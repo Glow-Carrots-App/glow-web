@@ -17,7 +17,7 @@ const ProfilePage = () => {
 
   const uid = authedUser?.uid ? authedUser.uid : null;
 
-  const [userObj, setUserObj] = useState();
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ProfilePage = () => {
         return;
       }
       const userResponse = await UserModel.getUser(uid);
-      setUserObj(userResponse);
+      setUser(userResponse);
       setLoading(false);
     }
     fetchData();
@@ -42,7 +42,7 @@ const ProfilePage = () => {
       <div className={styles.container}>
         <Heading1>Profile</Heading1>
         <UserInfo />
-        <Statistics userObj={userObj} />
+        <Statistics user={user} />
         <ColorBreakdown />
         <BottomTabs isProfile={true} />
       </div>

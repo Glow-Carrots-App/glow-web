@@ -7,7 +7,7 @@ import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const Statistics = ({ userObj }) => {
+const Statistics = ({ user }) => {
   const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
   const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
 
@@ -27,12 +27,12 @@ const Statistics = ({ userObj }) => {
         <StatsCard
           src="/stats/dayStreak.png"
           title="Day Streak"
-          data={userObj.dayStreak}
+          data={user.dayStreak}
         />
         <StatsCard
           src="/stats/goldenCarrot.png"
           title="Golden Carrots"
-          data={userObj.goldenCarrots}
+          data={user.goldenCarrots}
         />
       </div>
       <div className={styles.statsRow}>
