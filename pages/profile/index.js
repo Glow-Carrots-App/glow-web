@@ -14,8 +14,8 @@ const ProfilePage = () => {
         <Heading1>Profile</Heading1>
         <UserInfo />
         <Statistics />
-       <ColorBreakdown />
-       <BottomTabs />
+        <ColorBreakdown />
+        <BottomTabs isProfile={true} />
       </div>
     </WithProtected>
   );

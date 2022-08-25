@@ -1,23 +1,32 @@
+import { useState, useEffect } from "react";
+
 import { useAuth } from "../../context/AuthContext";
+import UserModel from "../../model/user";
 import StatsCard from "../StatsCard";
 import checkHighestColor from "../../utils/checkHighestColor";
 import checkLowestColor from "../../utils/checkLowestColor";
 import pickLowIcon from "../../utils/pickLowIcon";
 import pickHighIcon from "../../utils/pickHighIcon";
 import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
+import Loading from "../Loading";
 
 import styles from "./styles.module.css";
 
 const Statistics = () => {
+  const [userObj, setUserObj] = useState();
+  const [loading, setLoading] = useState(true);
   const {
     authedUser: { uid },
   } = useAuth();
 
+  useEffect(() => {
+    UserModel.getUser(uid)
+      .then((userObj) => setUserObj(userObj))
+      .then(() => setLoading(false));
+  }, []);
+
   const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
   const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
-
-  const userDayStreak = 20;
-  const userGoldenCarrots = 40;
 
   const lowIcon = pickLowIcon(lowestColor);
   const highIcon = pickHighIcon(highestColor);
@@ -27,7 +36,9 @@ const Statistics = () => {
 
   const lowestColorData = capatalizeString(lowestColor.color);
   const highestColorData = capatalizeString(highestColor.color);
-
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className={styles.container}>
       <p>Statistics</p>
@@ -35,12 +46,12 @@ const Statistics = () => {
         <StatsCard
           src="/stats/dayStreak.png"
           title="Day Streak"
-          data={userDayStreak}
+          data={userObj.dayStreak}
         />
         <StatsCard
           src="/stats/goldenCarrot.png"
           title="Golden Carrots"
-          data={userGoldenCarrots}
+          data={userObj.goldenCarrots}
         />
       </div>
       <div className={styles.statsRow}>
