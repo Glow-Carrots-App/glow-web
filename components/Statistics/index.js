@@ -20,9 +20,12 @@ const Statistics = () => {
   } = useAuth();
 
   useEffect(() => {
-    UserModel.getUser(uid)
-      .then((userObj) => setUserObj(userObj))
-      .then(() => setLoading(false));
+    async function fetchData() {
+      const userResponse = await UserModel.getUser(uid);
+      setUserObj(userResponse);
+      setLoading(false);
+    }
+    fetchData();
   }, []);
 
   const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
@@ -36,6 +39,7 @@ const Statistics = () => {
 
   const lowestColorData = capatalizeString(lowestColor.color);
   const highestColorData = capatalizeString(highestColor.color);
+
   if (loading) {
     return <Loading />;
   }
