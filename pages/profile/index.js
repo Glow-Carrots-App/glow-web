@@ -8,6 +8,7 @@ import BottomTabs from "../../components/BottomTabs";
 import WithProtected from "../../components/WithProtected";
 import Loading from "../../components/Loading";
 import UserModel from "../../model/user";
+import FoodEntryModel from "../../model/foodEntry";
 import { useAuth } from "../../context/AuthContext";
 
 import styles from "./styles.module.css";
@@ -18,6 +19,7 @@ const ProfilePage = () => {
   const uid = authedUser?.uid ? authedUser.uid : null;
 
   const [user, setUser] = useState();
+  const [lifetimeFoods, setLifetimeFoods] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,7 +29,9 @@ const ProfilePage = () => {
         return;
       }
       const userResponse = await UserModel.getUser(uid);
+      const foodResponse = await FoodEntryModel.getLifetimeHistory(uid);
       setUser(userResponse);
+      setLifetimeFoods(foodResponse);
       setLoading(false);
     }
     fetchData();
@@ -42,8 +46,8 @@ const ProfilePage = () => {
       <div className={styles.container}>
         <Heading1>Profile</Heading1>
         <UserInfo user={user} />
-        <Statistics user={user} />
-        <ColorBreakdown />
+        <Statistics user={user} lifetimeFoods={lifetimeFoods} />
+        <ColorBreakdown lifetimeFoods={lifetimeFoods} />
         <BottomTabs isProfile={true} />
       </div>
     </WithProtected>

@@ -3,22 +3,15 @@ import checkHighestColor from "../../utils/checkHighestColor";
 import checkLowestColor from "../../utils/checkLowestColor";
 import pickLowIcon from "../../utils/pickLowIcon";
 import pickHighIcon from "../../utils/pickHighIcon";
-import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const Statistics = ({ user }) => {
-  const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
-  const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
+const Statistics = ({ user, lifetimeFoods }) => {
+  const lowestColor = checkLowestColor(lifetimeFoods);
+  const highestColor = checkHighestColor(lifetimeFoods);
 
   const lowIcon = pickLowIcon(lowestColor);
   const highIcon = pickHighIcon(highestColor);
-
-  const capatalizeString = (string) =>
-    string.charAt(0).toUpperCase() + string.slice(1);
-
-  const lowestColorData = capatalizeString(lowestColor.color);
-  const highestColorData = capatalizeString(highestColor.color);
 
   return (
     <div className={styles.container}>
@@ -39,13 +32,13 @@ const Statistics = ({ user }) => {
         <StatsCard
           src={highIcon}
           title="Highest Color"
-          data={highestColorData}
+          data={highestColor.color}
           color={highestColor.textHex}
         />
         <StatsCard
           src={lowIcon}
           title="Lowest Color"
-          data={lowestColorData}
+          data={lowestColor.color}
           color={lowestColor.textHex}
         />
       </div>
