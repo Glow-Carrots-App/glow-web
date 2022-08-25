@@ -74,7 +74,7 @@ const AvatarList = () => {
       </div>
       <div className={styles.buttonContainer}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <a onClick={() => handleAvatarUpdate()}>Save</a>
+        <input value="Save" onClick={() => handleAvatarUpdate()} />
       </div>
     </div>
   );

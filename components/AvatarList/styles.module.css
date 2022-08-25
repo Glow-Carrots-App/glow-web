@@ -84,7 +84,7 @@
   }
 }
 
-.buttonContainer > a {
+.buttonContainer > input {
   line-height: 45px;
   display: inline-block;
   padding: 1px 6px;
@@ -98,7 +98,7 @@
 }
 
 @media (min-width: 768px) {
-  .buttonContainer > a {
+  .buttonContainer > input {
     line-height: 92px;
     font-size: 24px;
     height: 92px;
