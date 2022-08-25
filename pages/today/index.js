@@ -26,13 +26,13 @@ const Today = () => {
       const today = dayjs().format("YYYY/MM/DD");
       const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
       const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
-      const foodHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
+      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
         uid,
         today,
         dateToCompare
       );
       setCurrentDay(currentDayResponse);
-      setFoodHistory(foodHistoryResponse);
+      setFoodHistory(thirtyDayHistoryResponse);
     }
     fetchData();
   }, []);
