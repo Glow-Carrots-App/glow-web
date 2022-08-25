@@ -1,66 +1,40 @@
-import { useState, useEffect } from "react";
-import dayjs from "dayjs";
+import { useState } from "react";
 
-import { useAuth } from "../../context/AuthContext";
-import FoodEntryModel from "../../model/foodEntry";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
-import organizeHistory from "../../utils/organizeHistory";
+import organizeFoodHistory from "../../utils/organizeFoodHistory";
 
 import styles from "./styles.module.css";
 
-const ConsumptionHistory = () => {
-  let [days, setDays] = useState(7);
-  let [foodArr, setFoodArr] = useState([]);
-
-  const {
-    authedUser: { uid },
-  } = useAuth();
-
-  useEffect(() => {
-    async function fetchData() {
-      const today = dayjs().format("YYYY/MM/DD");
-      const dateToCompare = dayjs()
-        .subtract(days - 1, "day")
-        .format("YYYY/MM/DD");
-      const foodArrResponse = await FoodEntryModel.getHistory(
-        uid,
-        today,
-        dateToCompare
-      );
-      setFoodArr(foodArrResponse);
-    }
-    fetchData();
-  }, []);
-
-  let history = organizeHistory(foodArr, days);
-
+const ConsumptionHistory = ({ foodHistory }) => {
+  let [numberOfDays, setNumberOfDays] = useState(7);
+  let organizedFoodHistory = organizeFoodHistory(foodHistory, numberOfDays);
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
         <button
           onClick={() => {
-            setDays(7);
+            setNumberOfDays(7);
           }}
           className={styles.button}
-          disabled={days === 7}
+          disabled={numberOfDays === 7}
         >
           7 days
         </button>
         <button
           onClick={() => {
-            setDays(14);
+            setNumberOfDays(14);
           }}
           className={styles.button}
-          disabled={days === 14}
+          disabled={numberOfDays === 14}
         >
           14 days
         </button>
         <button
           onClick={() => {
-            setDays(30);
+            setNumberOfDays(30);
           }}
           className={styles.button}
-          disabled={days === 30}
+          disabled={numberOfDays === 30}
         >
           30 days
         </button>
@@ -68,12 +42,12 @@ const ConsumptionHistory = () => {
       <div className={styles.barChart}>
         <div className={styles.barChartImg} />
         <div className={styles.barChartContainer}>
-          {history.dayArrays.map((dayArr, i) => (
+          {organizedFoodHistory.days.map((day, i) => (
             <VerticalColorBreakdown
-              key={`${dayArr} + ${i}`}
-              arr={dayArr}
-              days={days}
-              height={history.percentages[i]}
+              key={`${day} + ${i}`}
+              day={day}
+              numberOfDays={numberOfDays}
+              height={organizedFoodHistory.percentages[i]}
             />
           ))}
         </div>

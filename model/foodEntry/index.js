@@ -1,17 +1,3 @@
-// FOOD ENTRY DB MODEL
-// import firestore
-
-// individual food entry
-// foodEntry = {
-//     id: 123,
-//     userId: ldf,
-//     product: green,
-//     productSearch: Asparagus,
-//     textHex: "",
-//     fillHex: "",
-//     date: "",
-//   }
-
 import { db } from "../../firebase.js";
 
 import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
@@ -23,12 +9,20 @@ class FoodEntryModel {
     return await addDoc(foodEntriesRef, foodObj);
   };
 
-  getCurrentDay = async (userId) => {
-    // await fireStoreFunction(userId, 1)
+  getCurrentDay = async (userId, today) => {
+    let currentDaySnapshot = await getDocs(
+      query(
+        foodEntriesRef,
+        where("uid", "==", userId),
+        where("date", "==", today)
+      )
+    );
+    let currentDay = currentDaySnapshot.docs.map((doc) => doc.data());
+    return currentDay;
   };
 
-  getHistory = async (userId, today, dateToCompare) => {
-    let historySnapshot = await getDocs(
+  getThirtyDayHistory = async (userId, today, dateToCompare) => {
+    let thirtyDayHistorySnapshot = await getDocs(
       query(
         foodEntriesRef,
         where("uid", "==", userId),
@@ -36,8 +30,10 @@ class FoodEntryModel {
         where("date", ">=", dateToCompare)
       )
     );
-    let history = historySnapshot.docs.map((doc) => doc.data());
-    return history;
+    let thirtyDayHistory = thirtyDayHistorySnapshot.docs.map((doc) =>
+      doc.data()
+    );
+    return thirtyDayHistory;
   };
 
   getLifetimeHistory = async (userId) => {
