@@ -43,7 +43,7 @@ const SearchFoodsForm = () => {
 
     const newFood = {
       ...selectedFood,
-      date: dayjs().format("MM/DD/YYYY"),
+      date: dayjs().format("YYYY/MM/DD"),
       uid,
     };
 
