@@ -1,13 +1,35 @@
+import { useEffect, useState } from "react";
+import dayjs from "dayjs";
 import { VictoryPie } from "victory";
 
 import { useAuth } from "../../context/AuthContext";
-
+import FoodEntryModel from "../../model/foodEntry";
 import populateDonutChartData from "../../utils/populateDonutChartData";
-import TODAY_SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
 const TodayInfo = () => {
+  const [currentDay, setCurrentDay] = useState([]);
+
+  const {
+    authedUser: { uid },
+  } = useAuth();
+
+  useEffect(() => {
+    async function fetchData() {
+      const today = dayjs().format("YYYY/MM/DD");
+      const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
+      setCurrentDay(currentDayResponse);
+    }
+    fetchData();
+  }, []);
+
+  let user = {
+    dailyGoal: 8,
+  };
+
+  const currentCount = currentDay.length;
+  const todaysData = populateDonutChartData(currentDay, user.dailyGoal);
   const today = [
     "#fc7790",
     "#fd8f52",
@@ -17,20 +39,6 @@ const TodayInfo = () => {
     "#9a7dcc",
     "#d1d0d0",
   ];
-
-  const {
-    authedUser: { uid },
-  } = useAuth();
-
-  let currentCount = TODAY_SAMPLE_FOOD_DATA.length;
-  let user = {
-    dailyGoal: 8,
-  };
-
-  const todaysData = populateDonutChartData(
-    TODAY_SAMPLE_FOOD_DATA,
-    user.dailyGoal
-  );
 
   return (
     <div className={styles.container}>
@@ -52,7 +60,7 @@ const TodayInfo = () => {
       </div>
       <div className={styles.listContainer}>
         <ul className={styles.foodList}>
-          {TODAY_SAMPLE_FOOD_DATA.map((food, index) => (
+          {currentDay.map((food, index) => (
             <li style={{ color: food.textHex }} key={index + food.product}>
               {food.product}
             </li>
