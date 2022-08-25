@@ -17,11 +17,11 @@ const AvatarList = () => {
   } = useAuth();
 
   const avatars1 = [
-    "/avatars/salad.png",
-    "/avatars/cooking-pot.png",
-    "/avatars/food-container.png",
-    "/avatars/pie.png",
     "/avatars/pot.png",
+    "/avatars/tropical-fruit.png",
+    "/avatars/black-pudding.png",
+    "/avatars/tupper.png",
+    "/avatars/water-bottle.png",
     "/avatars/smoothie.png",
   ];
   const avatars2 = [
@@ -29,8 +29,8 @@ const AvatarList = () => {
     "/avatars/camp.png",
     "/avatars/baby-food.png",
     "/avatars/leftover.png",
+    "/avatars/salad.png",
     "/avatars/birthday-cake.png",
-    "/avatars/tropical-fruit.png",
   ];
 
   const handleAvatarUpdate = () => {
