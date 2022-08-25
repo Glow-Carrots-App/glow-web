@@ -6,9 +6,9 @@ import pickHighIcon from "../../utils/pickHighIcon";
 
 import styles from "./styles.module.css";
 
-const Statistics = ({ user, lifetimeFoods }) => {
-  const lowestColor = checkLowestColor(lifetimeFoods);
-  const highestColor = checkHighestColor(lifetimeFoods);
+const Statistics = ({ user, lifetimeFoodHistory }) => {
+  const lowestColor = checkLowestColor(lifetimeFoodHistory);
+  const highestColor = checkHighestColor(lifetimeFoodHistory);
 
   const lowIcon = pickLowIcon(lowestColor);
   const highIcon = pickHighIcon(highestColor);

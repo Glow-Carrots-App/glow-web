@@ -2,8 +2,8 @@ import countColors from "../../utils/countColors";
 
 import styles from "./styles.module.css";
 
-const ColorBreakdown = ({ lifetimeFoods }) => {
-  let colorCount = countColors(lifetimeFoods);
+const ColorBreakdown = ({ lifetimeFoodHistory }) => {
+  let colorCount = countColors(lifetimeFoodHistory);
 
   return (
     <div className={styles.container}>
