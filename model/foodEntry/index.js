@@ -14,37 +14,30 @@
 
 import { db } from "../../firebase.js";
 
-import {
-  collection,
-  getDoc,
-  setDoc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
 
-const foodEntryCollectionRef = collection(db, "foodEntries");
+const foodEntriesRef = collection(db, "foodEntries");
 
 class FoodEntryModel {
   createFoodEntry = async (foodObj) => {
-    return await addDoc(foodEntryCollectionRef, foodObj);
+    return await addDoc(foodEntriesRef, foodObj);
   };
 
   getCurrentDay = async (userId) => {
     // await fireStoreFunction(userId, 1)
   };
 
-  get7DayHistory = async (userId) => {
-    // await firestoreFunction(userId, 7)
-  };
-
-  get14DayHistory = async (userId) => {
-    // await firestoreFunction(userId, 14)
-  };
-
-  get30DayHistory = async (userId) => {
-    // await firestoreFunction(userId, 30)
+  getHistory = async (userId, today, dateToCompare) => {
+    let historySnapshot = await getDocs(
+      query(
+        foodEntriesRef,
+        where("uid", "==", userId),
+        where("date", "<=", today),
+        where("date", ">=", dateToCompare)
+      )
+    );
+    let history = historySnapshot.docs.map((doc) => doc.data());
+    return history;
   };
 
   getLifetimeHistory = async (userId) => {

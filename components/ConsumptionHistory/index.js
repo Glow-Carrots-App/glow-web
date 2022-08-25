@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 import { useAuth } from "../../context/AuthContext";
-import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
+import FoodEntryModel from "../../model/foodEntry";
 import VerticalColorBreakdown from "../VerticalColorBreakdown";
 import organizeHistory from "../../utils/organizeHistory";
 
@@ -9,12 +10,29 @@ import styles from "./styles.module.css";
 
 const ConsumptionHistory = () => {
   let [days, setDays] = useState(7);
+  let [foodArr, setFoodArr] = useState([]);
 
   const {
     authedUser: { uid },
   } = useAuth();
 
-  let history = organizeHistory(SAMPLE_FOOD_DATA, days);
+  useEffect(() => {
+    async function fetchData() {
+      const today = dayjs().format("YYYY/MM/DD");
+      const dateToCompare = dayjs()
+        .subtract(days - 1, "day")
+        .format("YYYY/MM/DD");
+      const foodArrResponse = await FoodEntryModel.getHistory(
+        uid,
+        today,
+        dateToCompare
+      );
+      setFoodArr(foodArrResponse);
+    }
+    fetchData();
+  }, [days]);
+
+  let history = organizeHistory(foodArr, days);
 
   return (
     <div className={styles.container}>
@@ -50,10 +68,10 @@ const ConsumptionHistory = () => {
       <div className={styles.barChart}>
         <div className={styles.barChartImg} />
         <div className={styles.barChartContainer}>
-          {history.dayArrays.map((day, i) => (
+          {history.dayArrays.map((dayArr, i) => (
             <VerticalColorBreakdown
-              key={`${day} + ${i}`}
-              arr={day}
+              key={`${dayArr} + ${i}`}
+              arr={dayArr}
               days={days}
               height={history.percentages[i]}
             />
