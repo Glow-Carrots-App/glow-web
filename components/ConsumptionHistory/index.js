@@ -30,7 +30,7 @@ const ConsumptionHistory = () => {
       setFoodArr(foodArrResponse);
     }
     fetchData();
-  }, [days]);
+  }, []);
 
   let history = organizeHistory(foodArr, days);
 
