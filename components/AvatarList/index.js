@@ -1,12 +1,16 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext";
 import SmallLinkedButton from "../SmallLinkedButton";
+import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
 
 const AvatarList = () => {
   const [selectedAvatar, setSelectedAvatar] = useState("/avatars/salad.png");
+
+  const router = useRouter();
 
   const {
     authedUser: { uid },
@@ -28,6 +32,11 @@ const AvatarList = () => {
     "/avatars/birthday-cake.png",
     "/avatars/tropical-fruit.png",
   ];
+
+  const handleAvatarUpdate = () => {
+    UserModel.updateAvatar(uid, selectedAvatar);
+    router.push("/settings");
+  };
 
   return (
     <div className={styles.container}>
@@ -65,7 +74,7 @@ const AvatarList = () => {
       </div>
       <div className={styles.buttonContainer}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <SmallLinkedButton href="/settings">Save</SmallLinkedButton>
+        <button onClick={() => handleAvatarUpdate()}>Save</button>
       </div>
     </div>
   );

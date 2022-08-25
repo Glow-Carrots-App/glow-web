@@ -75,8 +75,11 @@ class UserModel {
     // await firestoreFunction(id, dailyGoal)
   };
 
-  updateAvatar = async (id, avatarPath) => {
-    // await firestoreFunction(id, avatarPath)
+  updateAvatar = async (uid, avatarPath) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      avatar: avatarPath
+    })
   };
 }
 
