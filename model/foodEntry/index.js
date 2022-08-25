@@ -16,7 +16,10 @@ import { db } from "../../firebase.js";
 
 import {
   collection,
+  query,
+  where,
   getDoc,
+  getDocs,
   setDoc,
   addDoc,
   updateDoc,
@@ -24,15 +27,23 @@ import {
   doc,
 } from "firebase/firestore";
 
-const foodEntryCollectionRef = collection(db, "foodEntries");
+const foodEntriesRef = collection(db, "foodEntries");
 
 class FoodEntryModel {
   createFoodEntry = async (foodObj) => {
-    return await addDoc(foodEntryCollectionRef, foodObj);
+    return await addDoc(foodEntriesRef, foodObj);
   };
 
-  getCurrentDay = async (userId) => {
-    // await fireStoreFunction(userId, 1)
+  getCurrentDay = async (userId, today) => {
+    let currentDaySnapshot = await getDocs(
+      query(
+        foodEntriesRef,
+        where("uid", "==", userId),
+        where("date", "==", today)
+      )
+    );
+    let currentDay = currentDaySnapshot.docs.map((doc) => doc.data());
+    return currentDay;
   };
 
   get7DayHistory = async (userId) => {
