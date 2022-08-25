@@ -1,11 +1,8 @@
-import { useAuth } from "../../context/AuthContext";
-
 import styles from "./styles.module.css";
 
-const SettingsInputs = () => {
-  const {
-    authedUser: { uid },
-  } = useAuth();
+const SettingsInputs = ({ user }) => {
+  const { firstName, email } = user;
+
   return (
     <form className={styles.container}>
       <label htmlFor="text">Name</label>
@@ -14,7 +11,7 @@ const SettingsInputs = () => {
         id="text"
         type="text"
         name="firstName"
-        value="Robby"
+        value={firstName}
       />
       <label htmlFor="email">Email</label>
       <input
@@ -22,7 +19,7 @@ const SettingsInputs = () => {
         id="email"
         type="text"
         name="email"
-        value="vince@gmail.com"
+        value={email}
       />
     </form>
   );
