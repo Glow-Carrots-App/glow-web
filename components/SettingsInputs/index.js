@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 import styles from "./styles.module.css";
 
 const SettingsInputs = ({ user }) => {
+  const [name, setName] = useState();
   const { firstName, email } = user;
 
   return (
@@ -11,7 +14,12 @@ const SettingsInputs = ({ user }) => {
         id="text"
         type="text"
         name="firstName"
-        value={firstName}
+        value={setName}
+        // value={firstName}
+        //default value {firstName}
+        //setName
+        //value tied to state
+        //onChange
       />
       <label htmlFor="email">Email</label>
       <input
