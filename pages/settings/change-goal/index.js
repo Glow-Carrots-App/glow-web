@@ -14,6 +14,7 @@ import styles from "./styles.module.css";
 const ChangeGoal = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
+
   const { authedUser } = useAuth();
   const uid = authedUser?.uid ? authedUser.uid : null;
 
