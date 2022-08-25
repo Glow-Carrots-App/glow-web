@@ -1,4 +1,3 @@
-import { useAuth } from "../../context/AuthContext";
 import StatsCard from "../StatsCard";
 import checkHighestColor from "../../utils/checkHighestColor";
 import checkLowestColor from "../../utils/checkLowestColor";
@@ -8,16 +7,9 @@ import SAMPLE_FOOD_DATA from "../../sampleData/userSampleFoodData";
 
 import styles from "./styles.module.css";
 
-const Statistics = () => {
-  const {
-    authedUser: { uid },
-  } = useAuth();
-
+const Statistics = ({ user }) => {
   const lowestColor = checkLowestColor(SAMPLE_FOOD_DATA);
   const highestColor = checkHighestColor(SAMPLE_FOOD_DATA);
-
-  const userDayStreak = 20;
-  const userGoldenCarrots = 40;
 
   const lowIcon = pickLowIcon(lowestColor);
   const highIcon = pickHighIcon(highestColor);
@@ -35,12 +27,12 @@ const Statistics = () => {
         <StatsCard
           src="/stats/dayStreak.png"
           title="Day Streak"
-          data={userDayStreak}
+          data={user.dayStreak}
         />
         <StatsCard
           src="/stats/goldenCarrot.png"
           title="Golden Carrots"
-          data={userGoldenCarrots}
+          data={user.goldenCarrots}
         />
       </div>
       <div className={styles.statsRow}>
