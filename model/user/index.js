@@ -47,12 +47,18 @@ class UserModel {
     // await firestoreFunction(uid)
   };
 
-  updateName = async (id, newName /*string*/) => {
-    // await firestoreFunction(id, newName)
+  updateName = async (uid, newName) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      firstName: newName,
+    });
   };
 
-  updateEmail = async (id, newEmail /*string*/) => {
-    // await firestoreFunction(id, newEmail)
+  updateEmail = async (uid, newEmail) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      email: newEmail,
+    });
   };
 
   updateGoldenCarrots = async (id, goldenCarrots /*number*/) => {
@@ -78,8 +84,8 @@ class UserModel {
   updateAvatar = async (uid, avatarPath) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      avatar: avatarPath
-    })
+      avatar: avatarPath,
+    });
   };
 }
 

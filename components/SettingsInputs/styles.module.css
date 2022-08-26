@@ -5,11 +5,34 @@
   width: 307px;
 }
 
-.settingsInput {
+.inputButtonPair {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.input {
   background: none;
   height: 50px;
+  width: 340px;
   border-width: 0 0 1px;
   border-color: black;
+}
+
+.inputButton,
+.inputButtonSaved {
+  background-color: rgba(235, 221, 245, 0.3);
+  width: 100px;
+  border-radius: 6px;
+  border-width: 1px;
+  margin: 10px 0;
+}
+
+.inputButton {
+  border: 1px solid gray;
+}
+.inputButtonSaved {
+  border: 1.8px solid var(--purple-dark);
 }
 
 .container label ~ label {
@@ -21,8 +44,15 @@
     width: 596px;
   }
 
-  .settingsInput {
-    height: 92px;
-    font-size: 24px;
+  .input {
+    height: 95px;
+    width: 450px;
+    font-size: x-large;
+  }
+
+  .inputButton,
+  .inputButtonSaved {
+    width: 150px;
+    border-radius: 8px;
   }
 }
