@@ -3,7 +3,6 @@ import dayjs from "dayjs";
 
 import { useAuth } from "../../context/AuthContext";
 import FoodEntryModel from "../../model/foodEntry";
-import UserModel from "../../model/user";
 import Heading1 from "../../components/Heading1";
 import TodayInfo from "../../components/TodayInfo";
 import ConsumptionHistory from "../../components/ConsumptionHistory";
@@ -17,7 +16,6 @@ const Today = () => {
   const [currentDay, setCurrentDay] = useState([]);
   const [foodHistory, setFoodHistory] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState();
 
   const { authedUser } = useAuth();
   const uid = authedUser?.uid ? authedUser.uid : null;
@@ -36,11 +34,9 @@ const Today = () => {
         today,
         dateToCompare
       );
-      const userResponse = await UserModel.getUser(uid);
       setCurrentDay(currentDayResponse);
       setFoodHistory(thirtyDayHistoryResponse);
       setLoading(false);
-      setUser(userResponse);
     }
     fetchData();
   }, []);
@@ -53,7 +49,7 @@ const Today = () => {
     <WithProtected>
       <div className={styles.container}>
         <Heading1>Today</Heading1>
-        <TodayInfo currentDay={currentDay} user={user} />
+        <TodayInfo currentDay={currentDay} />
         <ConsumptionHistory foodHistory={foodHistory} />
         <BottomTabs isToday={true} />
       </div>
