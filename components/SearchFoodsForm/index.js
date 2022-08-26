@@ -16,6 +16,7 @@ const SearchFoodsForm = ({ user, currentDay }) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
+  const [isNew, setIsNew] = useState(true);
 
   const {
     dailyGoal: { amount, isComplete },
@@ -53,10 +54,13 @@ const SearchFoodsForm = ({ user, currentDay }) => {
 
     try {
       FoodEntryModel.createFoodEntry(newFood);
-      if (currentCount + 1 >= amount && !isComplete) {
+      console.log("CC", currentCount, "A", amount, "isComplete", isComplete);
+      if (currentCount + 1 >= amount && !isComplete && isNew) {
+        console.log("in if statement");
         UserModel.incrementDayStreak(uid, dayStreak);
         UserModel.incrementGoldenCarrots(uid, goldenCarrots);
         UserModel.updateGoalIsComplete(uid, true);
+        setIsNew(false);
       }
       setSearchInput("");
       setSelectedFood(null);

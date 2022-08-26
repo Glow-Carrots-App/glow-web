@@ -54,10 +54,10 @@ class UserModel {
     // await firestoreFunction(id, 0)
   };
 
-  static updateDailyGoal = async (uid, dailyGoal, isComplete) => {
+  static updateDailyGoal = async (uid, dailyGoal) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      dailyGoal: { amount: dailyGoal, isComplete: isComplete },
+      "dailyGoal.amount": dailyGoal,
     });
   };
 
