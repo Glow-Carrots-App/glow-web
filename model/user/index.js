@@ -37,7 +37,6 @@ class UserModel {
   };
 
   static incrementGoldenCarrots = async (uid, goldenCarrots) => {
-    console.log("In Increment Carrots");
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
       goldenCarrots: goldenCarrots + 1,
@@ -45,7 +44,6 @@ class UserModel {
   };
 
   static incrementDayStreak = async (uid, currentDayStreak) => {
-    console.log("In Increment Streak");
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
       dayStreak: currentDayStreak + 1,
@@ -63,10 +61,10 @@ class UserModel {
     });
   };
 
-  static isGoalCompleteToTrue = async (uid, amount) => {
+  static updateGoalIsComplete = async (uid, isGoalComplete) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.isComplete": true,
+      "dailyGoal.isComplete": isGoalComplete,
     });
   };
 

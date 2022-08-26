@@ -1,17 +1,12 @@
-import { useEffect } from "react";
 import { VictoryPie } from "victory";
 
 import populateDonutChartData from "../../utils/populateDonutChartData";
-import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
 
 const TodayInfo = ({ currentDay, user }) => {
   const {
-    dailyGoal: { amount, isComplete },
-    goldenCarrots,
-    dayStreak,
-    uid,
+    dailyGoal: { amount },
   } = user;
 
   const currentCount = currentDay.length;
@@ -25,14 +20,6 @@ const TodayInfo = ({ currentDay, user }) => {
     "#9a7dcc",
     "#d1d0d0",
   ];
-
-  useEffect(() => {
-    if (amount === currentDay.length && !isComplete) {
-      UserModel.incrementDayStreak(uid, dayStreak);
-      UserModel.incrementGoldenCarrots(uid, goldenCarrots);
-      UserModel.isGoalCompleteToTrue(uid);
-    }
-  }, []);
 
   return (
     <div className={styles.container}>

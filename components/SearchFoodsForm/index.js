@@ -1,8 +1,8 @@
 import { useState } from "react";
 import dayjs from "dayjs";
 
-import { useAuth } from "../../context/AuthContext";
 import FoodEntryModel from "../../model/foodEntry";
+import UserModel from "../../model/user";
 import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
@@ -11,17 +11,21 @@ import alphabetizeFoods from "../../utils/alphabetizeFoods";
 
 import styles from "./styles.module.css";
 
-const SearchFoodsForm = () => {
+const SearchFoodsForm = ({ user, currentDay }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
 
   const {
-    authedUser: { uid },
-  } = useAuth();
+    dailyGoal: { amount, isComplete },
+    dayStreak,
+    goldenCarrots,
+    uid,
+  } = user;
 
   const alphabetizedFoods = alphabetizeFoods(masterFoodLibrary);
+  const currentCount = currentDay.length;
 
   const filteredFood = !selectedColor
     ? alphabetizedFoods.filter((food) =>
@@ -49,6 +53,11 @@ const SearchFoodsForm = () => {
 
     try {
       FoodEntryModel.createFoodEntry(newFood);
+      if (currentCount + 1 >= amount && !isComplete) {
+        UserModel.incrementDayStreak(uid, dayStreak);
+        UserModel.incrementGoldenCarrots(uid, goldenCarrots);
+        UserModel.updateGoalIsComplete(uid, true);
+      }
       setSearchInput("");
       setSelectedFood(null);
     } catch (err) {
@@ -91,7 +100,7 @@ const SearchFoodsForm = () => {
           type="submit"
           name="submitMessage"
           value="Add"
-          onClick={(e) => handleEatFood(e)}
+          onClick={handleEatFood}
         />
       </div>
     </div>
