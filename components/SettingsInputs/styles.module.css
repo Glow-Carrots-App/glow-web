@@ -54,5 +54,6 @@
   .inputButtonSaved {
     width: 150px;
     border-radius: 8px;
+    font-size: x-large;
   }
 }
