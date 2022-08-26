@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 
-export default function filterByDate(array, daysBehind) {
+export default function filterByDate(foodList, daysBehind) {
   let dateToCompare = dayjs().subtract(daysBehind, "day");
-  const filteredArr = array.filter((item) => {
-    return dateToCompare.isSame(item.date, "day");
+  const filteredFoodList = foodList.filter((food) => {
+    return dateToCompare.isSame(food.date, "day");
   });
-  return filteredArr;
+  return filteredFoodList;
 }

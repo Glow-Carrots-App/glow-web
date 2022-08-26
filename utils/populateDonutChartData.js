@@ -1,4 +1,4 @@
-export default function populateDonutChartData(foodArr, userGoal) {
+export default function populateDonutChartData(foodList, userGoal) {
   const data = [
     { x: " ", y: 0 },
     { x: " ", y: 0 },
@@ -8,7 +8,7 @@ export default function populateDonutChartData(foodArr, userGoal) {
     { x: " ", y: 0 },
     { x: " ", y: userGoal },
   ];
-  foodArr.forEach((food) => {
+  foodList.forEach((food) => {
     switch (food.color) {
       case "Red":
         data[0].y++;

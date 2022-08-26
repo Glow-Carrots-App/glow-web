@@ -5,8 +5,8 @@ import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
 const foodEntriesRef = collection(db, "foodEntries");
 
 class FoodEntryModel {
-  createFoodEntry = async (foodObj) => {
-    return await addDoc(foodEntriesRef, foodObj);
+  createFoodEntry = async (foodEntry) => {
+    return await addDoc(foodEntriesRef, foodEntry);
   };
 
   getCurrentDay = async (userId, today) => {
