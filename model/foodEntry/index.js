@@ -5,11 +5,11 @@ import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
 const foodEntriesRef = collection(db, "foodEntries");
 
 class FoodEntryModel {
-  createFoodEntry = async (foodObj) => {
+  static createFoodEntry = async (foodObj) => {
     return await addDoc(foodEntriesRef, foodObj);
   };
 
-  getCurrentDay = async (userId, today) => {
+  static getCurrentDay = async (userId, today) => {
     let currentDaySnapshot = await getDocs(
       query(
         foodEntriesRef,
@@ -21,7 +21,7 @@ class FoodEntryModel {
     return currentDay;
   };
 
-  getThirtyDayHistory = async (userId, today, dateToCompare) => {
+  static getThirtyDayHistory = async (userId, today, dateToCompare) => {
     let thirtyDayHistorySnapshot = await getDocs(
       query(
         foodEntriesRef,
@@ -36,7 +36,7 @@ class FoodEntryModel {
     return thirtyDayHistory;
   };
 
-  getLifetimeHistory = async (userId) => {
+  static getLifetimeHistory = async (userId) => {
     const lifetimeHistorySnapshot = await getDocs(
       query(foodEntriesRef, where("uid", "==", userId))
     );
@@ -47,4 +47,4 @@ class FoodEntryModel {
   };
 }
 
-export default new FoodEntryModel();
+export default FoodEntryModel;
