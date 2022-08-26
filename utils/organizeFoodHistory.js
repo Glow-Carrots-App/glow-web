@@ -1,19 +1,20 @@
-import createHeightPercentages from "./createHeightPercentages";
+import hashDay from "./hashDay";
+import populateWithHeightPercentages from "./populateWithHeightPercentages";
 import filterByDate from "./filterByDate";
 
 export default function organizeFoodHistory(foodHistory, numberOfDays) {
-  let organizedHistory = {
-    days: [],
-    percentages: [],
-  };
+  let organizedFoodHistory = [];
   let lengths = [];
 
   for (let i = 0; i < numberOfDays; i++) {
-    organizedHistory.days.push(filterByDate(foodHistory, i));
-    lengths.push(organizedHistory.days[i].length);
+    const day = filterByDate(foodHistory, i);
+    lengths.push(day.length);
+    
+    const hashedDay = hashDay(day)
+    organizedFoodHistory.push(hashedDay);
   }
 
-  organizedHistory.percentages = createHeightPercentages(lengths);
+  populateWithHeightPercentages(lengths, organizedFoodHistory);
 
-  return organizedHistory;
+  return organizedFoodHistory;
 }

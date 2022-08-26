@@ -42,12 +42,12 @@ const ConsumptionHistory = ({ foodHistory }) => {
       <div className={styles.barChart}>
         <div className={styles.barChartImg} />
         <div className={styles.barChartContainer}>
-          {organizedFoodHistory.days.map((day, i) => (
+          {organizedFoodHistory.map((day, i) => (
             <VerticalColorBreakdown
               key={`${day} + ${i}`}
               day={day}
               numberOfDays={numberOfDays}
-              height={organizedFoodHistory.percentages[i]}
+              height={day.percentage}
             />
           ))}
         </div>

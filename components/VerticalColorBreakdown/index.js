@@ -1,11 +1,7 @@
-import countColors from "../../utils/countColors";
-
 import styles from "./styles.module.css";
 
 const VerticalColorBreakdown = ({ day, numberOfDays, height }) => {
-  let colorCount = countColors(day);
-
-  if (!colorCount) {
+  if (!day.percentage) {
     return <div className={styles.progressBar}>_</div>;
   }
 
@@ -20,8 +16,10 @@ const VerticalColorBreakdown = ({ day, numberOfDays, height }) => {
 
   return (
     <div className={className} style={{ height: height }}>
-      {colorCount.map((color, index) => {
-        if (index === 6 || color.count === 0) {
+      {Object.keys(day).map((key, index) => {
+        let height = day[key];
+        let color = key;
+        if (height === "0%" || color === "percentage") {
           return null;
         }
         return (
@@ -29,8 +27,8 @@ const VerticalColorBreakdown = ({ day, numberOfDays, height }) => {
             key={color + index}
             className={styles.progressItem}
             style={{
-              backgroundColor: color.fillHex,
-              height: color.percentage,
+              backgroundColor: color,
+              height: height,
             }}
           />
         );
