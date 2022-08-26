@@ -30,12 +30,20 @@ class UserModel {
     // await firestoreFunction(id, newEmail)
   };
 
-  static updateGoldenCarrots = async (id, goldenCarrots) => {
-    // await firestoreFunction(id, goldenCarrots)
+  static incrementGoldenCarrots = async (uid, goldenCarrots) => {
+    console.log("In Increment Carrots");
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      goldenCarrots: goldenCarrots + 1,
+    });
   };
 
-  static incrementDayStreak = async (id, currentDayStreak) => {
-    // await firestoreFunction(id, currentDayStreak)
+  static incrementDayStreak = async (uid, currentDayStreak) => {
+    console.log("In Increment Streak");
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      dayStreak: currentDayStreak + 1,
+    });
   };
 
   static clearDayStreak = async (id, isGoalComplete) => {
@@ -46,6 +54,13 @@ class UserModel {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
       dailyGoal: { amount: dailyGoal, isComplete: isComplete },
+    });
+  };
+
+  static isGoalCompleteToTrue = async (uid, amount) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      "dailyGoal.isComplete": true,
     });
   };
 
