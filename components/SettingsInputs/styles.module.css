@@ -55,5 +55,6 @@
     width: 150px;
     border-radius: 8px;
     font-size: x-large;
+    border: 2.8px solid var(--purple-dark);
   }
 }
