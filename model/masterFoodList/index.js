@@ -1,6 +1,11 @@
-// FOOD MASTER LIST MODEL
-// import firestore
+import { db } from "../../firebase.js";
 
-const getMasterFoodList = async (id) => {
-  // await firestoreFunction(id)
-};
+import { getDoc, setDoc, updateDoc, doc } from "firebase/firestore";
+
+class MasterFoodListModel {
+  static getMasterFoodList = async (id) => {
+    // await firestoreFunction(id)
+  };
+}
+
+export default MasterFoodListModel;

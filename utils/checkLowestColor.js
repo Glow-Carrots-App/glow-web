@@ -1,8 +1,8 @@
 import countColors from "./countColors";
 
 export default function checkLowestColor(lifetimeEaten) {
-  if (!lifetimeEaten) {
-    return null;
+  if (lifetimeEaten.length === 0) {
+    return { color: "" };
   }
   let counts = countColors(lifetimeEaten);
   counts.pop();

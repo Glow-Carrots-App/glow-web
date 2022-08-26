@@ -7,6 +7,7 @@ import Heading1 from "../../components/Heading1";
 import TodayInfo from "../../components/TodayInfo";
 import ConsumptionHistory from "../../components/ConsumptionHistory";
 import BottomTabs from "../../components/BottomTabs";
+import Loading from "../../components/Loading";
 import WithProtected from "../../components/WithProtected";
 
 import styles from "./styles.module.css";
@@ -14,6 +15,7 @@ import styles from "./styles.module.css";
 const Today = () => {
   const [currentDay, setCurrentDay] = useState([]);
   const [foodHistory, setFoodHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const { authedUser } = useAuth();
   const uid = authedUser?.uid ? authedUser.uid : null;
@@ -21,21 +23,27 @@ const Today = () => {
   useEffect(() => {
     async function fetchData() {
       if (!uid) {
+        setLoading(false);
         return;
       }
       const today = dayjs().format("YYYY/MM/DD");
       const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
       const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
-      const foodHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
+      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
         uid,
         today,
         dateToCompare
       );
       setCurrentDay(currentDayResponse);
-      setFoodHistory(foodHistoryResponse);
+      setFoodHistory(thirtyDayHistoryResponse);
+      setLoading(false);
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <WithProtected>

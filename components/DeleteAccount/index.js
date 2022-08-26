@@ -1,13 +1,18 @@
 import { useRouter } from "next/router";
 
+import { useAuth } from "../../context/AuthContext";
+import UserModel from "../../model/user";
+import FoodEntryModel from "../../model/foodEntry";
 import Heading2 from "../Heading2";
 import SmallLinkedButton from "../SmallLinkedButton";
-import { useAuth } from "../../context/AuthContext";
 
 import styles from "./styles.module.css";
 
 const DeleteAccount = () => {
-  const { deleteAccount } = useAuth();
+  const {
+    deleteAccount,
+    authedUser: { uid },
+  } = useAuth();
   const router = useRouter();
 
   const handleDelete = async (e) => {
@@ -15,6 +20,8 @@ const DeleteAccount = () => {
 
     try {
       await deleteAccount();
+      await UserModel.deleteUser(uid);
+      await FoodEntryModel.deleteUserHistory(uid);
       router.push("/sign-in");
     } catch (err) {
       console.log(err);
@@ -26,7 +33,7 @@ const DeleteAccount = () => {
       <Heading2>Are you sure you want to delete your account?</Heading2>
       <div className={styles.buttonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <a className={styles.smallButton} onClick={(e) => handleDelete(e)}>
+        <a className={styles.smallButton} onClick={handleDelete}>
           Delete Account
         </a>
       </div>
