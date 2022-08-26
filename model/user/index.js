@@ -1,34 +1,9 @@
-// USER DB MODEL
-// import firestore
-
-// individual user
-// user = {
-//     uid: ""
-//     firstName: “Robby”,
-//     email: “robby@gmail.com”,
-//     joinDate: “2020-04-31”,
-//     avatar: fileLocation,
-//     dailyGoal: {amount: 10, isComplete: false},
-//     dayStreak: 20,
-//     goldenCarrots: 40,
-//     }
-
 import { db } from "../../firebase.js";
 
-import {
-  collection,
-  getDoc,
-  setDoc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
-
-const userCollectionRef = collection(db, "users");
+import { getDoc, setDoc, updateDoc, doc } from "firebase/firestore";
 
 class UserModel {
-  getUser = async (uid) => {
+  static getUser = async (uid) => {
     const docRef = doc(db, "users", uid);
     const docSnap = await getDoc(docRef);
 
@@ -39,46 +14,42 @@ class UserModel {
     }
   };
 
-  createUser = async (newUser, uid) => {
+  static createUser = async (newUser, uid) => {
     return await setDoc(doc(db, "users", uid), newUser);
   };
 
-  deleteUser = async (uid) => {
-    // await firestoreFunction(uid)
+  static deleteUser = async (uid) => {
+    return await deleteDoc(doc(db, "users", uid));
   };
 
-  updateName = async (id, newName /*string*/) => {
+  static updateName = async (id, newName) => {
     // await firestoreFunction(id, newName)
   };
 
-  updateEmail = async (id, newEmail /*string*/) => {
+  static updateEmail = async (id, newEmail) => {
     // await firestoreFunction(id, newEmail)
   };
 
-  updateGoldenCarrots = async (id, goldenCarrots /*number*/) => {
-    //   goldenCarrots = goldenCarrots + 1;
+  static updateGoldenCarrots = async (id, goldenCarrots) => {
     // await firestoreFunction(id, goldenCarrots)
   };
 
-  incrementDayStreak = async (id, currentDayStreak) => {
-    //   currentDayStreak = currentDayStreak + 1;
+  static incrementDayStreak = async (id, currentDayStreak) => {
     // await firestoreFunction(id, currentDayStreak)
   };
 
-  clearDayStreak = async (id, isGoalComplete) => {
-    //   if (!isGoalComplete) {
+  static clearDayStreak = async (id, isGoalComplete) => {
     // await firestoreFunction(id, 0)
-    //   }
   };
 
-  updateDailyGoal = async (uid, dailyGoal, isComplete) => {
+  static updateDailyGoal = async (uid, dailyGoal, isComplete) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
       dailyGoal: { amount: dailyGoal, isComplete: isComplete },
     });
   };
 
-  updateAvatar = async (uid, avatarPath) => {
+  static updateAvatar = async (uid, avatarPath) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
       avatar: avatarPath,
@@ -86,4 +57,4 @@ class UserModel {
   };
 }
 
-export default new UserModel();
+export default UserModel;
