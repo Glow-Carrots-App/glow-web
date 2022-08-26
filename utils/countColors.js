@@ -5,67 +5,67 @@ export default function countColors(foods) {
   let colorCounts = [
     {
       count: 0,
-      color: "red",
+      color: "Red",
       fillHex: "#fc7790",
       textHex: "#fc7790",
       percentage: "",
     },
     {
       count: 0,
-      color: "orange",
+      color: "Orange",
       fillHex: "#fd8f52",
       textHex: "#fd8f52",
       percentage: "",
     },
     {
       count: 0,
-      color: "yellow",
+      color: "Yellow",
       fillHex: "#f3e28d",
       textHex: "#ffbb1c",
       percentage: "",
     },
     {
       count: 0,
-      color: "white",
+      color: "White",
       fillHex: "#fef2d1",
       textHex: "#97906e",
       percentage: "",
     },
     {
       count: 0,
-      color: "green",
+      color: "Green",
       fillHex: "#63dd92",
       textHex: "#479d45",
       percentage: "",
     },
     {
       count: 0,
-      color: "purple",
+      color: "Purple",
       fillHex: "#9a7dcc",
       textHex: "#7471e7",
       percentage: "",
     },
-    { count: 0, color: "total", percentage: "" },
+    { count: 0, color: "Total", percentage: "" },
   ];
 
   foods.forEach((item) => {
     switch (item.color) {
-      case "red":
+      case "Red":
         colorCounts[0].count++;
         break;
-      case "orange":
+      case "Orange":
         colorCounts[1].count++;
         break;
-      case "yellow":
+      case "Yellow":
         colorCounts[2].count++;
         break;
-      case "white":
+      case "White":
         colorCounts[3].count++;
         break;
-      case "green":
+      case "Green":
         colorCounts[4].count++;
         break;
-      case "purple":
+      case "Purple":
         colorCounts[5].count++;
         break;
     }

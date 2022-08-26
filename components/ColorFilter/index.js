@@ -2,12 +2,12 @@ import styles from "./styles.module.css";
 
 const ColorFilter = ({ selectedColor, setSelectedColor }) => {
   const icons = [
-    "/colorIcons/red.png",
-    "/colorIcons/yellow.png",
-    "/colorIcons/orange.png",
-    "/colorIcons/green.png",
-    "/colorIcons/purple.png",
-    "/colorIcons/white.png",
+    "/colorIcons/Red.png",
+    "/colorIcons/Yellow.png",
+    "/colorIcons/Orange.png",
+    "/colorIcons/Green.png",
+    "/colorIcons/Purple.png",
+    "/colorIcons/White.png",
   ];
 
   const handleSelectedColor = (color) => {
