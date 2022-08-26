@@ -7,12 +7,17 @@ import {
   deleteUser,
   updatePassword,
   updateEmail,
+  signInWithRedirect,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { useRouter } from "next/router";
+
+import { auth, app, googleProvider } from "../firebase";
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
+
+// const router = useRouter();
 
 export const AuthContextProvider = ({ children }) => {
   const [authedUser, setAuthedUser] = useState(null);
@@ -39,7 +44,11 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const googleLogin = () => {
+    return signInWithRedirect(auth, googleProvider);
   };
 
   const logout = async () => {
@@ -71,6 +80,7 @@ export const AuthContextProvider = ({ children }) => {
         deleteAccount,
         changePassword,
         changeEmail,
+        googleLogin,
       }}
     >
       {loading ? null : children}

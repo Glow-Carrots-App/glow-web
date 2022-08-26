@@ -10,7 +10,7 @@ const SignInForm = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -21,9 +21,18 @@ const SignInForm = () => {
       console.log("Login failed", error);
     }
   };
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleLogin();
+      router.push("/today");
+    } catch (error) {
+      console.log("Login failed", error);
+    }
+  };
 
   return (
-    <form className={styles.container} onSubmit={(e) => handleSignIn(e)}>
+    <form className={styles.container} onSubmit={handleSignIn}>
       <input
         type="text"
         className={styles.signInFields}
@@ -44,6 +53,7 @@ const SignInForm = () => {
         type="button"
         value="Sign In With Google"
         className={styles.signInButton}
+        onClick={handleGoogleSignIn}
       />
     </form>
   );
