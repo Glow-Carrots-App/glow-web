@@ -1,6 +1,15 @@
-import { db } from "../../firebase.js";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  addDoc,
+  writeBatch,
+  deleteDoc,
+} from "firebase/firestore";
 
-import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
+import { db } from "../../firebase.js";
+import chunkArray from "../../utils/chunkArray.js";
 
 const foodEntriesRef = collection(db, "foodEntries");
 
@@ -44,6 +53,23 @@ class FoodEntryModel {
       doc.data()
     );
     return lifetimeHistory;
+  };
+
+  deleteUserHistory = async (userId) => {
+    const userHistorySnapshot = await getDocs(
+      query(foodEntriesRef, where("uid", "==", userId))
+    );
+    const MAX_WRITES_PER_BATCH = 500;
+    const batches = chunkArray(userHistorySnapshot.docs, MAX_WRITES_PER_BATCH);
+    const commitBatchPromises = [];
+
+    batches.forEach((batch) => {
+      const deleteBatch = writeBatch(db);
+      batch.forEach((doc) => deleteBatch.delete(doc.ref));
+      commitBatchPromises.push(deleteBatch.commit());
+    });
+
+    await Promise.all(commitBatchPromises);
   };
 }
 

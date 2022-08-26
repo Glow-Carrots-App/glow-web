@@ -19,7 +19,7 @@ class UserModel {
   };
 
   static deleteUser = async (uid) => {
-    // await firestoreFunction(uid)
+    return await deleteDoc(doc(db, "users", uid));
   };
 
   static updateName = async (id, newName) => {
