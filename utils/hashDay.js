@@ -1,6 +1,6 @@
 import countColors from "./countColors";
 
-export default function hasDay(day) {
+export default function hashDay(day) {
   const hashedDay =
     day.length === 0
       ? {}
