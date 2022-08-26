@@ -55,7 +55,7 @@ class FoodEntryModel {
     return lifetimeHistory;
   };
 
-  deleteUserHistory = async (userId) => {
+  static deleteUserHistory = async (userId) => {
     const userHistorySnapshot = await getDocs(
       query(foodEntriesRef, where("uid", "==", userId))
     );

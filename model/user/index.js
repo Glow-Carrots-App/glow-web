@@ -22,12 +22,18 @@ class UserModel {
     return await deleteDoc(doc(db, "users", uid));
   };
 
-  static updateName = async (id, newName) => {
-    // await firestoreFunction(id, newName)
+  static updateName = async (uid, newName) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      firstName: newName,
+    });
   };
 
-  static updateEmail = async (id, newEmail) => {
-    // await firestoreFunction(id, newEmail)
+  static updateEmail = async (uid, newEmail) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      email: newEmail,
+    });
   };
 
   static incrementGoldenCarrots = async (uid, goldenCarrots) => {
