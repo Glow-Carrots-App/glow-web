@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext.js";
+import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
 
@@ -25,7 +26,6 @@ const SignInForm = () => {
     e.preventDefault();
     try {
       await googleLogin();
-      router.push("/today");
     } catch (error) {
       console.log("Login failed", error);
     }

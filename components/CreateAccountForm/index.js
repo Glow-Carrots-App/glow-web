@@ -6,6 +6,7 @@ import { useAuth } from "../../context/AuthContext.js";
 import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
+import createNewUserDataModel from "../../utils/createNewUserDataModel.js";
 
 const CreateAccountForm = () => {
   const [email, setEmail] = useState("");
@@ -21,22 +22,8 @@ const CreateAccountForm = () => {
 
     try {
       const { user } = await signup(email, password);
-
-      const newUser = {
-        avatar: "/avatars/camp.png",
-        dailyGoal: {
-          amount: 5,
-          isComplete: false,
-        },
-        dayStreak: 0,
-        email,
-        firstName,
-        goldenCarrots: 0,
-        joinDate: dayjs().format("MM/DD/YYYY"),
-        uid: user.uid,
-      };
-
-      await UserModel.createUser(newUser, user.uid);
+      const newUser = createNewUserDataModel(email, firstName, user.uid);
+      await UserModel.createUser(newUser);
       router.push("/today");
     } catch (err) {
       console.log(err);

@@ -8,16 +8,17 @@ import {
   updatePassword,
   updateEmail,
   signInWithRedirect,
+  getRedirectResult,
+  getAdditionalUserInfo,
 } from "firebase/auth";
-import { useRouter } from "next/router";
 
-import { auth, app, googleProvider } from "../firebase";
+import UserModel from "../model/user";
+import { auth, googleProvider } from "../firebase";
+import createNewUserDataModel from "../utils/createNewUserDataModel";
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
-
-// const router = useRouter();
 
 export const AuthContextProvider = ({ children }) => {
   const [authedUser, setAuthedUser] = useState(null);
@@ -25,6 +26,25 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      const debugRedirectResult = async () => {
+        try {
+          const result = await getRedirectResult(auth);
+          if (result) {
+            const {
+              user: { email, uid },
+            } = result;
+            const {
+              isNewUser,
+              profile: { given_name },
+            } = getAdditionalUserInfo(result);
+            const newUser = createNewUserDataModel(email, given_name, uid);
+            isNewUser ? await UserModel.createUser(newUser) : null;
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
       if (user) {
         setAuthedUser({
           uid: user.uid,
@@ -33,6 +53,8 @@ export const AuthContextProvider = ({ children }) => {
       } else {
         setAuthedUser(null);
       }
+
+      debugRedirectResult();
       setLoading(false);
     });
 
@@ -48,7 +70,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const googleLogin = () => {
-    return signInWithRedirect(auth, googleProvider);
+    signInWithRedirect(auth, googleProvider);
   };
 
   const logout = async () => {
