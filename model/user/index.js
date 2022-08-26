@@ -1,6 +1,6 @@
 import { db } from "../../firebase.js";
 
-import { getDoc, setDoc, updateDoc, doc } from "firebase/firestore";
+import { getDoc, setDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
 
 class UserModel {
   static getUser = async (uid) => {
