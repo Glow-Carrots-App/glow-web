@@ -10,22 +10,22 @@ export default function populateDonutChartData(foodArr, userGoal) {
   ];
   foodArr.forEach((food) => {
     switch (food.color) {
-      case "red":
+      case "Red":
         data[0].y++;
         break;
-      case "orange":
+      case "Orange":
         data[1].y++;
         break;
-      case "yellow":
+      case "Yellow":
         data[2].y++;
         break;
-      case "white":
+      case "White":
         data[3].y++;
         break;
-      case "green":
+      case "Green":
         data[4].y++;
         break;
-      case "purple":
+      case "Purple":
         data[5].y++;
         break;
     }

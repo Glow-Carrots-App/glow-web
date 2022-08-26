@@ -1,16 +1,16 @@
 const pickLowIcon = (lowestColor) => {
   switch (lowestColor.color) {
-    case "red":
+    case "Red":
       return "/colorIcons/red.png";
-    case "orange":
+    case "Orange":
       return "/colorIcons/orange.png";
-    case "yellow":
+    case "Yellow":
       return "/colorIcons/yellow.png";
-    case "green":
+    case "Green":
       return "/colorIcons/green.png";
-    case "purple":
+    case "Purple":
       return "/colorIcons/purple.png";
-    case "white":
+    case "White":
       return "/colorIcons/white.png";
     case "":
       return "/colorIcons/sad.png";

@@ -2,7 +2,7 @@ const masterFoodLibrary = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -10,7 +10,7 @@ const masterFoodLibrary = [
   {
     product: "Lettuce",
     productSearch: "Lettuce (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -18,7 +18,7 @@ const masterFoodLibrary = [
   {
     product: "Arugula",
     productSearch: "Arugula",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -26,7 +26,7 @@ const masterFoodLibrary = [
   {
     product: "Asparagus",
     productSearch: "Asparagus (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -34,7 +34,7 @@ const masterFoodLibrary = [
   {
     product: "Wasabi",
     productSearch: "Wasabi",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -42,7 +42,7 @@ const masterFoodLibrary = [
   {
     product: "Chlorella",
     productSearch: "Chlorella",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -50,7 +50,7 @@ const masterFoodLibrary = [
   {
     product: "Cucumber",
     productSearch: "Cucumber (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -58,7 +58,7 @@ const masterFoodLibrary = [
   {
     product: "Dandelion Green",
     productSearch: "Dandelion, Greens",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -66,7 +66,7 @@ const masterFoodLibrary = [
   {
     product: "Fiddlehead Fern",
     productSearch: "Fiddlehead Fern",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -74,7 +74,7 @@ const masterFoodLibrary = [
   {
     product: "Green Tea",
     productSearch: "Green Tea",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -82,7 +82,7 @@ const masterFoodLibrary = [
   {
     product: "Lamb's Quarters",
     productSearch: "Lamb's Quarters",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -90,7 +90,7 @@ const masterFoodLibrary = [
   {
     product: "Lemongrass",
     productSearch: "Lemongrass",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -98,7 +98,7 @@ const masterFoodLibrary = [
   {
     product: "Moringa",
     productSearch: "Moringa",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -106,7 +106,7 @@ const masterFoodLibrary = [
   {
     product: "Nopal/Cactus",
     productSearch: "Nopal/Cactus",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -114,7 +114,7 @@ const masterFoodLibrary = [
   {
     product: "Stinging Nettle",
     productSearch: "Stinging Nettle",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -122,7 +122,7 @@ const masterFoodLibrary = [
   {
     product: "Seaweed",
     productSearch: "Seaweed",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -130,7 +130,7 @@ const masterFoodLibrary = [
   {
     product: "Rosemary",
     productSearch: "Rosemary",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -138,7 +138,7 @@ const masterFoodLibrary = [
   {
     product: "Spirulina",
     productSearch: "Spirulina",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -146,7 +146,7 @@ const masterFoodLibrary = [
   {
     product: "Leek",
     productSearch: "Leek",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -154,7 +154,7 @@ const masterFoodLibrary = [
   {
     product: "Sprouts",
     productSearch: "Sprouts (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -162,7 +162,7 @@ const masterFoodLibrary = [
   {
     product: "Wheatgrass",
     productSearch: "Wheatgrass",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -170,7 +170,7 @@ const masterFoodLibrary = [
   {
     product: "Sage",
     productSearch: "Sage",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -178,7 +178,7 @@ const masterFoodLibrary = [
   {
     product: "Thyme",
     productSearch: "Thyme",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -186,7 +186,7 @@ const masterFoodLibrary = [
   {
     product: "Kiwano Melon",
     productSearch: "Kiwano Melon",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -194,7 +194,7 @@ const masterFoodLibrary = [
   {
     product: "Okra",
     productSearch: "Okra (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -202,7 +202,7 @@ const masterFoodLibrary = [
   {
     product: "Kale",
     productSearch: "Kale (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -210,7 +210,7 @@ const masterFoodLibrary = [
   {
     product: "Watercress",
     productSearch: "Watercress",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -218,7 +218,7 @@ const masterFoodLibrary = [
   {
     product: "Spinach",
     productSearch: "Spinach",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -226,7 +226,7 @@ const masterFoodLibrary = [
   {
     product: "Mint",
     productSearch: "Mint",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -234,7 +234,7 @@ const masterFoodLibrary = [
   {
     product: "Celery",
     productSearch: "Celery",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -242,7 +242,7 @@ const masterFoodLibrary = [
   {
     product: "Zucchini",
     productSearch: "Zucchini",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -250,7 +250,7 @@ const masterFoodLibrary = [
   {
     product: "Cilantro",
     productSearch: "Cilantro",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -258,7 +258,7 @@ const masterFoodLibrary = [
   {
     product: "Microgreens",
     productSearch: "Microgreens (Green)",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -266,7 +266,7 @@ const masterFoodLibrary = [
   {
     product: "Parsley",
     productSearch: "Parsley",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -274,7 +274,7 @@ const masterFoodLibrary = [
   {
     product: "Dill",
     productSearch: "Dill",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -282,7 +282,7 @@ const masterFoodLibrary = [
   {
     product: "Blackberry",
     productSearch: "Blackberry",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -290,7 +290,7 @@ const masterFoodLibrary = [
   {
     product: "Blueberry",
     productSearch: "Blueberry",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -298,7 +298,7 @@ const masterFoodLibrary = [
   {
     product: "Açai",
     productSearch: "Açai",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -306,7 +306,7 @@ const masterFoodLibrary = [
   {
     product: "Broccoli",
     productSearch: "Broccoli (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -314,7 +314,7 @@ const masterFoodLibrary = [
   {
     product: "Carrot",
     productSearch: "Carrot (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -322,7 +322,7 @@ const masterFoodLibrary = [
   {
     product: "Artichoke",
     productSearch: "Artichoke (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -330,7 +330,7 @@ const masterFoodLibrary = [
   {
     product: "Sweet Potato",
     productSearch: "Sweet Potato (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -338,7 +338,7 @@ const masterFoodLibrary = [
   {
     product: "Asparagus",
     productSearch: "Asparagus, Purple",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -346,7 +346,7 @@ const masterFoodLibrary = [
   {
     product: "Fig",
     productSearch: "Fig (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -354,7 +354,7 @@ const masterFoodLibrary = [
   {
     product: "Prune",
     productSearch: "Prune",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -362,7 +362,7 @@ const masterFoodLibrary = [
   {
     product: "Kale",
     productSearch: "Kale (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -370,7 +370,7 @@ const masterFoodLibrary = [
   {
     product: "Cauliflower",
     productSearch: "Cauliflower (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -378,7 +378,7 @@ const masterFoodLibrary = [
   {
     product: "Bell Pepper",
     productSearch: "Pepper, Bell (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -386,7 +386,7 @@ const masterFoodLibrary = [
   {
     product: "Eggplant",
     productSearch: "Eggplant",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -394,7 +394,7 @@ const masterFoodLibrary = [
   {
     product: "Grape",
     productSearch: "Grape (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -402,7 +402,7 @@ const masterFoodLibrary = [
   {
     product: "Boisenberry",
     productSearch: "Boisenberry",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -410,7 +410,7 @@ const masterFoodLibrary = [
   {
     product: "Taro",
     productSearch: "Taro (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -418,7 +418,7 @@ const masterFoodLibrary = [
   {
     product: "Raisin",
     productSearch: "Raisin",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -426,7 +426,7 @@ const masterFoodLibrary = [
   {
     product: "Dragonfruit",
     productSearch: "Dragonfruit (Purple)",
-    color: "purple",
+    color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
     date: null,
@@ -434,7 +434,7 @@ const masterFoodLibrary = [
   {
     product: "Basil",
     productSearch: "Basil (Purple)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -442,7 +442,7 @@ const masterFoodLibrary = [
   {
     product: "Guava",
     productSearch: "Guava (Pink)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -450,7 +450,7 @@ const masterFoodLibrary = [
   {
     product: "Grapefruit",
     productSearch: "Grapefruit (Pink)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -458,7 +458,7 @@ const masterFoodLibrary = [
   {
     product: "Strawberry",
     productSearch: "Strawberry",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -466,7 +466,7 @@ const masterFoodLibrary = [
   {
     product: "Bell Pepper",
     productSearch: "Pepper, Bell (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -474,7 +474,7 @@ const masterFoodLibrary = [
   {
     product: "Pomegranate",
     productSearch: "Pomegranate",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -482,7 +482,7 @@ const masterFoodLibrary = [
   {
     product: "Tomato",
     productSearch: "Tomato (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -490,7 +490,7 @@ const masterFoodLibrary = [
   {
     product: "Cherry",
     productSearch: "Cherry (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -498,7 +498,7 @@ const masterFoodLibrary = [
   {
     product: "Rhubarb",
     productSearch: "Rhubarb",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -506,7 +506,7 @@ const masterFoodLibrary = [
   {
     product: "Raspberry",
     productSearch: "Raspberry",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -514,7 +514,7 @@ const masterFoodLibrary = [
   {
     product: "Chili Pepper",
     productSearch: "Pepper, Chili (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -522,7 +522,7 @@ const masterFoodLibrary = [
   {
     product: "Dragonfruit",
     productSearch: "Dragonfruit (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -530,7 +530,7 @@ const masterFoodLibrary = [
   {
     product: "Radish",
     productSearch: "Radish (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -538,7 +538,7 @@ const masterFoodLibrary = [
   {
     product: "Cranberry",
     productSearch: "Cranberry",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -546,7 +546,7 @@ const masterFoodLibrary = [
   {
     product: "Watermelon",
     productSearch: "Watermelon (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -554,7 +554,7 @@ const masterFoodLibrary = [
   {
     product: "Grape",
     productSearch: "Grape (Red)",
-    color: "red",
+    color: "Red",
     textHex: "#F94D4D",
     fillHex: "#F94D4D",
     date: null,
@@ -562,7 +562,7 @@ const masterFoodLibrary = [
   {
     product: "Banana",
     productSearch: "Banana",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -570,7 +570,7 @@ const masterFoodLibrary = [
   {
     product: "Cauliflower",
     productSearch: "Cauliflower (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -578,7 +578,7 @@ const masterFoodLibrary = [
   {
     product: "Corn",
     productSearch: "Corn (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -586,7 +586,7 @@ const masterFoodLibrary = [
   {
     product: "Jackfruit",
     productSearch: "Jackfruit",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -594,7 +594,7 @@ const masterFoodLibrary = [
   {
     product: "Lemon",
     productSearch: "Lemon",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -602,7 +602,7 @@ const masterFoodLibrary = [
   {
     product: "Citron",
     productSearch: "Citron",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -610,7 +610,7 @@ const masterFoodLibrary = [
   {
     product: "Grapefruit",
     productSearch: "Grapefruit (White)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -618,7 +618,7 @@ const masterFoodLibrary = [
   {
     product: "Raspberry",
     productSearch: "Raspberry (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -626,7 +626,7 @@ const masterFoodLibrary = [
   {
     product: "Tomato",
     productSearch: "Tomato (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -634,7 +634,7 @@ const masterFoodLibrary = [
   {
     product: "Apricot",
     productSearch: "Apricot (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -642,7 +642,7 @@ const masterFoodLibrary = [
   {
     product: "Lentil",
     productSearch: "Lentil (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -650,7 +650,7 @@ const masterFoodLibrary = [
   {
     product: "Durian",
     productSearch: "Durian",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -658,7 +658,7 @@ const masterFoodLibrary = [
   {
     product: "Melon",
     productSearch: "Melon (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -666,7 +666,7 @@ const masterFoodLibrary = [
   {
     product: "Watermelon",
     productSearch: "Watermelon (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -674,7 +674,7 @@ const masterFoodLibrary = [
   {
     product: "Raisin",
     productSearch: "Raisin (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -682,7 +682,7 @@ const masterFoodLibrary = [
   {
     product: "Quince",
     productSearch: "Quince",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -690,7 +690,7 @@ const masterFoodLibrary = [
   {
     product: "Starfruit",
     productSearch: "Starfruit",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -698,7 +698,7 @@ const masterFoodLibrary = [
   {
     product: "Squash",
     productSearch: "Squash (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -706,7 +706,7 @@ const masterFoodLibrary = [
   {
     product: "Cherry",
     productSearch: "Cherry (Yellow)",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -714,7 +714,7 @@ const masterFoodLibrary = [
   {
     product: "Squash",
     productSearch: "Squash (Orange)",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -722,7 +722,7 @@ const masterFoodLibrary = [
   {
     product: "Apricot",
     productSearch: "Apricot (Orange)",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -730,7 +730,7 @@ const masterFoodLibrary = [
   {
     product: "Cantalope",
     productSearch: "Cantalope",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -738,7 +738,7 @@ const masterFoodLibrary = [
   {
     product: "Carrot",
     productSearch: "Carrot (Orange)",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -746,7 +746,7 @@ const masterFoodLibrary = [
   {
     product: "Turmeric",
     productSearch: "Turmeric",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -754,7 +754,7 @@ const masterFoodLibrary = [
   {
     product: "Cloudberry",
     productSearch: "Cloudberry",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -762,7 +762,7 @@ const masterFoodLibrary = [
   {
     product: "Groundcherry",
     productSearch: "Groundcherry",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -770,7 +770,7 @@ const masterFoodLibrary = [
   {
     product: "Kumquat",
     productSearch: "Kumquat",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -778,7 +778,7 @@ const masterFoodLibrary = [
   {
     product: "Orange",
     productSearch: "Orange",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -786,7 +786,7 @@ const masterFoodLibrary = [
   {
     product: "Tangerine",
     productSearch: "Tangerine",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -794,7 +794,7 @@ const masterFoodLibrary = [
   {
     product: "Papaya",
     productSearch: "Papaya",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -802,7 +802,7 @@ const masterFoodLibrary = [
   {
     product: "Passionfruit",
     productSearch: "Passionfruit",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -810,7 +810,7 @@ const masterFoodLibrary = [
   {
     product: "Sweet Potato",
     productSearch: "Sweet Potato (Orange)",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -818,7 +818,7 @@ const masterFoodLibrary = [
   {
     product: "Persimmon",
     productSearch: "Persimmon",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -826,7 +826,7 @@ const masterFoodLibrary = [
   {
     product: "Pumpkin",
     productSearch: "Pumpkin",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -834,7 +834,7 @@ const masterFoodLibrary = [
   {
     product: "Loquat",
     productSearch: "Loquat",
-    color: "orange",
+    color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
     date: null,
@@ -842,7 +842,7 @@ const masterFoodLibrary = [
   {
     product: "Onion",
     productSearch: "Onion (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -850,7 +850,7 @@ const masterFoodLibrary = [
   {
     product: "Almond",
     productSearch: "Almond",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -858,7 +858,7 @@ const masterFoodLibrary = [
   {
     product: "Cashew",
     productSearch: "Cashew",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -866,7 +866,7 @@ const masterFoodLibrary = [
   {
     product: "Asparagus",
     productSearch: "Asparagus (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -874,7 +874,7 @@ const masterFoodLibrary = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -882,7 +882,7 @@ const masterFoodLibrary = [
   {
     product: "Carrot",
     productSearch: "Carrot (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -890,7 +890,7 @@ const masterFoodLibrary = [
   {
     product: "Cassava",
     productSearch: "Cassava",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -898,7 +898,7 @@ const masterFoodLibrary = [
   {
     product: "Couscous",
     productSearch: "Couscous",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -906,7 +906,7 @@ const masterFoodLibrary = [
   {
     product: "Radish",
     productSearch: "Radish (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -914,7 +914,7 @@ const masterFoodLibrary = [
   {
     product: "Garlic",
     productSearch: "Garlic",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -922,7 +922,7 @@ const masterFoodLibrary = [
   {
     product: "Heart of Palm",
     productSearch: "Heart of Palm",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -930,7 +930,7 @@ const masterFoodLibrary = [
   {
     product: "Horseradish",
     productSearch: "Horseradish",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -939,7 +939,7 @@ const masterFoodLibrary = [
   {
     product: "Jicama",
     productSearch: "Jicama",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -947,7 +947,7 @@ const masterFoodLibrary = [
   {
     product: "Lychee",
     productSearch: "Lychee",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -955,7 +955,7 @@ const masterFoodLibrary = [
   {
     product: "Potato",
     productSearch: "Potato",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -963,7 +963,7 @@ const masterFoodLibrary = [
   {
     product: "Millet",
     productSearch: "Millet",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -971,7 +971,7 @@ const masterFoodLibrary = [
   {
     product: "Ginger",
     productSearch: "Ginger",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -979,7 +979,7 @@ const masterFoodLibrary = [
   {
     product: "Rambutan",
     productSearch: "Rambutan",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -987,7 +987,7 @@ const masterFoodLibrary = [
   {
     product: "Kiwi",
     productSearch: "Kiwi",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -995,7 +995,7 @@ const masterFoodLibrary = [
   {
     product: "Romanesco",
     productSearch: "Romanesco",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -1003,7 +1003,7 @@ const masterFoodLibrary = [
   {
     product: "Bitter Melon",
     productSearch: "Bitter Melon",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -1011,7 +1011,7 @@ const masterFoodLibrary = [
   {
     product: "Chayote",
     productSearch: "Chayote",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -1019,7 +1019,7 @@ const masterFoodLibrary = [
   {
     product: "Mushroom",
     productSearch: "Mushroom",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1027,7 +1027,7 @@ const masterFoodLibrary = [
   {
     product: "Avocado",
     productSearch: "Avocado",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -1035,7 +1035,7 @@ const masterFoodLibrary = [
   {
     product: "Pineapple",
     productSearch: "Pineapple",
-    color: "yellow",
+    color: "Yellow",
     textHex: "#FFBB1C",
     fillHex: "#F9C449",
     date: null,
@@ -1043,7 +1043,7 @@ const masterFoodLibrary = [
   {
     product: "Lime",
     productSearch: "Lime",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -1051,7 +1051,7 @@ const masterFoodLibrary = [
   {
     product: "Cauliflower",
     productSearch: "Cauliflower (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1059,7 +1059,7 @@ const masterFoodLibrary = [
   {
     product: "Tofu",
     productSearch: "Tofu",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1067,7 +1067,7 @@ const masterFoodLibrary = [
   {
     product: "Honeydew",
     productSearch: "Honey Dew",
-    color: "green",
+    color: "Green",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
     date: null,
@@ -1075,7 +1075,7 @@ const masterFoodLibrary = [
   {
     product: "Coconut",
     productSearch: "Coconut",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1083,7 +1083,7 @@ const masterFoodLibrary = [
   {
     product: "Guava",
     productSearch: "Guava (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1091,7 +1091,7 @@ const masterFoodLibrary = [
   {
     product: "Cherimoya",
     productSearch: "Cherimoya",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1099,7 +1099,7 @@ const masterFoodLibrary = [
   {
     product: "Lotus Root",
     productSearch: "Lotus Root",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1107,7 +1107,7 @@ const masterFoodLibrary = [
   {
     product: "Taro",
     productSearch: "Taro (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1115,7 +1115,7 @@ const masterFoodLibrary = [
   {
     product: "Sunchoke",
     productSearch: "Sunchoke",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
@@ -1123,7 +1123,7 @@ const masterFoodLibrary = [
   {
     product: "Dragonfruit",
     productSearch: "Dragonfruit (White)",
-    color: "white",
+    color: "White",
     textHex: "#97906E",
     fillHex: "#F2EDCF",
     date: null,
