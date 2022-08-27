@@ -51,22 +51,35 @@ class UserModel {
     });
   };
 
-  static updateGoldenCarrots = async (id, goldenCarrots) => {
-    // await firestoreFunction(id, goldenCarrots)
+  static incrementGoldenCarrots = async (uid, goldenCarrots) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      goldenCarrots: goldenCarrots + 1,
+    });
   };
 
-  static incrementDayStreak = async (id, currentDayStreak) => {
-    // await firestoreFunction(id, currentDayStreak)
+  static incrementDayStreak = async (uid, currentDayStreak) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      dayStreak: currentDayStreak + 1,
+    });
   };
 
   static clearDayStreak = async (id, isGoalComplete) => {
     // await firestoreFunction(id, 0)
   };
 
-  static updateDailyGoal = async (uid, dailyGoal, isComplete) => {
+  static updateDailyGoal = async (uid, dailyGoal) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      dailyGoal: { amount: dailyGoal, isComplete: isComplete },
+      "dailyGoal.amount": dailyGoal,
+    });
+  };
+
+  static updateGoalIsComplete = async (uid, isGoalComplete) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      "dailyGoal.isComplete": isGoalComplete,
     });
   };
 
