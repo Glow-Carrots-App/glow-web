@@ -62,8 +62,7 @@
   gap: 11px;
   margin-top: 24px;
 }
-.button,
-.button:disabled {
+.button {
   line-height: 45px;
   display: inline-block;
   padding: 1px 6px;
@@ -73,9 +72,6 @@
   border: none;
   color: white;
   text-align: center;
-}
-
-.button {
   background-color: var(--purple-light);
 }
 
@@ -87,8 +83,7 @@
   .buttonContainer {
     gap: 40px;
   }
-  .button,
-  .button:disabled {
+  .button {
     line-height: 92px;
     font-size: 24px;
     height: 92px;

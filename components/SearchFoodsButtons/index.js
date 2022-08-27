@@ -57,13 +57,13 @@ const SearchFoodsButtons = ({
   return (
     <div className={styles.buttons}>
       <SmallLinkedButton href="/today">Cancel</SmallLinkedButton>
-      <input
+      <button
+        disabled={selectedFood ? false : true}
         className={styles.addButton}
-        type="submit"
-        name="submitMessage"
-        value="Add"
         onClick={handleEatFood}
-      />
+      >
+        Add
+      </button>
     </div>
   );
 };
