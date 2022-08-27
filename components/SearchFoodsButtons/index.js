@@ -15,14 +15,12 @@ const SearchFoodsButtons = ({
   setSelectedFood,
 }) => {
   const [currentCount, setCurrentCount] = useState(currentDay.length);
-  const [isGoalComplete, setisGoalComplete] = useState(
+  const [isGoalComplete, setIsGoalComplete] = useState(
     user.dailyGoal.isComplete
   );
 
   let {
     dailyGoal: { amount },
-    dayStreak,
-    goldenCarrots,
     uid,
   } = user;
 
@@ -44,10 +42,12 @@ const SearchFoodsButtons = ({
       setSearchInput("");
       setSelectedFood(null);
       if (currentCount + 1 >= amount && !isGoalComplete) {
-        UserModel.incrementDayStreak(uid, dayStreak);
-        UserModel.incrementGoldenCarrots(uid, goldenCarrots);
+        const currentDate = dayjs().format("MM/DD/YYYY");
+        UserModel.incrementDayStreak(uid);
+        UserModel.incrementGoldenCarrots(uid);
+        UserModel.updateLastGoalDate(uid, currentDate);
         UserModel.updateGoalIsComplete(uid, true);
-        setisGoalComplete(true);
+        setIsGoalComplete(true);
       }
     } catch (err) {
       console.log(err);

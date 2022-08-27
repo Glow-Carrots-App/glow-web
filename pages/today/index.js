@@ -21,14 +21,14 @@ const Today = () => {
   const [user, setUser] = useState();
 
   const { authedUser } = useAuth();
-  const uid = authedUser?.uid ? authedUser.uid : null;
 
   useEffect(() => {
     async function fetchData() {
-      if (!uid) {
+      if (!authedUser) {
         setLoading(false);
         return;
       }
+      const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
       const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
       const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
@@ -38,8 +38,15 @@ const Today = () => {
       );
       const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
       const userResponse = await UserModel.getUser(uid);
+      const {
+        dailyGoal: { isComplete, lastGoalDate },
+      } = userResponse;
 
-      if (userResponse.dailyGoal.isComplete && currentDay.length === 0) {
+      if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
+        await UserModel.clearDayStreak(uid);
+      }
+
+      if (isComplete && currentDay.length) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
 

@@ -6,6 +6,7 @@ export default function createNewUserDataModel(email, firstName, uid) {
     dailyGoal: {
       amount: 5,
       isComplete: false,
+      lastGoalDate: dayjs().format("YYYY/MM/DD"),
     },
     dayStreak: 0,
     email,
