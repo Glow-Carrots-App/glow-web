@@ -18,18 +18,6 @@ class FoodEntryModel {
     return await addDoc(foodEntriesRef, foodObj);
   };
 
-  // static getCurrentDay = async (userId, today) => {
-  //   let currentDaySnapshot = await getDocs(
-  //     query(
-  //       foodEntriesRef,
-  //       where("uid", "==", userId),
-  //       where("date", "==", today)
-  //     )
-  //   );
-  //   let currentDay = currentDaySnapshot.docs.map((doc) => doc.data());
-  //   return currentDay;
-  // };
-
   static getThirtyDayHistory = async (userId, today, dateToCompare) => {
     let thirtyDayHistorySnapshot = await getDocs(
       query(

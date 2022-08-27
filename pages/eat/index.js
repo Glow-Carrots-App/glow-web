@@ -9,6 +9,7 @@ import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
 import Loading from "../../components/Loading";
 import { useAuth } from "../../context/AuthContext";
+import filterByDate from "../../utils/filterByDate";
 
 import styles from "./styles.module.css";
 
@@ -27,9 +28,15 @@ const Eat = () => {
       }
       const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
-      const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
+      const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
+      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
+        uid,
+        today,
+        dateToCompare
+      );
+      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
       const userResponse = await UserModel.getUser(uid);
-      setCurrentDay(currentDayResponse);
+      setCurrentDay(currentDay);
       setLoading(false);
       setUser(userResponse);
     }
