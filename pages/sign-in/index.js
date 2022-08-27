@@ -5,11 +5,32 @@ import SignInForm from "../../components/SignInForm";
 import Loading from "../../components/Loading";
 import WithUnprotected from "../../components/WithUnprotected";
 import { useAuth } from "../../context/AuthContext";
+import UserModel from "../../model/user";
+import createNewUserDataModel from "../../utils/createNewUserDataModel";
 
 import styles from "./styles.module.css";
+import { useEffect } from "react";
 
 const SignIn = () => {
-  const { loading } = useAuth();
+  const { authedUser, loading, getGoogleRedirectResult } = useAuth();
+
+  useEffect(() => {
+    const fetchGoogleData = async () => {
+      try {
+        const result = await getGoogleRedirectResult();
+        if (result?.isNewUser) {
+          const { email, uid } = authedUser;
+          const newUser = createNewUserDataModel(email, result.firstName, uid);
+          await UserModel.createUser(newUser);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (authedUser) {
+      fetchGoogleData();
+    }
+  }, []);
 
   if (loading) {
     return <Loading />;

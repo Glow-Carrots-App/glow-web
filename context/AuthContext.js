@@ -12,9 +12,8 @@ import {
   getAdditionalUserInfo,
 } from "firebase/auth";
 
-import UserModel from "../model/user";
 import { auth, googleProvider } from "../firebase";
-import createNewUserDataModel from "../utils/createNewUserDataModel";
+import Loading from "../components/Loading";
 
 const AuthContext = createContext();
 
@@ -26,25 +25,6 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      const debugRedirectResult = async () => {
-        try {
-          const result = await getRedirectResult(auth);
-          if (result) {
-            const {
-              user: { email, uid },
-            } = result;
-            const {
-              isNewUser,
-              profile: { given_name },
-            } = getAdditionalUserInfo(result);
-            const newUser = createNewUserDataModel(email, given_name, uid);
-            isNewUser ? await UserModel.createUser(newUser) : null;
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-
       if (user) {
         setAuthedUser({
           uid: user.uid,
@@ -53,24 +33,38 @@ export const AuthContextProvider = ({ children }) => {
       } else {
         setAuthedUser(null);
       }
-
-      debugRedirectResult();
       setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
 
-  const signup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const signup = async (email, password) => {
+    return await createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
-  const googleLogin = () => {
-    signInWithRedirect(auth, googleProvider);
+  const googleLogin = async () => {
+    await signInWithRedirect(auth, googleProvider);
+  };
+
+  const getGoogleRedirectResult = async () => {
+    const result = await getRedirectResult(auth);
+    if (result) {
+      const {
+        isNewUser,
+        profile: { given_name },
+      } = getAdditionalUserInfo(result);
+      const formattedResult = {
+        isNewUser,
+        firstName: given_name,
+      };
+      return formattedResult;
+    }
+    return null;
   };
 
   const logout = async () => {
@@ -103,9 +97,10 @@ export const AuthContextProvider = ({ children }) => {
         changePassword,
         changeEmail,
         googleLogin,
+        getGoogleRedirectResult,
       }}
     >
-      {loading ? null : children}
+      {loading ? <Loading /> : children}
     </AuthContext.Provider>
   );
 };
