@@ -65,8 +65,11 @@ class UserModel {
     });
   };
 
-  static clearDayStreak = async (id, isGoalComplete) => {
-    // await firestoreFunction(id, 0)
+  static clearDayStreak = async (uid) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      dayStreak: 0,
+    });
   };
 
   static updateDailyGoal = async (uid, dailyGoal) => {
