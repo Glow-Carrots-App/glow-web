@@ -37,8 +37,8 @@ const Today = () => {
         dateToCompare
       );
       const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
-
       const userResponse = await UserModel.getUser(uid);
+
       if (userResponse.dailyGoal.isComplete && currentDay.length === 0) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
