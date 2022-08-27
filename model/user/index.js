@@ -1,6 +1,17 @@
 import { db } from "../../firebase.js";
 
-import { getDoc, setDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import {
+  getDoc,
+  setDoc,
+  updateDoc,
+  doc,
+  deleteDoc,
+  collection,
+  query,
+  where,
+} from "firebase/firestore";
+
+const usersRef = collection(db, "users");
 
 class UserModel {
   static getUser = async (uid) => {
@@ -14,12 +25,16 @@ class UserModel {
     }
   };
 
-  static createUser = async (newUser, uid) => {
-    return await setDoc(doc(db, "users", uid), newUser);
+  static createUser = async (newUser) => {
+    return await setDoc(doc(db, "users", newUser.uid), newUser);
   };
 
   static deleteUser = async (uid) => {
     return await deleteDoc(doc(db, "users", uid));
+  };
+
+  static checkIfUserExists = async (email) => {
+    const userQuery = query(usersRef, where("email", "==", email));
   };
 
   static updateName = async (uid, newName) => {
