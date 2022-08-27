@@ -14,6 +14,10 @@
   font-size: medium;
 }
 
+.addButton:disabled {
+  background-color: lightgray;
+}
+
 @media (min-width: 768px) {
   .buttons {
     gap: 40px;
