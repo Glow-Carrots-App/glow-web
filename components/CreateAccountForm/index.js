@@ -34,7 +34,7 @@ const CreateAccountForm = () => {
     <form
       className={styles.form}
       method="post"
-      onSubmit={(e) => handleCreateAccount(e)}
+      onSubmit={handleCreateAccount}
     >
       <input
         className={styles.formInput}
