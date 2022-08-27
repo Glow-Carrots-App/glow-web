@@ -18,14 +18,14 @@ const Eat = () => {
   const [loading, setLoading] = useState(true);
 
   const { authedUser } = useAuth();
-  const uid = authedUser?.uid ? authedUser.uid : null;
 
   useEffect(() => {
     async function fetchData() {
-      if (!uid) {
+      if (!authedUser) {
         setLoading(false);
         return;
       }
+      const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
       const currentDayResponse = await FoodEntryModel.getCurrentDay(uid, today);
       const userResponse = await UserModel.getUser(uid);
