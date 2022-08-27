@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext.js";
-import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
 

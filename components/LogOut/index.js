@@ -26,7 +26,7 @@ const LogOut = () => {
       <Heading2>Are you sure you want to log out?</Heading2>
       <div className={styles.buttonPair}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <a className={styles.smallButton} onClick={(e) => handleLogOut(e)}>
+        <a className={styles.smallButton} onClick={handleLogOut}>
           Log Out
         </a>
       </div>
