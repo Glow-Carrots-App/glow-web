@@ -37,6 +37,12 @@ const Today = () => {
         dateToCompare
       );
       const userResponse = await UserModel.getUser(uid);
+      if (
+        userResponse.dailyGoal.isComplete &&
+        currentDayResponse.length === 0
+      ) {
+        await UserModel.updateGoalIsComplete(uid, false);
+      }
       setCurrentDay(currentDayResponse);
       setFoodHistory(thirtyDayHistoryResponse);
       setLoading(false);
