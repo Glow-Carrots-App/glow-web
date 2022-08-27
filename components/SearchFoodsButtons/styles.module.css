@@ -1,0 +1,27 @@
+.buttons {
+  display: flex;
+  gap: 11px;
+}
+
+.addButton {
+  background-color: var(--purple-light);
+  height: 50px;
+  width: 148px;
+  border-radius: 4px;
+  border: none;
+  margin: 0;
+  color: white;
+  font-size: medium;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    gap: 40px;
+  }
+  .addButton {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 278px;
+  }
+}
