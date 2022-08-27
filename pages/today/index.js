@@ -42,9 +42,6 @@ const Today = () => {
       if (userResponse.dailyGoal.isComplete && currentDay.length === 0) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
-      if (!userResponse.dailyGoal.isComplete && currentDay.length === 0) {
-        await UserModel.clearDayStreak(uid);
-      }
 
       setCurrentDay(currentDay);
       setFoodHistory(thirtyDayHistoryResponse);
