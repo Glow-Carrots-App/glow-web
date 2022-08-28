@@ -46,7 +46,7 @@ const Today = () => {
         await UserModel.clearDayStreak(uid);
       }
 
-      if (isComplete && currentDay.length) {
+      if (isComplete && currentDay.length === 0) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
 
