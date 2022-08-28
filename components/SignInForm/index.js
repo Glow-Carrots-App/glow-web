@@ -41,7 +41,6 @@ const SignInForm = () => {
         autoComplete="email"
         placeholder="Email"
         value={email}
-        required
         className={styles.signInFields}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -51,7 +50,6 @@ const SignInForm = () => {
         placeholder="Password"
         value={password}
         pattern={validatePasswordRegex}
-        required
         className={styles.signInFields}
         onInput={(e) => e.target.setCustomValidity(validatePasswordMsg)}
         onChange={(e) => setPassword(e.target.value)}
