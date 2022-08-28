@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext.js";
+import validatePassword from "../../utils/validatePassword.js";
 
 import styles from "./styles.module.css";
 
@@ -33,20 +34,30 @@ const SignInForm = () => {
   return (
     <form className={styles.container} onSubmit={handleSignIn}>
       <input
-        type="text"
-        className={styles.signInFields}
+        type="email"
         placeholder="Email"
+        autoComplete="username"
         value={email}
+        required
+        className={styles.signInFields}
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
         type="password"
-        className={styles.signInFields}
         placeholder="Password"
+        autoComplete="current-password"
         value={password}
+        pattern={validatePassword}
+        required
+        className={styles.signInFields}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <input type="submit" value="Sign In" className={styles.signInButton} />
+      <input
+        type="submit"
+        value="Sign In"
+        className={styles.signInButton}
+        disabled={!email || !password}
+      />
 
       <input
         type="button"
