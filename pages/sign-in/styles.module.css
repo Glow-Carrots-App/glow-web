@@ -1,13 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  height: 100vh;
-  background-image: var(--landing-gradient);
-  padding: 34px;
-}
-
 .signInText {
   font-size: 16px;
   color: black;
@@ -31,9 +21,6 @@
 }
 
 @media (min-width: 768px) {
-  .container {
-    padding: 86px;
-  }
   .signInText {
     font-size: 24px;
   }

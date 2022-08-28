@@ -1,14 +1,4 @@
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 34px;
-  position: relative;
-}
-
-.container p {
+.text {
   margin-top: -14px;
   color: var(--purple-dark);
 }
@@ -24,11 +14,7 @@
 }
 
 @media (min-width: 768px) {
-  .container {
-    padding: 86px;
-  }
-
-  .container p {
+  .text {
     font-size: 24px;
   }
 

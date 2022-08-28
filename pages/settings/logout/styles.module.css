@@ -1,14 +1,3 @@
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  padding: 34px;
-}
-
 .watermelon1 {
   position: absolute;
   top: -30px;
@@ -30,10 +19,6 @@
 }
 
 @media (min-width: 768px) {
-  .container {
-    padding: 86px;
-  }
-
   .watermelon1 {
     height: 350px;
     width: 350px;
@@ -41,5 +26,6 @@
   .watermelon2 {
     height: 350px;
     width: 350px;
+    right: 280px;
   }
 }

@@ -1,3 +1,4 @@
+import PageContainer from "../../../components/PageContainer";
 import Heading1 from "../../../components/Heading1";
 import LogOut from "../../../components/LogOut";
 import BottomTabs from "../../../components/BottomTabs/index";
@@ -8,7 +9,7 @@ import styles from "./styles.module.css";
 const LogOutPage = () => {
   return (
     <WithProtected>
-      <div className={styles.container}>
+      <PageContainer>
         <Heading1>Log Out</Heading1>
         <img
           src="/pageBackgrounds/watermelon.png"
@@ -20,7 +21,7 @@ const LogOutPage = () => {
         />
         <LogOut />
         <BottomTabs />
-      </div>
+      </PageContainer>
     </WithProtected>
   );
 };

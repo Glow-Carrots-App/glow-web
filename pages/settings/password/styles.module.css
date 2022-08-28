@@ -1,11 +1,10 @@
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
+  height: 100vh;
   padding: 34px;
-  position: relative;
 }
 
 .fruit {
