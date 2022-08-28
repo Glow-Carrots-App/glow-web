@@ -38,8 +38,8 @@ const SignInForm = () => {
     <form className={styles.container} onSubmit={handleSignIn}>
       <input
         type="email"
+        autoComplete="email"
         placeholder="Email"
-        autoComplete="username"
         value={email}
         required
         className={styles.signInFields}
@@ -47,8 +47,8 @@ const SignInForm = () => {
       />
       <input
         type="password"
-        placeholder="Password"
         autoComplete="current-password"
+        placeholder="Password"
         value={password}
         pattern={validatePasswordRegex}
         required
@@ -62,13 +62,9 @@ const SignInForm = () => {
         className={styles.signInButton}
         disabled={!email || !password}
       />
-
-      <input
-        type="button"
-        value="Sign In With Google"
-        className={styles.signInButton}
-        onClick={handleGoogleSignIn}
-      />
+      <button className={styles.signInButton} onClick={handleGoogleSignIn}>
+        Sign In With Google
+      </button>
     </form>
   );
 };
