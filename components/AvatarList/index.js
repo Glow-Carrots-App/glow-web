@@ -33,8 +33,8 @@ const AvatarList = () => {
     "/avatars/birthday-cake.png",
   ];
 
-  const handleAvatarUpdate = () => {
-    UserModel.updateAvatar(uid, selectedAvatar);
+  const handleAvatarUpdate = async () => {
+    await UserModel.updateAvatar(uid, selectedAvatar);
     router.push("/settings");
   };
 
@@ -74,7 +74,7 @@ const AvatarList = () => {
       </div>
       <div className={styles.buttonContainer}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <button onClick={() => handleAvatarUpdate()}>Save</button>
+        <button onClick={handleAvatarUpdate}>Save</button>
       </div>
     </div>
   );

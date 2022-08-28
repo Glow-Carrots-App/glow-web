@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext.js";
 
@@ -8,7 +7,6 @@ import styles from "./styles.module.css";
 const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter();
 
   const { login, googleLogin } = useAuth();
 
@@ -16,7 +14,6 @@ const SignInForm = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      router.push("/today");
     } catch (error) {
       console.log("Login failed", error);
     }
