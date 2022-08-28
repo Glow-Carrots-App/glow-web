@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext.js";
-import validatePassword from "../../utils/validatePassword.js";
+import {
+  validatePasswordRegex,
+  validatePasswordMsg,
+} from "../../utils/validatePassword.js";
 
 import styles from "./styles.module.css";
 
@@ -47,9 +50,10 @@ const SignInForm = () => {
         placeholder="Password"
         autoComplete="current-password"
         value={password}
-        pattern={validatePassword}
+        pattern={validatePasswordRegex}
         required
         className={styles.signInFields}
+        onInput={(e) => e.target.setCustomValidity(validatePasswordMsg)}
         onChange={(e) => setPassword(e.target.value)}
       />
       <input
