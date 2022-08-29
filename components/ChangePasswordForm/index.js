@@ -5,9 +5,9 @@ import { useAuth } from "../../context/AuthContext";
 import styles from "./styles.module.css";
 
 const ChangePasswordForm = () => {
-  const [oldPassword, setOldPassword] = useState();
-  const [newPassword, setNewPassword] = useState();
-  const [confirmNewPassword, setConfirmNewPassword] = useState();
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
   const [isPasswordSaved, setIsPasswordSaved] = useState(false);
 
@@ -16,10 +16,11 @@ const ChangePasswordForm = () => {
     changePassword,
   } = useAuth();
 
-  const handlePasswordUpdate = (e) => {
+  const handlePasswordUpdate = async (e) => {
     e.preventDefault();
-    changePassword(newPassword);
+    await changePassword(newPassword);
     setIsPasswordSaved(true);
+    //reset or fields === reset
   };
 
   return (
@@ -30,6 +31,7 @@ const ChangePasswordForm = () => {
         name="oldPassword"
         value={oldPassword}
         placeholder="Old Password"
+        onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setOldPassword(e.target.value)}
       />
       <input
@@ -38,6 +40,7 @@ const ChangePasswordForm = () => {
         name="newPassword"
         value={newPassword}
         placeholder="New Password"
+        onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setNewPassword(e.target.value)}
       />
       <input
@@ -46,10 +49,19 @@ const ChangePasswordForm = () => {
         name="confirmNewPassword"
         value={confirmNewPassword}
         placeholder="Confirm New Password"
+        onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setConfirmNewPassword(e.target.value)}
       />
       <div className={styles.buttonPair}>
-        <button type="reset" className={styles.reset}>
+        <button
+          type="reset"
+          className={styles.reset}
+          onClick={() => {
+            setOldPassword("");
+            setNewPassword("");
+            setConfirmNewPassword("");
+          }}
+        >
           Reset
         </button>
         <button
