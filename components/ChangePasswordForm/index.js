@@ -30,7 +30,7 @@ const ChangePasswordForm = () => {
       <input
         className={styles.inputFields}
         type="password"
-        name="oldPassword"
+        id="oldPassword"
         value={oldPassword}
         placeholder="Old Password"
         autoComplete="current-password"
@@ -40,7 +40,7 @@ const ChangePasswordForm = () => {
       <input
         className={styles.inputFields}
         type="password"
-        name="newPassword"
+        id="newPassword"
         value={newPassword}
         placeholder="New Password"
         autoComplete="new-password"
@@ -50,7 +50,7 @@ const ChangePasswordForm = () => {
       <input
         className={styles.inputFields}
         type="password"
-        name="confirmNewPassword"
+        id="confirmNewPassword"
         value={confirmNewPassword}
         placeholder="Confirm New Password"
         autoComplete="new-password"
