@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useAuth } from "../../context/AuthContext";
 import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
@@ -8,19 +9,26 @@ const SettingsInputs = ({ user }) => {
   const { firstName, email, uid } = user;
   const [newName, setNewName] = useState(firstName);
   const [newEmail, setNewEmail] = useState(email);
+  const [password, setPassword] = useState("");
 
   const [isNameSaved, setIsNameSaved] = useState(false);
   const [isEmailSaved, setIsEmailSaved] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleNewName = (e) => {
+  const { reauthenticate, changeEmail } = useAuth();
+
+  const handleNewName = async (e) => {
     e.preventDefault();
-    UserModel.updateName(uid, newName);
+    await UserModel.updateName(uid, newName);
     setIsNameSaved(true);
   };
-  const handleNewEmail = (e) => {
+  const handleNewEmail = async (e) => {
     e.preventDefault();
-    UserModel.updateEmail(uid, newEmail);
+    await reauthenticate(password);
+    await changeEmail(newEmail);
+    await UserModel.updateEmail(uid, newEmail);
     setIsEmailSaved(true);
+    setShowPassword(false);
   };
 
   return (
@@ -44,6 +52,21 @@ const SettingsInputs = ({ user }) => {
           {!isNameSaved ? "Save" : "Saved!"}
         </button>
       </div>
+      <label
+        htmlFor="password"
+        style={!showPassword ? { display: "none" } : null}
+      >
+        Confirm password to change email:
+      </label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        value={password}
+        className={styles.password}
+        style={!showPassword ? { display: "none" } : null}
+        onChange={(e) => setPassword(e.target.value)}
+      />
       <label htmlFor="email">Email</label>
       <div className={styles.inputButtonPair}>
         <input
@@ -52,7 +75,10 @@ const SettingsInputs = ({ user }) => {
           type="text"
           value={newEmail}
           onChange={(e) => setNewEmail(e.target.value)}
-          onFocus={() => setIsEmailSaved(false)}
+          onFocus={() => {
+            setIsEmailSaved(false);
+            setShowPassword(true);
+          }}
         />
         <button
           className={

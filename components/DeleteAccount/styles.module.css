@@ -24,6 +24,29 @@
   background-color: var(--purple-light);
 }
 
+.smallButton:disabled {
+  background-color: darkgray;
+}
+
+.passwordField {
+  height: 50px;
+  width: 307px;
+  border-width: 0 0 1px;
+  border-color: black;
+  background: none;
+  margin-top: 8px;
+}
+
+.deleteAccountText {
+  font-size: smaller;
+}
+
+.deleteAccountForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
 @media (min-width: 768px) {
   .buttonPair {
     gap: 40px;
@@ -33,5 +56,13 @@
     font-size: 24px;
     height: 92px;
     width: 278px;
+  }
+  .passwordField {
+    height: 92px;
+    width: 596px;
+    font-size: 24px;
+  }
+  .deleteAccountText {
+    font-size: larger;
   }
 }

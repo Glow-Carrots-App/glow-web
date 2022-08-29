@@ -46,7 +46,7 @@ const SignInForm = () => {
         autoComplete="current-password"
         placeholder="Password"
         value={password}
-        pattern={validatePasswordRegex}
+        pattern="[a-z]{1,15}"
         className={styles.signInFields}
         onInput={(e) => e.target.setCustomValidity(validatePasswordMsg)}
         onChange={(e) => setPassword(e.target.value)}
