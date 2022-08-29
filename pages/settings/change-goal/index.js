@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useAuth } from "../../../context/AuthContext";
 import UserModel from "../../../model/user";
+import PageContainer from "../../../components/PageContainer";
 import Heading1 from "../../../components/Heading1/index";
 import Heading2 from "../../../components/Heading2";
 import ChangeGoalForm from "../../../components/ChangeGoalForm";
@@ -37,7 +38,7 @@ const ChangeGoal = () => {
 
   return (
     <WithProtected>
-      <div className={styles.container}>
+      <PageContainer>
         <Heading1>Daily Goal</Heading1>
         <img src="/pageBackgrounds/berries.png" className={styles.berry} />
         <Heading2>
@@ -46,7 +47,7 @@ const ChangeGoal = () => {
         </Heading2>
         <ChangeGoalForm user={user} />
         <BottomTabs />
-      </div>
+      </PageContainer>
     </WithProtected>
   );
 };

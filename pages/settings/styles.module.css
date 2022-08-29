@@ -1,11 +1,10 @@
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-items: center;
-  align-items: center;
   text-align: center;
   overflow-y: scroll;
+  height: 100vh;
   padding: 34px;
 }
 
