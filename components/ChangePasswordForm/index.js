@@ -57,7 +57,7 @@ const ChangePasswordForm = () => {
         </button>
         <input
           // className={
-          //   //if new password added to FB, change color
+          //   //if new password added to FB, change value to "Saved"
           //   //else stay same style
           // }
           className={styles.passwordButton}
