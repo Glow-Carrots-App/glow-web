@@ -9,6 +9,8 @@ const ChangePasswordForm = () => {
   const [newPassword, setNewPassword] = useState();
   const [confirmNewPassword, setConfirmNewPassword] = useState();
 
+  const [isPasswordSaved, setIsPasswordSaved] = useState(false);
+
   const {
     authedUser: { uid },
     changePassword,
@@ -17,18 +19,13 @@ const ChangePasswordForm = () => {
   const handlePasswordUpdate = (e) => {
     e.preventDefault();
     changePassword(newPassword);
-    //change style
+    setIsPasswordSaved(true);
   };
 
   return (
-    <form
-      id="passwordForm"
-      className={styles.container}
-      action="/settings"
-      mode="post"
-    >
+    <form id="passwordForm" className={styles.container}>
       <input
-        className={styles.passwordFields}
+        className={styles.inputFields}
         type="password"
         name="oldPassword"
         value={oldPassword}
@@ -36,7 +33,7 @@ const ChangePasswordForm = () => {
         onChange={(e) => setOldPassword(e.target.value)}
       />
       <input
-        className={styles.passwordFields}
+        className={styles.inputFields}
         type="password"
         name="newPassword"
         value={newPassword}
@@ -44,27 +41,24 @@ const ChangePasswordForm = () => {
         onChange={(e) => setNewPassword(e.target.value)}
       />
       <input
-        className={styles.passwordFields}
+        className={styles.inputFields}
         type="password"
         name="confirmNewPassword"
         value={confirmNewPassword}
         placeholder="Confirm New Password"
         onChange={(e) => setConfirmNewPassword(e.target.value)}
       />
-      <div className={styles.passwordButtonPair}>
-        <button type="reset" className={styles.resetButton}>
+      <div className={styles.buttonPair}>
+        <button type="reset" className={styles.reset}>
           Reset
         </button>
-        <input
-          // className={
-          //   //if new password added to FB, change value to "Saved"
-          //   //else stay same style
-          // }
-          className={styles.passwordButton}
+        <button
           type="submit"
-          value="Save"
+          className={styles.save}
           onClick={handlePasswordUpdate}
-        />
+        >
+          {!isPasswordSaved ? "Save" : "Saved!"}
+        </button>
       </div>
     </form>
   );
