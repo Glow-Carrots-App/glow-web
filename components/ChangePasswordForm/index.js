@@ -53,6 +53,9 @@ const ChangePasswordForm = () => {
           Reset
         </button>
         <button
+          disabled={
+            newPassword && oldPassword && confirmNewPassword ? false : true
+          }
           type="submit"
           className={styles.save}
           onClick={handlePasswordUpdate}

@@ -49,6 +49,10 @@
   font-size: medium;
 }
 
+.save:disabled {
+  background-color: lightgray;
+}
+
 @media (min-width: 768px) {
   .container {
     gap: 30px;
