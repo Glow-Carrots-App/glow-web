@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { useAuth } from "../../context/AuthContext";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 
@@ -26,6 +27,11 @@ const ChangePasswordForm = () => {
 
   return (
     <form className={styles.container}>
+      <Link href="/settings">
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/back.png" />
+        </a>
+      </Link>
       <input style={{ display: "none" }} autoComplete="email" />
       <input
         className={styles.inputFields}

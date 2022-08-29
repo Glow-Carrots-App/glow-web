@@ -12,10 +12,10 @@ class MyDocument extends Document {
         </head>
         <body>
           <div id={"globalLoader"}>
-            <div class="bounce">
-              <div class="bounce1"></div>
-              <div class="bounce2"></div>
-              <div class="bounce3"></div>
+            <div className="bounce">
+              <div className="bounce1"></div>
+              <div className="bounce2"></div>
+              <div className="bounce3"></div>
             </div>
           </div>
           <Main />

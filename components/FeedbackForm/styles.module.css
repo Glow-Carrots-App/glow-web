@@ -1,9 +1,20 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: left;
+}
+
+.doneLink {
+  position: absolute;
+  top: -125px;
+  left: 0;
+}
+
+.doneLink > img {
+  height: 35px;
 }
 
 .container > input {
@@ -54,6 +65,13 @@
 }
 
 @media (min-width: 768px) {
+  .doneLink {
+    top: -180px;
+  }
+
+  .doneLink > img {
+    height: 60px;
+  }
   .container > input {
     height: 92px;
     width: 596px;
