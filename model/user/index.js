@@ -1,4 +1,5 @@
 import { db } from "../../firebase.js";
+import { auth } from "../../firebase.js";
 
 import {
   getDoc,
@@ -9,6 +10,7 @@ import {
   collection,
   query,
   where,
+  increment,
 } from "firebase/firestore";
 
 const usersRef = collection(db, "users");
@@ -51,17 +53,17 @@ class UserModel {
     });
   };
 
-  static incrementGoldenCarrots = async (uid, goldenCarrots) => {
+  static incrementGoldenCarrots = async (uid) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      goldenCarrots: goldenCarrots + 1,
+      goldenCarrots: increment(1),
     });
   };
 
-  static incrementDayStreak = async (uid, currentDayStreak) => {
+  static incrementDayStreak = async (uid) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      dayStreak: currentDayStreak + 1,
+      dayStreak: increment(1),
     });
   };
 
@@ -83,6 +85,13 @@ class UserModel {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
       "dailyGoal.isComplete": isGoalComplete,
+    });
+  };
+
+  static updateLastGoalDate = async (uid, currentDate) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      "dailyGoal.lastGoalDate": currentDate,
     });
   };
 
