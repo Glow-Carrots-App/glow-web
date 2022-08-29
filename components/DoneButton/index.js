@@ -7,7 +7,7 @@ const DoneButton = ({ href, top, right }) => {
     <>
       <Link href={href}>
         <a className={styles.doneLink}>
-          <img src="/buttonIcons/reply.png" />
+          <img src="/buttonIcons/back.png" />
         </a>
       </Link>
     </>

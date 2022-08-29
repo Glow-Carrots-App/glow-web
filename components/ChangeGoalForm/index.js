@@ -32,7 +32,7 @@ const ChangeGoalForm = ({ user }) => {
     <div className={styles.container}>
       <Link href="/settings">
         <a className={styles.doneLink}>
-          <img src="/buttonIcons/reply.png" />
+          <img src="/buttonIcons/back.png" />
         </a>
       </Link>
       <div className={styles.numberPickerContainer}>

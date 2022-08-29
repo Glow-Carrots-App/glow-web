@@ -29,7 +29,7 @@ const ChangePasswordForm = () => {
     <form className={styles.container}>
       <Link href="/settings">
         <a className={styles.doneLink}>
-          <img src="/buttonIcons/reply.png" />
+          <img src="/buttonIcons/back.png" />
         </a>
       </Link>
       <input style={{ display: "none" }} autoComplete="email" />

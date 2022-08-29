@@ -13,7 +13,7 @@ const FeedbackForm = () => {
     <form className={styles.container} action="/settings" mode="post">
       <Link href="/settings">
         <a className={styles.doneLink}>
-          <img src="/buttonIcons/reply.png" />
+          <img src="/buttonIcons/back.png" />
         </a>
       </Link>
       <label htmlFor="subject">Subject</label>
