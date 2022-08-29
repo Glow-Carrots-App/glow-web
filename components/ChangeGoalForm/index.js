@@ -23,8 +23,8 @@ const ChangeGoalForm = ({ user }) => {
     }
   };
 
-  const handleDailyGoalUpdate = () => {
-    UserModel.updateDailyGoal(uid, number);
+  const handleDailyGoalUpdate = async () => {
+    await UserModel.updateDailyGoal(uid, number);
     router.push("/settings");
   };
 

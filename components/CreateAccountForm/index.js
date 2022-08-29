@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import dayjs from "dayjs";
 
 import { useAuth } from "../../context/AuthContext.js";
 import UserModel from "../../model/user";
@@ -15,8 +13,6 @@ const CreateAccountForm = () => {
 
   const { signup } = useAuth();
 
-  const router = useRouter();
-
   const handleCreateAccount = async (e) => {
     e.preventDefault();
 
@@ -24,18 +20,13 @@ const CreateAccountForm = () => {
       const { user } = await signup(email, password);
       const newUser = createNewUserDataModel(email, firstName, user.uid);
       await UserModel.createUser(newUser);
-      router.push("/today");
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <form
-      className={styles.form}
-      method="post"
-      onSubmit={handleCreateAccount}
-    >
+    <form className={styles.form} method="post" onSubmit={handleCreateAccount}>
       <input
         className={styles.formInput}
         type="text"
