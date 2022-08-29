@@ -29,6 +29,10 @@
   height: 50px;
 }
 
+.inputButton:disabled {
+  background-color: darkgray;
+}
+
 @media (min-width: 768px) {
   .inputButton {
     line-height: 92px;
