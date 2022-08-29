@@ -39,8 +39,8 @@ const ChangeGoal = () => {
   return (
     <WithProtected>
       <PageContainer>
-        <Heading1>Daily Goal</Heading1>
         <img src="/pageBackgrounds/berries.png" className={styles.berry} />
+        <Heading1>Daily Goal</Heading1>
         <Heading2>
           How many healthy foods <br />
           do you want to eat each day?

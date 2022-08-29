@@ -1,7 +1,18 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.doneLink {
+  position: absolute;
+  top: -185px;
+  left: 0;
+}
+
+.doneLink > img {
+  height: 35px;
 }
 
 .numberPickerContainer {
@@ -67,7 +78,7 @@
   display: inline-block;
   padding: 1px 6px;
   height: 50px;
-  width: 148px;
+  width: 100%;
   border-radius: 4px;
   border: none;
   color: white;
@@ -87,7 +98,15 @@
     line-height: 92px;
     font-size: 24px;
     height: 92px;
-    width: 278px;
+    width: 100%;
+  }
+
+  .doneLink {
+    top: -270px;
+  }
+
+  .doneLink > img {
+    height: 60px;
   }
 
   .numberPicker {

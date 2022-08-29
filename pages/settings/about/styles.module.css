@@ -19,7 +19,12 @@
 
 .doneLink {
   position: absolute;
-  inset: 30px 30px auto auto;
+  top: 30px;
+  left: 30px;
+}
+
+.doneLink > img {
+  height: 35px;
 }
 
 .banana {
@@ -32,6 +37,15 @@
 @media (min-width: 768px) {
   .container {
     padding: 86px;
+  }
+
+  .doneLink {
+    top: 74px;
+    left: 80px;
+  }
+
+  .doneLink > img {
+    height: 60px;
   }
 
   .container p {
