@@ -14,6 +14,7 @@ const SearchFoodsForm = ({ user, currentDay }) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
+  const [isAdded, setIsAdded] = useState(false);
 
   const alphabetizedFoods = alphabetizeFoods(masterFoodLibrary);
 
@@ -22,6 +23,13 @@ const SearchFoodsForm = ({ user, currentDay }) => {
     selectedColor,
     searchInput
   );
+
+  const displayCheck = () => {
+    setIsAdded(true);
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 2000);
+  };
 
   return (
     <div className={styles.container}>
@@ -49,7 +57,19 @@ const SearchFoodsForm = ({ user, currentDay }) => {
         )}
       </div>
       <div className={styles.backgroundImage}>
-        <img src="/eatBackground/eatBackground.png" />
+        <img
+          className={styles.bowlImg}
+          src="/eatBackground/eatBackground.png"
+        />
+        <img
+          className={styles.checkImg}
+          src="/eatBackground/check.png"
+          style={
+            isAdded
+              ? { visibility: "visible", opacity: 1 }
+              : { visibility: "hidden", opacity: 0 }
+          }
+        />
       </div>
       <SearchFoodsButtons
         user={user}
@@ -57,6 +77,7 @@ const SearchFoodsForm = ({ user, currentDay }) => {
         setSearchInput={setSearchInput}
         setSelectedFood={setSelectedFood}
         selectedFood={selectedFood}
+        displayCheck={displayCheck}
       />
     </div>
   );
