@@ -19,6 +19,14 @@
   border-color: black;
 }
 
+.password {
+  background: none;
+  height: 50px;
+  width: 222px;
+  border-width: 0 0 1px;
+  border-color: black;
+}
+
 .inputButton,
 .inputButtonSaved {
   background-color: rgba(235, 221, 245, 0.3);

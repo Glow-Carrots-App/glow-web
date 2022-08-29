@@ -12,48 +12,54 @@ const ChangePasswordForm = () => {
 
   const [isPasswordSaved, setIsPasswordSaved] = useState(false);
 
-  const {
-    authedUser: { uid },
-    changePassword,
-  } = useAuth();
+  const { changePassword, reauthenticate } = useAuth();
 
   const handlePasswordUpdate = async (e) => {
     e.preventDefault();
-    await changePassword(newPassword);
-    setIsPasswordSaved(true);
+    try {
+      await reauthenticate(oldPassword);
+      await changePassword(newPassword);
+      setIsPasswordSaved(true);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
-    <form className={styles.container} action="/settings" mode="post">
+    <form className={styles.container}>
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/reply1.png" />
         </a>
       </Link>
+      <input style={{ display: "none" }} autoComplete="email" />
       <input
         className={styles.inputFields}
         type="password"
-        name="oldPassword"
+        id="oldPassword"
         value={oldPassword}
         placeholder="Old Password"
+        autoComplete="current-password"
         onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setOldPassword(e.target.value)}
       />
       <input
         className={styles.inputFields}
         type="password"
-        name="newPassword"
+        id="newPassword"
         value={newPassword}
         placeholder="New Password"
+        autoComplete="new-password"
         onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setNewPassword(e.target.value)}
       />
       <input
         className={styles.inputFields}
         type="password"
-        name="confirmNewPassword"
+        id="confirmNewPassword"
         value={confirmNewPassword}
         placeholder="Confirm New Password"
+        autoComplete="new-password"
         onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setConfirmNewPassword(e.target.value)}
       />
