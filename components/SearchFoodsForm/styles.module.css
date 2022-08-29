@@ -32,11 +32,19 @@
   width: 100%;
   margin: 20px 0 30px;
   border-radius: 3px;
+}
+
+.bowlImg {
+  height: 200px;
   opacity: 0.5;
 }
 
-.backgroundImage > img {
-  height: 185px;
+.checkImg {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s;
+  height: 100px;
 }
 
 @media (min-width: 768px) {
