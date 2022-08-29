@@ -1,6 +1,17 @@
 import { db } from "../../firebase.js";
 
-import { getDoc, setDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import {
+  getDoc,
+  setDoc,
+  updateDoc,
+  doc,
+  deleteDoc,
+  collection,
+  query,
+  where,
+} from "firebase/firestore";
+
+const usersRef = collection(db, "users");
 
 class UserModel {
   static getUser = async (uid) => {
@@ -14,12 +25,16 @@ class UserModel {
     }
   };
 
-  static createUser = async (newUser, uid) => {
-    return await setDoc(doc(db, "users", uid), newUser);
+  static createUser = async (newUser) => {
+    return await setDoc(doc(db, "users", newUser.uid), newUser);
   };
 
   static deleteUser = async (uid) => {
     return await deleteDoc(doc(db, "users", uid));
+  };
+
+  static checkIfUserExists = async (email) => {
+    const userQuery = query(usersRef, where("email", "==", email));
   };
 
   static updateName = async (uid, newName) => {
@@ -36,22 +51,38 @@ class UserModel {
     });
   };
 
-  static updateGoldenCarrots = async (id, goldenCarrots) => {
-    // await firestoreFunction(id, goldenCarrots)
-  };
-
-  static incrementDayStreak = async (id, currentDayStreak) => {
-    // await firestoreFunction(id, currentDayStreak)
-  };
-
-  static clearDayStreak = async (id, isGoalComplete) => {
-    // await firestoreFunction(id, 0)
-  };
-
-  static updateDailyGoal = async (uid, dailyGoal, isComplete) => {
+  static incrementGoldenCarrots = async (uid, goldenCarrots) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      dailyGoal: { amount: dailyGoal, isComplete: isComplete },
+      goldenCarrots: goldenCarrots + 1,
+    });
+  };
+
+  static incrementDayStreak = async (uid, currentDayStreak) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      dayStreak: currentDayStreak + 1,
+    });
+  };
+
+  static clearDayStreak = async (uid) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      dayStreak: 0,
+    });
+  };
+
+  static updateDailyGoal = async (uid, dailyGoal) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      "dailyGoal.amount": dailyGoal,
+    });
+  };
+
+  static updateGoalIsComplete = async (uid, isGoalComplete) => {
+    const docRef = doc(db, "users", uid);
+    await updateDoc(docRef, {
+      "dailyGoal.isComplete": isGoalComplete,
     });
   };
 

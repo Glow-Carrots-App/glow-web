@@ -7,8 +7,13 @@ import {
   deleteUser,
   updatePassword,
   updateEmail,
+  signInWithRedirect,
+  getRedirectResult,
+  getAdditionalUserInfo,
 } from "firebase/auth";
-import { auth } from "../firebase";
+
+import { auth, googleProvider } from "../firebase";
+import Loading from "../components/Loading";
 
 const AuthContext = createContext();
 
@@ -34,12 +39,32 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const signup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const signup = async (email, password) => {
+    return await createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const googleLogin = async () => {
+    await signInWithRedirect(auth, googleProvider);
+  };
+
+  const getGoogleRedirectResult = async () => {
+    const result = await getRedirectResult(auth);
+    if (result) {
+      const {
+        isNewUser,
+        profile: { given_name },
+      } = getAdditionalUserInfo(result);
+      const formattedResult = {
+        isNewUser,
+        firstName: given_name,
+      };
+      return formattedResult;
+    }
+    return null;
   };
 
   const logout = async () => {
@@ -71,9 +96,11 @@ export const AuthContextProvider = ({ children }) => {
         deleteAccount,
         changePassword,
         changeEmail,
+        googleLogin,
+        getGoogleRedirectResult,
       }}
     >
-      {loading ? null : children}
+      {loading ? <Loading /> : children}
     </AuthContext.Provider>
   );
 };

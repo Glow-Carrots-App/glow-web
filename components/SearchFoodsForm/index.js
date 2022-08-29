@@ -1,60 +1,27 @@
 import { useState } from "react";
-import dayjs from "dayjs";
 
-import { useAuth } from "../../context/AuthContext";
-import FoodEntryModel from "../../model/foodEntry";
-import SmallLinkedButton from "../SmallLinkedButton";
 import SearchFoodsList from "../SearchFoodsList";
 import ColorFilter from "../ColorFilter";
 import masterFoodLibrary from "../../masterFoodLibrary/masterFoodLibrary";
 import alphabetizeFoods from "../../utils/alphabetizeFoods";
+import filterFoodsForSearch from "../../utils/filterFoodsForSearch";
+import SearchFoodsButtons from "../SearchFoodsButtons";
 
 import styles from "./styles.module.css";
 
-const SearchFoodsForm = () => {
+const SearchFoodsForm = ({ user, currentDay }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
   const [selectedFood, setSelectedFood] = useState(null);
 
-  const {
-    authedUser: { uid },
-  } = useAuth();
-
   const alphabetizedFoods = alphabetizeFoods(masterFoodLibrary);
 
-  const filteredFood = !selectedColor
-    ? alphabetizedFoods.filter((food) =>
-        food.productSearch.toLowerCase().includes(searchInput.toLowerCase())
-      )
-    : alphabetizedFoods.filter(
-        (food) =>
-          food.productSearch
-            .toLowerCase()
-            .includes(searchInput.toLowerCase()) && food.color === selectedColor
-      );
-
-  const handleEatFood = (e) => {
-    e.preventDefault();
-
-    if (!selectedFood) {
-      return;
-    }
-
-    const newFood = {
-      ...selectedFood,
-      date: dayjs().format("YYYY/MM/DD"),
-      uid,
-    };
-
-    try {
-      FoodEntryModel.createFoodEntry(newFood);
-      setSearchInput("");
-      setSelectedFood(null);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const filteredFood = filterFoodsForSearch(
+    alphabetizedFoods,
+    selectedColor,
+    searchInput
+  );
 
   return (
     <div className={styles.container}>
@@ -76,24 +43,21 @@ const SearchFoodsForm = () => {
             setSelectedColor={setSelectedColor}
             setSelectedFood={setSelectedFood}
             setFocused={setFocused}
-            data={filteredFood}
             setSearchInput={setSearchInput}
+            data={filteredFood}
           />
         )}
       </div>
       <div className={styles.backgroundImage}>
         <img src="/eatBackground/eatBackground.png" />
       </div>
-      <div className={styles.buttons}>
-        <SmallLinkedButton href="/today">Cancel</SmallLinkedButton>
-        <input
-          className={styles.addButton}
-          type="submit"
-          name="submitMessage"
-          value="Add"
-          onClick={(e) => handleEatFood(e)}
-        />
-      </div>
+      <SearchFoodsButtons
+        user={user}
+        currentDay={currentDay}
+        setSearchInput={setSearchInput}
+        setSelectedFood={setSelectedFood}
+        selectedFood={selectedFood}
+      />
     </div>
   );
 };

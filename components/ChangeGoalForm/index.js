@@ -11,10 +11,7 @@ const ChangeGoalForm = ({ user }) => {
   const [number, setNumber] = useState(user.dailyGoal.amount);
   const router = useRouter();
 
-  const {
-    uid,
-    dailyGoal: { isComplete },
-  } = user;
+  const { uid } = user;
 
   const handleChange = (e) => {
     if (e.target.value > 60) {
@@ -27,7 +24,7 @@ const ChangeGoalForm = ({ user }) => {
   };
 
   const handleDailyGoalUpdate = () => {
-    UserModel.updateDailyGoal(uid, number, isComplete);
+    UserModel.updateDailyGoal(uid, number);
     router.push("/settings");
   };
 
