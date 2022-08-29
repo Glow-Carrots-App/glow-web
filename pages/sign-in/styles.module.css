@@ -37,8 +37,12 @@
   .signInText {
     font-size: 24px;
   }
-
   .signUpLink {
     font-size: 24px;
+  }
+  .image {
+    margin: 5px 0 0 12px;
+    height: 40px;
+    width: 40px;
   }
 }

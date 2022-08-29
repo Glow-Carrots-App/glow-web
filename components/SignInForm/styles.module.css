@@ -30,6 +30,10 @@
   margin-top: 24px;
 }
 
+.signInButton:disabled {
+  background-color: darkgray;
+}
+
 @media (min-width: 768px) {
   .signInFields {
     max-width: 596px;
