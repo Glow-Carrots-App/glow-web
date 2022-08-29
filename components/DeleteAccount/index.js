@@ -39,6 +39,7 @@ const DeleteAccount = () => {
           type="password"
           name="password"
           placeholder="Password"
+          autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className={styles.passwordField}

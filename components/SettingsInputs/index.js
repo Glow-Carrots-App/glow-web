@@ -6,6 +6,7 @@ import UserModel from "../../model/user";
 import styles from "./styles.module.css";
 
 const SettingsInputs = ({ user }) => {
+  const { firstName, email, uid } = user;
   const [newName, setNewName] = useState(firstName);
   const [newEmail, setNewEmail] = useState(email);
   const [password, setPassword] = useState("");
@@ -14,7 +15,6 @@ const SettingsInputs = ({ user }) => {
   const [isEmailSaved, setIsEmailSaved] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const { firstName, email, uid } = user;
   const { reauthenticate, changeEmail } = useAuth();
 
   const handleNewName = async (e) => {
@@ -70,6 +70,7 @@ const SettingsInputs = ({ user }) => {
         id="password"
         type="password"
         placeholder="Password"
+        autoComplete="current-password"
         value={password}
         className={styles.password}
         style={!showPassword ? { display: "none" } : null}
@@ -80,6 +81,7 @@ const SettingsInputs = ({ user }) => {
         <input
           className={styles.input}
           id="email"
+          autoComplete="email"
           type="text"
           value={newEmail}
           onChange={(e) => setNewEmail(e.target.value)}
