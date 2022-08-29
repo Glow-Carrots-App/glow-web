@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 import Heading2 from "../Heading2";
+import DoneButton from "../DoneButton";
 
 import styles from "./styles.module.css";
 
@@ -11,9 +12,7 @@ const SettingsTopInfo = ({ user }) => {
 
   return (
     <div className={styles.container}>
-      <Link href="/profile">
-        <a className={styles.doneLink}>Done</a>
-      </Link>
+      <DoneButton href="/profile" />
       <Heading2>Your Profile</Heading2>
       <Link href="/settings/change-avatar">
         <a className={styles.avatarContainer}>
