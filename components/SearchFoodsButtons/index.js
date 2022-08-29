@@ -13,6 +13,7 @@ const SearchFoodsButtons = ({
   selectedFood,
   setSearchInput,
   setSelectedFood,
+  displayCheck,
 }) => {
   const [currentCount, setCurrentCount] = useState(currentDay.length);
   const [isGoalComplete, setIsGoalComplete] = useState(
@@ -49,6 +50,7 @@ const SearchFoodsButtons = ({
         UserModel.updateGoalIsComplete(uid, true);
         setIsGoalComplete(true);
       }
+      displayCheck();
     } catch (err) {
       console.log(err);
     }
