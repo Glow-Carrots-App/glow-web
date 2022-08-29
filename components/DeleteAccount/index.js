@@ -38,7 +38,7 @@ const DeleteAccount = () => {
         <input style={{ display: "none" }} autoComplete="email" />
         <input
           type="password"
-          name="password"
+          id="password"
           placeholder="Password"
           autoComplete="current-password"
           value={password}
