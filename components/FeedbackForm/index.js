@@ -1,5 +1,4 @@
 import { useAuth } from "../../context/AuthContext";
-import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
@@ -25,7 +24,7 @@ const FeedbackForm = () => {
         placeholder="Type here"
       />
       <div className={styles.buttonPair}>
-        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
+        <button type="reset">Reset</button>
         <input
           className={styles.submitButton}
           type="submit"
