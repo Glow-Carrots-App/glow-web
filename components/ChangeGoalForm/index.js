@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import UserModel from "../../model/user";
 import Heading2 from "../Heading2";
-import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
@@ -30,6 +30,11 @@ const ChangeGoalForm = ({ user }) => {
 
   return (
     <div className={styles.container}>
+      <Link href="/settings">
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/reply1.png" />
+        </a>
+      </Link>
       <div className={styles.numberPickerContainer}>
         <Heading2>I want to eat:</Heading2>
         <div
@@ -55,7 +60,6 @@ const ChangeGoalForm = ({ user }) => {
         <Heading2>healthy foods daily.</Heading2>
       </div>
       <div className={styles.buttonContainer}>
-        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <button
           disabled={!number}
           className={styles.button}

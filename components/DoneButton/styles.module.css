@@ -1,11 +1,17 @@
 .doneLink {
   position: absolute;
-  inset: -60px 0px auto auto;
+  /* inset: -45px auto auto 0; */
+}
+
+.doneLink > img {
+  height: 35px;
 }
 
 @media (min-width: 768px) {
   .doneLink {
-    font-size: 24px;
-    inset: -90px 0px auto auto;
+    inset: -75px auto auto 0;
+  }
+  .doneLink > img {
+    height: 60px;
   }
 }

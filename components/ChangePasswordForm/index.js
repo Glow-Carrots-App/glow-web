@@ -1,5 +1,5 @@
 import { useAuth } from "../../context/AuthContext";
-import SmallLinkedButton from "../SmallLinkedButton";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 
@@ -9,6 +9,11 @@ const ChangePasswordForm = () => {
   } = useAuth();
   return (
     <form className={styles.container} action="/settings" mode="post">
+      <Link href="/settings">
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/reply1.png" />
+        </a>
+      </Link>
       <input
         className={styles.passwordFields}
         type="password"
@@ -28,7 +33,7 @@ const ChangePasswordForm = () => {
         placeholder="Confirm New Password"
       />
       <div className={styles.passwordButtonPair}>
-        <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
+        <button>Reset</button>
         <input
           className={styles.passwordButton}
           type="submit"

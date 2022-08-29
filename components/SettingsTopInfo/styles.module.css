@@ -6,6 +6,16 @@
   width: 307px;
 }
 
+.doneLink {
+  position: absolute;
+  top: -45px;
+  left: 0;
+}
+
+.doneLink > img {
+  height: 35px;
+}
+
 .avatarContainer {
   position: relative;
   display: flex;
@@ -32,6 +42,13 @@
 @media (min-width: 768px) {
   .container {
     width: 596px;
+  }
+
+  .doneLink {
+    inset: -75px auto auto 0;
+  }
+  .doneLink > img {
+    height: 60px;
   }
   .avatarContainer {
     height: 140px;

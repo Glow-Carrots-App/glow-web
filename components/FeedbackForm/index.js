@@ -1,5 +1,6 @@
 import { useAuth } from "../../context/AuthContext";
 import SmallLinkedButton from "../SmallLinkedButton";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 
@@ -10,6 +11,11 @@ const FeedbackForm = () => {
 
   return (
     <form className={styles.container} action="/settings" mode="post">
+      <Link href="/settings">
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/reply1.png" />
+        </a>
+      </Link>
       <label htmlFor="subject">Subject</label>
       <input
         id="subject"
