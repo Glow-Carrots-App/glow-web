@@ -7,7 +7,7 @@
   padding-top: 24px;
 }
 
-.passwordFields {
+.inputFields {
   height: 50px;
   width: 307px;
   border-width: 0 0 1px;
@@ -15,17 +15,31 @@
   background: none;
 }
 
-.passwordFields::placeholder {
+.inputFields::placeholder {
   color: black;
 }
 
-.passwordButtonPair {
+.buttonPair {
   display: flex;
   justify-content: center;
   gap: 11px;
 }
 
-.passwordButton {
+.reset {
+  line-height: 45px;
+  display: inline-block;
+  padding: 1px 6px;
+  height: 50px;
+  width: 148px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: var(--purple-light);
+  text-align: center;
+  font-size: medium;
+}
+
+.save {
   background-color: var(--purple-light);
   color: white;
   height: 50px;
@@ -35,23 +49,33 @@
   font-size: medium;
 }
 
+.save:disabled {
+  background-color: lightgray;
+}
+
 @media (min-width: 768px) {
   .container {
     gap: 30px;
   }
-  .passwordFields {
+  .inputFields {
     height: 92px;
     width: 596px;
     font-size: 24px;
   }
 
-  .passwordFields::placeholder {
+  .inputFields::placeholder {
     font-size: 24px;
   }
-  .passwordButtonPair {
+  .buttonPair {
     gap: 40px;
   }
-  .passwordButton {
+  .reset {
+    line-height: 92px;
+    font-size: 24px;
+    height: 92px;
+    width: 278px;
+  }
+  .save {
     line-height: 92px;
     font-size: 24px;
     height: 92px;

@@ -384,6 +384,14 @@ const masterFoodLibrary = [
     date: null,
   },
   {
+    product: "Basil",
+    productSearch: "Basil (Purple)",
+    color: "Purple",
+    textHex: "#7471E7",
+    fillHex: "#4B37A8",
+    date: null,
+  },
+  {
     product: "Eggplant",
     productSearch: "Eggplant",
     color: "Purple",
@@ -429,14 +437,6 @@ const masterFoodLibrary = [
     color: "Purple",
     textHex: "#7471E7",
     fillHex: "#4B37A8",
-    date: null,
-  },
-  {
-    product: "Basil",
-    productSearch: "Basil (Purple)",
-    color: "Red",
-    textHex: "#F94D4D",
-    fillHex: "#F94D4D",
     date: null,
   },
   {
@@ -728,8 +728,8 @@ const masterFoodLibrary = [
     date: null,
   },
   {
-    product: "Cantalope",
-    productSearch: "Cantalope",
+    product: "Cantaloupe",
+    productSearch: "Cantaloupe",
     color: "Orange",
     textHex: "#FD8F52",
     fillHex: "#FD8F52",
