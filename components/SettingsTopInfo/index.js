@@ -13,7 +13,7 @@ const SettingsTopInfo = ({ user }) => {
     <div className={styles.container}>
       <Link href="/profile">
         <a className={styles.doneLink}>
-          <img src="/buttonIcons/reply1.png" />
+          <img src="/buttonIcons/reply.png" />
         </a>
       </Link>
       <Heading2>Your Profile</Heading2>

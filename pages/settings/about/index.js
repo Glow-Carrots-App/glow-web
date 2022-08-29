@@ -13,7 +13,7 @@ const AboutUs = () => {
         <Heading1>About Glow</Heading1>
         <Link href="/settings">
           <a className={styles.doneLink}>
-            <img src="/buttonIcons/reply1.png" />
+            <img src="/buttonIcons/reply.png" />
           </a>
         </Link>
         <img src="/pageBackgrounds/banana.png" className={styles.banana} />
