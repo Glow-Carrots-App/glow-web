@@ -20,7 +20,6 @@ const ChangePasswordForm = () => {
     e.preventDefault();
     await changePassword(newPassword);
     setIsPasswordSaved(true);
-    //reset or fields === reset
   };
 
   return (
