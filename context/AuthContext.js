@@ -10,6 +10,8 @@ import {
   signInWithRedirect,
   getRedirectResult,
   getAdditionalUserInfo,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
 } from "firebase/auth";
 
 import { auth, googleProvider } from "../firebase";
@@ -72,6 +74,14 @@ export const AuthContextProvider = ({ children }) => {
     await signOut(auth);
   };
 
+  const reauthenticate = async (password) => {
+    const user = auth.currentUser;
+    const { email } = user;
+    const credential = EmailAuthProvider.credential(email, password);
+
+    await reauthenticateWithCredential(user, credential);
+  };
+
   const deleteAccount = async () => {
     setAuthedUser(null);
     await deleteUser(auth.currentUser);
@@ -98,6 +108,7 @@ export const AuthContextProvider = ({ children }) => {
         changeEmail,
         googleLogin,
         getGoogleRedirectResult,
+        reauthenticate,
       }}
     >
       {loading ? <Loading /> : children}
