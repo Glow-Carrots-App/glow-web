@@ -18,7 +18,6 @@ const DeleteAccount = () => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-
     try {
       await reauthenticate(password);
       await deleteAccount();

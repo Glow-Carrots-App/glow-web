@@ -6,7 +6,6 @@ import UserModel from "../../model/user";
 import styles from "./styles.module.css";
 
 const SettingsInputs = ({ user }) => {
-  const { firstName, email, uid } = user;
   const [newName, setNewName] = useState(firstName);
   const [newEmail, setNewEmail] = useState(email);
   const [password, setPassword] = useState("");
@@ -15,20 +14,29 @@ const SettingsInputs = ({ user }) => {
   const [isEmailSaved, setIsEmailSaved] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const { firstName, email, uid } = user;
   const { reauthenticate, changeEmail } = useAuth();
 
   const handleNewName = async (e) => {
-    e.preventDefault();
-    await UserModel.updateName(uid, newName);
-    setIsNameSaved(true);
+    try {
+      e.preventDefault();
+      await UserModel.updateName(uid, newName);
+      setIsNameSaved(true);
+    } catch (err) {
+      console.log(err);
+    }
   };
   const handleNewEmail = async (e) => {
-    e.preventDefault();
-    await reauthenticate(password);
-    await changeEmail(newEmail);
-    await UserModel.updateEmail(uid, newEmail);
-    setIsEmailSaved(true);
-    setShowPassword(false);
+    try {
+      e.preventDefault();
+      await reauthenticate(password);
+      await changeEmail(newEmail);
+      await UserModel.updateEmail(uid, newEmail);
+      setIsEmailSaved(true);
+      setShowPassword(false);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -77,6 +85,7 @@ const SettingsInputs = ({ user }) => {
           onChange={(e) => setNewEmail(e.target.value)}
           onFocus={() => {
             setIsEmailSaved(false);
+            setPassword("");
             setShowPassword(true);
           }}
         />
