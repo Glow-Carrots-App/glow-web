@@ -1,11 +1,3 @@
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
 .berry {
   position: absolute;
   top: -20px;
@@ -13,10 +5,4 @@
   height: 200px;
   width: 200px;
   opacity: 60%;
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 86px;
-  }
 }
