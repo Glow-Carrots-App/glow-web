@@ -35,6 +35,7 @@ const DeleteAccount = () => {
         <label className={styles.deleteAccountText} htmlFor="password">
           Confirm password to delete account:
         </label>
+        <input style={{ display: "none" }} autoComplete="email" />
         <input
           type="password"
           name="password"
