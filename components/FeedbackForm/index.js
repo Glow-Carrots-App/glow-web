@@ -1,25 +1,23 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 
-import { useAuth } from "../../context/AuthContext";
-
 import styles from "./styles.module.css";
 
-const FeedbackForm = () => {
-  const {
-    authedUser: { uid, email },
-  } = useAuth();
-
+const FeedbackForm = ({ user }) => {
   const form = useRef();
+
+  // process.env.NEXT_PUBLIC_SERVICE_ID = service_7zc9jub;
+  // process.env.NEXT_PUBLIC_TEMPLATE_ID = glow_contact_form;
+  // process.env.NEXT_PUBLIC_USER_ID = gqFxIjo66reB6ta0x;
 
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_USER_ID
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        e.target,
+        process.env.NEXT_PUBLIC_USER_ID
       )
       .then(
         (result) => console.log(result.text),
@@ -27,14 +25,22 @@ const FeedbackForm = () => {
       );
     e.target.reset();
   };
+
   return (
     <form className={styles.container} ref={form} onSubmit={sendEmail}>
+      <input className={styles.hiddenInputs} name={user.uid} />
+      <input
+        className={styles.hiddenInputs}
+        name="name"
+        value={user.firstName}
+      />
+      <input className={styles.hiddenInputs} name="email" value={user.email} />
       <label htmlFor="subject">Subject</label>
       <input
         required
         id="subject"
         type="text"
-        name="subjectText"
+        name="subject"
         placeholder="Type here"
       />
       <label htmlFor="message">Message</label>
@@ -42,17 +48,14 @@ const FeedbackForm = () => {
         required
         id="message"
         type="text"
-        name="messageText"
+        name="message"
         placeholder="Type here"
       />
       <div className={styles.buttonPair}>
-        <button type="reset">Reset</button>
-        <input
-          className={styles.submitButton}
-          type="submit"
-          name="submitMessage"
-          value="Submit"
-        />
+        <button className={styles.resetButton} type="reset">
+          Reset
+        </button>
+        <input className={styles.submitButton} type="submit" value="Submit" />
       </div>
     </form>
   );
