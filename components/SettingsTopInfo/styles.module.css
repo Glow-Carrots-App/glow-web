@@ -45,7 +45,7 @@
   }
 
   .doneLink {
-    inset: -75px auto auto 0;
+    top: -75px;
   }
   .doneLink > img {
     height: 60px;

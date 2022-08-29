@@ -67,7 +67,6 @@
 @media (min-width: 768px) {
   .doneLink {
     top: -180px;
-    left: 0;
   }
 
   .doneLink > img {
