@@ -1,14 +1,3 @@
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 34px;
-  position: relative;
-}
-
 .avocado1 {
   position: absolute;
   top: -120px;
@@ -24,10 +13,6 @@
 }
 
 @media (min-width: 768px) {
-  .container {
-    padding: 86px;
-  }
-
   .avocado1 {
     height: 400px;
     width: 400px;

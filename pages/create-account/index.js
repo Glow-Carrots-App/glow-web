@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import PageContainer from "../../components/PageContainer";
 import Heading1 from "../../components/Heading1";
 import CreateAccountForm from "../../components/CreateAccountForm";
 import Loading from "../../components/Loading";
@@ -17,7 +18,7 @@ const CreateAccountPage = () => {
 
   return (
     <WithUnprotected>
-      <div className={styles.container}>
+      <PageContainer isLanding={true}>
         <div className={styles.heading}>
           <Heading1>Create Account</Heading1>
           <img src="/stats/goldenCarrot.png" className={styles.image} />
@@ -29,7 +30,7 @@ const CreateAccountPage = () => {
             <a className={styles.signInLink}> Sign In</a>
           </Link>
         </p>
-      </div>
+      </PageContainer>
     </WithUnprotected>
   );
 };

@@ -1,6 +1,10 @@
 import { useState } from "react";
 
 import { useAuth } from "../../context/AuthContext.js";
+import {
+  validatePasswordRegex,
+  validatePasswordMsg,
+} from "../../utils/validatePassword.js";
 
 import styles from "./styles.module.css";
 
@@ -30,27 +34,32 @@ const SignInForm = () => {
   return (
     <form className={styles.container} onSubmit={handleSignIn}>
       <input
-        type="text"
-        className={styles.signInFields}
+        type="email"
+        autoComplete="email"
         placeholder="Email"
         value={email}
+        className={styles.signInFields}
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
         type="password"
-        className={styles.signInFields}
+        autoComplete="current-password"
         placeholder="Password"
         value={password}
+        pattern={validatePasswordRegex}
+        className={styles.signInFields}
+        onInput={(e) => e.target.setCustomValidity(validatePasswordMsg)}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <input type="submit" value="Sign In" className={styles.signInButton} />
-
       <input
-        type="button"
-        value="Sign In With Google"
+        type="submit"
+        value="Sign In"
         className={styles.signInButton}
-        onClick={handleGoogleSignIn}
+        disabled={!email || !password}
       />
+      <button className={styles.signInButton} onClick={handleGoogleSignIn}>
+        Sign In With Google
+      </button>
     </form>
   );
 };
