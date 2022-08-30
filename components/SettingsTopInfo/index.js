@@ -12,7 +12,9 @@ const SettingsTopInfo = ({ user }) => {
   return (
     <div className={styles.container}>
       <Link href="/profile">
-        <a className={styles.doneLink}>Done</a>
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/back.png" />
+        </a>
       </Link>
       <Heading2>Your Profile</Heading2>
       <Link href="/settings/change-avatar">

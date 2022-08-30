@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 
@@ -21,6 +22,11 @@ const FeedbackForm = ({ user }) => {
 
   return (
     <form className={styles.container} ref={form} onSubmit={sendEmail}>
+      <Link href="/settings">
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/back.png" />
+        </a>
+      </Link>
       <input
         className={styles.hiddenInputs}
         name="uid"

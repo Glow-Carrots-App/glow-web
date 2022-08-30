@@ -1,8 +1,8 @@
 .berry {
   position: absolute;
-  top: -20px;
-  left: -60px;
+  inset: -20px 0 auto auto;
   height: 200px;
   width: 200px;
   opacity: 60%;
+  transform: scaleX(-1);
 }

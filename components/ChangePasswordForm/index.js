@@ -1,70 +1,90 @@
 import { useState } from "react";
 
 import { useAuth } from "../../context/AuthContext";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 
 const ChangePasswordForm = () => {
-  const [oldPassword, setOldPassword] = useState();
-  const [newPassword, setNewPassword] = useState();
-  const [confirmNewPassword, setConfirmNewPassword] = useState();
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
-  const {
-    authedUser: { uid },
-    changePassword,
-  } = useAuth();
+  const [isPasswordSaved, setIsPasswordSaved] = useState(false);
 
-  const handlePasswordUpdate = (e) => {
+  const { changePassword, reauthenticate } = useAuth();
+
+  const handlePasswordUpdate = async (e) => {
     e.preventDefault();
-    changePassword(newPassword);
-    //change style
+    try {
+      await reauthenticate(oldPassword);
+      await changePassword(newPassword);
+      setIsPasswordSaved(true);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
-    <form
-      id="passwordForm"
-      className={styles.container}
-      action="/settings"
-      mode="post"
-    >
+    <form className={styles.container}>
+      <Link href="/settings">
+        <a className={styles.doneLink}>
+          <img src="/buttonIcons/back.png" />
+        </a>
+      </Link>
+      <input style={{ display: "none" }} autoComplete="email" />
       <input
-        className={styles.passwordFields}
+        className={styles.inputFields}
         type="password"
-        name="oldPassword"
+        id="oldPassword"
         value={oldPassword}
         placeholder="Old Password"
+        autoComplete="current-password"
+        onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setOldPassword(e.target.value)}
       />
       <input
-        className={styles.passwordFields}
+        className={styles.inputFields}
         type="password"
-        name="newPassword"
+        id="newPassword"
         value={newPassword}
         placeholder="New Password"
+        autoComplete="new-password"
+        onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setNewPassword(e.target.value)}
       />
       <input
-        className={styles.passwordFields}
+        className={styles.inputFields}
         type="password"
-        name="confirmNewPassword"
+        id="confirmNewPassword"
         value={confirmNewPassword}
         placeholder="Confirm New Password"
+        autoComplete="new-password"
+        onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setConfirmNewPassword(e.target.value)}
       />
-      <div className={styles.passwordButtonPair}>
-        <button type="reset" className={styles.resetButton}>
+      <div className={styles.buttonPair}>
+        <button
+          type="reset"
+          className={styles.reset}
+          onClick={() => {
+            setOldPassword("");
+            setNewPassword("");
+            setConfirmNewPassword("");
+          }}
+        >
           Reset
         </button>
-        <input
-          // className={
-          //   //if new password added to FB, change value to "Saved"
-          //   //else stay same style
-          // }
-          className={styles.passwordButton}
+        <button
+          disabled={
+            newPassword && oldPassword && confirmNewPassword ? false : true
+          }
           type="submit"
-          value="Save"
+          className={styles.save}
           onClick={handlePasswordUpdate}
-        />
+        >
+          {!isPasswordSaved ? "Save" : "Saved!"}
+        </button>
       </div>
     </form>
   );

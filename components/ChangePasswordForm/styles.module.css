@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +8,17 @@
   padding-top: 24px;
 }
 
-.passwordFields {
+.doneLink {
+  position: absolute;
+  top: -50px;
+  left: -5px;
+}
+
+.doneLink > img {
+  height: 35px;
+}
+
+.inputFields {
   height: 50px;
   width: 307px;
   border-width: 0 0 1px;
@@ -15,17 +26,17 @@
   background: none;
 }
 
-.passwordFields::placeholder {
+.inputFields::placeholder {
   color: black;
 }
 
-.passwordButtonPair {
+.buttonPair {
   display: flex;
   justify-content: center;
   gap: 11px;
 }
 
-.resetButton {
+.reset {
   line-height: 45px;
   display: inline-block;
   padding: 1px 6px;
@@ -39,7 +50,7 @@
   font-size: medium;
 }
 
-.passwordButton {
+.save {
   background-color: var(--purple-light);
   color: white;
   height: 50px;
@@ -49,29 +60,42 @@
   font-size: medium;
 }
 
+.save:disabled {
+  background-color: lightgray;
+}
+
 @media (min-width: 768px) {
   .container {
     gap: 30px;
   }
-  .passwordFields {
+
+  .doneLink {
+    top: -75px;
+  }
+
+  .doneLink > img {
+    height: 60px;
+  }
+
+  .inputFields {
     height: 92px;
     width: 596px;
     font-size: 24px;
   }
 
-  .passwordFields::placeholder {
+  .inputFields::placeholder {
     font-size: 24px;
   }
-  .passwordButtonPair {
+  .buttonPair {
     gap: 40px;
   }
-  .resetButton {
+  .reset {
     line-height: 92px;
     font-size: 24px;
     height: 92px;
     width: 278px;
   }
-  .passwordButton {
+  .save {
     line-height: 92px;
     font-size: 24px;
     height: 92px;
