@@ -1,7 +1,11 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import { useAuth } from "../../context/AuthContext";
-import Link from "next/link";
+import {
+  validatePasswordRegex,
+  validatePasswordMsg,
+} from "../../utils/validatePassword";
 
 import styles from "./styles.module.css";
 
@@ -24,7 +28,7 @@ const ChangePasswordForm = () => {
   };
 
   return (
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={handlePasswordUpdate}>
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/back.png" />
@@ -48,8 +52,13 @@ const ChangePasswordForm = () => {
         value={newPassword}
         placeholder="New Password"
         autoComplete="new-password"
+        pattern={validatePasswordRegex}
         onFocus={() => setIsPasswordSaved(false)}
-        onChange={(e) => setNewPassword(e.target.value)}
+        onChange={(e) => {
+          e.target.setCustomValidity("");
+          setNewPassword(e.target.value);
+        }}
+        onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
       <input
         className={styles.inputFields}
@@ -58,12 +67,17 @@ const ChangePasswordForm = () => {
         value={confirmNewPassword}
         placeholder="Confirm New Password"
         autoComplete="new-password"
+        pattern={validatePasswordRegex}
         onFocus={() => setIsPasswordSaved(false)}
-        onChange={(e) => setConfirmNewPassword(e.target.value)}
+        onChange={(e) => {
+          e.target.setCustomValidity("");
+          setConfirmNewPassword(e.target.value);
+        }}
+        onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
       <div className={styles.buttonPair}>
         <button
-          type="reset"
+          type="button"
           className={styles.reset}
           onClick={() => {
             setOldPassword("");
@@ -73,16 +87,17 @@ const ChangePasswordForm = () => {
         >
           Reset
         </button>
-        <button
-          disabled={
-            newPassword && oldPassword && confirmNewPassword ? false : true
-          }
+        <input
           type="submit"
+          value={!isPasswordSaved ? "Save" : "Saved!"}
+          disabled={
+            !newPassword ||
+            !oldPassword ||
+            !confirmNewPassword ||
+            newPassword !== confirmNewPassword
+          }
           className={styles.save}
-          onClick={handlePasswordUpdate}
-        >
-          {!isPasswordSaved ? "Save" : "Saved!"}
-        </button>
+        />
       </div>
     </form>
   );
