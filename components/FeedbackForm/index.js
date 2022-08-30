@@ -28,13 +28,21 @@ const FeedbackForm = ({ user }) => {
 
   return (
     <form className={styles.container} ref={form} onSubmit={sendEmail}>
-      <input className={styles.hiddenInputs} name={user.uid} />
+      <input
+        className={styles.hiddenInputs}
+        name="uid"
+        defaultValue={user.uid}
+      />
       <input
         className={styles.hiddenInputs}
         name="name"
-        value={user.firstName}
+        defaultValue={user.firstName}
       />
-      <input className={styles.hiddenInputs} name="email" value={user.email} />
+      <input
+        className={styles.hiddenInputs}
+        name="email"
+        defaultValue={user.email}
+      />
       <label htmlFor="subject">Subject</label>
       <input
         required
