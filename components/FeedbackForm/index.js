@@ -15,10 +15,7 @@ const FeedbackForm = ({ user }) => {
         e.target,
         process.env.NEXT_PUBLIC_USER_ID
       )
-      .then(
-        (result) => console.log(result.text),
-        (error) => console.log(error.text)
-      );
+      .then(console.log(errortext));
     e.target.reset();
   };
 
