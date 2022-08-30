@@ -91,6 +91,7 @@ const SettingsInputs = ({ user }) => {
           type="email"
           pattern={validateEmailRegex}
           value={newEmail}
+          onInvalid={(e) => e.target.setCustomValidity(validateEmailMsg)}
           onChange={(e) => {
             e.target.setCustomValidity("");
             setNewEmail(e.target.value);
