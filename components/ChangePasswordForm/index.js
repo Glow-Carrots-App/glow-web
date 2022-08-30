@@ -9,9 +9,7 @@ const ChangePasswordForm = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
-
   const [isPasswordSaved, setIsPasswordSaved] = useState(false);
-
   const { changePassword, reauthenticate } = useAuth();
 
   const handlePasswordUpdate = async (e) => {

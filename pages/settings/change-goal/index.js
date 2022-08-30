@@ -8,48 +8,41 @@ import Heading2 from "../../../components/Heading2";
 import ChangeGoalForm from "../../../components/ChangeGoalForm";
 import Loading from "../../../components/Loading";
 import BottomTabs from "../../../components/BottomTabs/index";
-import WithProtected from "../../../components/WithProtected";
+import withProtected from "../../../routers/withProtected";
 
 import styles from "./styles.module.css";
 
-const ChangeGoal = () => {
-  const [user, setUser] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  const { authedUser } = useAuth();
-  const uid = authedUser?.uid ? authedUser.uid : null;
+const ChangeGoal = ({ authedUser }) => {
+  const [user, setUser] = useState();
 
   useEffect(() => {
     async function fetchData() {
-      if (!uid) {
-        setLoading(false);
+      if (!authedUser) {
         return;
       }
+      const { uid } = authedUser;
       const userResponse = await UserModel.getUser(uid);
       setUser(userResponse);
-      setLoading(false);
     }
     fetchData();
   }, []);
 
-  if (loading) {
+  if (!user) {
     return <Loading />;
   }
 
   return (
-    <WithProtected>
-      <PageContainer>
-        <img src="/pageBackgrounds/berries.png" className={styles.berry} />
-        <Heading1>Daily Goal</Heading1>
-        <Heading2>
-          How many healthy foods <br />
-          do you want to eat each day?
-        </Heading2>
-        <ChangeGoalForm user={user} />
-        <BottomTabs />
-      </PageContainer>
-    </WithProtected>
+    <PageContainer>
+      <img src="/pageBackgrounds/berries.png" className={styles.berry} />
+      <Heading1>Daily Goal</Heading1>
+      <Heading2>
+        How many healthy foods <br />
+        do you want to eat each day?
+      </Heading2>
+      <ChangeGoalForm user={user} />
+      <BottomTabs />
+    </PageContainer>
   );
 };
 
-export default ChangeGoal;
+export default withProtected(ChangeGoal);
