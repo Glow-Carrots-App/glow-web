@@ -34,6 +34,11 @@
   background-color: darkgray;
 }
 
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) and (min-height: 1024px) {
   .signInFields {
     max-width: 596px;
