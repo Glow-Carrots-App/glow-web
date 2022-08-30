@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styles from "./styles.module.css";
 
-const Sidebar = ({ page }) => {
+const Sidebar = ({ page = "" }) => {
   return (
     <div className={styles.container}>
       <p>

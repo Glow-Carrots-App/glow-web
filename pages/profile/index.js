@@ -8,8 +8,8 @@ import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
 import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
-import { useAuth } from "../../context/AuthContext";
 import withProtected from "../../routers/withProtected";
+import Sidebar from "../../components/Sidebar";
 
 import styles from "./styles.module.css";
 
@@ -37,6 +37,7 @@ const ProfilePage = ({ authedUser }) => {
 
   return (
     <div className={styles.container}>
+      <Sidebar page="profile" />
       <Heading1>Profile</Heading1>
       <UserInfo user={user} />
       <Statistics user={user} lifetimeFoodHistory={lifetimeFoodHistory} />

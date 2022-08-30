@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { useAuth } from "../../../context/AuthContext";
 import UserModel from "../../../model/user";
 import PageContainer from "../../../components/PageContainer";
 import Heading1 from "../../../components/Heading1/index";
@@ -9,6 +8,7 @@ import ChangeGoalForm from "../../../components/ChangeGoalForm";
 import Loading from "../../../components/Loading";
 import BottomTabs from "../../../components/BottomTabs/index";
 import withProtected from "../../../routers/withProtected";
+import Sidebar from "../../../components/Sidebar";
 
 import styles from "./styles.module.css";
 
@@ -33,6 +33,7 @@ const ChangeGoal = ({ authedUser }) => {
 
   return (
     <PageContainer>
+      <Sidebar />
       <img src="/pageBackgrounds/berries.png" className={styles.berry} />
       <Heading1>Daily Goal</Heading1>
       <Heading2>
