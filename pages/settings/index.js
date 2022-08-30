@@ -9,6 +9,7 @@ import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
 import UserModel from "../../model/user";
 import withProtected from "../../routers/withProtected";
+import Sidebar from "../../components/Sidebar";
 
 import styles from "./styles.module.css";
 
@@ -32,6 +33,7 @@ const SettingsPage = ({ authedUser }) => {
   }
   return (
     <div className={styles.container}>
+      <Sidebar page="settings" />
       <Heading1>Settings</Heading1>
       <SettingsTopInfo user={user} />
       <SettingsNameForm user={user} />
