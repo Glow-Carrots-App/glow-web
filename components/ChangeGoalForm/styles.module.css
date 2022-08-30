@@ -90,7 +90,7 @@
   background-color: lightgray;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .buttonContainer {
     gap: 40px;
   }

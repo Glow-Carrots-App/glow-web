@@ -34,7 +34,7 @@
   background-color: darkgray;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .signInFields {
     max-width: 596px;
     height: 92px;

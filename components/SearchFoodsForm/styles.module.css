@@ -47,7 +47,7 @@
   height: 100px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .container > input {
     height: 92px;
     font-size: 24px;
