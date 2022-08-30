@@ -1,0 +1,23 @@
+.inputField {
+  height: 50px;
+  width: 307px;
+  border-width: 0 0 1px;
+  border-color: black;
+  background: none;
+}
+
+.inputField::placeholder {
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .inputField {
+    height: 92px;
+    width: 596px;
+    font-size: 24px;
+  }
+
+  .inputField::placeholder {
+    font-size: 24px;
+  }
+}

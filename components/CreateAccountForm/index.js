@@ -10,6 +10,7 @@ import {
   validateEmailRegex,
   validateEmailMsg,
 } from "../../utils/validateEmail.js";
+import CreateAccountPasswordInput from "../CreateAccountPasswordInput/index.js";
 
 import styles from "./styles.module.css";
 import createNewUserDataModel from "../../utils/createNewUserDataModel.js";
@@ -38,7 +39,6 @@ const CreateAccountForm = () => {
       <input
         className={styles.formInput}
         type="text"
-        name="firstName"
         placeholder="First Name"
         autoComplete="name"
         value={firstName}
@@ -47,7 +47,6 @@ const CreateAccountForm = () => {
       <input
         className={styles.formInput}
         type="text"
-        name="email"
         placeholder="Email"
         autoComplete="email"
         pattern={validateEmailRegex}
@@ -58,33 +57,15 @@ const CreateAccountForm = () => {
         }}
         onInvalid={(e) => e.target.setCustomValidity(validateEmailMsg)}
       />
-      <input
-        className={styles.formInput}
-        type="password"
-        name="password"
+      <CreateAccountPasswordInput
+        password={password}
+        setPassword={setPassword}
         placeholder="Password"
-        autoComplete="new-password"
-        pattern={validatePasswordRegex}
-        value={password}
-        onChange={(e) => {
-          e.target.setCustomValidity("");
-          setPassword(e.target.value);
-        }}
-        onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
-      <input
-        className={styles.formInput}
-        type="password"
-        name="confirmPassword"
+      <CreateAccountPasswordInput
+        password={confirmPassword}
+        setPassword={setConfirmPassword}
         placeholder="Confirm Password"
-        autoComplete="new-password"
-        pattern={validatePasswordRegex}
-        value={confirmPassword}
-        onChange={(e) => {
-          e.target.setCustomValidity("");
-          setConfirmPassword(e.target.value);
-        }}
-        onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
       <input
         type="submit"
