@@ -36,7 +36,10 @@ const SignIn = ({ authedUser }) => {
     <PageContainer isLanding={true}>
       <div className={styles.container}>
         <div>
-          <img className={styles.groceryBag} src="/landing/grocery-bag.png" />
+          <img
+            className={styles.groceryBag}
+            src="/landing/grocery-bag-signin.png"
+          />
         </div>
         <div>
           <div className={styles.heading}>

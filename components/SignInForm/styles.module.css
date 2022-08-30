@@ -32,6 +32,7 @@
 .signInButton:disabled {
   background-color: darkgray;
 }
+
 @media (min-width: 1024px) {
   .signInButton {
     width: 300px;
