@@ -10,7 +10,7 @@
   color: black;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .inputField {
     height: 92px;
     width: 596px;

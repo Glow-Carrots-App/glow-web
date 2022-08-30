@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .container > p {
     font-size: 28px;
   }

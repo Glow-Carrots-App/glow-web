@@ -45,7 +45,7 @@
   height: 55px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .goalContainer div {
     width: 280px;
     height: 280px;
