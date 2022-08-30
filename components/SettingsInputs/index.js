@@ -10,11 +10,9 @@ const SettingsInputs = ({ user }) => {
   const [newName, setNewName] = useState(firstName);
   const [newEmail, setNewEmail] = useState(email);
   const [password, setPassword] = useState("");
-
   const [isNameSaved, setIsNameSaved] = useState(false);
   const [isEmailSaved, setIsEmailSaved] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
   const { reauthenticate, changeEmail } = useAuth();
 
   const handleNewName = async (e) => {

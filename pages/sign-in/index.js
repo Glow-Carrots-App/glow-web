@@ -3,17 +3,16 @@ import Link from "next/link";
 import PageContainer from "../../components/PageContainer";
 import Heading1 from "../../components/Heading1";
 import SignInForm from "../../components/SignInForm";
-import Loading from "../../components/Loading";
-import WithUnprotected from "../../components/WithUnprotected";
 import { useAuth } from "../../context/AuthContext";
 import UserModel from "../../model/user";
 import createNewUserDataModel from "../../utils/createNewUserDataModel";
+import withUnprotected from "../../routers/withUnprotected";
 
 import styles from "./styles.module.css";
 import { useEffect } from "react";
 
-const SignIn = () => {
-  const { authedUser, loading, getGoogleRedirectResult } = useAuth();
+const SignIn = ({ authedUser }) => {
+  const { getGoogleRedirectResult } = useAuth();
 
   useEffect(() => {
     const fetchGoogleData = async () => {
@@ -33,27 +32,21 @@ const SignIn = () => {
     }
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
-    <WithUnprotected>
-      <PageContainer isLanding={true}>
-        <div className={styles.heading}>
-          <Heading1>GLOW</Heading1>
-          <img src="/stats/goldenCarrot.png" className={styles.image} />
-        </div>
-        <SignInForm />
-        <p className={styles.signInText}>
-          Don't have an account?
-          <Link href="/create-account">
-            <a className={styles.signUpLink}> Sign Up</a>
-          </Link>
-        </p>
-      </PageContainer>
-    </WithUnprotected>
+    <PageContainer isLanding={true}>
+      <div className={styles.heading}>
+        <Heading1>GLOW</Heading1>
+        <img src="/stats/goldenCarrot.png" className={styles.image} />
+      </div>
+      <SignInForm />
+      <p className={styles.signInText}>
+        Don't have an account?
+        <Link href="/create-account">
+          <a className={styles.signUpLink}> Sign Up</a>
+        </Link>
+      </p>
+    </PageContainer>
   );
 };
 
-export default SignIn;
+export default withUnprotected(SignIn);

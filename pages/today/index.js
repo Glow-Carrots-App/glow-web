@@ -9,23 +9,19 @@ import TodayInfo from "../../components/TodayInfo";
 import ConsumptionHistory from "../../components/ConsumptionHistory";
 import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
-import WithProtected from "../../components/WithProtected";
+import withProtected from "../../routers/withProtected";
 
 import styles from "./styles.module.css";
 import filterByDate from "../../utils/filterByDate";
 
-const Today = () => {
-  const [currentDay, setCurrentDay] = useState([]);
-  const [foodHistory, setFoodHistory] = useState([]);
-  const [loading, setLoading] = useState(true);
+const Today = ({ authedUser }) => {
+  const [currentDay, setCurrentDay] = useState();
+  const [foodHistory, setFoodHistory] = useState();
   const [user, setUser] = useState();
-
-  const { authedUser } = useAuth();
 
   useEffect(() => {
     async function fetchData() {
       if (!authedUser) {
-        setLoading(false);
         return;
       }
       const { uid } = authedUser;
@@ -36,8 +32,8 @@ const Today = () => {
         today,
         dateToCompare
       );
-      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
       const userResponse = await UserModel.getUser(uid);
+      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
       const {
         dailyGoal: { isComplete, lastGoalDate },
       } = userResponse;
@@ -45,33 +41,29 @@ const Today = () => {
       if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
         await UserModel.clearDayStreak(uid);
       }
-
       if (isComplete && currentDay.length === 0) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
 
+      setUser(userResponse);
       setCurrentDay(currentDay);
       setFoodHistory(thirtyDayHistoryResponse);
-      setLoading(false);
-      setUser(userResponse);
     }
     fetchData();
   }, []);
 
-  if (loading) {
+  if (!user || !currentDay || !foodHistory) {
     return <Loading />;
   }
 
   return (
-    <WithProtected>
-      <div className={styles.container}>
-        <Heading1>Today</Heading1>
-        <TodayInfo currentDay={currentDay} user={user} />
-        <ConsumptionHistory foodHistory={foodHistory} />
-        <BottomTabs isToday={true} />
-      </div>
-    </WithProtected>
+    <div className={styles.container}>
+      <Heading1>Today</Heading1>
+      <TodayInfo currentDay={currentDay} user={user} />
+      <ConsumptionHistory foodHistory={foodHistory} />
+      <BottomTabs isToday={true} />
+    </div>
   );
 };
 
-export default Today;
+export default withProtected(Today);
