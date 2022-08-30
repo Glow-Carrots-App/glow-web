@@ -39,4 +39,8 @@
   .progressBar {
     height: 120px;
   }
+  .emptyBar {
+    font-size: 34px;
+    line-height: 120px;
+  }
 }

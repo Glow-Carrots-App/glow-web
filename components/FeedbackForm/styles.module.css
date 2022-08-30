@@ -7,6 +7,10 @@
   text-align: left;
 }
 
+.hiddenInputs {
+  display: none;
+}
+
 .doneLink {
   position: absolute;
   top: -125px;
@@ -53,6 +57,7 @@
   gap: 11px;
 }
 
+.resetButton,
 .submitButton {
   background-color: var(--purple-light);
   height: 50px;
@@ -75,7 +80,9 @@
   .container > input {
     height: 92px;
     width: 596px;
+    font-size: 30px;
   }
+  .resetButton,
   .submitButton {
     line-height: 92px;
     font-size: 24px;
@@ -94,6 +101,7 @@
   .container textarea {
     height: 300px;
     width: 596px;
+    font-size: 30px;
   }
 
   .container textarea::placeholder {
