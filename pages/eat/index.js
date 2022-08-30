@@ -43,8 +43,8 @@ const Eat = ({ authedUser }) => {
   }
   return (
     <div className={styles.container}>
-      <Heading1>What are you eating?</Heading1>
       <Sidebar page="eat" />
+      <Heading1>What are you eating?</Heading1>
       <SearchFoodsForm user={user} currentDay={currentDay} />
       <BottomTabs isEat={true} />
     </div>

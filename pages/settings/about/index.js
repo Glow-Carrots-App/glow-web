@@ -10,8 +10,8 @@ import styles from "./styles.module.css";
 const AboutUs = () => {
   return (
     <div className={styles.container}>
-      <Heading1>About Glow</Heading1>
       <Sidebar />
+      <Heading1>About Glow</Heading1>
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/back.png" />

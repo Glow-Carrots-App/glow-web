@@ -58,8 +58,8 @@ const Today = ({ authedUser }) => {
 
   return (
     <div className={styles.container}>
-      <Heading1>Today</Heading1>
       <Sidebar page="today" />
+      <Heading1>Today</Heading1>
       <TodayInfo currentDay={currentDay} user={user} />
       <ConsumptionHistory foodHistory={foodHistory} />
       <BottomTabs isToday={true} />
