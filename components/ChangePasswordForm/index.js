@@ -2,10 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { useAuth } from "../../context/AuthContext";
-import {
-  validatePasswordRegex,
-  validatePasswordMsg,
-} from "../../utils/validatePassword";
+import ChangePasswordInput from "../ChangePasswordInput";
 
 import styles from "./styles.module.css";
 
@@ -27,6 +24,12 @@ const ChangePasswordForm = () => {
     }
   };
 
+  const handleReset = () => {
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmNewPassword("");
+  };
+
   return (
     <form className={styles.container} onSubmit={handlePasswordUpdate}>
       <Link href="/settings">
@@ -38,53 +41,26 @@ const ChangePasswordForm = () => {
       <input
         className={styles.inputFields}
         type="password"
-        id="oldPassword"
         value={oldPassword}
         placeholder="Old Password"
         autoComplete="current-password"
         onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setOldPassword(e.target.value)}
       />
-      <input
-        className={styles.inputFields}
-        type="password"
-        id="newPassword"
-        value={newPassword}
+      <ChangePasswordInput
+        password={newPassword}
+        setPassword={setNewPassword}
+        setIsPasswordSaved={setIsPasswordSaved}
         placeholder="New Password"
-        autoComplete="new-password"
-        pattern={validatePasswordRegex}
-        onFocus={() => setIsPasswordSaved(false)}
-        onChange={(e) => {
-          e.target.setCustomValidity("");
-          setNewPassword(e.target.value);
-        }}
-        onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
-      <input
-        className={styles.inputFields}
-        type="password"
-        id="confirmNewPassword"
-        value={confirmNewPassword}
+      <ChangePasswordInput
+        password={confirmNewPassword}
+        setPassword={setConfirmNewPassword}
+        setIsPasswordSaved={setIsPasswordSaved}
         placeholder="Confirm New Password"
-        autoComplete="new-password"
-        pattern={validatePasswordRegex}
-        onFocus={() => setIsPasswordSaved(false)}
-        onChange={(e) => {
-          e.target.setCustomValidity("");
-          setConfirmNewPassword(e.target.value);
-        }}
-        onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
       <div className={styles.buttonPair}>
-        <button
-          type="button"
-          className={styles.reset}
-          onClick={() => {
-            setOldPassword("");
-            setNewPassword("");
-            setConfirmNewPassword("");
-          }}
-        >
+        <button type="button" className={styles.reset} onClick={handleReset}>
           Reset
         </button>
         <input
