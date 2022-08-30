@@ -14,8 +14,15 @@
   margin: 12px 34px;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) and (min-height: 1024px) {
   .container {
+    display: flex;
     height: 120px;
     justify-content: space-around;
   }

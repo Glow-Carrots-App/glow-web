@@ -7,9 +7,9 @@ import BottomTabs from "../../components/BottomTabs";
 import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
 import Loading from "../../components/Loading";
-import { useAuth } from "../../context/AuthContext";
 import filterByDate from "../../utils/filterByDate";
 import withProtected from "../../routers/withProtected";
+import Sidebar from "../../components/Sidebar";
 
 import styles from "./styles.module.css";
 
@@ -43,6 +43,7 @@ const Eat = ({ authedUser }) => {
   }
   return (
     <div className={styles.container}>
+      <Sidebar page="eat" />
       <Heading1>What are you eating?</Heading1>
       <SearchFoodsForm user={user} currentDay={currentDay} />
       <BottomTabs isEat={true} />
