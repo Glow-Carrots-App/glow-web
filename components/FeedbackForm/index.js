@@ -6,10 +6,6 @@ import styles from "./styles.module.css";
 const FeedbackForm = ({ user }) => {
   const form = useRef();
 
-  // process.env.NEXT_PUBLIC_SERVICE_ID = service_7zc9jub;
-  // process.env.NEXT_PUBLIC_TEMPLATE_ID = glow_contact_form;
-  // process.env.NEXT_PUBLIC_USER_ID = gqFxIjo66reB6ta0x;
-
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
