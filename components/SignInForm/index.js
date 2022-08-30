@@ -1,16 +1,13 @@
 import { useState } from "react";
 
 import { useAuth } from "../../context/AuthContext.js";
-import {
-  validatePasswordRegex,
-  validatePasswordMsg,
-} from "../../utils/validatePassword.js";
 
 import styles from "./styles.module.css";
 
 const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const { login, googleLogin } = useAuth();
 
   const handleSignIn = async (e) => {
@@ -18,7 +15,7 @@ const SignInForm = () => {
     try {
       await login(email, password);
     } catch (error) {
-      console.log("Login failed", error);
+      setError("Invalid email or password.");
     }
   };
   const handleGoogleSignIn = async (e) => {
@@ -26,7 +23,7 @@ const SignInForm = () => {
     try {
       await googleLogin();
     } catch (error) {
-      console.log("Login failed", error);
+      setError("Error. Try again.");
     }
   };
 
@@ -48,6 +45,7 @@ const SignInForm = () => {
         className={styles.signInFields}
         onChange={(e) => setPassword(e.target.value)}
       />
+      {error && <p className={styles.error}>{error}</p>}
       <input
         type="submit"
         value="Sign In"

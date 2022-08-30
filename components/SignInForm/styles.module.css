@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .signInFields {
   height: 50px;
   width: 100%;
@@ -14,11 +13,9 @@
   padding-left: 8px;
   margin-top: 25px;
 }
-
 .signInFields::placeholder {
   color: black;
 }
-
 .signInButton {
   background-color: var(--purple-dark);
   color: white;
@@ -28,18 +25,13 @@
   border: none;
   margin-top: 24px;
 }
-
 .signInButton:disabled {
   background-color: darkgray;
 }
 
-@media (min-width: 1024px) {
-  .signInButton {
-    width: 300px;
-  }
-  .signInFields {
-    width: 500px;
-  }
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -54,11 +46,22 @@
   .signInFields::placeholder {
     font-size: 24px;
   }
-
   .signInButton {
     line-height: 92px;
     font-size: 24px;
     height: 92px;
     width: 596px;
+  }
+  .error {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signInButton {
+    width: 300px;
+  }
+  .signInFields {
+    width: 500px;
   }
 }
