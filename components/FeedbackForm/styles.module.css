@@ -69,7 +69,7 @@
   font-size: medium;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .doneLink {
     top: -180px;
   }

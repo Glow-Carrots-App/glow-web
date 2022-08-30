@@ -33,7 +33,7 @@
   background-color: darkgray;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .inputButton {
     line-height: 92px;
     font-size: 24px;
