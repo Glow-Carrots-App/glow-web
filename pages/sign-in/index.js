@@ -34,17 +34,24 @@ const SignIn = ({ authedUser }) => {
 
   return (
     <PageContainer isLanding={true}>
-      <div className={styles.heading}>
-        <Heading1>GLOW</Heading1>
-        <img src="/stats/goldenCarrot.png" className={styles.image} />
+      <div className={styles.container}>
+        <div>
+          <img className={styles.groceryBag} src="/landing/grocery-bag.png" />
+        </div>
+        <div>
+          <div className={styles.heading}>
+            <Heading1>GLOW</Heading1>
+            <img src="/stats/goldenCarrot.png" className={styles.carrot} />
+          </div>
+          <SignInForm />
+          <p className={styles.signInText}>
+            Don't have an account?
+            <Link href="/create-account">
+              <a className={styles.signUpLink}> Sign Up</a>
+            </Link>
+          </p>
+        </div>
       </div>
-      <SignInForm />
-      <p className={styles.signInText}>
-        Don't have an account?
-        <Link href="/create-account">
-          <a className={styles.signUpLink}> Sign Up</a>
-        </Link>
-      </p>
     </PageContainer>
   );
 };
