@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
-import { useAuth } from "../../context/AuthContext";
 import FoodEntryModel from "../../model/foodEntry";
 import UserModel from "../../model/user";
 import Heading1 from "../../components/Heading1";
@@ -10,6 +9,7 @@ import ConsumptionHistory from "../../components/ConsumptionHistory";
 import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
 import withProtected from "../../routers/withProtected";
+import Sidebar from "../../components/Sidebar";
 
 import styles from "./styles.module.css";
 import filterByDate from "../../utils/filterByDate";
@@ -59,8 +59,11 @@ const Today = ({ authedUser }) => {
   return (
     <div className={styles.container}>
       <Heading1>Today</Heading1>
-      <TodayInfo currentDay={currentDay} user={user} />
-      <ConsumptionHistory foodHistory={foodHistory} />
+      <Sidebar page="today" />
+      <div className={styles.contentContainer}>
+        <TodayInfo currentDay={currentDay} user={user} />
+        <ConsumptionHistory foodHistory={foodHistory} />
+      </div>
       <BottomTabs isToday={true} />
     </div>
   );
