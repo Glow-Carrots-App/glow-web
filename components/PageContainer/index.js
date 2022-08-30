@@ -1,9 +1,3 @@
-import { useRouter } from "next/router";
-
-import Heading2 from "../Heading2";
-import SmallLinkedButton from "../SmallLinkedButton";
-import { useAuth } from "../../context/AuthContext";
-
 import styles from "./styles.module.css";
 
 const PageContainer = ({ children, isLanding = false }) => {
