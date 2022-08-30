@@ -1,11 +1,18 @@
-.container {
+.formContainer {
   display: flex;
   flex-direction: column;
-  margin: 16px 0;
+  align-self: center;
   width: 307px;
 }
 
 .inputButtonPair {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.passwordContainer {
   display: flex;
   flex-direction: row;
   gap: 15px;
@@ -14,7 +21,7 @@
 .input {
   background: none;
   height: 50px;
-  width: 340px;
+  width: 222px;
   border-width: 0 0 1px;
   border-color: black;
 }
@@ -25,12 +32,13 @@
   width: 222px;
   border-width: 0 0 1px;
   border-color: black;
+  margin-bottom: 24px;
 }
 
 .inputButton,
 .inputButtonSaved {
   background-color: rgba(235, 221, 245, 0.3);
-  width: 100px;
+  width: 60px;
   border-radius: 6px;
   border-width: 1px;
   margin: 10px 0;
@@ -48,7 +56,7 @@
 }
 
 @media (min-width: 768px) {
-  .container {
+  .formContainer {
     width: 596px;
   }
 
@@ -57,7 +65,11 @@
     width: 450px;
     font-size: x-large;
   }
-
+  .password {
+    height: 95px;
+    width: 450px;
+    font-size: x-large;
+  }
   .inputButton,
   .inputButtonSaved {
     width: 150px;

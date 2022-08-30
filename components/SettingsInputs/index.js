@@ -2,6 +2,10 @@ import { useState } from "react";
 
 import { useAuth } from "../../context/AuthContext";
 import UserModel from "../../model/user";
+import {
+  validateEmailRegex,
+  validateEmailMsg,
+} from "../../utils/validateEmail";
 
 import styles from "./styles.module.css";
 
@@ -38,7 +42,7 @@ const SettingsInputs = ({ user }) => {
   };
 
   return (
-    <form className={styles.container}>
+    <form className={styles.formContainer} onSubmit={handleNewEmail}>
       <label htmlFor="text">Name</label>
       <div className={styles.inputButtonPair}>
         <input
@@ -64,39 +68,45 @@ const SettingsInputs = ({ user }) => {
       >
         Confirm password to change email:
       </label>
-      <input
-        id="password"
-        type="password"
-        placeholder="Password"
-        autoComplete="current-password"
-        value={password}
-        className={styles.password}
-        style={!showPassword ? { display: "none" } : null}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className={styles.passwordContainer}>
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          autoComplete="current-password"
+          value={password}
+          className={styles.password}
+          style={!showPassword ? { display: "none" } : null}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
       <label htmlFor="email">Email</label>
       <div className={styles.inputButtonPair}>
         <input
           className={styles.input}
           id="email"
           autoComplete="email"
-          type="text"
+          type="email"
+          pattern={validateEmailRegex}
           value={newEmail}
-          onChange={(e) => setNewEmail(e.target.value)}
+          onInvalid={(e) => e.target.setCustomValidity(validateEmailMsg)}
+          onChange={(e) => {
+            e.target.setCustomValidity("");
+            setNewEmail(e.target.value);
+          }}
           onFocus={() => {
             setIsEmailSaved(false);
             setPassword("");
             setShowPassword(true);
           }}
         />
-        <button
+        <input
+          type="submit"
           className={
             !isEmailSaved ? styles.inputButton : styles.inputButtonSaved
           }
-          onClick={handleNewEmail}
-        >
-          {!isEmailSaved ? "Save" : "Saved!"}
-        </button>
+          value={!isEmailSaved ? "Save" : "Saved!"}
+        />
       </div>
     </form>
   );
