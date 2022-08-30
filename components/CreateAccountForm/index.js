@@ -47,13 +47,16 @@ const CreateAccountForm = () => {
       />
       <input
         className={styles.formInput}
-        type="email"
+        type="text"
         name="email"
         placeholder="Email"
         autoComplete="email"
         pattern={validateEmailRegex}
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) => {
+          e.target.setCustomValidity("");
+          setEmail(e.target.value);
+        }}
         onInvalid={(e) => e.target.setCustomValidity(validateEmailMsg)}
       />
       <input
@@ -64,7 +67,10 @@ const CreateAccountForm = () => {
         autoComplete="new-password"
         pattern={validatePasswordRegex}
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => {
+          e.target.setCustomValidity("");
+          setPassword(e.target.value);
+        }}
         onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
       <input
@@ -75,7 +81,10 @@ const CreateAccountForm = () => {
         autoComplete="new-password"
         pattern={validatePasswordRegex}
         value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
+        onChange={(e) => {
+          e.target.setCustomValidity("");
+          setConfirmPassword(e.target.value);
+        }}
         onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
       />
       <input

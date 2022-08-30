@@ -1,4 +1,4 @@
 export const validateEmailRegex =
   // prettier-ignore
-  "^[a-z0-9]+@[a-z]+\.[a-z]{2,3}";
+  "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
 export const validateEmailMsg = "Invalid email format.";
