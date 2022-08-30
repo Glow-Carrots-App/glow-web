@@ -6,7 +6,6 @@
 
 .formInput {
   background: none;
-  max-width: 307px;
   padding-left: 8px;
   margin-top: 25px;
   height: 50px;
@@ -31,6 +30,15 @@
 
 .inputButton:disabled {
   background-color: darkgray;
+}
+
+@media (min-width: 1024px) {
+  .inputButton {
+    width: 300px;
+  }
+  .formInput {
+    width: 400px;
+  }
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {

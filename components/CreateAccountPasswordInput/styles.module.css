@@ -1,6 +1,5 @@
 .inputField {
   background: none;
-  max-width: 307px;
   padding-left: 8px;
   margin-top: 25px;
   height: 50px;
@@ -22,5 +21,11 @@
 
   .inputField::placeholder {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inputField {
+    width: 400px;
   }
 }
