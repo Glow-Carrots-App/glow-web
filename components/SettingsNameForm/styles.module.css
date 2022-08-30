@@ -12,27 +12,12 @@
   margin-bottom: 24px;
 }
 
-.passwordContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-}
-
 .input {
   background: none;
   height: 50px;
   width: 222px;
   border-width: 0 0 1px;
   border-color: black;
-}
-
-.password {
-  background: none;
-  height: 50px;
-  width: 222px;
-  border-width: 0 0 1px;
-  border-color: black;
-  margin-bottom: 24px;
 }
 
 .inputButton,
@@ -55,21 +40,17 @@
   margin-top: 15px;
 }
 
-@media (min-width: 768px) and (min-height: 1024px) {
+@media (min-width: 768px) {
   .formContainer {
     width: 596px;
   }
 
   .input {
     height: 95px;
-    width: 450px;
+    width: 435px;
     font-size: x-large;
   }
-  .password {
-    height: 95px;
-    width: 450px;
-    font-size: x-large;
-  }
+
   .inputButton,
   .inputButtonSaved {
     width: 150px;
