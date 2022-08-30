@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import Loading from "../../components/Loading";
 
 const withProtected = (Component) => {
-  return function Protected(props) {
+  return function Protected() {
     const { authedUser } = useAuth();
     const router = useRouter();
 
@@ -18,7 +18,7 @@ const withProtected = (Component) => {
     if (!authedUser) {
       return <Loading />;
     }
-    return <Component authedUser={authedUser} {...props} />;
+    return <Component authedUser={authedUser} />;
   };
 };
 
