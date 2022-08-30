@@ -5,14 +5,13 @@ import UserModel from "../../model/user";
 import styles from "./styles.module.css";
 
 const SettingsNameForm = ({ user }) => {
-  const { firstName, uid } = user;
-  const [newName, setNewName] = useState(firstName);
+  const [newName, setNewName] = useState(user.firstName);
   const [isNameSaved, setIsNameSaved] = useState(false);
 
   const handleNewName = async (e) => {
     try {
       e.preventDefault();
-      await UserModel.updateName(uid, newName);
+      await UserModel.updateName(user.uid, newName);
       setIsNameSaved(true);
     } catch (err) {
       console.log(err);

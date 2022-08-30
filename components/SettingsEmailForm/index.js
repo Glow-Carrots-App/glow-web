@@ -10,8 +10,7 @@ import {
 import styles from "./styles.module.css";
 
 const SettingsEmailForm = ({ user }) => {
-  const { email, uid } = user;
-  const [newEmail, setNewEmail] = useState(email);
+  const [newEmail, setNewEmail] = useState(user.email);
   const [password, setPassword] = useState("");
   const [isEmailSaved, setIsEmailSaved] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -22,12 +21,18 @@ const SettingsEmailForm = ({ user }) => {
       e.preventDefault();
       await reauthenticate(password);
       await changeEmail(newEmail);
-      await UserModel.updateEmail(uid, newEmail);
+      await UserModel.updateEmail(user.uid, newEmail);
       setIsEmailSaved(true);
       setShowPassword(false);
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const handleOnFocus = () => {
+    setIsEmailSaved(false);
+    setPassword("");
+    setShowPassword(true);
   };
 
   return (
@@ -64,11 +69,7 @@ const SettingsEmailForm = ({ user }) => {
             e.target.setCustomValidity("");
             setNewEmail(e.target.value);
           }}
-          onFocus={() => {
-            setIsEmailSaved(false);
-            setPassword("");
-            setShowPassword(true);
-          }}
+          onFocus={handleOnFocus}
         />
         <input
           type="submit"
