@@ -36,7 +36,6 @@ const SignInForm = () => {
         value={email}
         className={styles.signInFields}
         onChange={(e) => setEmail(e.target.value)}
-        onFocus={() => setError("")}
       />
       <input
         type="password"
@@ -45,7 +44,6 @@ const SignInForm = () => {
         value={password}
         className={styles.signInFields}
         onChange={(e) => setPassword(e.target.value)}
-        onFocus={() => setError("")}
       />
       {error && <p className={styles.error}>{error}</p>}
       <input
