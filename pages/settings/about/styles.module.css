@@ -8,15 +8,6 @@
   position: relative;
 }
 
-.container p {
-  color: var(--purple-dark);
-  font-size: medium;
-}
-
-.container a {
-  color: black;
-}
-
 .doneLink {
   position: absolute;
   top: 30px;
@@ -27,11 +18,12 @@
   height: 35px;
 }
 
-.banana {
+.wheat {
   position: absolute;
   opacity: 60%;
-  transform: rotate(70deg);
   bottom: 20px;
+  height: 200px;
+  width: 200px;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -48,15 +40,29 @@
     height: 60px;
   }
 
-  .container p {
-    font-size: xx-large;
-  }
-
   .doneLink {
     font-size: 24px;
   }
 
-  .banana {
+  .wheat {
     height: 400px;
+    width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 50px 50px 50px 22%;
+  }
+
+  .doneLink {
+    display: none;
+  }
+
+  .wheat {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    inset: auto auto -120px auto;
   }
 }
