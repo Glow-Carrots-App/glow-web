@@ -69,3 +69,20 @@
     margin: 16px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 55%;
+  }
+  .barChart {
+    height: 80%;
+    width: 90%;
+  }
+  .buttonContainer {
+    width: 90%;
+  }
+}

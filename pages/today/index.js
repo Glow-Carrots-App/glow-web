@@ -10,6 +10,8 @@ import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
 import withProtected from "../../routers/withProtected";
 import Sidebar from "../../components/Sidebar";
+import TodayStatistics from "../../components/TodayStatistics";
+import TodayUserInfo from "../../components/TodayUserInfo";
 
 import styles from "./styles.module.css";
 import filterByDate from "../../utils/filterByDate";
@@ -18,6 +20,7 @@ const Today = ({ authedUser }) => {
   const [currentDay, setCurrentDay] = useState();
   const [foodHistory, setFoodHistory] = useState();
   const [user, setUser] = useState();
+  const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -27,6 +30,7 @@ const Today = ({ authedUser }) => {
       const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
       const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
+      const lifetimeResponse = await FoodEntryModel.getLifetimeHistory(uid);
       const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
         uid,
         today,
@@ -48,6 +52,7 @@ const Today = ({ authedUser }) => {
       setUser(userResponse);
       setCurrentDay(currentDay);
       setFoodHistory(thirtyDayHistoryResponse);
+      setLifetimeFoodHistory(lifetimeResponse);
     }
     fetchData();
   }, []);
@@ -60,8 +65,17 @@ const Today = ({ authedUser }) => {
     <div className={styles.container}>
       <Sidebar page="today" />
       <Heading1>Today</Heading1>
-      <TodayInfo currentDay={currentDay} user={user} />
-      <ConsumptionHistory foodHistory={foodHistory} />
+      <div className={styles.todayColumnLeft}>
+        <TodayInfo currentDay={currentDay} user={user} />
+        <ConsumptionHistory foodHistory={foodHistory} />
+      </div>
+      <div className={styles.todayColumnRight}>
+        <TodayUserInfo user={user} />
+        <TodayStatistics
+          user={user}
+          lifetimeFoodHistory={lifetimeFoodHistory}
+        />
+      </div>
       <BottomTabs isToday={true} />
     </div>
   );

@@ -11,3 +11,20 @@
     padding: 86px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px 50px 50px 22%;
+  }
+  .todayColumnLeft {
+    width: 70%;
+  }
+  .todayColumnRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+  }
+}
