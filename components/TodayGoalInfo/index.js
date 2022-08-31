@@ -1,6 +1,7 @@
 import { VictoryPie } from "victory";
 
 import populateDonutChartData from "../../utils/populateDonutChartData";
+import TodayFoodList from "../TodayFoodList";
 
 import styles from "./styles.module.css";
 
@@ -39,21 +40,8 @@ const TodayGoalInfo = ({ currentDay, user }) => {
           {currentCount}/{amount} Foods
         </p>
       </div>
-      <div className={styles.listContainer}>
-        <div>
-          <img className={styles.sunImg} src="/stats/sun.png" />
-          <span>Today's Noms</span>
-        </div>
-        <ul className={styles.foodList}>
-          {currentDay.map((food, index) => (
-            <li style={{ color: food.textHex }} key={index + food.product}>
-              {food.product}
-            </li>
-          ))}
-        </ul>
-        {!currentCount && (
-          <img className={styles.listImg} src="/pageBackgrounds/confused.png" />
-        )}
+      <div className={styles.columnRight}>
+        <TodayFoodList currentDay={currentDay} />
       </div>
     </div>
   );

@@ -1,0 +1,95 @@
+.listContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 144px;
+  background-color: var(--card-background-purple);
+  margin-top: 25px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgb(167, 163, 192);
+  overflow: scroll;
+}
+
+.listContainer > div {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  width: 100%;
+  padding: 5px 8px 0;
+  background-color: var(--card-background-purple);
+}
+
+.listContainer span {
+  font-size: x-small;
+  font-weight: 500;
+  padding: 5px 4px;
+}
+
+.sunImg {
+  height: 24px;
+  width: 24px;
+}
+
+.listImg {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  opacity: 0.6;
+}
+
+.foodList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10px 10px;
+  font-size: small;
+}
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .listContainer {
+    height: 240px;
+    width: 178px;
+    border-radius: 8px;
+  }
+
+  .listContainer span {
+    font-size: small;
+    font-weight: 500;
+  }
+
+  .listImg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .foodList {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listContainer {
+    width: 100%;
+    max-width: 185px;
+    height: 80%;
+    max-height: 250px;
+  }
+
+  .listContainer span {
+    font-size: small;
+    font-weight: 500;
+  }
+
+  .listImg {
+    width: 125px;
+    height: 125px;
+  }
+
+  .foodList {
+    font-size: medium;
+  }
+}

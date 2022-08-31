@@ -1,10 +1,15 @@
+.container {
+  text-align: left;
+  width: 100%;
+}
+
 .subheading {
   align-self: flex-start;
   margin: 10px 0 0;
   color: var(--purple-dark);
 }
 
-.container {
+.iconsContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;

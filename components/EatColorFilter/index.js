@@ -15,9 +15,9 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <p className={styles.subheading}>Filter by Color: </p>
-      <div className={styles.container}>
+      <div className={styles.iconsContainer}>
         {icons.map((icon, index) => (
           <div
             key={index + icon}
@@ -35,7 +35,7 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
