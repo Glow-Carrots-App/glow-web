@@ -92,6 +92,11 @@
   background-color: lightgray;
 }
 
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin: 0;
+}
+
 @media (min-width: 768px) and (min-height: 1024px) {
   .button {
     line-height: 92px;
@@ -137,6 +142,9 @@
   }
   .arrowUpDisabled {
     border-bottom: 30px solid lightgray;
+  }
+  .error {
+    font-size: 24px;
   }
 }
 
