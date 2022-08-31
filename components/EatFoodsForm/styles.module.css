@@ -1,8 +1,13 @@
 .container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 640px;
+  width: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container > input {
@@ -57,5 +62,15 @@
   }
   .backgroundImage > img {
     height: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    position: static;
+    transform: none;
+    padding: 40px 40px 40px 0;
+    width: 90%;
+    height: 90%;
   }
 }

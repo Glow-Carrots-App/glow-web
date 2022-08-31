@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 const EatFormButtons = ({
   user,
   currentDay,
+  setCurrentDay,
   selectedFood,
   setSearchInput,
   setSelectedFood,
@@ -39,6 +40,7 @@ const EatFormButtons = ({
 
     try {
       FoodEntryModel.createFoodEntry(newFood);
+      setCurrentDay((prev) => [...prev, newFood]);
       setCurrentCount(currentCount + 1);
       setSearchInput("");
       setSelectedFood(null);

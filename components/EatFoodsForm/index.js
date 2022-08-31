@@ -9,7 +9,7 @@ import filterFoodsForSearch from "../../utils/filterFoodsForSearch";
 
 import styles from "./styles.module.css";
 
-const EatFoodsForm = ({ user, currentDay }) => {
+const EatFoodsForm = ({ user, currentDay, setCurrentDay }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
@@ -74,6 +74,7 @@ const EatFoodsForm = ({ user, currentDay }) => {
       <EatFormButtons
         user={user}
         currentDay={currentDay}
+        setCurrentDay={setCurrentDay}
         setSearchInput={setSearchInput}
         setSelectedFood={setSelectedFood}
         selectedFood={selectedFood}

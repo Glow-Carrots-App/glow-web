@@ -10,6 +10,8 @@ import Loading from "../../components/Loading";
 import filterByDate from "../../utils/filterByDate";
 import withProtected from "../../routers/withProtected";
 import Sidebar from "../../components/Sidebar";
+import TodayUserInfo from "../../components/TodayUserInfo";
+import TodayFoodList from "../../components/TodayFoodList";
 
 import styles from "./styles.module.css";
 
@@ -45,7 +47,17 @@ const Eat = ({ authedUser }) => {
     <div className={styles.container}>
       <Sidebar page="eat" />
       <Heading1>What are you eating?</Heading1>
-      <EatFoodsForm user={user} currentDay={currentDay} />
+      <div className={styles.columnLeft}>
+        <EatFoodsForm
+          user={user}
+          currentDay={currentDay}
+          setCurrentDay={setCurrentDay}
+        />
+      </div>
+      <div className={styles.columnRight}>
+        <TodayUserInfo user={user} />
+        <TodayFoodList currentDay={currentDay} />
+      </div>
       <BottomTabs isEat={true} />
     </div>
   );
