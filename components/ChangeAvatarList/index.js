@@ -9,9 +9,9 @@ import styles from "./styles.module.css";
 
 const ChangeAvatarList = () => {
   const [selectedAvatar, setSelectedAvatar] = useState("/avatars/salad.png");
+  const [error, setError] = useState("");
 
   const router = useRouter();
-
   const {
     authedUser: { uid },
   } = useAuth();
@@ -34,8 +34,12 @@ const ChangeAvatarList = () => {
   ];
 
   const handleAvatarUpdate = async () => {
-    await UserModel.updateAvatar(uid, selectedAvatar);
-    router.push("/settings");
+    try {
+      await UserModel.updateAvatar(uid, selectedAvatar);
+      router.push("/settings");
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -72,6 +76,7 @@ const ChangeAvatarList = () => {
           ))}
         </div>
       </div>
+      {error && <p className={styles.error}>{error}</p>}
       <div className={styles.buttonContainer}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <button onClick={handleAvatarUpdate}>Save</button>
