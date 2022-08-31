@@ -43,7 +43,7 @@ const SignIn = ({ authedUser }) => {
         </div>
         <div>
           <div className={styles.heading}>
-            <Heading1>GLOW</Heading1>
+            <h1 className={styles.heading1}>GLOW</h1>
             <img src="/stats/goldenCarrot.png" className={styles.carrot} />
           </div>
           <SignInForm />

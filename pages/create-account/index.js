@@ -18,11 +18,10 @@ const CreateAccountPage = () => {
           />
         </div>
         <div>
-          <Heading1>
-            Create Account
+          <div className={styles.heading}>
+            <h1 className={styles.heading1}>Create Account</h1>
             <img src="/stats/goldenCarrot.png" className={styles.carrot} />
-          </Heading1>
-
+          </div>
           <CreateAccountForm />
           <p className={styles.signinText}>
             Already have an account?
