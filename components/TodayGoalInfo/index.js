@@ -9,8 +9,7 @@ const TodayGoalInfo = ({ currentDay, user }) => {
     dailyGoal: { amount },
   } = user;
 
-  const currentCount = 0;
-  currentDay = [];
+  const currentCount = currentDay.length;
   const todaysData = populateDonutChartData(currentDay, amount);
   const today = [
     "#fc7790",
