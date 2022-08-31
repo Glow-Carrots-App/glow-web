@@ -22,6 +22,7 @@
 
 .listContainer {
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 144px;
   background-color: var(--card-background-purple);
@@ -43,14 +44,24 @@
 }
 
 .listContainer span {
-  font-size: small;
+  font-size: x-small;
   font-weight: 500;
-  padding: 5px 8px;
+  padding: 5px 4px;
 }
 
 .sunImg {
   height: 24px;
   width: 24px;
+}
+
+.listImg {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  opacity: 0.6;
 }
 
 .foodList {
@@ -89,6 +100,16 @@
     border-radius: 8px;
   }
 
+  .listContainer span {
+    font-size: small;
+    font-weight: 500;
+  }
+
+  .listImg {
+    width: 100px;
+    height: 100px;
+  }
+
   .foodList {
     font-size: 24px;
   }
@@ -120,6 +141,17 @@
     max-width: 185px;
     height: 80%;
   }
+
+  .listContainer span {
+    font-size: small;
+    font-weight: 500;
+  }
+
+  .listImg {
+    width: 125px;
+    height: 125px;
+  }
+
   .foodList {
     font-size: medium;
   }

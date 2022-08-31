@@ -41,7 +41,7 @@ const TodayGoalInfo = ({ currentDay, user }) => {
       </div>
       <div className={styles.listContainer}>
         <div>
-          <img className={styles.sunImg} src="./stats/sun.png" />
+          <img className={styles.sunImg} src="/stats/sun.png" />
           <span>Today's Noms</span>
         </div>
         <ul className={styles.foodList}>
@@ -51,6 +51,9 @@ const TodayGoalInfo = ({ currentDay, user }) => {
             </li>
           ))}
         </ul>
+        {!currentCount && (
+          <img className={styles.listImg} src="/pageBackgrounds/confused.png" />
+        )}
       </div>
     </div>
   );
