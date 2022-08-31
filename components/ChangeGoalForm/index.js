@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 
 const ChangeGoalForm = ({ user }) => {
   const [number, setNumber] = useState(user.dailyGoal.amount);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const { uid } = user;
@@ -24,8 +25,12 @@ const ChangeGoalForm = ({ user }) => {
   };
 
   const handleDailyGoalUpdate = async () => {
-    await UserModel.updateDailyGoal(uid, number);
-    router.push("/settings");
+    try {
+      await UserModel.updateDailyGoal(uid, number);
+      router.push("/settings");
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -58,6 +63,7 @@ const ChangeGoalForm = ({ user }) => {
           onClick={() => setNumber(number - 1)}
         />
         <Heading2>healthy foods daily.</Heading2>
+        {error && <p className={styles.error}>{error}</p>}
       </div>
       <button
         disabled={!number}
