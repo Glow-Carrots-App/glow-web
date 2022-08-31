@@ -51,7 +51,7 @@ const DeleteAccount = () => {
           className={styles.passwordField}
           required
         />
-        <p className={styles.error}>{error}</p>
+        {error && <p className={styles.error}>{error}</p>}
         <div className={styles.buttonPair}>
           <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
           <input
