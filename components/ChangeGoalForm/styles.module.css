@@ -34,6 +34,15 @@
   color: var(--purple-dark);
 }
 
+.numberPicker::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numberPicker[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .arrowUp,
 .arrowDown,
 .arrowDownDisabled,
@@ -138,5 +147,14 @@
   }
   .arrowUpDisabled {
     border-bottom: 30px solid lightgray;
+  }
+}
+
+@media (min-width: 1024px) {
+  .doneLink {
+    display: none;
+  }
+  .button {
+    width: 250px;
   }
 }
