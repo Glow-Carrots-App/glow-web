@@ -28,8 +28,8 @@ const LogOut = () => {
         <button className={styles.smallButton} onClick={handleLogOut}>
           Log Out
         </button>
-        {error && <p className={styles.error}>{error}</p>}
       </div>
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };
