@@ -35,6 +35,7 @@ const ChangeGoal = ({ authedUser }) => {
     <PageContainer>
       <Sidebar />
       <img src="/pageBackgrounds/berries.png" className={styles.berry} />
+      <img src="/pageBackgrounds/red-berries.png" className={styles.redBerry} />
       <Heading1>Daily Goal</Heading1>
       <Heading2>
         How many healthy foods <br />
