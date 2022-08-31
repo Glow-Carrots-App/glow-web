@@ -1,0 +1,19 @@
+.buttonContainer {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .buttonContainer {
+    display: block;
+  }
+  .button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px grey;
+  }
+
+  .button:active {
+    box-shadow: none;
+  }
+}
