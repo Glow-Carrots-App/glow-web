@@ -18,7 +18,10 @@ const CreateAccountPasswordInput = ({ password, setPassword, placeholder }) => {
         e.target.setCustomValidity("");
         setPassword(e.target.value);
       }}
-      onInvalid={(e) => e.target.setCustomValidity(validatePasswordMsg)}
+      onInvalid={(e) => {
+        e.target.setCustomValidity(validatePasswordMsg);
+        setPassword("");
+      }}
     />
   );
 };

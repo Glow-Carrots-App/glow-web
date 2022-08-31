@@ -3,10 +3,6 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext.js";
 import UserModel from "../../model/user";
 import {
-  validatePasswordRegex,
-  validatePasswordMsg,
-} from "../../utils/validatePassword";
-import {
   validateEmailRegex,
   validateEmailMsg,
 } from "../../utils/validateEmail.js";
@@ -20,17 +16,17 @@ const CreateAccountForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
   const { signup } = useAuth();
 
   const handleCreateAccount = async (e) => {
     e.preventDefault();
-
     try {
       const { user } = await signup(email, password);
       const newUser = createNewUserDataModel(email, firstName, user.uid);
       await UserModel.createUser(newUser);
     } catch (err) {
-      console.log(err);
+      setError("Email already in use.");
     }
   };
 
@@ -67,6 +63,7 @@ const CreateAccountForm = () => {
         setPassword={setConfirmPassword}
         placeholder="Confirm Password"
       />
+      {error && <p className={styles.error}>{error}</p>}
       <input
         type="submit"
         value="Sign Up"

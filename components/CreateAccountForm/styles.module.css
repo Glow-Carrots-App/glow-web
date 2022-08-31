@@ -32,13 +32,9 @@
   background-color: darkgray;
 }
 
-@media (min-width: 1024px) {
-  .inputButton {
-    width: 300px;
-  }
-  .formInput {
-    width: 400px;
-  }
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -57,5 +53,18 @@
 
   .formInput::placeholder {
     font-size: 24px;
+  }
+
+  .error {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inputButton {
+    width: 300px;
+  }
+  .formInput {
+    width: 400px;
   }
 }
