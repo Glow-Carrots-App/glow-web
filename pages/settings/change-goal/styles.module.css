@@ -6,3 +6,27 @@
   opacity: 60%;
   transform: scaleX(-1);
 }
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .redBerry {
+    position: absolute;
+    inset: 340px 600px auto auto;
+    rotate: -10deg;
+    height: 200px;
+    width: 200px;
+    opacity: 60%;
+    transform: scaleX(-1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .redBerry {
+    position: absolute;
+    inset: 340px 700px auto auto;
+    rotate: -10deg;
+    height: 200px;
+    width: 200px;
+    opacity: 60%;
+    transform: scaleX(-1);
+  }
+}

@@ -59,15 +59,13 @@ const ChangeGoalForm = ({ user }) => {
         />
         <Heading2>healthy foods daily.</Heading2>
       </div>
-      <div className={styles.buttonContainer}>
-        <button
-          disabled={!number}
-          className={styles.button}
-          onClick={handleDailyGoalUpdate}
-        >
-          Save
-        </button>
-      </div>
+      <button
+        disabled={!number}
+        className={styles.button}
+        onClick={handleDailyGoalUpdate}
+      >
+        Save
+      </button>
     </div>
   );
 };
