@@ -11,6 +11,7 @@
   height: 50px;
   border-width: 0 0 1px;
   width: 100%;
+  max-width: 596px;
   border-color: black;
 }
 
