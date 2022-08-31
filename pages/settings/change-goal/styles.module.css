@@ -1,6 +1,16 @@
 .berry {
   position: absolute;
-  inset: -20px 0 auto auto;
+  inset: -30px 0 auto auto;
+  height: 200px;
+  width: 200px;
+  opacity: 60%;
+  transform: scaleX(-1);
+}
+
+.redBerry {
+  position: absolute;
+  inset: auto auto 10px -50px;
+  rotate: -35deg;
   height: 200px;
   width: 200px;
   opacity: 60%;
@@ -10,7 +20,7 @@
 @media (min-width: 768px) and (min-height: 1024px) {
   .redBerry {
     position: absolute;
-    inset: 340px 600px auto auto;
+    inset: auto auto 10px 0;
     rotate: -10deg;
     height: 200px;
     width: 200px;
@@ -22,7 +32,7 @@
 @media (min-width: 1024px) {
   .redBerry {
     position: absolute;
-    inset: 340px 700px auto auto;
+    inset: auto auto 10px auto;
     rotate: -10deg;
     height: 200px;
     width: 200px;
