@@ -102,3 +102,11 @@
     width: 278px;
   }
 }
+@media (min-width: 1024px) {
+  .doneLink {
+    display: none;
+  }
+  .inputFields {
+    width: 400px;
+  }
+}

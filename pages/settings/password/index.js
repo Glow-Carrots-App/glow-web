@@ -12,7 +12,11 @@ const PasswordPage = () => {
       <Sidebar />
       <Heading1>Change Password</Heading1>
       <ChangePasswordForm />
-      <img src="/pageBackgrounds/passion-fruit.png" className={styles.fruit} />
+      <img
+        src="/pageBackgrounds/passion-fruit.png"
+        className={styles.passionFruit}
+      />
+      <img src="/pageBackgrounds/guava.png" className={styles.guava} />
       <BottomTabs />
     </div>
   );
