@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import PageContainer from "../../components/PageContainer";
-import Heading1 from "../../components/Heading1";
 import SignInForm from "../../components/SignInForm";
 import { useAuth } from "../../context/AuthContext";
 import UserModel from "../../model/user";

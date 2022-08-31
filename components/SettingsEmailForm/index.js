@@ -14,6 +14,7 @@ const SettingsEmailForm = ({ user }) => {
   const [password, setPassword] = useState("");
   const [isEmailSaved, setIsEmailSaved] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const { reauthenticate, changeEmail } = useAuth();
 
   const handleNewEmail = async (e) => {
@@ -25,7 +26,11 @@ const SettingsEmailForm = ({ user }) => {
       setIsEmailSaved(true);
       setShowPassword(false);
     } catch (err) {
-      console.log(err);
+      if (err.code == "auth/wrong-password") {
+        setError("Incorrect password.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     }
   };
 
@@ -79,6 +84,7 @@ const SettingsEmailForm = ({ user }) => {
           value={!isEmailSaved ? "Save" : "Saved!"}
         />
       </div>
+      {error && <p className={styles.error}>{error}</p>}
     </form>
   );
 };
