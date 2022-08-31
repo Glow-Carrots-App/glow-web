@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 
 const DeleteAccount = () => {
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const {
     deleteAccount,
     authedUser: { uid },
@@ -24,7 +25,11 @@ const DeleteAccount = () => {
       await UserModel.deleteUser(uid);
       await FoodEntryModel.deleteUserHistory(uid);
     } catch (err) {
-      console.log(err);
+      if (err.code == "auth/wrong-password") {
+        setError("Invalid password.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     }
   };
 
@@ -46,6 +51,7 @@ const DeleteAccount = () => {
           className={styles.passwordField}
           required
         />
+        <p className={styles.error}>{error}</p>
         <div className={styles.buttonPair}>
           <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
           <input

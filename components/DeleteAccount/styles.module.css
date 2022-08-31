@@ -47,6 +47,11 @@
   margin-top: 8px;
 }
 
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) and (min-height: 1024px) {
   .buttonPair {
     gap: 40px;
@@ -64,5 +69,8 @@
   }
   .deleteAccountText {
     font-size: larger;
+  }
+  .error {
+    font-size: 24px;
   }
 }
