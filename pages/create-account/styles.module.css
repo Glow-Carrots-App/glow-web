@@ -19,21 +19,6 @@
   width: 25px;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 200px;
-  }
-
-  .groceryBag {
-    display: block;
-    height: 300px;
-    width: 300px;
-  }
-}
-
 @media (min-width: 768px) and (min-height: 1024px) {
   .signinText {
     font-size: 24px;
@@ -49,5 +34,20 @@
     margin: 5px 0 0 12px;
     height: 40px;
     width: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 200px;
+  }
+
+  .groceryBag {
+    display: block;
+    height: 300px;
+    width: 300px;
   }
 }
