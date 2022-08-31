@@ -25,6 +25,7 @@ const SettingsEmailForm = ({ user }) => {
       await UserModel.updateEmail(user.uid, newEmail);
       setIsEmailSaved(true);
       setShowPassword(false);
+      setError("");
     } catch (err) {
       if (err.code == "auth/wrong-password") {
         setError("Incorrect password.");

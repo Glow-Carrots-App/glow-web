@@ -56,7 +56,6 @@
   .formContainer {
     width: 596px;
   }
-
   .input {
     height: 95px;
     width: 435px;
@@ -73,5 +72,8 @@
     border-radius: 8px;
     font-size: x-large;
     border: 2.8px solid var(--purple-dark);
+  }
+  .error {
+    font-size: 24px;
   }
 }
