@@ -4,7 +4,7 @@ import populateDonutChartData from "../../utils/populateDonutChartData";
 
 import styles from "./styles.module.css";
 
-const TodayInfo = ({ currentDay, user }) => {
+const TodayGoalInfo = ({ currentDay, user }) => {
   const {
     dailyGoal: { amount },
   } = user;
@@ -52,4 +52,4 @@ const TodayInfo = ({ currentDay, user }) => {
   );
 };
 
-export default TodayInfo;
+export default TodayGoalInfo;

@@ -7,7 +7,7 @@ import UserModel from "../../model/user";
 
 import styles from "./styles.module.css";
 
-const AvatarList = () => {
+const ChangeAvatarList = () => {
   const [selectedAvatar, setSelectedAvatar] = useState("/avatars/salad.png");
 
   const router = useRouter();
@@ -80,4 +80,4 @@ const AvatarList = () => {
   );
 };
 
-export default AvatarList;
+export default ChangeAvatarList;

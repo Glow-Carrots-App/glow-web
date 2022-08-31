@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 import Heading1 from "../../components/Heading1";
-import UserInfo from "../../components/UserInfo";
-import Statistics from "../../components/Statistics";
-import ColorBreakdown from "../../components/ColorBreakdown";
+import ProfileUserInfo from "../../components/ProfileUserInfo";
+import ProfileStatistics from "../../components/ProfileStatistics";
+import ProfileGraph from "../../components/ProfileGraph";
 import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
 import UserModel from "../../model/user";
@@ -39,9 +39,12 @@ const ProfilePage = ({ authedUser }) => {
     <div className={styles.container}>
       <Sidebar page="profile" />
       <Heading1>Profile</Heading1>
-      <UserInfo user={user} />
-      <Statistics user={user} lifetimeFoodHistory={lifetimeFoodHistory} />
-      <ColorBreakdown lifetimeFoodHistory={lifetimeFoodHistory} />
+      <ProfileUserInfo user={user} />
+      <ProfileStatistics
+        user={user}
+        lifetimeFoodHistory={lifetimeFoodHistory}
+      />
+      <ProfileGraph lifetimeFoodHistory={lifetimeFoodHistory} />
       <BottomTabs isProfile={true} />
     </div>
   );

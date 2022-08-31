@@ -2,7 +2,7 @@ import countColors from "../../utils/countColors";
 
 import styles from "./styles.module.css";
 
-const ColorBreakdown = ({ lifetimeFoodHistory }) => {
+const ProfileGraph = ({ lifetimeFoodHistory }) => {
   let colorCount = countColors(lifetimeFoodHistory);
 
   return (
@@ -33,4 +33,4 @@ const ColorBreakdown = ({ lifetimeFoodHistory }) => {
   );
 };
 
-export default ColorBreakdown;
+export default ProfileGraph;

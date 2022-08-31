@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import VerticalColorBreakdown from "../VerticalColorBreakdown";
+import TodayVerticalBar from "../TodayVerticalBar";
 import organizeFoodHistory from "../../utils/organizeFoodHistory";
 
 import styles from "./styles.module.css";
 
-const ConsumptionHistory = ({ foodHistory }) => {
+const TodayGraph = ({ foodHistory }) => {
   let [numberOfDays, setNumberOfDays] = useState(7);
   let organizedFoodHistory = organizeFoodHistory(foodHistory, numberOfDays);
   return (
@@ -43,7 +43,7 @@ const ConsumptionHistory = ({ foodHistory }) => {
         <div className={styles.barChartImg} />
         <div className={styles.barChartContainer}>
           {organizedFoodHistory.days.map((day, i) => (
-            <VerticalColorBreakdown
+            <TodayVerticalBar
               key={`${day} + ${i}`}
               day={day}
               numberOfDays={numberOfDays}
@@ -56,4 +56,4 @@ const ConsumptionHistory = ({ foodHistory }) => {
   );
 };
 
-export default ConsumptionHistory;
+export default TodayGraph;
