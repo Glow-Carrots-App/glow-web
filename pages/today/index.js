@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
-import FoodEntryModel from "../../model/foodEntry";
-import UserModel from "../../model/user";
+import Sidebar from "../../components/Sidebar";
 import Heading1 from "../../components/Heading1";
-import TodayInfo from "../../components/TodayInfo";
-import ConsumptionHistory from "../../components/ConsumptionHistory";
+import TodayGoalInfo from "../../components/TodayGoalInfo";
+import TodayGraph from "../../components/TodayGraph";
+import TodayUserInfo from "../../components/TodayUserInfo";
+import TodayStatistics from "../../components/TodayStatistics";
 import BottomTabs from "../../components/BottomTabs";
 import Loading from "../../components/Loading";
+import FoodEntryModel from "../../model/foodEntry";
+import UserModel from "../../model/user";
 import withProtected from "../../routers/withProtected";
-import Sidebar from "../../components/Sidebar";
-import TodayStatistics from "../../components/TodayStatistics";
-import TodayUserInfo from "../../components/TodayUserInfo";
 
 import styles from "./styles.module.css";
 import filterByDate from "../../utils/filterByDate";
@@ -66,8 +66,8 @@ const Today = ({ authedUser }) => {
       <Sidebar page="today" />
       <Heading1>Today</Heading1>
       <div className={styles.todayColumnLeft}>
-        <TodayInfo currentDay={currentDay} user={user} />
-        <ConsumptionHistory foodHistory={foodHistory} />
+        <TodayGoalInfo currentDay={currentDay} user={user} />
+        <TodayGraph foodHistory={foodHistory} />
       </div>
       <div className={styles.todayColumnRight}>
         <TodayUserInfo user={user} />

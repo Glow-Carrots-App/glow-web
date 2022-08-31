@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const SearchFoodsList = ({
+const EatFoodsList = ({
   setSelectedColor,
   setSelectedFood,
   setFocused,
@@ -33,4 +33,4 @@ const SearchFoodsList = ({
   );
 };
 
-export default SearchFoodsList;
+export default EatFoodsList;

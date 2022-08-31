@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 
 import Heading1 from "../../components/Heading1";
-import SearchFoodsForm from "../../components/SearchFoodsForm";
+import EatFoodsForm from "../../components/EatFoodsForm";
 import BottomTabs from "../../components/BottomTabs";
 import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
@@ -45,7 +45,7 @@ const Eat = ({ authedUser }) => {
     <div className={styles.container}>
       <Sidebar page="eat" />
       <Heading1>What are you eating?</Heading1>
-      <SearchFoodsForm user={user} currentDay={currentDay} />
+      <EatFoodsForm user={user} currentDay={currentDay} />
       <BottomTabs isEat={true} />
     </div>
   );

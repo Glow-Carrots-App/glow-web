@@ -2,7 +2,7 @@ import countColors from "../../utils/countColors";
 
 import styles from "./styles.module.css";
 
-const VerticalColorBreakdown = ({ day, numberOfDays, height }) => {
+const TodayVerticalBar = ({ day, numberOfDays, height }) => {
   let colorCount = countColors(day);
 
   if (!colorCount) {
@@ -39,4 +39,4 @@ const VerticalColorBreakdown = ({ day, numberOfDays, height }) => {
   );
 };
 
-export default VerticalColorBreakdown;
+export default TodayVerticalBar;

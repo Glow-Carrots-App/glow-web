@@ -6,7 +6,7 @@ import pickHighIcon from "../../utils/pickHighIcon";
 
 import styles from "./styles.module.css";
 
-const Statistics = ({ user, lifetimeFoodHistory }) => {
+const ProfileStatistics = ({ user, lifetimeFoodHistory }) => {
   const lowestColor = checkLowestColor(lifetimeFoodHistory);
   const highestColor = checkHighestColor(lifetimeFoodHistory);
 
@@ -46,4 +46,4 @@ const Statistics = ({ user, lifetimeFoodHistory }) => {
   );
 };
 
-export default Statistics;
+export default ProfileStatistics;

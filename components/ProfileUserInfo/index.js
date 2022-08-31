@@ -6,7 +6,7 @@ import Heading2 from "../Heading2";
 
 import styles from "./styles.module.css";
 
-const UserInfo = ({ user }) => {
+const ProfileUserInfo = ({ user }) => {
   const { avatar, firstName, joinDate } = user;
   return (
     <div className={styles.container}>
@@ -26,4 +26,4 @@ const UserInfo = ({ user }) => {
   );
 };
 
-export default UserInfo;
+export default ProfileUserInfo;

@@ -7,7 +7,7 @@ import SmallLinkedButton from "../SmallLinkedButton";
 
 import styles from "./styles.module.css";
 
-const SearchFoodsButtons = ({
+const EatFormButtons = ({
   user,
   currentDay,
   selectedFood,
@@ -69,4 +69,4 @@ const SearchFoodsButtons = ({
     </div>
   );
 };
-export default SearchFoodsButtons;
+export default EatFormButtons;

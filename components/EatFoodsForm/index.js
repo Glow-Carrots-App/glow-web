@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-import SearchFoodsList from "../SearchFoodsList";
-import ColorFilter from "../ColorFilter";
+import EatColorFilter from "../EatColorFilter";
+import EatFoodsList from "../EatFoodsList";
+import EatFormButtons from "../EatFormButtons";
 import masterFoodLibrary from "../../masterFoodLibrary/masterFoodLibrary";
 import alphabetizeFoods from "../../utils/alphabetizeFoods";
 import filterFoodsForSearch from "../../utils/filterFoodsForSearch";
-import SearchFoodsButtons from "../SearchFoodsButtons";
 
 import styles from "./styles.module.css";
 
-const SearchFoodsForm = ({ user, currentDay }) => {
+const EatFoodsForm = ({ user, currentDay }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
   const [focused, setFocused] = useState(false);
@@ -33,7 +33,7 @@ const SearchFoodsForm = ({ user, currentDay }) => {
 
   return (
     <div className={styles.container}>
-      <ColorFilter
+      <EatColorFilter
         selectedColor={selectedColor}
         setSelectedColor={setSelectedColor}
       />
@@ -47,7 +47,7 @@ const SearchFoodsForm = ({ user, currentDay }) => {
       />
       <div className={styles.blockContainer}>
         {(focused || selectedColor) && (
-          <SearchFoodsList
+          <EatFoodsList
             setSelectedColor={setSelectedColor}
             setSelectedFood={setSelectedFood}
             setFocused={setFocused}
@@ -71,7 +71,7 @@ const SearchFoodsForm = ({ user, currentDay }) => {
           }
         />
       </div>
-      <SearchFoodsButtons
+      <EatFormButtons
         user={user}
         currentDay={currentDay}
         setSearchInput={setSearchInput}
@@ -82,4 +82,4 @@ const SearchFoodsForm = ({ user, currentDay }) => {
     </div>
   );
 };
-export default SearchFoodsForm;
+export default EatFoodsForm;

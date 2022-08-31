@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const ColorFilter = ({ selectedColor, setSelectedColor }) => {
+const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
   const icons = [
     "/colorIcons/Red.png",
     "/colorIcons/Yellow.png",
@@ -39,4 +39,4 @@ const ColorFilter = ({ selectedColor, setSelectedColor }) => {
   );
 };
 
-export default ColorFilter;
+export default EatColorFilter;
