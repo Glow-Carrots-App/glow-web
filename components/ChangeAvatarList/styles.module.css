@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
+  text-align: center;
   margin: 24px 0;
 }
 
@@ -64,6 +64,11 @@
   width: 75px;
 }
 
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin: 4px auto;
+}
+
 @media (min-width: 768px) {
   .buttonContainer {
     gap: 40px;
@@ -93,5 +98,8 @@
   .avatar {
     height: 130px;
     width: 130px;
+  }
+  .error {
+    font-size: 24px;
   }
 }
