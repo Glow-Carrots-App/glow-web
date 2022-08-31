@@ -4,6 +4,7 @@ import Heading1 from "../../../components/Heading1/index";
 import BottomTabs from "../../../components/BottomTabs/index";
 import withProtected from "../../../routers/withProtected";
 import Sidebar from "../../../components/Sidebar";
+import About from "../../../components/About";
 
 import styles from "./styles.module.css";
 
@@ -17,20 +18,8 @@ const AboutUs = () => {
           <img src="/buttonIcons/back.png" />
         </a>
       </Link>
-      <img src="/pageBackgrounds/banana.png" className={styles.banana} />
-      <p>
-        Glow is a food tracker app inspired by the Rainbow Diet and science
-        linking nutrition to the colors of natural foods.
-        <br />
-        <br />
-        This app is intended for all ages. It is not indended to treat,
-        diagnose, prevent, or cure diseases.
-        <br />
-        <br />
-        Icons are made by
-        <a href="https://www.flaticon.com/authors/freepik"> Freepik</a> from
-        <a href="https://www.flaticon.com/"> www.flaticon.com</a>.
-      </p>
+      <About />
+      <img src="/pageBackgrounds/wheat.png" className={styles.wheat} />
       <BottomTabs />
     </div>
   );

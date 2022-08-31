@@ -1,0 +1,28 @@
+.container {
+  margin: 40px;
+  color: var(--purple-dark);
+}
+
+.container a {
+  color: #4c9886;
+}
+
+.container p {
+  font-size: 14px;
+}
+
+.text {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .container p {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container p {
+    font-size: 26px;
+  }
+}
