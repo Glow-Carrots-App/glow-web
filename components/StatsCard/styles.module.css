@@ -51,3 +51,9 @@
     height: 50px;
   }
 }
+
+@media (min-width: 1024px) {
+  .statContainer {
+    width: 90%;
+  }
+}

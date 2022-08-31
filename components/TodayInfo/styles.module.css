@@ -71,3 +71,34 @@
     font-size: 24px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    height: 45%;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .goalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+  }
+  .goalContainer > div {
+    height: 80%;
+    width: 80%;
+  }
+  .carrot {
+    top: 29%;
+    left: 40%;
+    height: 80px;
+  }
+  .listContainer {
+    width: 30%;
+    max-width: 185px;
+    height: 80%;
+  }
+  .foodList {
+    font-size: medium;
+  }
+}

@@ -1,0 +1,13 @@
+.container {
+  display: none;
+  flex-direction: column;
+  margin: 32px;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}

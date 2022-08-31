@@ -10,3 +10,9 @@
     font-size: 36px;
   }
 }
+
+@media (min-width: 1024px) {
+  .heading1 {
+    display: none;
+  }
+}
