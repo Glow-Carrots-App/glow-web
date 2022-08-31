@@ -102,18 +102,3 @@
     width: 278px;
   }
 }
-
-@media (min-width: 1024px) {
-  .doneLink {
-    display: none;
-  }
-  .inputFields {
-    width: 300px;
-  }
-  .save {
-    width: 200px;
-  }
-  .reset {
-    width: 200px;
-  }
-}
