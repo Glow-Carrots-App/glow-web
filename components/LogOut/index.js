@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Heading2 from "../Heading2";
 import SmallLinkedButton from "../SmallLinkedButton";
 import { useAuth } from "../../context/AuthContext";
@@ -5,15 +7,16 @@ import { useAuth } from "../../context/AuthContext";
 import styles from "./styles.module.css";
 
 const LogOut = () => {
-  const { authedUser, logout } = useAuth();
+  const [error, setError] = useState("");
+  const { logout } = useAuth();
 
   const handleLogOut = async (e) => {
     e.preventDefault();
 
     try {
-      await logout(authedUser);
+      await logout();
     } catch (err) {
-      console.log(err);
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -26,6 +29,7 @@ const LogOut = () => {
           Log Out
         </button>
       </div>
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };
