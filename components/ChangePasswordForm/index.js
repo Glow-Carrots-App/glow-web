@@ -11,16 +11,22 @@ const ChangePasswordForm = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [isPasswordSaved, setIsPasswordSaved] = useState(false);
+  const [error, setError] = useState("");
   const { changePassword, reauthenticate } = useAuth();
 
   const handlePasswordUpdate = async (e) => {
     e.preventDefault();
     try {
+      setError("");
       await reauthenticate(oldPassword);
       await changePassword(newPassword);
       setIsPasswordSaved(true);
     } catch (err) {
-      console.log(err);
+      if (err.code == "auth/wrong-password") {
+        setError("Incorrect password.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     }
   };
 
@@ -59,6 +65,7 @@ const ChangePasswordForm = () => {
         setIsPasswordSaved={setIsPasswordSaved}
         placeholder="Confirm New Password"
       />
+      {error && <p className={styles.error}>{error}</p>}
       <div className={styles.buttonPair}>
         <button type="button" className={styles.reset} onClick={handleReset}>
           Reset

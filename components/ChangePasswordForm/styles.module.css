@@ -34,6 +34,7 @@
   display: flex;
   justify-content: center;
   gap: 11px;
+  z-index: 1;
 }
 
 .reset {
@@ -62,6 +63,11 @@
 
 .save:disabled {
   background-color: lightgray;
+}
+
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin: 0;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -100,6 +106,9 @@
     font-size: 24px;
     height: 92px;
     width: 278px;
+  }
+  .error {
+    font-size: 24px;
   }
 }
 @media (min-width: 1024px) {
