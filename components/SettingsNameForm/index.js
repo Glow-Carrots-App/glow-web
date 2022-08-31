@@ -7,14 +7,16 @@ import styles from "./styles.module.css";
 const SettingsNameForm = ({ user }) => {
   const [newName, setNewName] = useState(user.firstName);
   const [isNameSaved, setIsNameSaved] = useState(false);
+  const [error, setError] = useState("");
 
   const handleNewName = async (e) => {
     try {
       e.preventDefault();
       await UserModel.updateName(user.uid, newName);
       setIsNameSaved(true);
+      setError("");
     } catch (err) {
-      console.log(err);
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -38,6 +40,7 @@ const SettingsNameForm = ({ user }) => {
           value={!isNameSaved ? "Save" : "Saved!"}
         />
       </div>
+      {error && <p className={styles.error}>{error}</p>}
     </form>
   );
 };

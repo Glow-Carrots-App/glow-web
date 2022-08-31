@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import PageContainer from "../../components/PageContainer";
-import Heading1 from "../../components/Heading1";
 import CreateAccountForm from "../../components/CreateAccountForm";
 import withUnprotected from "../../routers/withUnprotected";
 

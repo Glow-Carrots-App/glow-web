@@ -4,20 +4,17 @@
   align-self: center;
   width: 307px;
 }
-
 .inputButtonPair {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
-
 .passwordContainer {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
-
 .input {
   background: none;
   height: 50px;
@@ -25,7 +22,6 @@
   border-width: 0 0 1px;
   border-color: black;
 }
-
 .password {
   background: none;
   height: 50px;
@@ -34,7 +30,6 @@
   border-color: black;
   margin-bottom: 24px;
 }
-
 .inputButton,
 .inputButtonSaved {
   background-color: rgba(235, 221, 245, 0.3);
@@ -43,23 +38,24 @@
   border-width: 1px;
   margin: 10px 0;
 }
-
 .inputButton {
   border: 1px solid gray;
 }
 .inputButtonSaved {
   border: 1.8px solid var(--purple-dark);
 }
-
 .container label ~ label {
   margin-top: 15px;
+}
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin: 0 0 8px;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
   .formContainer {
     width: 596px;
   }
-
   .input {
     height: 95px;
     width: 435px;
@@ -76,5 +72,8 @@
     border-radius: 8px;
     font-size: x-large;
     border: 2.8px solid var(--purple-dark);
+  }
+  .error {
+    font-size: 24px;
   }
 }
