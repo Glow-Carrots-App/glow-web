@@ -22,7 +22,7 @@
 }
 
 .container > input {
-  margin: 12px 0 25px;
+  margin: 12px 0 20px;
   height: 50px;
   border-width: 1px;
   border-radius: 4px;
@@ -36,7 +36,7 @@
 }
 
 .container textarea {
-  margin: 12px 0 25px;
+  margin: 12px 0 0;
   height: 200px;
   border-width: 1px;
   border-radius: 4px;
@@ -55,6 +55,7 @@
   display: flex;
   justify-content: center;
   gap: 11px;
+  margin-top: 16px;
 }
 
 .resetButton,
@@ -67,6 +68,15 @@
   margin: 0;
   color: white;
   font-size: medium;
+}
+
+.submitButton:disabled {
+  background-color: darkgray;
+}
+
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin: 8px 0;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -109,5 +119,8 @@
   }
   .buttonPair {
     gap: 40px;
+  }
+  .error {
+    font-size: 24px;
   }
 }
