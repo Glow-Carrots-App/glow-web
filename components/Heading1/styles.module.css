@@ -13,6 +13,8 @@
 
 @media (min-width: 1024px) {
   .heading1 {
-    display: none;
+    position: absolute;
+    left: 22%;
+    top: 4%;
   }
 }
