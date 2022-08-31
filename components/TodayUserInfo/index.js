@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 
 import styles from "./styles.module.css";
 
-const UserInfo = ({ user }) => {
+const TodayUserInfo = ({ user }) => {
   const { avatar, firstName, joinDate } = user;
   const formattedDate = dayjs(joinDate).format("MMM YYYY");
   return (
@@ -18,4 +18,4 @@ const UserInfo = ({ user }) => {
   );
 };
 
-export default UserInfo;
+export default TodayUserInfo;

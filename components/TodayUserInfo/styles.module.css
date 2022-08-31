@@ -1,7 +1,5 @@
 .container {
   display: none;
-  justify-content: space-between;
-  position: relative;
 }
 
 @media (min-width: 1024px) {
