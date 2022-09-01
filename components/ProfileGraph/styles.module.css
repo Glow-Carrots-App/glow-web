@@ -44,3 +44,9 @@
     line-height: 120px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container > p {
+    font-size: x-large;
+  }
+}
