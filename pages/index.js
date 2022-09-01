@@ -15,21 +15,33 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img className={styles.grapes} src="/landing/grapes-home.png" />
-      <Heading1>
-        Welcome to <span className={styles.glowText}>Glow</span>
-      </Heading1>
-      <Heading2>
-        The fun and effective way to document all the healthy, colorful foods we
-        eat!
-      </Heading2>
-      <Heading2>Start tracking your Rainbow diet today!</Heading2>
-      <div className={styles.buttonPair}>
-        <LargeLinkedButton href="/create-account" isLanding={true}>
-          Create Account
-        </LargeLinkedButton>
-        <LargeLinkedButton href="/sign-in" isLanding={true}>
-          Log In
-        </LargeLinkedButton>
+      <img className={styles.carrot1} src="/stats/goldenCarrot.png" />
+      <img className={styles.carrot2} src="/stats/goldenCarrot.png" />
+      <img className={styles.carrot3} src="/stats/goldenCarrot.png" />
+      <img className={styles.carrot4} src="/stats/goldenCarrot.png" />
+      <img className={styles.carrot5} src="/stats/goldenCarrot.png" />
+      <div className={styles.container}>
+        <div className={styles.headings}>
+          <Heading1>
+            Welcome to <span className={styles.glowText}>Glow</span>
+          </Heading1>
+          <Heading2>
+            The fun and effective way to document all the healthy, colorful
+            foods we eat!
+          </Heading2>
+          <Heading2>
+            Start tracking your Rainbow diet and collecting Golden Carrots
+            today!
+          </Heading2>
+        </div>
+        <div className={styles.buttonPair}>
+          <LargeLinkedButton href="/create-account" isLanding={true}>
+            Get Started
+          </LargeLinkedButton>
+          <LargeLinkedButton href="/sign-in" isLanding={true}>
+            I Already Have An Account
+          </LargeLinkedButton>
+        </div>
       </div>
       <img className={styles.rainbow} src="/landing/rainbow-home.png" />
     </PageContainer>
