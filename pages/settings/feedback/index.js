@@ -35,7 +35,6 @@ const FeedbackPage = ({ authedUser }) => {
       <Sidebar />
       <img src="/pageBackgrounds/artichoke.png" className={styles.artichoke} />
       <Heading1>Feedback</Heading1>
-      <p className={styles.text}>Send us your feedback!</p>
       <FeedbackForm user={user} />
       <BottomTabs />
     </PageContainer>
