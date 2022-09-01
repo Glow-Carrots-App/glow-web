@@ -28,10 +28,10 @@ const FeedbackForm = ({ user }) => {
   };
 
   return (
-    <div className={styles.parentContainer}>
+    <div className={styles.container}>
       <p>Send us your feedback!</p>
       <form
-        className={styles.container}
+        className={styles.formContainer}
         onSubmit={handleSendEmail}
         autoComplete="off"
       >

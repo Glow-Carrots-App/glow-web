@@ -1,13 +1,13 @@
-.parentContainer {
+.container {
   align-self: center;
 }
 
-.parentContainer > p {
+.container > p {
   color: var(--purple-dark);
   font-size: large;
 }
 
-.container {
+.formContainer {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -30,11 +30,11 @@
   height: 35px;
 }
 
-.container label {
+.formContainer label {
   align-self: flex-start;
 }
 
-.container > input {
+.formContainer > input {
   margin: 12px 0 20px;
   height: 50px;
   border-width: 1px;
@@ -44,11 +44,11 @@
   width: 307px;
 }
 
-.container input::placeholder {
+.formContainer input::placeholder {
   color: black;
 }
 
-.container textarea {
+.formContainer textarea {
   margin: 12px 0 0;
   height: 200px;
   border-width: 1px;
@@ -60,7 +60,7 @@
   width: 307px;
 }
 
-.container textarea::placeholder {
+.formContainer textarea::placeholder {
   color: black;
 }
 
@@ -105,7 +105,7 @@
     font-size: xx-large;
   }
 
-  .container > input {
+  .formContainer > input {
     height: 88px;
     width: 596px;
     font-size: 30px;
@@ -117,21 +117,21 @@
     width: 278px;
   }
 
-  .container > label {
+  .formContainer > label {
     font-size: 24px;
   }
 
-  .container input::placeholder {
+  .formContainer input::placeholder {
     font-size: 24px;
   }
 
-  .container textarea {
+  .formContainer textarea {
     height: 260px;
     width: 596px;
     font-size: 30px;
   }
 
-  .container textarea::placeholder {
+  .formContainer textarea::placeholder {
     font-size: 24px;
   }
   .buttonPair {
@@ -148,31 +148,31 @@
     display: none;
   }
 
-  .container {
+  .formContainer {
     width: 546px;
   }
 
-  .container > input {
+  .formContainer > input {
     height: 62px;
     width: 546px;
     font-size: 30px;
   }
 
-  .container > label {
+  .formContainer > label {
     font-size: 18px;
   }
 
-  .container input::placeholder {
+  .formContainer input::placeholder {
     font-size: 18px;
   }
 
-  .container textarea {
+  .formContainer textarea {
     height: 200px;
     width: 546px;
     font-size: 30px;
   }
 
-  .container textarea::placeholder {
+  .formContainer textarea::placeholder {
     font-size: 18px;
   }
 
