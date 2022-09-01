@@ -2,7 +2,6 @@
   display: flex;
   gap: 11px;
 }
-
 .addButton {
   background-color: var(--purple-light);
   height: 50px;
@@ -13,9 +12,13 @@
   color: white;
   font-size: medium;
 }
-
 .addButton:disabled {
   background-color: lightgray;
+}
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  font-size: 14px;
+  margin: 0 0 8px;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -27,5 +30,8 @@
     font-size: 24px;
     height: 92px;
     width: 278px;
+  }
+  .error {
+    font-size: 24px;
   }
 }
