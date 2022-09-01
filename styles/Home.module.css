@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
 }
 
 .grapes {
@@ -54,8 +55,8 @@
   opacity: 0.5;
 }
 .carrot1 {
-  top: 0;
-  right: 0;
+  top: 10%;
+  right: 10%;
   transform: scaleX(-1);
 }
 .carrot2 {
@@ -63,15 +64,18 @@
   left: -10px;
 }
 .carrot3 {
-  top: 370px;
-  right: 12%;
+  top: -45px;
+  right: 20px;
   transform: scaleY(-1);
+  z-index: -1;
 }
 .carrot4 {
-  bottom: 180px;
-  left: 27%;
+  bottom: 40px;
+  left: -30px;
   transform: scaleX(-1);
+  z-index: -1;
 }
 .carrot5 {
-  bottom: 15px;
+  left: 10%;
+  bottom: 5%;
 }
