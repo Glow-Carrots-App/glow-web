@@ -12,3 +12,9 @@
     gap: 24px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    margin: 15px;
+  }
+}
