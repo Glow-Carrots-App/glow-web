@@ -22,3 +22,17 @@
     font-size: 28px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    height: 40%;
+  }
+
+  .container > p {
+    font-size: x-large;
+  }
+}

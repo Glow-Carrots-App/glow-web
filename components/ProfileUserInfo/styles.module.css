@@ -58,3 +58,9 @@
     right: -20px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
