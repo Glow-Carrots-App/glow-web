@@ -24,7 +24,7 @@ const EatFoodsForm = ({ user, currentDay, setCurrentDay }) => {
     searchInput
   );
 
-  const displayCheck = () => {
+  const displayCheckmark = () => {
     setIsAdded(true);
     setTimeout(() => {
       setIsAdded(false);
@@ -78,7 +78,7 @@ const EatFoodsForm = ({ user, currentDay, setCurrentDay }) => {
         setSearchInput={setSearchInput}
         setSelectedFood={setSelectedFood}
         selectedFood={selectedFood}
-        displayCheck={displayCheck}
+        displayCheckmark={displayCheckmark}
       />
     </div>
   );
