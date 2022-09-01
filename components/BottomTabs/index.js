@@ -13,7 +13,7 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
             className={styles.fontAwesomeSide}
             icon={faSun}
             size="2x"
-            color={isToday ? "#907ac4" : "#cac4d8"}
+            color={isToday ? "#ffdb4b" : "#cac4d8"}
           />
         </a>
       </Link>
@@ -33,7 +33,7 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
             className={styles.fontAwesomeSide}
             icon={faUser}
             size="2x"
-            color={isProfile ? "#907ac4" : "#cac4d8"}
+            color={isProfile ? "#ffdb4b" : "#cac4d8"}
           />
         </a>
       </Link>
