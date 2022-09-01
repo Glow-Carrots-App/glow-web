@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.module.css";
 
-const LargeLinkedButton = ({ children, href }) => {
+const LargeLinkedButton = ({ children, href, isLanding = false }) => {
   return (
     <Link href={href}>
-      <a className={styles.largeButton}>{children}</a>
+      <a className={isLanding ? styles.landingLargeButton : styles.largeButton}>
+        {children}
+      </a>
     </Link>
   );
 };

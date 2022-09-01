@@ -1,3 +1,35 @@
 .container {
   padding: 0 2rem;
 }
+
+.glowText {
+  font-style: oblique;
+  font-size: 32px;
+  color: var(--filter-yellow);
+}
+
+.buttonPair {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1;
+}
+
+.grapes {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  transform: rotate(-60deg);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+}
+
+.rainbow {
+  position: absolute;
+  height: 180px;
+  width: 180px;
+  opacity: 0.6;
+  bottom: 0;
+  right: 0;
+}
