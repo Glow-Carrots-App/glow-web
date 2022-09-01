@@ -28,72 +28,75 @@ const FeedbackForm = ({ user }) => {
   };
 
   return (
-    <form
-      className={styles.container}
-      onSubmit={handleSendEmail}
-      autoComplete="off"
-    >
-      <Link href="/settings">
-        <a className={styles.doneLink}>
-          <img src="/buttonIcons/back.png" />
-        </a>
-      </Link>
-      <input
-        className={styles.hiddenInputs}
-        name="uid"
-        defaultValue={user.uid}
-      />
-      <input
-        className={styles.hiddenInputs}
-        name="name"
-        defaultValue={user.firstName}
-      />
-      <input
-        className={styles.hiddenInputs}
-        name="email"
-        defaultValue={user.email}
-      />
-      <label htmlFor="subject">Subject</label>
-      <input
-        id="subject"
-        type="text"
-        name="subject"
-        placeholder="Type here"
-        value={subject}
-        onFocus={() => setIsSubmitted(false)}
-        onChange={(e) => setSubject(e.target.value)}
-        required
-      />
-      <label htmlFor="message">Message</label>
-      <textarea
-        id="message"
-        type="text"
-        name="message"
-        placeholder="Type here"
-        value={message}
-        onFocus={() => setIsSubmitted(false)}
-        onChange={(e) => setMessage(e.target.value)}
-        required
-      />
-      {error && <p className={styles.error}>{error}</p>}
-      <div className={styles.buttonPair}>
-        <button
-          className={styles.resetButton}
-          onClick={() => {
-            setSubject("");
-            setMessage("");
-          }}
-        >
-          Reset
-        </button>
+    <div className={styles.container}>
+      <p>Send us your feedback!</p>
+      <form
+        className={styles.formContainer}
+        onSubmit={handleSendEmail}
+        autoComplete="off"
+      >
+        <Link href="/settings">
+          <a className={styles.doneLink}>
+            <img src="/buttonIcons/back.png" />
+          </a>
+        </Link>
         <input
-          className={styles.submitButton}
-          type="submit"
-          disabled={!subject || !message}
-          value={isSubmitted ? "Submitted!" : "Submit"}
+          className={styles.hiddenInputs}
+          name="uid"
+          defaultValue={user.uid}
         />
-      </div>
-    </form>
+        <input
+          className={styles.hiddenInputs}
+          name="name"
+          defaultValue={user.firstName}
+        />
+        <input
+          className={styles.hiddenInputs}
+          name="email"
+          defaultValue={user.email}
+        />
+        <label htmlFor="subject">Subject</label>
+        <input
+          id="subject"
+          type="text"
+          name="subject"
+          placeholder="Type here"
+          value={subject}
+          onFocus={() => setIsSubmitted(false)}
+          onChange={(e) => setSubject(e.target.value)}
+          required
+        />
+        <label htmlFor="message">Message</label>
+        <textarea
+          id="message"
+          type="text"
+          name="message"
+          placeholder="Type here"
+          value={message}
+          onFocus={() => setIsSubmitted(false)}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        />
+        {error && <p className={styles.error}>{error}</p>}
+        <div className={styles.buttonPair}>
+          <button
+            className={styles.resetButton}
+            onClick={() => {
+              setSubject("");
+              setMessage("");
+            }}
+          >
+            Reset
+          </button>
+          <input
+            className={styles.submitButton}
+            type="submit"
+            disabled={!subject || !message}
+            value={isSubmitted ? "Submitted!" : "Submit"}
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 
