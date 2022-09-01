@@ -19,3 +19,9 @@
     width: 596px;
   }
 }
+
+@media (min-width: 1024px) {
+  .largeButton {
+    width: 50%;
+  }
+}

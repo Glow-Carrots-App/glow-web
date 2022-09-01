@@ -43,24 +43,6 @@ const SettingsEmailForm = ({ user }) => {
 
   return (
     <form className={styles.formContainer} onSubmit={handleNewEmail}>
-      <label
-        htmlFor="password"
-        style={!showPassword ? { display: "none" } : null}
-      >
-        Confirm password to change email:
-      </label>
-      <div className={styles.passwordContainer}>
-        <input
-          id="password"
-          type="password"
-          placeholder="Confirm Password"
-          autoComplete="current-password"
-          value={password}
-          className={styles.password}
-          style={!showPassword ? { display: "none" } : null}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
       <label htmlFor="email">Email</label>
       <div className={styles.inputButtonPair}>
         <input
@@ -83,6 +65,24 @@ const SettingsEmailForm = ({ user }) => {
             !isEmailSaved ? styles.inputButton : styles.inputButtonSaved
           }
           value={!isEmailSaved ? "Save" : "Saved!"}
+        />
+      </div>
+      <label
+        htmlFor="password"
+        style={!showPassword ? { display: "none" } : null}
+      >
+        Confirm password to change email:
+      </label>
+      <div className={styles.passwordContainer}>
+        <input
+          id="password"
+          type="password"
+          placeholder="Confirm Password"
+          autoComplete="current-password"
+          value={password}
+          className={styles.password}
+          style={!showPassword ? { display: "none" } : null}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       {error && <p className={styles.error}>{error}</p>}

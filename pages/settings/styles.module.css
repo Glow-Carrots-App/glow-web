@@ -12,12 +12,19 @@
   text-align: left;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .container {
     padding: 86px;
   }
 
   .container label {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 75px 50px 50px 22%;
+    overflow: scroll;
   }
 }
