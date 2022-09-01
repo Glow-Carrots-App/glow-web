@@ -2,6 +2,11 @@
   align-self: center;
 }
 
+.parentContainer > p {
+  color: var(--purple-dark);
+  font-size: large;
+}
+
 .container {
   position: relative;
   display: flex;
@@ -9,11 +14,6 @@
   justify-content: center;
   align-items: center;
   text-align: left;
-}
-
-.pTag {
-  color: var(--purple-dark);
-  font-size: large;
 }
 
 .hiddenInputs {
@@ -112,7 +112,6 @@
   }
   .resetButton,
   .submitButton {
-    line-height: 92px;
     font-size: 24px;
     height: 92px;
     width: 278px;
@@ -176,10 +175,16 @@
   .container textarea::placeholder {
     font-size: 18px;
   }
-  .buttonPair {
-    gap: 40px;
-  }
+
   .error {
     font-size: 24px;
+  }
+
+  .resetButton,
+  .submitButton {
+    height: 50px;
+    width: 148px;
+    color: white;
+    font-size: 16px;
   }
 }

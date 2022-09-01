@@ -29,7 +29,7 @@ const FeedbackForm = ({ user }) => {
 
   return (
     <div className={styles.parentContainer}>
-      <p className={styles.pTag}>Send us your feedback!</p>
+      <p>Send us your feedback!</p>
       <form
         className={styles.container}
         onSubmit={handleSendEmail}
