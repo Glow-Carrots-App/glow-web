@@ -5,9 +5,12 @@ import organizeFoodHistory from "../../utils/organizeFoodHistory";
 
 import styles from "./styles.module.css";
 
-const TodayGraph = ({ foodHistory }) => {
+const TodayGraph = ({ thirtyDayFoodHistory }) => {
   let [numberOfDays, setNumberOfDays] = useState(7);
-  let organizedFoodHistory = organizeFoodHistory(foodHistory, numberOfDays);
+  let organizedFoodHistory = organizeFoodHistory(
+    thirtyDayFoodHistory,
+    numberOfDays
+  );
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
