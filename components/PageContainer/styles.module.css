@@ -18,10 +18,18 @@
   .containerLanding {
     padding: 86px;
   }
+  .containerLanding {
+    justify-content: center;
+  }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .container {
     padding: 50px 50px 50px 22%;
+  }
+  .containerLanding {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

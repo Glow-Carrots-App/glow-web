@@ -1,0 +1,30 @@
+.statsContainer {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .statsContainer {
+    display: block;
+    width: 30%;
+  }
+
+  .stats1 {
+    width: 40%;
+    border-radius: 5%;
+    transform: rotate(-15deg);
+    opacity: 0.7;
+  }
+
+  .stats2 {
+    width: 40%;
+    border-radius: 5%;
+    transform: rotate(10deg);
+    opacity: 0.7;
+  }
+
+  .statsText {
+    font-weight: bold;
+    margin: 60px;
+    transform: rotate(10deg);
+  }
+}
