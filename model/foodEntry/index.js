@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import {
   collection,
   query,
@@ -18,7 +19,8 @@ class FoodEntryModel {
     return await addDoc(foodEntriesRef, foodObj);
   };
 
-  static getCurrentDayHistory = async (userId, today) => {
+  static getCurrentDayHistory = async (userId) => {
+    let today = dayjs().format("YYYY/MM/DD");
     let currentDayHistorySnapshot = await getDocs(
       query(
         foodEntriesRef,
