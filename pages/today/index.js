@@ -13,10 +13,10 @@ import FoodEntryModel from "../../model/foodEntry";
 import UserModel from "../../model/user";
 import withProtected from "../../routers/withProtected";
 import AddButton from "../../components/AddButton";
-
-import styles from "./styles.module.css";
 import filterByDate from "../../utils/filterByDate";
 import filterByDateRange from "../../utils/filterByDateRange";
+
+import styles from "./styles.module.css";
 
 const Today = ({ authedUser }) => {
   const [currentDay, setCurrentDay] = useState();
