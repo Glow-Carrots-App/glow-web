@@ -35,8 +35,8 @@ const Today = ({ authedUser }) => {
         uid
       );
       const userResponse = await UserModel.getUser(uid);
-      const currentDay = filterByDate(lifetimeHistoryResponse, 0);
       const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
+      const currentDay = filterByDate(thirtyDayHistory, 0);
 
       const {
         dailyGoal: { isComplete, lastGoalDate },
