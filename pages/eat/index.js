@@ -26,15 +26,10 @@ const Eat = ({ authedUser }) => {
       }
       const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
-      const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
-      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
-        uid,
-        today,
-        dateToCompare
-      );
-      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
+      const currentDayHistoryResponse =
+        await FoodEntryModel.getCurrentDayHistory(uid, today);
       const userResponse = await UserModel.getUser(uid);
-      setCurrentDay(currentDay);
+      setCurrentDay(currentDayHistoryResponse);
       setUser(userResponse);
     }
     fetchData();

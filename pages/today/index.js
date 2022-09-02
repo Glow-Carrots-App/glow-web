@@ -16,10 +16,11 @@ import AddButton from "../../components/AddButton";
 
 import styles from "./styles.module.css";
 import filterByDate from "../../utils/filterByDate";
+import filterByDateRange from "../../utils/filterByDateRange";
 
 const Today = ({ authedUser }) => {
   const [currentDay, setCurrentDay] = useState();
-  const [foodHistory, setFoodHistory] = useState();
+  const [thirtyDayFoodHistory, setThirtyDayFoodHistory] = useState();
   const [user, setUser] = useState();
   const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
 
@@ -30,15 +31,15 @@ const Today = ({ authedUser }) => {
       }
       const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
-      const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
-      const lifetimeResponse = await FoodEntryModel.getLifetimeHistory(uid);
-      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
-        uid,
-        today,
-        dateToCompare
+      const lifetimeHistoryResponse = await FoodEntryModel.getLifetimeHistory(
+        uid
       );
       const userResponse = await UserModel.getUser(uid);
-      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
+      const currentDay = filterByDate(lifetimeHistoryResponse, 0);
+      const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
+      console.log(thirtyDayHistory);
+      console.log(currentDay);
+
       const {
         dailyGoal: { isComplete, lastGoalDate },
       } = userResponse;
@@ -52,13 +53,13 @@ const Today = ({ authedUser }) => {
 
       setUser(userResponse);
       setCurrentDay(currentDay);
-      setFoodHistory(thirtyDayHistoryResponse);
-      setLifetimeFoodHistory(lifetimeResponse);
+      setThirtyDayFoodHistory(thirtyDayHistory);
+      setLifetimeFoodHistory(lifetimeHistoryResponse);
     }
     fetchData();
   }, []);
 
-  if (!user || !currentDay || !foodHistory) {
+  if (!user || !currentDay || !thirtyDayFoodHistory) {
     return <Loading />;
   }
 
@@ -68,7 +69,7 @@ const Today = ({ authedUser }) => {
       <Heading1>Today</Heading1>
       <div className={styles.todayColumnLeft}>
         <TodayGoalInfo currentDay={currentDay} user={user} />
-        <TodayGraph foodHistory={foodHistory} />
+        <TodayGraph thirtyDayFoodHistory={thirtyDayFoodHistory} />
       </div>
       <div className={styles.todayColumnRight}>
         <TodayUserInfo user={user} />
