@@ -17,15 +17,10 @@ const EatFormButtons = ({
   displayCheckmark,
 }) => {
   const [currentCount, setCurrentCount] = useState(currentDay.length);
-  const [isGoalComplete, setIsGoalComplete] = useState(
-    user.dailyGoal.isComplete
-  );
+  const [isGoalComplete, setIsGoalComplete] = useState(user.isGoalComplete);
   const [error, setError] = useState("");
 
-  let {
-    dailyGoal: { amount },
-    uid,
-  } = user;
+  let { dailyGoalAmount, uid } = user;
 
   const handleEatFood = (e) => {
     e.preventDefault();
@@ -45,7 +40,7 @@ const EatFormButtons = ({
       setCurrentCount(currentCount + 1);
       setSearchInput("");
       setSelectedFood(null);
-      if (currentCount + 1 >= amount && !isGoalComplete) {
+      if (currentCount + 1 >= dailyGoalAmount && !isGoalComplete) {
         const currentDate = dayjs().format("MM/DD/YYYY");
         UserModel.incrementDayStreak(uid);
         UserModel.incrementGoldenCarrots(uid);

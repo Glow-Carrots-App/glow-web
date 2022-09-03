@@ -7,11 +7,20 @@ import {
   deleteDoc,
   collection,
   increment,
+  onSnapshot,
 } from "firebase/firestore";
 
 const usersRef = collection(db, "users");
 
 class UserModel {
+  static listenToUser = async (uid, setUser) => {
+    const docRef = doc(db, "users", uid);
+    const unsubscribe = onSnapshot(docRef, (doc) => {
+      setUser(doc.data());
+    });
+    return () => unsubscribe();
+  };
+
   static createUser = async (newUser) => {
     return await setDoc(doc(db, "users", newUser.uid), newUser);
   };

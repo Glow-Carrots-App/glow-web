@@ -13,13 +13,11 @@ const withProtected = (Component) => {
 
     useEffect(() => {
       if (!authedUser) {
-        console.log("with protected pushing route");
         router.replace("/sign-in");
       }
     }, [authedUser]);
 
-    if (!authedUser) {
-      console.log("with protected loading");
+    if (!authedUser || !user) {
       return <Loading />;
     }
     return <Component authedUser={authedUser} user={user} />;

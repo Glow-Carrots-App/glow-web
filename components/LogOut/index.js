@@ -3,18 +3,22 @@ import { useState } from "react";
 import Heading2 from "../Heading2";
 import SmallLinkedButton from "../SmallLinkedButton";
 import { useAuth } from "../../context/AuthContext";
+import { useUser } from "../../context/UserContext";
 
 import styles from "./styles.module.css";
 
 const LogOut = () => {
   const [error, setError] = useState("");
   const { logout } = useAuth();
+  const { setUser, unsubscribe } = useUser();
 
   const handleLogOut = async (e) => {
     e.preventDefault();
 
     try {
       await logout();
+      setUser(null);
+      unsubscribe();
     } catch (err) {
       setError("Something went wrong. Please try again.");
     }

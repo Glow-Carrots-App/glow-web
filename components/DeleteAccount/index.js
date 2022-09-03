@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { useAuth } from "../../context/AuthContext";
+import { useUser } from "../../context/UserContext";
 import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
 import Heading2 from "../Heading2";
@@ -11,6 +12,7 @@ import styles from "./styles.module.css";
 const DeleteAccount = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { setUser, unsubscribe } = useUser();
   const {
     deleteAccount,
     authedUser: { uid },
@@ -24,6 +26,8 @@ const DeleteAccount = () => {
       await deleteAccount();
       await UserModel.deleteUser(uid);
       await FoodEntryModel.deleteUserHistory(uid);
+      setUser(null);
+      unsubscribe();
     } catch (err) {
       if (err.code == "auth/wrong-password") {
         setError("Invalid password.");

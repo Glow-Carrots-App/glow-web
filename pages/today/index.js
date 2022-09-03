@@ -21,8 +21,8 @@ import styles from "./styles.module.css";
 const Today = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
   const [thirtyDayFoodHistory, setThirtyDayFoodHistory] = useState();
-
   const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
+
   useEffect(() => {
     async function fetchData() {
       const today = dayjs().format("YYYY/MM/DD");
@@ -32,7 +32,6 @@ const Today = ({ user }) => {
       );
       const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
       const currentDay = filterByDate(thirtyDayHistory, 0);
-
       if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
         await UserModel.clearDayStreak(uid);
       }
@@ -45,7 +44,7 @@ const Today = ({ user }) => {
     }
     fetchData();
   }, []);
-  console.log("user in today", user);
+
   if (!currentDay || !thirtyDayFoodHistory || !user) {
     return <Loading />;
   }

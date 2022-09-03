@@ -13,8 +13,8 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
 } from "firebase/auth";
-
 import { auth, googleProvider } from "../firebase";
+
 import Loading from "../components/Loading";
 
 const AuthContext = createContext();
@@ -95,11 +95,6 @@ export const AuthContextProvider = ({ children }) => {
     await updateEmail(auth.currentUser, newEmail);
   };
 
-  if (loading) {
-    console.log("in authcontext loading");
-    return <Loading />;
-  }
-
   return (
     <AuthContext.Provider
       value={{
@@ -117,7 +112,7 @@ export const AuthContextProvider = ({ children }) => {
         setLoading,
       }}
     >
-      {children}
+      {loading ? <Loading /> : children}
     </AuthContext.Provider>
   );
 };
