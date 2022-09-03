@@ -6,12 +6,10 @@ import TodayFoodList from "../TodayFoodList";
 import styles from "./styles.module.css";
 
 const TodayGoalInfo = ({ currentDay, user }) => {
-  const {
-    dailyGoal: { amount },
-  } = user;
+  const { dailyGoalAmount } = user;
 
   const currentCount = currentDay.length;
-  const todaysData = populateDonutChartData(currentDay, amount);
+  const todaysData = populateDonutChartData(currentDay, dailyGoalAmount);
   const today = [
     "#fc7790",
     "#fd8f52",
@@ -32,12 +30,12 @@ const TodayGoalInfo = ({ currentDay, user }) => {
             innerRadius={100}
             data={todaysData}
           />
-          {currentCount >= amount && (
+          {currentCount >= dailyGoalAmount && (
             <img className={styles.carrot} src="/stats/goldenCarrot.png" />
           )}
         </div>
         <p>
-          {currentCount}/{amount} Foods
+          {currentCount}/{dailyGoalAmount} Foods
         </p>
       </div>
       <div className={styles.columnRight}>

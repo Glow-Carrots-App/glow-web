@@ -11,11 +11,13 @@ const withUnprotected = (Component) => {
 
     useEffect(() => {
       if (authedUser) {
+        console.log("with unprotected pushing route");
         router.push("/today");
       }
     }, [authedUser]);
 
     if (authedUser) {
+      console.log("ewith unprotected losading");
       return <Loading />;
     }
     return <Component authedUser={authedUser} />;

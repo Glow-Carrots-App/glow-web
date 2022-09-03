@@ -95,6 +95,11 @@ export const AuthContextProvider = ({ children }) => {
     await updateEmail(auth.currentUser, newEmail);
   };
 
+  if (loading) {
+    console.log("in authcontext loading");
+    return <Loading />;
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -108,9 +113,11 @@ export const AuthContextProvider = ({ children }) => {
         googleLogin,
         getGoogleRedirectResult,
         reauthenticate,
+        loading,
+        setLoading,
       }}
     >
-      {loading ? <Loading /> : children}
+      {children}
     </AuthContext.Provider>
   );
 };

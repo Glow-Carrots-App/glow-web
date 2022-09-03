@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Heading1 from "../../components/Heading1";
 import EatFoodsForm from "../../components/EatFoodsForm";
 import BottomTabs from "../../components/BottomTabs";
-import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
 import Loading from "../../components/Loading";
 import withProtected from "../../routers/withProtected";
@@ -13,26 +12,20 @@ import TodayFoodList from "../../components/TodayFoodList";
 
 import styles from "./styles.module.css";
 
-const Eat = ({ authedUser }) => {
+const Eat = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
-  const [user, setUser] = useState();
+  const { uid } = user;
 
   useEffect(() => {
     async function fetchData() {
-      if (!authedUser) {
-        return;
-      }
-      const { uid } = authedUser;
       const currentDayHistoryResponse =
         await FoodEntryModel.getCurrentDayHistory(uid);
-      const userResponse = await UserModel.getUser(uid);
       setCurrentDay(currentDayHistoryResponse);
-      setUser(userResponse);
     }
     fetchData();
   }, []);
 
-  if (!user) {
+  if (!currentDay) {
     return <Loading />;
   }
   return (

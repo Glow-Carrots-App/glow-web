@@ -18,46 +18,35 @@ import filterByDateRange from "../../utils/filterByDateRange";
 
 import styles from "./styles.module.css";
 
-const Today = ({ authedUser }) => {
+const Today = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
   const [thirtyDayFoodHistory, setThirtyDayFoodHistory] = useState();
-  const [user, setUser] = useState();
-  const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
 
+  const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
   useEffect(() => {
     async function fetchData() {
-      if (!authedUser) {
-        return;
-      }
-      const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
+      const { isDailyGoalComplete, lastGoalDate, uid } = user;
       const lifetimeHistoryResponse = await FoodEntryModel.getLifetimeHistory(
         uid
       );
-      const userResponse = await UserModel.getUser(uid);
       const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
       const currentDay = filterByDate(thirtyDayHistory, 0);
-
-      const {
-        dailyGoal: { isComplete, lastGoalDate },
-      } = userResponse;
 
       if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
         await UserModel.clearDayStreak(uid);
       }
-      if (isComplete && currentDay.length === 0) {
+      if (isDailyGoalComplete && currentDay.length === 0) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
-
-      setUser(userResponse);
       setCurrentDay(currentDay);
       setThirtyDayFoodHistory(thirtyDayHistory);
       setLifetimeFoodHistory(lifetimeHistoryResponse);
     }
     fetchData();
   }, []);
-
-  if (!user || !currentDay || !thirtyDayFoodHistory) {
+  console.log("user in today", user);
+  if (!currentDay || !thirtyDayFoodHistory || !user) {
     return <Loading />;
   }
 
