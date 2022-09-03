@@ -12,7 +12,7 @@ import styles from "./styles.module.css";
 const DeleteAccount = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { setUser, unsubscribe } = useUser();
+  const { setUser } = useUser();
   const {
     deleteAccount,
     authedUser: { uid },
@@ -27,7 +27,6 @@ const DeleteAccount = () => {
       await UserModel.deleteUser(uid);
       await FoodEntryModel.deleteUserHistory(uid);
       setUser(null);
-      unsubscribe();
     } catch (err) {
       if (err.code == "auth/wrong-password") {
         setError("Invalid password.");

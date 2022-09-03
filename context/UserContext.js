@@ -14,7 +14,6 @@ export const useUser = () => useContext(UserContext);
 
 export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState();
-  const [unsubscribe, setUnsubscribe] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const { authedUser } = useAuth();
@@ -24,9 +23,11 @@ export const UserContextProvider = ({ children }) => {
       const { uid } = authedUser;
       const docRef = doc(db, "users", uid);
       const unsubscribe = onSnapshot(docRef, (doc) => {
+        console.log("listening");
         setUser(doc.data());
       });
       setLoading(false);
+
       return () => unsubscribe();
     } else {
       setUser(null);
@@ -43,7 +44,6 @@ export const UserContextProvider = ({ children }) => {
       value={{
         user,
         setUser,
-        unsubscribe,
       }}
     >
       {children}
