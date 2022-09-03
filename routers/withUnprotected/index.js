@@ -8,7 +8,6 @@ import Loading from "../../components/Loading";
 const withUnprotected = (Component) => {
   return function Unprotected() {
     const { authedUser } = useAuth();
-    const { user } = useUser();
     const router = useRouter();
 
     useEffect(() => {
