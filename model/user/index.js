@@ -5,9 +5,7 @@ import {
   updateDoc,
   doc,
   deleteDoc,
-  collection,
   increment,
-  onSnapshot,
 } from "firebase/firestore";
 
 class UserModel {
@@ -54,24 +52,24 @@ class UserModel {
     });
   };
 
-  static updateDailyGoal = async (uid, dailyGoal) => {
+  static updateDailyGoal = async (uid, dailyGoalAmount) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.amount": dailyGoal,
+      dailyGoalAmount: dailyGoalAmount,
     });
   };
 
   static updateGoalIsComplete = async (uid, isGoalComplete) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.isComplete": isGoalComplete,
+      isDailyGoalComplete: isGoalComplete,
     });
   };
 
   static updateLastGoalDate = async (uid, currentDate) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.lastGoalDate": currentDate,
+      lastGoalDate: currentDate,
     });
   };
 

@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 import { useAuth } from "./AuthContext";
 import Loading from "../components/Loading";
-import UserModel from "../model/user/index.js";
 
 import { db } from "../firebase";
 
