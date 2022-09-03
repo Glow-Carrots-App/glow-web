@@ -27,7 +27,10 @@ export const UserContextProvider = ({ children }) => {
       });
       setLoading(false);
 
-      return () => unsubscribe();
+      return () => {
+        console.log("unsubscribing");
+        unsubscribe();
+      };
     } else {
       setUser(null);
       setLoading(false);
