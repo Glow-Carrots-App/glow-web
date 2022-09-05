@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import { useAuth } from "../../context/AuthContext";
-import { useUser } from "../../context/UserContext";
 import Loading from "../../components/Loading";
 
 const withUnprotected = (Component) => {
