@@ -22,15 +22,11 @@ export const UserContextProvider = ({ children }) => {
       const { uid } = authedUser;
       const docRef = doc(db, "users", uid);
       const unsubscribe = onSnapshot(docRef, (doc) => {
-        console.log("listening");
         setUser(doc.data());
       });
       setLoading(false);
 
-      return () => {
-        console.log("unsubscribing");
-        unsubscribe();
-      };
+      return () => unsubscribe();
     } else {
       setUser(null);
       setLoading(false);
