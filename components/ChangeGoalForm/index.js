@@ -8,7 +8,7 @@ import Heading2 from "../Heading2";
 import styles from "./styles.module.css";
 
 const ChangeGoalForm = ({ user }) => {
-  const [number, setNumber] = useState(user.dailyGoal.amount);
+  const [number, setNumber] = useState(user.dailyGoalAmount);
   const [error, setError] = useState("");
   const router = useRouter();
 
