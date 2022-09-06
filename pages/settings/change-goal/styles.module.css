@@ -32,7 +32,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .berry {
     inset: -30px 0 auto auto;
     height: 200px;

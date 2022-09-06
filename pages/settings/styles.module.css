@@ -22,7 +22,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .container {
     padding: 75px 50px 50px 22%;
     overflow: scroll;
