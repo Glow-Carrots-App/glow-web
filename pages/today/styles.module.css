@@ -6,7 +6,11 @@
   padding: 34px;
 }
 
-@media (min-width: 768px) {
+.todayColumnLeft {
+  height: 80%;
+}
+
+@media (min-width: 768px) and (min-height: 1024px) {
   .container {
     padding: 86px;
   }
@@ -20,6 +24,7 @@
   }
   .todayColumnLeft {
     width: 70%;
+    height: 100%;
   }
   .todayColumnRight {
     display: flex;

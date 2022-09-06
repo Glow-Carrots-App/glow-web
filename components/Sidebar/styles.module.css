@@ -7,13 +7,19 @@
   border-bottom-right-radius: 40px;
   border-top-right-radius: 40px;
   height: 100vh;
-  padding: 40px 40px;
+  padding: 40px 0 40px;
   font-size: large;
 }
 
+.container > p {
+  font-size: 28px;
+  margin: 0 0 24px;
+  padding: 0 30px;
+}
+
 .logo {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
 }
 
 .linksContainer {
@@ -23,10 +29,20 @@
   height: 100%;
 }
 
+.linksContainer span {
+  margin-left: 12px;
+}
+
+.linksContainer > img {
+  opacity: 0.6;
+  width: 85%;
+  padding: 0 10px;
+}
+
 .topLinks {
   display: flex;
   flex-direction: column;
-  margin: 30px 0;
+  padding: 0 40px;
 }
 
 .topLinks a {
@@ -35,6 +51,10 @@
 
 .topLinks a:hover {
   color: rgb(199, 199, 199);
+}
+
+.bottomLink {
+  padding: 0 30px;
 }
 
 .bottomLink a {
