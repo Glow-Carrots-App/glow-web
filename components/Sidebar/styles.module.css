@@ -65,7 +65,7 @@
   color: rgb(199, 199, 199);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .container {
     display: flex;
     flex-direction: column;

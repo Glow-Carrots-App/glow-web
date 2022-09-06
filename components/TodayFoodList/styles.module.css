@@ -71,7 +71,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .listContainer {
     width: 100%;
     max-width: 185px;
