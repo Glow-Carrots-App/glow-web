@@ -17,8 +17,7 @@ const HomeCenterContainer = () => {
             foods we eat!
           </Heading2>
           <Heading2>
-            Start tracking your Rainbow diet and collecting Golden Carrots
-            today!
+            Start tracking your Rainbow Diet and collect Golden Carrots today!
           </Heading2>
         </div>
         <div className={styles.buttonPair}>
