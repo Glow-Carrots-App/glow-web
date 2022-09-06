@@ -1,7 +1,6 @@
 .container {
   display: flex;
   justify-content: space-between;
-  margin: 24px 0;
   position: relative;
 }
 
@@ -56,5 +55,11 @@
     font-size: 32px;
     top: -100px;
     right: -20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: none;
   }
 }

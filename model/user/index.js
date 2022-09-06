@@ -1,42 +1,20 @@
 import { db } from "../../firebase.js";
-import { auth } from "../../firebase.js";
 
 import {
-  getDoc,
   setDoc,
   updateDoc,
   doc,
   deleteDoc,
-  collection,
-  query,
-  where,
   increment,
 } from "firebase/firestore";
 
-const usersRef = collection(db, "users");
-
 class UserModel {
-  static getUser = async (uid) => {
-    const docRef = doc(db, "users", uid);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      return docSnap.data();
-    } else {
-      return;
-    }
-  };
-
   static createUser = async (newUser) => {
     return await setDoc(doc(db, "users", newUser.uid), newUser);
   };
 
   static deleteUser = async (uid) => {
     return await deleteDoc(doc(db, "users", uid));
-  };
-
-  static checkIfUserExists = async (email) => {
-    const userQuery = query(usersRef, where("email", "==", email));
   };
 
   static updateName = async (uid, newName) => {
@@ -74,24 +52,24 @@ class UserModel {
     });
   };
 
-  static updateDailyGoal = async (uid, dailyGoal) => {
+  static updateDailyGoal = async (uid, dailyGoalAmount) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.amount": dailyGoal,
+      dailyGoalAmount: dailyGoalAmount,
     });
   };
 
   static updateGoalIsComplete = async (uid, isGoalComplete) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.isComplete": isGoalComplete,
+      isDailyGoalComplete: isGoalComplete,
     });
   };
 
   static updateLastGoalDate = async (uid, currentDate) => {
     const docRef = doc(db, "users", uid);
     await updateDoc(docRef, {
-      "dailyGoal.lastGoalDate": currentDate,
+      lastGoalDate: currentDate,
     });
   };
 

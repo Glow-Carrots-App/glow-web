@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import dayjs from "dayjs";
 
 import Heading1 from "../../components/Heading1";
 import EatFoodsForm from "../../components/EatFoodsForm";
 import BottomTabs from "../../components/BottomTabs";
-import UserModel from "../../model/user";
 import FoodEntryModel from "../../model/foodEntry";
 import Loading from "../../components/Loading";
-import filterByDate from "../../utils/filterByDate";
 import withProtected from "../../routers/withProtected";
 import Sidebar from "../../components/Sidebar";
 import TodayUserInfo from "../../components/TodayUserInfo";
@@ -15,32 +12,20 @@ import TodayFoodList from "../../components/TodayFoodList";
 
 import styles from "./styles.module.css";
 
-const Eat = ({ authedUser }) => {
+const Eat = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
-  const [user, setUser] = useState();
+  const { uid } = user;
 
   useEffect(() => {
     async function fetchData() {
-      if (!authedUser) {
-        return;
-      }
-      const { uid } = authedUser;
-      const today = dayjs().format("YYYY/MM/DD");
-      const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
-      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
-        uid,
-        today,
-        dateToCompare
-      );
-      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
-      const userResponse = await UserModel.getUser(uid);
-      setCurrentDay(currentDay);
-      setUser(userResponse);
+      const currentDayHistoryResponse =
+        await FoodEntryModel.getCurrentDayHistory(uid);
+      setCurrentDay(currentDayHistoryResponse);
     }
     fetchData();
   }, []);
 
-  if (!user) {
+  if (!currentDay) {
     return <Loading />;
   }
   return (

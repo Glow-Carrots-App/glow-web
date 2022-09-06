@@ -54,6 +54,6 @@
 
 @media (min-width: 1024px) {
   .statContainer {
-    width: 90%;
+    min-width: 180px;
   }
 }

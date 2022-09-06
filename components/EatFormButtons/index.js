@@ -14,17 +14,13 @@ const EatFormButtons = ({
   selectedFood,
   setSearchInput,
   setSelectedFood,
-  displayCheck,
+  displayCheckmark,
 }) => {
   const [currentCount, setCurrentCount] = useState(currentDay.length);
-  const [isGoalComplete, setIsGoalComplete] = useState(
-    user.dailyGoal.isComplete
-  );
+  const [isGoalComplete, setIsGoalComplete] = useState(user.isGoalComplete);
+  const [error, setError] = useState("");
 
-  let {
-    dailyGoal: { amount },
-    uid,
-  } = user;
+  let { dailyGoalAmount, uid } = user;
 
   const handleEatFood = (e) => {
     e.preventDefault();
@@ -44,7 +40,7 @@ const EatFormButtons = ({
       setCurrentCount(currentCount + 1);
       setSearchInput("");
       setSelectedFood(null);
-      if (currentCount + 1 >= amount && !isGoalComplete) {
+      if (currentCount + 1 >= dailyGoalAmount && !isGoalComplete) {
         const currentDate = dayjs().format("MM/DD/YYYY");
         UserModel.incrementDayStreak(uid);
         UserModel.incrementGoldenCarrots(uid);
@@ -52,23 +48,28 @@ const EatFormButtons = ({
         UserModel.updateGoalIsComplete(uid, true);
         setIsGoalComplete(true);
       }
-      displayCheck();
+      displayCheckmark();
+      setError("");
     } catch (err) {
-      console.log(err);
+      setError("Something went wrong. Please try again.");
+      setSearchInput("");
     }
   };
 
   return (
-    <div className={styles.buttons}>
-      <SmallLinkedButton href="/today">Cancel</SmallLinkedButton>
-      <button
-        disabled={selectedFood ? false : true}
-        className={styles.addButton}
-        onClick={handleEatFood}
-      >
-        Add
-      </button>
-    </div>
+    <>
+      {error && <p className={styles.error}>{error}</p>}
+      <div className={styles.buttons}>
+        <SmallLinkedButton href="/today">Cancel</SmallLinkedButton>
+        <button
+          disabled={selectedFood ? false : true}
+          className={styles.addButton}
+          onClick={handleEatFood}
+        >
+          Add
+        </button>
+      </div>
+    </>
   );
 };
 export default EatFormButtons;

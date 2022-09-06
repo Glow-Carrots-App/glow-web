@@ -13,8 +13,8 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
 } from "firebase/auth";
-
 import { auth, googleProvider } from "../firebase";
+
 import Loading from "../components/Loading";
 
 const AuthContext = createContext();
@@ -108,6 +108,8 @@ export const AuthContextProvider = ({ children }) => {
         googleLogin,
         getGoogleRedirectResult,
         reauthenticate,
+        loading,
+        setLoading,
       }}
     >
       {loading ? <Loading /> : children}

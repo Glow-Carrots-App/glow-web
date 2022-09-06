@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import {
   collection,
   query,
@@ -16,6 +17,21 @@ const foodEntriesRef = collection(db, "foodEntries");
 class FoodEntryModel {
   static createFoodEntry = async (foodObj) => {
     return await addDoc(foodEntriesRef, foodObj);
+  };
+
+  static getCurrentDayHistory = async (userId) => {
+    let today = dayjs().format("YYYY/MM/DD");
+    let currentDayHistorySnapshot = await getDocs(
+      query(
+        foodEntriesRef,
+        where("uid", "==", userId),
+        where("date", "==", today)
+      )
+    );
+    let currentDayHistory = currentDayHistorySnapshot.docs.map((doc) =>
+      doc.data()
+    );
+    return currentDayHistory;
   };
 
   static getThirtyDayHistory = async (userId, today, dateToCompare) => {

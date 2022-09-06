@@ -11,14 +11,13 @@
 .watermelon2 {
   position: absolute;
   bottom: -30px;
-  right: 10px;
   height: 230px;
   width: 230px;
   opacity: 60%;
   transform: rotate(-30deg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .watermelon1 {
     height: 350px;
     width: 350px;
@@ -26,6 +25,6 @@
   .watermelon2 {
     height: 350px;
     width: 350px;
-    right: 280px;
+    left: 380px;
   }
 }

@@ -12,7 +12,7 @@
   opacity: 60%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .avocado1 {
     height: 400px;
     width: 400px;

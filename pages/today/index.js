@@ -13,52 +13,39 @@ import FoodEntryModel from "../../model/foodEntry";
 import UserModel from "../../model/user";
 import withProtected from "../../routers/withProtected";
 import AddButton from "../../components/AddButton";
+import filterByDate from "../../utils/filterByDate";
+import filterByDateRange from "../../utils/filterByDateRange";
 
 import styles from "./styles.module.css";
-import filterByDate from "../../utils/filterByDate";
 
-const Today = ({ authedUser }) => {
+const Today = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
-  const [foodHistory, setFoodHistory] = useState();
-  const [user, setUser] = useState();
+  const [thirtyDayFoodHistory, setThirtyDayFoodHistory] = useState();
   const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
 
   useEffect(() => {
     async function fetchData() {
-      if (!authedUser) {
-        return;
-      }
-      const { uid } = authedUser;
       const today = dayjs().format("YYYY/MM/DD");
-      const dateToCompare = dayjs().subtract(29, "day").format("YYYY/MM/DD");
-      const lifetimeResponse = await FoodEntryModel.getLifetimeHistory(uid);
-      const thirtyDayHistoryResponse = await FoodEntryModel.getThirtyDayHistory(
-        uid,
-        today,
-        dateToCompare
+      const { isDailyGoalComplete, lastGoalDate, uid } = user;
+      const lifetimeHistoryResponse = await FoodEntryModel.getLifetimeHistory(
+        uid
       );
-      const userResponse = await UserModel.getUser(uid);
-      const currentDay = filterByDate(thirtyDayHistoryResponse, 0);
-      const {
-        dailyGoal: { isComplete, lastGoalDate },
-      } = userResponse;
-
+      const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
+      const currentDay = filterByDate(thirtyDayHistory, 0);
       if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
         await UserModel.clearDayStreak(uid);
       }
-      if (isComplete && currentDay.length === 0) {
+      if (isDailyGoalComplete && currentDay.length === 0) {
         await UserModel.updateGoalIsComplete(uid, false);
       }
-
-      setUser(userResponse);
       setCurrentDay(currentDay);
-      setFoodHistory(thirtyDayHistoryResponse);
-      setLifetimeFoodHistory(lifetimeResponse);
+      setThirtyDayFoodHistory(thirtyDayHistory);
+      setLifetimeFoodHistory(lifetimeHistoryResponse);
     }
     fetchData();
   }, []);
 
-  if (!user || !currentDay || !foodHistory) {
+  if (!currentDay || !thirtyDayFoodHistory || !user) {
     return <Loading />;
   }
 
@@ -68,7 +55,7 @@ const Today = ({ authedUser }) => {
       <Heading1>Today</Heading1>
       <div className={styles.todayColumnLeft}>
         <TodayGoalInfo currentDay={currentDay} user={user} />
-        <TodayGraph foodHistory={foodHistory} />
+        <TodayGraph thirtyDayFoodHistory={thirtyDayFoodHistory} />
       </div>
       <div className={styles.todayColumnRight}>
         <TodayUserInfo user={user} />

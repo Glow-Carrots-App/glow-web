@@ -65,3 +65,13 @@
     font-size: 32px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    width: 60%;
+  }
+
+  .doneLink {
+    display: none;
+  }
+}
