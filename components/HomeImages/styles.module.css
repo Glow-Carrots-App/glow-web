@@ -2,7 +2,7 @@
   position: absolute;
   height: 150px;
   width: 150px;
-  transform: rotate(-60deg);
+  transform: rotate(-20deg);
   opacity: 0.6;
   top: 0;
   left: 0;
@@ -15,6 +15,7 @@
   opacity: 0.6;
   bottom: 0;
   right: 0;
+  transform: rotate(-45deg);
 }
 
 .mango {
