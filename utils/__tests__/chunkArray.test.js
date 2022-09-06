@@ -27,18 +27,18 @@ const userHistorySnapshot = [
   },
 ];
 
-let MAX_COUNT = 2;
+let MAX_WRITES_PER_BATCH = 2;
 
 describe("chunkArray", () => {
   test("returns an array", () => {
-    const testRun = chunkArray(userHistorySnapshot, MAX_COUNT);
+    const testRun = chunkArray(userHistorySnapshot, MAX_WRITES_PER_BATCH);
     expect(Array.isArray(testRun)).toBe(true);
   });
 
   test("return subarrays does not exceed max count", () => {
-    const testRun = chunkArray(userHistorySnapshot, MAX_COUNT);
+    const testRun = chunkArray(userHistorySnapshot, MAX_WRITES_PER_BATCH);
     testRun.forEach((test) =>
-      expect(test.length).toBeLessThanOrEqual(MAX_COUNT)
+      expect(test.length).toBeLessThanOrEqual(MAX_WRITES_PER_BATCH)
     );
   });
 });
