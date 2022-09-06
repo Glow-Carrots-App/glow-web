@@ -26,6 +26,10 @@
   margin-top: 0;
   font-weight: 400;
 }
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  margin: 4px auto;
+}
 
 @media (min-width: 768px) and (min-height: 1024px) {
   .signInText {
@@ -41,6 +45,9 @@
   }
   .heading1 {
     font-size: 36px;
+  }
+  .error {
+    font-size: 24px;
   }
 }
 
