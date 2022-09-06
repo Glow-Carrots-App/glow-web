@@ -22,25 +22,32 @@ const Today = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
   const [thirtyDayFoodHistory, setThirtyDayFoodHistory] = useState();
   const [lifetimeFoodHistory, setLifetimeFoodHistory] = useState();
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const today = dayjs().format("YYYY/MM/DD");
-      const { isDailyGoalComplete, lastGoalDate, uid } = user;
-      const lifetimeHistoryResponse = await FoodEntryModel.getLifetimeHistory(
-        uid
-      );
-      const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
-      const currentDay = filterByDate(thirtyDayHistory, 0);
-      if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
-        await UserModel.clearDayStreak(uid);
+      try {
+        const today = dayjs().format("YYYY/MM/DD");
+        const { isDailyGoalComplete, lastGoalDate, uid } = user;
+        const lifetimeHistoryResponse = await FoodEntryModel.getLifetimeHistory(
+          uid
+        );
+        const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
+        const currentDay = filterByDate(thirtyDayHistory, 0);
+        if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
+          await UserModel.clearDayStreak(uid);
+        }
+        if (isDailyGoalComplete && currentDay.length === 0) {
+          await UserModel.updateGoalIsComplete(uid, false);
+        }
+        setCurrentDay(currentDay);
+        setThirtyDayFoodHistory(thirtyDayHistory);
+        setLifetimeFoodHistory(lifetimeHistoryResponse);
+      } catch (err) {
+        setHasError(true);
+        setCurrentDay([]);
+        setThirtyDayFoodHistory([]);
       }
-      if (isDailyGoalComplete && currentDay.length === 0) {
-        await UserModel.updateGoalIsComplete(uid, false);
-      }
-      setCurrentDay(currentDay);
-      setThirtyDayFoodHistory(thirtyDayHistory);
-      setLifetimeFoodHistory(lifetimeHistoryResponse);
     }
     fetchData();
   }, []);
@@ -53,18 +60,26 @@ const Today = ({ user }) => {
     <div className={styles.container}>
       <Sidebar page="today" />
       <Heading1>Today</Heading1>
-      <div className={styles.todayColumnLeft}>
-        <TodayGoalInfo currentDay={currentDay} user={user} />
-        <TodayGraph thirtyDayFoodHistory={thirtyDayFoodHistory} />
-      </div>
-      <div className={styles.todayColumnRight}>
-        <TodayUserInfo user={user} />
-        <TodayStatistics
-          user={user}
-          lifetimeFoodHistory={lifetimeFoodHistory}
-        />
-        <AddButton />
-      </div>
+      {hasError ? (
+        <p className={styles.error}>
+          Something went wrong. Please refresh the page.
+        </p>
+      ) : (
+        <>
+          <div className={styles.todayColumnLeft}>
+            <TodayGoalInfo currentDay={currentDay} user={user} />
+            <TodayGraph thirtyDayFoodHistory={thirtyDayFoodHistory} />
+          </div>
+          <div className={styles.todayColumnRight}>
+            <TodayUserInfo user={user} />
+            <TodayStatistics
+              user={user}
+              lifetimeFoodHistory={lifetimeFoodHistory}
+            />
+            <AddButton />
+          </div>
+        </>
+      )}
       <BottomTabs isToday={true} />
     </div>
   );

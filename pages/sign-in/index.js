@@ -8,9 +8,10 @@ import createNewUserDataModel from "../../utils/createNewUserDataModel";
 import withUnprotected from "../../routers/withUnprotected";
 
 import styles from "./styles.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const SignIn = ({ authedUser }) => {
+  const [hasError, setHasError] = useState(false);
   const { getGoogleRedirectResult } = useAuth();
 
   useEffect(() => {
@@ -23,13 +24,23 @@ const SignIn = ({ authedUser }) => {
           await UserModel.createUser(newUser);
         }
       } catch (error) {
-        console.log(error);
+        setHasError(true);
       }
     };
     if (authedUser) {
       fetchGoogleData();
     }
   }, []);
+
+  if (hasError) {
+    return (
+      <PageContainer isLanding={true}>
+        <p className={styles.error}>
+          Something went wrong. Please refresh the page.
+        </p>
+      </PageContainer>
+    );
+  }
 
   return (
     <PageContainer isLanding={true}>
