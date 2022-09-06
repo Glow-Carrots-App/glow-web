@@ -1,4 +1,5 @@
-.heading1 {
+.heading1,
+.heading1Landing {
   color: var(--purple-dark);
   font-size: 26px;
   margin-top: 0;
@@ -6,7 +7,8 @@
 }
 
 @media (min-width: 768px) {
-  .heading1 {
+  .heading1,
+  .heading1Landing {
     font-size: 36px;
   }
 }

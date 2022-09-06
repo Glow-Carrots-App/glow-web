@@ -1,0 +1,58 @@
+.watermelon {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  transform: rotate(-20deg);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+}
+
+.onion {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  opacity: 0.6;
+  bottom: 0;
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+.mango {
+  position: absolute;
+  height: 110px;
+  width: 110px;
+  opacity: 0.6;
+  top: 230px;
+  right: -30px;
+}
+
+.carrot1,
+.carrot2,
+.carrot5 {
+  position: absolute;
+  height: 50px;
+  opacity: 0.5;
+}
+
+.carrot1 {
+  top: 10%;
+  right: 10%;
+  transform: scaleX(-1);
+}
+.carrot2 {
+  top: 260px;
+  left: -10px;
+}
+.carrot5 {
+  left: 10%;
+  bottom: 5%;
+}
+
+@media (min-width: 1025px) {
+  .carrot1,
+  .carrot2,
+  .carrot5 {
+    height: 10%;
+  }
+}
