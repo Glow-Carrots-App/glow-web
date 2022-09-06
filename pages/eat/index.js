@@ -14,13 +14,19 @@ import styles from "./styles.module.css";
 
 const Eat = ({ user }) => {
   const [currentDay, setCurrentDay] = useState();
-  const { uid } = user;
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const currentDayHistoryResponse =
-        await FoodEntryModel.getCurrentDayHistory(uid);
-      setCurrentDay(currentDayHistoryResponse);
+      try {
+        const { uid } = user;
+        const currentDayHistoryResponse =
+          await FoodEntryModel.getCurrentDayHistory(ui);
+        setCurrentDay(currentDayHistoryResponse);
+      } catch (err) {
+        setCurrentDay([]);
+        setHasError(true);
+      }
     }
     fetchData();
   }, []);
@@ -32,17 +38,25 @@ const Eat = ({ user }) => {
     <div className={styles.container}>
       <Sidebar page="eat" />
       <Heading1>What are you eating?</Heading1>
-      <div className={styles.columnLeft}>
-        <EatFoodsForm
-          user={user}
-          currentDay={currentDay}
-          setCurrentDay={setCurrentDay}
-        />
-      </div>
-      <div className={styles.columnRight}>
-        <TodayUserInfo user={user} />
-        <TodayFoodList currentDay={currentDay} />
-      </div>
+      {hasError ? (
+        <p className={styles.error}>
+          Something went wrong. Please refresh the page.
+        </p>
+      ) : (
+        <>
+          <div className={styles.columnLeft}>
+            <EatFoodsForm
+              user={user}
+              currentDay={currentDay}
+              setCurrentDay={setCurrentDay}
+            />
+          </div>
+          <div className={styles.columnRight}>
+            <TodayUserInfo user={user} />
+            <TodayFoodList currentDay={currentDay} />
+          </div>
+        </>
+      )}
       <BottomTabs isEat={true} />
     </div>
   );

@@ -9,7 +9,6 @@
 .error {
   color: rgba(196, 10, 10, 0.821);
   margin: auto auto;
-  vertical-align: middle;
 }
 
 @media (min-width: 768px) {
@@ -35,8 +34,5 @@
     flex-direction: column;
     justify-content: space-between;
     width: 30%;
-  }
-  .error {
-    align-self: center;
   }
 }

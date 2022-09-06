@@ -8,9 +8,17 @@
   display: none;
 }
 
+.error {
+  color: rgba(196, 10, 10, 0.821);
+  align-self: center;
+}
+
 @media (min-width: 768px) and (min-height: 1024px) {
   .container {
     padding: 86px;
+  }
+  .error {
+    font-size: 24px;
   }
 }
 
