@@ -44,7 +44,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .container {
     height: 45%;
     justify-content: flex-start;

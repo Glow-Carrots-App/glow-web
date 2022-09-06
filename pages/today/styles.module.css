@@ -16,7 +16,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .container {
     flex-direction: row;
     justify-content: space-around;
