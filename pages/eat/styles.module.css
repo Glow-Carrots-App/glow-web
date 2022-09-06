@@ -26,7 +26,6 @@
 
 @media (min-width: 1025px) {
   .container {
-    display: flex;
     flex-direction: row;
     align-items: center;
     padding: 50px 50px 50px 22%;
