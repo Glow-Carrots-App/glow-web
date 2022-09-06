@@ -21,7 +21,7 @@ const Eat = ({ user }) => {
       try {
         const { uid } = user;
         const currentDayHistoryResponse =
-          await FoodEntryModel.getCurrentDayHistory(ui);
+          await FoodEntryModel.getCurrentDayHistory(uid);
         setCurrentDay(currentDayHistoryResponse);
       } catch (err) {
         setCurrentDay([]);

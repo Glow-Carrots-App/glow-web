@@ -1,4 +1,6 @@
 .container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   height: 100vh;
   padding: 34px;
@@ -10,7 +12,7 @@
 
 .error {
   color: rgba(196, 10, 10, 0.821);
-  align-self: center;
+  margin: auto auto;
 }
 
 @media (min-width: 768px) and (min-height: 1024px) {
@@ -25,6 +27,7 @@
 @media (min-width: 1024px) {
   .container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding: 50px 50px 50px 22%;
   }
