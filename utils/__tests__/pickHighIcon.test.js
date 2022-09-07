@@ -1,4 +1,3 @@
-import { faItalic } from "@fortawesome/free-solid-svg-icons";
 import pickHighIcon from "../pickHighIcon";
 
 let highestCount = {
