@@ -19,7 +19,7 @@ describe("createHeightPercentages", () => {
   it("should return an array filled with strings containing %", () => {
     const percentages = createHeightPercentages(lengths);
     percentages.forEach((percentage) =>
-      expect(percentage).toEqual(expect.stringContaining(percentageChar))
+      expect(percentage).toContain(percentageChar)
     );
   });
 });
