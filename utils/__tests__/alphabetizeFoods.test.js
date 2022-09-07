@@ -1,4 +1,3 @@
-import { faCropSimple } from "@fortawesome/free-solid-svg-icons";
 import alphabetizeFoods from "../alphabetizeFoods";
 
 const unorderedFoods = [
