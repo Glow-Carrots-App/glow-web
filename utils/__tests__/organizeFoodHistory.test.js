@@ -58,7 +58,7 @@ describe("organizeFoodHistory", () => {
     testOrganized.days.forEach((day, i) =>
       day.forEach((food) =>
         expect(food.date).toEqual(
-          expect.stringMatching(dayjs().subtract(i, "day").format("YYYY/MM/DD"))
+          dayjs().subtract(i, "day").format("YYYY/MM/DD")
         )
       )
     );
