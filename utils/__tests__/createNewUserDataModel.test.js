@@ -19,12 +19,12 @@ const correctUser = {
 };
 
 describe("createNewUserDataModel", () => {
-  test("returns an object", () => {
+  it("should return an object", () => {
     const testUser = createNewUserDataModel(email, firstName, uid);
     expect(typeof testUser).toBe("object");
   });
 
-  test("return object has desired properties", () => {
+  it("should return an object with desired properties", () => {
     const testUser = createNewUserDataModel(email, firstName, uid);
     expect(testUser).toMatchObject(correctUser);
   });

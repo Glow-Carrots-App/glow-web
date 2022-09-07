@@ -30,12 +30,12 @@ const userHistorySnapshot = [
 let MAX_WRITES_PER_BATCH = 2;
 
 describe("chunkArray", () => {
-  test("returns an array", () => {
+  it("should return an array", () => {
     const testRun = chunkArray(userHistorySnapshot, MAX_WRITES_PER_BATCH);
     expect(Array.isArray(testRun)).toBe(true);
   });
 
-  test("return subarrays does not exceed max count", () => {
+  it("should return subarrays does not exceed max count", () => {
     const testRun = chunkArray(userHistorySnapshot, MAX_WRITES_PER_BATCH);
     testRun.forEach((test) =>
       expect(test.length).toBeLessThanOrEqual(MAX_WRITES_PER_BATCH)

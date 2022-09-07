@@ -74,7 +74,7 @@ const filteredRangeOutput = [
 ];
 
 describe("filterByDateRange", () => {
-  test("return array of food objects that have date within today and days behind", () => {
+  it("should return an array of food objects that have date within today and days behind", () => {
     const filteredList = filterByDateRange(foodHistory, 1);
     expect(filteredList).toStrictEqual(filteredRangeOutput);
   });
