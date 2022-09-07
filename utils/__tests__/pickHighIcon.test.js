@@ -10,9 +10,11 @@ let highestCount = {
 
 describe("pickHighIcon", () => {
   it("returns the correct color icon", () => {
-    expect(pickHighIcon(highestCount)).toBe("/colorIcons/red.png");
+    const testIcon = pickHighIcon(highestCount);
+    expect(testIcon).toBe("/colorIcons/red.png");
   });
   it("returns the correct file type of png", () => {
-    expect(pickHighIcon(highestCount)).toContain(".png");
+    const testIcon = pickHighIcon(highestCount);
+    expect(testIcon).toContain(".png");
   });
 });

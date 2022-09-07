@@ -9,10 +9,12 @@ const lowestColor = {
 };
 
 describe("pickLowIcon", () => {
-  test("the correct string is provided given a lowest count color object", () => {
-    expect(pickLowIcon(lowestColor)).toBe("/colorIcons/orange.png");
+  it("should return the correct string given a lowest count color object", () => {
+    const testIcon = pickLowIcon(lowestColor);
+    expect(testIcon).toBe("/colorIcons/orange.png");
   });
-  test("make sure the retun value to contain .png", () => {
-    expect(pickLowIcon(lowestColor)).toContain(".png");
+  it("makes sure the return value contains .png", () => {
+    const testIcon = pickLowIcon(lowestColor);
+    expect(testIcon).toContain(".png");
   });
 });

@@ -56,7 +56,7 @@ const expectedResult = [
 ];
 
 describe("populateDonutChartData", () => {
-  test("return array with the expectedResult", () => {
+  it("should return an array with the expectedResult", () => {
     expect(populateDonutChartData(todayFoods, dailyGoal)).toStrictEqual(
       expectedResult
     );

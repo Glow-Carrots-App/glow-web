@@ -28,11 +28,11 @@ const totalFoods = [
 ];
 
 describe("checkHighestColor", () => {
-  test("return highest color object", () => {
+  it("should return highest color object", () => {
     const testRun = checkHighestColor(totalFoods);
     expect(testRun.color).toBe("Red");
   });
-  test("return empty string when no foods present", () => {
+  it("should return empty string when no foods present", () => {
     const testRun = checkHighestColor([]);
     expect(testRun.color).toBe("");
   });

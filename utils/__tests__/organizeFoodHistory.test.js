@@ -33,7 +33,7 @@ const EXPECTED_OBJECT = {
   days: expect.any(Array),
   percentages: expect.any(Array),
 };
-const string = "%";
+const percentageChar = "%";
 
 describe("organizeFoodHistory", () => {
   it("returns an object", () => {
@@ -49,10 +49,9 @@ describe("organizeFoodHistory", () => {
   it("returns an object where the percentages property is an array containing strings with %", () => {
     const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);
     testOrganized.percentages.forEach((percentage) =>
-      expect(percentage).toEqual(expect.stringContaining(string))
+      expect(percentage).toContain(percentageChar)
     );
   });
-
 
   it("returns an object where the days property is an array containing arrays containing objects with the appropriate day value", () => {
     const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);

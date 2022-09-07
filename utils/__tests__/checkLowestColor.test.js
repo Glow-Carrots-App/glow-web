@@ -52,11 +52,11 @@ const totalFoods = [
 ];
 
 describe("checkLowestColor", () => {
-  test("return lowest color object", () => {
+  it("should return lowest color object", () => {
     const testRun = checkLowestColor(totalFoods);
     expect(testRun.color).toBe("Purple");
   });
-  test("return empty string when no foods present", () => {
+  it("should return empty string when no foods present", () => {
     const testRun = checkLowestColor([]);
     expect(testRun.color).toBe("");
   });
