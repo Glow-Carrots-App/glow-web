@@ -1,3 +1,4 @@
+import { faCropSimple } from "@fortawesome/free-solid-svg-icons";
 import alphabetizeFoods from "../alphabetizeFoods";
 
 const unorderedFoods = [
@@ -55,20 +56,29 @@ const orderedFoods = [
 ];
 
 describe("alphabetizeFoods", () => {
-  test("arrange foods alphabetically by productSearch property", () => {
+  it("should arrange foods alphabetically by productSearch property", () => {
     const testRun = alphabetizeFoods(unorderedFoods);
     expect(testRun).toStrictEqual(orderedFoods);
   });
 
-  test("data output is an array with objects", () => {
+  it("should return an array with objects", () => {
     const testRun = alphabetizeFoods(unorderedFoods);
-    expect(testRun.constructor === Array).toBe(true);
+    expect(Array.isArray(testRun)).toBe(true);
   });
-  test("data out is an array with ONLY objects", () => {
+
+  it("should return an array with ONLY objects", () => {
     const testRun = alphabetizeFoods(unorderedFoods);
     expect(
       testRun.every((food) => {
-        typeof food === "Object";
+        console.log(food);
+        expect(food).toEqual({
+          product: expect.any(String),
+          productSearch: expect.any(String),
+          color: expect.any(String),
+          textHex: expect.any(String),
+          fillHex: expect.any(String),
+          date: null,
+        });
       })
     );
   });

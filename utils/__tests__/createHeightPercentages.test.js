@@ -1,7 +1,7 @@
 import createHeightPercentages from "../createHeightPercentages";
 
 const lengths = [0, 3, 4, 7, 4, 9, 2];
-const string = "%";
+const percentageChar = "%";
 
 describe("createHeightPercentages", () => {
   test("returns an array", () => {
@@ -19,7 +19,7 @@ describe("createHeightPercentages", () => {
   test("return array filled with strings containing %", () => {
     const percentages = createHeightPercentages(lengths);
     percentages.forEach((percentage) =>
-      expect(percentage).toEqual(expect.stringContaining(string))
+      expect(percentage).toEqual(expect.stringContaining(percentageChar))
     );
   });
 });
