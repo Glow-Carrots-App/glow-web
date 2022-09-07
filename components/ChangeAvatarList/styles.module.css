@@ -69,7 +69,7 @@
   margin: 4px auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 1024px) {
   .buttonContainer {
     gap: 40px;
   }
@@ -82,24 +82,43 @@
   }
 
   .avatarList {
-    height: 550px;
+    height: 450px;
   }
 
   .avatarListItem {
-    height: 170px;
-    width: 170px;
+    height: 150px;
+    width: 150px;
   }
 
   .avatarListItemSelected {
-    height: 170px;
-    width: 170px;
+    height: 150px;
+    width: 150px;
   }
 
   .avatar {
-    height: 130px;
-    width: 130px;
+    height: 120px;
+    width: 120px;
   }
   .error {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .avatarList {
+    height: 500px;
+  }
+  .avatarListItem {
+    height: 160px;
+    width: 160px;
+  }
+  .avatarListItemSelected {
+    height: 160px;
+    width: 160px;
+  }
+
+  .avatar {
+    height: 120px;
+    width: 120px;
   }
 }
