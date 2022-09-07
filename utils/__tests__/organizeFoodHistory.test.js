@@ -53,12 +53,13 @@ describe("organizeFoodHistory", () => {
     );
   });
 
-  it("returns an object where the days property is an array containing arrays containing objects with the appropriate day property", () => {
+
+  it("returns an object where the days property is an array containing arrays containing objects with the appropriate day value", () => {
     const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);
     testOrganized.days.forEach((day, i) =>
       day.forEach((food) =>
         expect(food.date).toEqual(
-          expect.stringMatching(dayjs().subtract(i, "day").format("YYYY/MM/DD"))
+          dayjs().subtract(i, "day").format("YYYY/MM/DD")
         )
       )
     );
