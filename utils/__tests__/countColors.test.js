@@ -90,13 +90,13 @@ let counts = [
 ];
 
 describe("countColors", () => {
-  test("return null is input is an empty array", () => {
+  test("return null if input is an empty array", () => {
     expect(countColors([])).toBeNull();
   });
   test("return null if input is a falsy value", () => {
-    expect(countColors(0)).toBeNull();
+    expect(countColors(undefined)).toBeNull();
   });
-  test("return array of objects with counts of colors, percentage, and other color properties", () => {
+  test("return array of objects with accurate counts of colors, percentage, and other color properties", () => {
     expect(countColors(totalFoods)).toStrictEqual(counts);
   });
 });
