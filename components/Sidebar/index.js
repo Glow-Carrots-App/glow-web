@@ -23,7 +23,6 @@ const Sidebar = ({ page = "" }) => {
               <FontAwesomeIcon
                 className={styles.fontAwesomeSide}
                 icon={faSun}
-                size="med"
               />
               <span>Today</span>
             </a>
@@ -33,7 +32,6 @@ const Sidebar = ({ page = "" }) => {
               <FontAwesomeIcon
                 className={styles.fontAwesomeSide}
                 icon={faPlus}
-                size="med"
               />
               <span>Eat</span>
             </a>
@@ -43,7 +41,6 @@ const Sidebar = ({ page = "" }) => {
               <FontAwesomeIcon
                 className={styles.fontAwesomeSide}
                 icon={faUser}
-                size="med"
               />
               <span>Profile</span>
             </a>
@@ -53,7 +50,6 @@ const Sidebar = ({ page = "" }) => {
               <FontAwesomeIcon
                 className={styles.fontAwesomeSide}
                 icon={faGear}
-                size="med"
               />
               <span>Settings</span>
             </a>
@@ -66,7 +62,6 @@ const Sidebar = ({ page = "" }) => {
               <FontAwesomeIcon
                 className={styles.fontAwesomeSide}
                 icon={faRightFromBracket}
-                size="med"
               />
               <span>Logout</span>
             </a>
