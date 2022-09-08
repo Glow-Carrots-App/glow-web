@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import About from ".";
 
-describe("about component", () => {
+describe("About component", () => {
   beforeEach(() => render(<About />));
 
   it("should render a container div", () => {
