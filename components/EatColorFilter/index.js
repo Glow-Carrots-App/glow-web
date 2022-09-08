@@ -16,10 +16,11 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.subheading}>Filter by Color: </p>
+      <p className={styles.subheading}>Filter by Color:</p>
       <div className={styles.iconsContainer}>
         {icons.map((icon, index) => (
           <div
+            data-testid={`filter-button-${index}`}
             key={index + icon}
             className={
               selectedColor === icon.slice(12, -4)
@@ -28,6 +29,7 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
             }
           >
             <img
+              data-testid={`filter-img-${index}`}
               onClick={() => handleSelectedColor(icon.slice(12, -4))}
               className={styles.icon}
               src={icon}
