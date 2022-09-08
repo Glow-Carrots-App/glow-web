@@ -6,7 +6,7 @@ const TodayUserInfo = ({ user }) => {
   const { avatar, firstName, joinDate } = user;
   const formattedDate = dayjs(joinDate).format("MMM YYYY");
   return (
-    <div className={styles.container}>
+    <div role="container" className={styles.container}>
       <div className={styles.textContainer}>
         <p className={styles.name}>{firstName}</p>
         <p className={styles.joinDateText}>Joined {formattedDate}</p>
