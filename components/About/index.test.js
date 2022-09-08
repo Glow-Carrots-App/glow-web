@@ -12,17 +12,17 @@ describe("about component", () => {
   });
 
   it("should render the first paragraph tag", () => {
-    const paragraphElement = screen.getByText(/Glow/i);
+    const paragraphElement = screen.getByRole("firstParagraph");
     expect(paragraphElement).toBeInTheDocument();
   });
 
   it("should render the second paragraph tag", () => {
-    const paragraphElement = screen.getByText(/treat/i);
+    const paragraphElement = screen.getByRole("secondParagraph");
     expect(paragraphElement).toBeInTheDocument();
   });
 
   it("should render the third paragraph tag", () => {
-    const paragraphElement = screen.getByText(/Icons/i);
+    const paragraphElement = screen.getByRole("thirdParagraph");
     expect(paragraphElement).toBeInTheDocument();
   });
 
