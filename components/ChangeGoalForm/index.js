@@ -34,7 +34,7 @@ const ChangeGoalForm = ({ user }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/back.png" />
