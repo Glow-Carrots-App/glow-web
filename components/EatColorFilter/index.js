@@ -16,10 +16,11 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.subheading}>Filter by Color: </p>
+      <p className={styles.subheading}>Filter by Color:</p>
       <div className={styles.iconsContainer}>
         {icons.map((icon, index) => (
           <div
+            role={`filter-button-${index}`}
             key={index + icon}
             className={
               selectedColor === icon.slice(12, -4)
