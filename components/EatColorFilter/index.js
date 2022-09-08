@@ -29,7 +29,6 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
             }
           >
             <img
-              data-testid={`filter-img-${index}`}
               onClick={() => handleSelectedColor(icon.slice(12, -4))}
               className={styles.icon}
               src={icon}
