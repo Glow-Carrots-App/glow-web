@@ -6,9 +6,9 @@ import styles from "./styles.module.css";
 
 const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <Link href="/today">
-        <a>
+        <a role="todayAnchor">
           <FontAwesomeIcon
             className={styles.fontAwesomeSide}
             icon={faSun}
@@ -18,7 +18,7 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
         </a>
       </Link>
       <Link href="/eat">
-        <a>
+        <a role="eatAnchor">
           <FontAwesomeIcon
             className={styles.fontAwesomeCenter}
             icon={faPlus}
@@ -28,7 +28,7 @@ const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
         </a>
       </Link>
       <Link href="/profile">
-        <a>
+        <a role="profileAnchor">
           <FontAwesomeIcon
             className={styles.fontAwesomeSide}
             icon={faUser}
