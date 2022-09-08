@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 
 const About = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <p className={styles.text}>
         Glow is a food tracker app inspired by the Rainbow Diet and science
         linking nutrition to the colors our food.
