@@ -8,10 +8,11 @@ const EatFoodsList = ({
   setSearchInput,
 }) => {
   return (
-    <div className={styles.listContainer}>
+    <div role="container" className={styles.listContainer}>
       {data.map((food) => {
         return (
           <div
+            role="foodListItem"
             onMouseDown={() => {
               setSearchInput(food.productSearch);
               setSelectedFood(food);
