@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 
 import EatFoodsList from ".";
 
-const mockedData = [
+const MOCKED_DATA = [
   {
     productSearch: "Cabbage (Green)",
   },
@@ -22,7 +22,7 @@ const mockedData = [
 ];
 
 describe("EatFoodsList", () => {
-  beforeEach(() => render(<EatFoodsList data={mockedData} />));
+  beforeEach(() => render(<EatFoodsList data={MOCKED_DATA} />));
 
   it("should render a container div for food list", () => {
     const containerElement = screen.getByRole("container");
@@ -35,7 +35,7 @@ describe("EatFoodsList", () => {
   });
 
   it("should render 5 divs for each food list item", () => {
-    const listElements = screen.getAllByRole("food-list-item");
+    const listElements = screen.getAllByRole("foodListItem");
     expect(listElements.length).toBe(5);
   });
 });

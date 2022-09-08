@@ -12,7 +12,7 @@ const EatFoodsList = ({
       {data.map((food) => {
         return (
           <div
-            role="food-list-item"
+            role="foodListItem"
             onMouseDown={() => {
               setSearchInput(food.productSearch);
               setSelectedFood(food);
