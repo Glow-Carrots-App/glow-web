@@ -2,12 +2,13 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TodayUserInfo from ".";
 
+const Mocked_User = {
+  avatar: "/avatars/camp.png",
+  firstName: "Vince",
+  joinDate: "08/12/2022",
+};
+
 describe("TodayUserInfo", () => {
-  const mockedUser = {
-    avatar: "/avatars/camp.png",
-    firstName: "Vince",
-    joinDate: "08/12/2022",
-  };
   beforeEach(() => render(<TodayUserInfo user={mockedUser} />));
   it("should render the correct avatar", () => {
     const imgElement = screen.getByRole("img");
