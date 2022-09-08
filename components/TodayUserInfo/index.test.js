@@ -9,7 +9,7 @@ const MOCK_USER = {
 };
 
 describe("TodayUserInfo", () => {
-  beforeEach(() => render(<TodayUserInfo user={mockedUser} />));
+  beforeEach(() => render(<TodayUserInfo user={MOCK_USER} />));
   it("should render the correct avatar", () => {
     const imgElement = screen.getByRole("img");
     expect(imgElement).toBeInTheDocument();
