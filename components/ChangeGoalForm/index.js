@@ -48,6 +48,7 @@ const ChangeGoalForm = ({ user }) => {
         <div
           className={number === 60 ? styles.arrowUpDisabled : styles.arrowUp}
           onClick={() => setNumber(Number(number + 1))}
+          role="arrowUp"
         />
         <input
           type="number"
@@ -64,6 +65,7 @@ const ChangeGoalForm = ({ user }) => {
               : styles.arrowDown
           }
           onClick={() => setNumber(number - 1)}
+          role="arrowDown"
         />
         <Heading2>healthy foods daily.</Heading2>
         {error && <p className={styles.error}>{error}</p>}
