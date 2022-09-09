@@ -37,10 +37,18 @@ const DeleteAccount = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <Heading2>We're sad to see you go!</Heading2>
-      <form onSubmit={handleDelete} className={styles.deleteAccountForm}>
-        <label className={styles.deleteAccountText} htmlFor="password">
+      <form
+        onSubmit={handleDelete}
+        className={styles.deleteAccountForm}
+        role="form"
+      >
+        <label
+          className={styles.deleteAccountText}
+          htmlFor="password"
+          role="label"
+        >
           Confirm password to delete account:
         </label>
         <input style={{ display: "none" }} autoComplete="email" />
@@ -55,7 +63,7 @@ const DeleteAccount = () => {
           required
         />
         {error && <p className={styles.error}>{error}</p>}
-        <div className={styles.buttonPair}>
+        <div className={styles.buttonPair} role="buttonContainer">
           <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
           <input
             type="submit"
