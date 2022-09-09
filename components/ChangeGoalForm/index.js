@@ -34,17 +34,21 @@ const ChangeGoalForm = ({ user }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/back.png" />
         </a>
       </Link>
-      <div className={styles.numberPickerContainer}>
+      <div
+        className={styles.numberPickerContainer}
+        role="numberPickerContainer"
+      >
         <Heading2>I want to eat:</Heading2>
         <div
           className={number === 60 ? styles.arrowUpDisabled : styles.arrowUp}
           onClick={() => setNumber(Number(number + 1))}
+          role="arrowUp"
         />
         <input
           type="number"
@@ -61,6 +65,7 @@ const ChangeGoalForm = ({ user }) => {
               : styles.arrowDown
           }
           onClick={() => setNumber(number - 1)}
+          role="arrowDown"
         />
         <Heading2>healthy foods daily.</Heading2>
         {error && <p className={styles.error}>{error}</p>}
