@@ -22,7 +22,6 @@ module.exports = (path, options) => {
       ]);
 
       if (pkgNamesToTarget.has(pkg.name)) {
-        console.log(">>>", pkg.name);
         delete pkg["exports"];
         delete pkg["module"];
       }
