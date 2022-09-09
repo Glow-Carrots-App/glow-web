@@ -9,6 +9,7 @@ const CreateAccountPasswordInput = ({ password, setPassword, placeholder }) => {
   return (
     <input
       className={styles.inputField}
+      role="password"
       type="password"
       value={password}
       placeholder={placeholder}
