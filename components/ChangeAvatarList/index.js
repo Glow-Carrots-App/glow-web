@@ -45,7 +45,7 @@ const ChangeAvatarList = () => {
   return (
     <div role="container" className={styles.container}>
       <div className={styles.avatarList}>
-        <div>
+        <div role="avatarItemList1">
           {avatars1.map((avatar, index) => (
             <div
               role={`avatarItem${index}`}
@@ -61,7 +61,7 @@ const ChangeAvatarList = () => {
             </div>
           ))}
         </div>
-        <div className={styles.avatarColumn}>
+        <div role="avatarItemList2">
           {avatars2.map((avatar, index) => (
             <div
               role={`avatarItem${index + 6}`}
@@ -81,7 +81,7 @@ const ChangeAvatarList = () => {
       {error && <p className={styles.error}>{error}</p>}
       <div className={styles.buttonContainer}>
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
-        <button role="save" onClick={handleAvatarUpdate}>
+        <button role="saveButton" onClick={handleAvatarUpdate}>
           Save
         </button>
       </div>
