@@ -14,6 +14,7 @@ const ChangePasswordInput = ({
   return (
     <input
       className={styles.inputField}
+      role="password"
       type="password"
       value={password}
       placeholder={placeholder}
