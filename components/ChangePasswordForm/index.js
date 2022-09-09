@@ -18,10 +18,11 @@ const ChangePasswordForm = () => {
     e.preventDefault();
     try {
       setError("");
+      setIsPasswordSaved(true);
       await reauthenticate(oldPassword);
       await changePassword(newPassword);
-      setIsPasswordSaved(true);
     } catch (err) {
+      setIsPasswordSaved(false);
       if (err.code == "auth/wrong-password") {
         setError("Incorrect password.");
       } else {
@@ -37,7 +38,11 @@ const ChangePasswordForm = () => {
   };
 
   return (
-    <form className={styles.container} onSubmit={handlePasswordUpdate}>
+    <form
+      className={styles.container}
+      onSubmit={handlePasswordUpdate}
+      role="passwordForm"
+    >
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/back.png" />
@@ -52,6 +57,7 @@ const ChangePasswordForm = () => {
         autoComplete="current-password"
         onFocus={() => setIsPasswordSaved(false)}
         onChange={(e) => setOldPassword(e.target.value)}
+        role="oldPassword"
       />
       <ChangePasswordInput
         password={newPassword}
@@ -65,8 +71,12 @@ const ChangePasswordForm = () => {
         setIsPasswordSaved={setIsPasswordSaved}
         placeholder="Confirm New Password"
       />
-      {error && <p className={styles.error}>{error}</p>}
-      <div className={styles.buttonPair}>
+      {error && (
+        <p className={styles.error} role="error">
+          {error}
+        </p>
+      )}
+      <div className={styles.buttonPair} role="buttonContainer">
         <button type="button" className={styles.reset} onClick={handleReset}>
           Reset
         </button>
