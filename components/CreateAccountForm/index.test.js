@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
 
 import CreateAccountForm from ".";
 
@@ -67,17 +66,15 @@ describe("CreateAccountForm component", () => {
         const confirmPasswordInput =
           screen.getByPlaceholderText(/^Confirm Password$/);
 
-        act(() => {
-          fireEvent.change(nameInput, {
-            target: { value: MOCK_USER.firstName },
-          });
-          fireEvent.change(emailInput, { target: { value: MOCK_USER.email } });
-          fireEvent.change(passwordInput, {
-            target: { value: MOCK_USER.password },
-          });
-          fireEvent.change(confirmPasswordInput, {
-            target: { value: MOCK_USER.confirmPassword },
-          });
+        fireEvent.change(nameInput, {
+          target: { value: MOCK_USER.firstName },
+        });
+        fireEvent.change(emailInput, { target: { value: MOCK_USER.email } });
+        fireEvent.change(passwordInput, {
+          target: { value: MOCK_USER.password },
+        });
+        fireEvent.change(confirmPasswordInput, {
+          target: { value: MOCK_USER.confirmPassword },
         });
 
         expect(submitButton).toBeEnabled();

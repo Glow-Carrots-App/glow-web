@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
 
 import ChangePasswordForm from ".";
 
@@ -77,12 +76,11 @@ describe("ChangePasswordForm component", () => {
       const newPassword = screen.getByPlaceholderText(/^New Password$/);
       const confirmNewPassword =
         screen.getByPlaceholderText(/Confirm New Password/);
-      act(() => {
-        fireEvent.change(oldPassword, { target: { value: "pass123" } });
-        fireEvent.change(newPassword, { target: { value: "Password123!" } });
-        fireEvent.change(confirmNewPassword, {
-          target: { value: "Password123!" },
-        });
+
+      fireEvent.change(oldPassword, { target: { value: "pass123" } });
+      fireEvent.change(newPassword, { target: { value: "Password123!" } });
+      fireEvent.change(confirmNewPassword, {
+        target: { value: "Password123!" },
       });
       expect(buttonElement).toBeEnabled();
     });
@@ -94,14 +92,12 @@ describe("ChangePasswordForm component", () => {
       const confirmNewPassword =
         screen.getByPlaceholderText(/Confirm New Password/);
 
-      act(() => {
-        fireEvent.change(oldPassword, { target: { value: "pass123" } });
-        fireEvent.change(newPassword, { target: { value: "Password123!" } });
-        fireEvent.change(confirmNewPassword, {
-          target: { value: "Password123!" },
-        });
-        fireEvent.click(buttonElement);
+      fireEvent.change(oldPassword, { target: { value: "pass123" } });
+      fireEvent.change(newPassword, { target: { value: "Password123!" } });
+      fireEvent.change(confirmNewPassword, {
+        target: { value: "Password123!" },
       });
+      fireEvent.click(buttonElement);
       expect(oldPassword).toHaveValue("");
       expect(newPassword).toHaveValue("");
       expect(confirmNewPassword).toHaveValue("");
@@ -116,14 +112,12 @@ describe("ChangePasswordForm component", () => {
       const confirmNewPassword =
         screen.getByPlaceholderText(/Confirm New Password/);
 
-      act(() => {
-        fireEvent.change(oldPassword, { target: { value: "pass123" } });
-        fireEvent.change(newPassword, { target: { value: "Password123!" } });
-        fireEvent.change(confirmNewPassword, {
-          target: { value: "Password123!" },
-        });
-        fireEvent.submit(formElement);
+      fireEvent.change(oldPassword, { target: { value: "pass123" } });
+      fireEvent.change(newPassword, { target: { value: "Password123!" } });
+      fireEvent.change(confirmNewPassword, {
+        target: { value: "Password123!" },
       });
+      fireEvent.submit(formElement);
       expect(buttonElement).toHaveValue("Saved!");
     });
   });
