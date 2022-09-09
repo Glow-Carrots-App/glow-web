@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-// import { useRouter } from "next/router";
 
 import ChangeGoalForm from ".";
 
@@ -8,8 +7,6 @@ const MOCK_USER = {
   dailyGoalAmount: 10,
 };
 const IMAGE_SRC = "/buttonIcons/back.png";
-
-// mock function for router push
 
 describe("ChangeGoalForm component", () => {
   beforeEach(() => render(<ChangeGoalForm user={MOCK_USER} />));
@@ -81,13 +78,6 @@ describe("ChangeGoalForm component", () => {
       const expectedValue = Number(numberPicker.value) - 1;
       fireEvent.click(arrowDownElement);
       expect(Number(numberPicker.value)).toEqual(expectedValue);
-    });
-
-    it("should route to /settings after clicking Save", () => {
-      // Code logic for testing router push
-      const buttonElement = screen.getByText(/Save/i);
-      fireEvent.click(buttonElement);
-      // expect(push).toHaveBeenCalledWith("/settings");
     });
   });
 });
