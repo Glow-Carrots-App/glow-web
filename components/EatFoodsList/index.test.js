@@ -24,7 +24,7 @@ describe("EatFoodsList", () => {
   beforeEach(() => render(<EatFoodsList data={MOCKED_DATA} />));
 
   it("should render a container div for food list", () => {
-    const containerElement = screen.getByRole("container");
+    const containerElement = screen.getByRole("listContainer");
     expect(containerElement).toBeInTheDocument();
   });
 
@@ -34,7 +34,7 @@ describe("EatFoodsList", () => {
   });
 
   it("should render 5 divs for each food list item", () => {
-    const listElements = screen.getAllByRole("foodListItem");
+    const listElements = screen.getAllByRole(/foodListItem/i);
     expect(listElements.length).toBe(5);
   });
 });

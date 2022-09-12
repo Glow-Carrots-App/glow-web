@@ -20,7 +20,7 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
       <div className={styles.iconsContainer}>
         {icons.map((icon, index) => (
           <div
-            role={`filter-button-${index}`}
+            role={`filterButton${index}`}
             key={index + icon}
             className={
               selectedColor === icon.slice(12, -4)
@@ -29,6 +29,7 @@ const EatColorFilter = ({ selectedColor, setSelectedColor }) => {
             }
           >
             <img
+              role={`filterImg${index}`}
               onClick={() => handleSelectedColor(icon.slice(12, -4))}
               className={styles.icon}
               src={icon}

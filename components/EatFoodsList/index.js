@@ -8,7 +8,7 @@ const EatFoodsList = ({
   setSearchInput,
 }) => {
   return (
-    <div role="container" className={styles.listContainer}>
+    <div role="listContainer" className={styles.listContainer}>
       {data.map((food) => {
         return (
           <div
