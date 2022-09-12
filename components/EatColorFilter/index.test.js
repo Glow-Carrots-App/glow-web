@@ -11,19 +11,19 @@ describe("EatColorFilter", () => {
 
   it("should render 6 clickable divs", () => {
     render(<EatColorFilter />);
-    const divElements = screen.getAllByRole(/filter-button/i);
+    const divElements = screen.getAllByRole(/filterButton/i);
     expect(divElements.length).toBe(6);
   });
 
   it("should have default styles first rendered", () => {
     render(<EatColorFilter />);
-    const divElement = screen.getByRole(/filter-button-0/i);
+    const divElement = screen.getByRole(/filterButton0/i);
     expect(divElement).toHaveClass("iconContainer");
   });
 
   it("when clicked div should have different styles rendered", () => {
     render(<EatColorFilter selectedColor={"Red"} />);
-    const divElement = screen.getByRole(/filter-button-0/i);
+    const divElement = screen.getByRole(/filterButton0/i);
     expect(divElement).toHaveClass("iconHighlight");
   });
 });
