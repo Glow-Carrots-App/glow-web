@@ -13,6 +13,7 @@ const FeedbackForm = ({ user }) => {
   const handleSendEmail = async (e) => {
     e.preventDefault();
     try {
+      setIsSubmitted(true);
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
@@ -21,19 +22,20 @@ const FeedbackForm = ({ user }) => {
       );
       setSubject("");
       setMessage("");
-      setIsSubmitted(true);
     } catch (err) {
+      setIsSubmitted(false);
       setError("Something went wrong. Please try again.");
     }
   };
 
   return (
-    <div className={styles.container}>
-      <p>Send us your feedback!</p>
+    <div className={styles.container} role="container">
+      <p role="helperText">Send us your feedback!</p>
       <form
         className={styles.formContainer}
         onSubmit={handleSendEmail}
         autoComplete="off"
+        role="form"
       >
         <Link href="/settings">
           <a className={styles.doneLink}>
@@ -62,6 +64,7 @@ const FeedbackForm = ({ user }) => {
           name="subject"
           placeholder="Type here"
           value={subject}
+          role="subjectInput"
           onFocus={() => setIsSubmitted(false)}
           onChange={(e) => setSubject(e.target.value)}
           required
@@ -73,12 +76,13 @@ const FeedbackForm = ({ user }) => {
           name="message"
           placeholder="Type here"
           value={message}
+          role="messageInput"
           onFocus={() => setIsSubmitted(false)}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
         {error && <p className={styles.error}>{error}</p>}
-        <div className={styles.buttonPair}>
+        <div className={styles.buttonPair} role="buttonContainer">
           <button
             className={styles.resetButton}
             onClick={() => {
@@ -90,6 +94,7 @@ const FeedbackForm = ({ user }) => {
           </button>
           <input
             className={styles.submitButton}
+            role="submit"
             type="submit"
             disabled={!subject || !message}
             value={isSubmitted ? "Submitted!" : "Submit"}
