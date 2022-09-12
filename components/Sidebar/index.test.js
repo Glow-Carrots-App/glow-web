@@ -14,7 +14,7 @@ const expectedLinkText = ["Today", "Eat", "Profile", "Settings", "Logout"];
 
 describe("Sidebar", () => {
   beforeEach(() => render(<Sidebar page="today" />));
-  it("should render 5 links", () => {
+  it("should render glow text", () => {
     const headerElement = screen.getByText(/glow/i);
     expect(headerElement).toBeInTheDocument();
   });
