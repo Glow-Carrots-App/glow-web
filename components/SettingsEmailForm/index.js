@@ -19,17 +19,19 @@ const SettingsEmailForm = ({ user }) => {
 
   const handleNewEmail = async (e) => {
     try {
+      setIsEmailSaved(true);
       e.preventDefault();
       await reauthenticate(password);
       await changeEmail(newEmail);
       await UserModel.updateEmail(user.uid, newEmail);
-      setIsEmailSaved(true);
       setShowPassword(false);
       setError("");
     } catch (err) {
       if (err.code == "auth/wrong-password") {
+        setIsEmailSaved(false);
         setError("Incorrect password.");
       } else {
+        setIsEmailSaved(false);
         setError("Something went wrong. Please try again.");
       }
     }
@@ -42,7 +44,11 @@ const SettingsEmailForm = ({ user }) => {
   };
 
   return (
-    <form className={styles.formContainer} onSubmit={handleNewEmail}>
+    <form
+      className={styles.formContainer}
+      onSubmit={handleNewEmail}
+      role="form"
+    >
       <label htmlFor="email">Email</label>
       <div className={styles.inputButtonPair}>
         <input
