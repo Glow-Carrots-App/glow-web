@@ -6,7 +6,7 @@ import TodayFoodList from "../TodayFoodList";
 import styles from "./styles.module.css";
 
 const TodayGoalInfo = ({ currentDay, user }) => {
-  const { dailyGoalAmount } = user;
+  const { dailyGoalAmount, isDailyGoalComplete } = user;
 
   const currentCount = currentDay.length;
   const todaysData = populateDonutChartData(currentDay, dailyGoalAmount);
@@ -21,24 +21,29 @@ const TodayGoalInfo = ({ currentDay, user }) => {
   ];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.goalContainer}>
-        <div>
+    <div role="parentContainer" className={styles.container}>
+      <div role="piePTagContainer" className={styles.goalContainer}>
+        <div role="pieAndCarrotContainer">
           <VictoryPie
+            data-testid="victory-chart"
             colorScale={today}
             padAngle={({ datum }) => datum}
             innerRadius={100}
             data={todaysData}
           />
-          {currentCount >= dailyGoalAmount && (
-            <img className={styles.carrot} src="/stats/goldenCarrot.png" />
+          {isDailyGoalComplete && (
+            <img
+              role="carrotIMG"
+              className={styles.carrot}
+              src="/stats/goldenCarrot.png"
+            />
           )}
         </div>
-        <p>
+        <p role="pTag">
           {currentCount}/{dailyGoalAmount} Foods
         </p>
       </div>
-      <div className={styles.columnRight}>
+      <div role="foodList" className={styles.columnRight}>
         <TodayFoodList currentDay={currentDay} />
       </div>
     </div>
