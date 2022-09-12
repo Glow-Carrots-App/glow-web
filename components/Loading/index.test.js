@@ -10,7 +10,7 @@ describe("Loading", () => {
   });
 
   it("should check to see that the Loading component is rendered", () => {
-    const loadingComponent = screen.findByTestId("loader");
-    screen.debug();
+    const loadingComponent = screen.getByTestId("loader");
+    expect(loadingComponent).toBeInTheDocument();
   });
 });
