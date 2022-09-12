@@ -24,9 +24,9 @@ const LogOut = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <Heading2>Are you sure you want to log out?</Heading2>
-      <div className={styles.buttonPair}>
+      <div className={styles.buttonPair} role="buttonContainer">
         <SmallLinkedButton href="/settings">Cancel</SmallLinkedButton>
         <button className={styles.smallButton} onClick={handleLogOut}>
           Log Out
