@@ -14,9 +14,9 @@ const ProfileStatistics = ({ user, lifetimeFoodHistory }) => {
   const highIcon = pickHighIcon(highestColor);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <p>Statistics</p>
-      <div className={styles.statsRow}>
+      <div className={styles.statsRow} role="statsRow1">
         <StatsCard
           src="/stats/dayStreak.png"
           title="Day Streak"
@@ -28,7 +28,7 @@ const ProfileStatistics = ({ user, lifetimeFoodHistory }) => {
           data={user.goldenCarrots}
         />
       </div>
-      <div className={styles.statsRow}>
+      <div className={styles.statsRow} role="statsRow2">
         <StatsCard
           src={highIcon}
           title="Highest Color"
