@@ -18,6 +18,7 @@ describe("HomeStatsContainer component", () => {
   describe("statsContainer", () => {
     it("should render 2 stats images", () => {
       const stats = screen.getAllByRole("img");
+      expect(stats.length).toBe(2);
       stats.forEach((stat, i) => {
         expect(stat).toBeInTheDocument();
         expect(stat).toHaveAttribute("src", STATS_SRC[i]);
