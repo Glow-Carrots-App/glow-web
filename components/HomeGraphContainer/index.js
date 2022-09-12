@@ -4,9 +4,7 @@ const HomeGraphContainer = () => {
   return (
     <>
       <div className={styles.graphContainer} role="graphContainer">
-        <p className={styles.graphText} role="graphText">
-          Data driven graphs!
-        </p>
+        <p className={styles.graphText}>Data driven graphs!</p>
         <img className={styles.graphImage} src="/landing/glow-graph-home.png" />
       </div>
     </>

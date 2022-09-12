@@ -14,7 +14,7 @@ describe("HomeGraphContainer component", () => {
 
   describe("graphContainer", () => {
     it("should render graph text", () => {
-      const graphText = screen.getByRole("graphText");
+      const graphText = screen.getByText(/Data driven graphs!/);
       expect(graphText).toBeInTheDocument();
     });
 
