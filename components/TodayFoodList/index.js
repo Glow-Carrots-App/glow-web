@@ -8,7 +8,7 @@ const TodayFoodList = ({ currentDay }) => {
         <img role="sunImage" className={styles.sunImg} src="/stats/sun.png" />
         <span>Today's Noms</span>
       </div>
-      <ul className={styles.foodList}>
+      <ul role="populatedList" className={styles.foodList}>
         {currentDay.map((food, index) => (
           <li style={{ color: food.textHex }} key={index + food.product}>
             {food.product}
