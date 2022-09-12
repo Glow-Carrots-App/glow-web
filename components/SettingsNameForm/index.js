@@ -11,17 +11,18 @@ const SettingsNameForm = ({ user }) => {
 
   const handleNewName = async (e) => {
     try {
+      setIsNameSaved(true);
       e.preventDefault();
       await UserModel.updateName(user.uid, newName);
-      setIsNameSaved(true);
       setError("");
     } catch (err) {
+      setIsNameSaved(false);
       setError("Something went wrong. Please try again.");
     }
   };
 
   return (
-    <form className={styles.formContainer} onSubmit={handleNewName}>
+    <form className={styles.formContainer} onSubmit={handleNewName} role="form">
       <label htmlFor="text">Name</label>
       <div className={styles.inputButtonPair}>
         <input
