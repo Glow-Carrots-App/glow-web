@@ -53,7 +53,7 @@ describe("TodayFoodList component", () => {
 describe("TodayFodoList when food is eaten", () => {
   it("should receive all foods eaten today", () => {
     render(<TodayFoodList currentDay={CURRENT_DAY_NOT_EMPTY} />);
-    const populatedList = screen.getByRole("populatedList");
+    const populatedList = screen.getByRole("list");
     expect(populatedList).toBeInTheDocument();
   });
 });

@@ -3,12 +3,12 @@ import styles from "./styles.module.css";
 const TodayFoodList = ({ currentDay }) => {
   const currentCount = currentDay.length;
   return (
-    <div role="container" className={styles.listContainer}>
-      <div role="subcontainer">
+    <div className={styles.listContainer}>
+      <div>
         <img role="sunImage" className={styles.sunImg} src="/stats/sun.png" />
         <span>Today's Noms</span>
       </div>
-      <ul role="populatedList" className={styles.foodList}>
+      <ul className={styles.foodList}>
         {currentDay.map((food, index) => (
           <li style={{ color: food.textHex }} key={index + food.product}>
             {food.product}
