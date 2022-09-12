@@ -5,7 +5,7 @@ const TodayFoodList = ({ currentDay }) => {
   return (
     <div className={styles.listContainer}>
       <div>
-        <img className={styles.sunImg} src="/stats/sun.png" />
+        <img role="sunImage" className={styles.sunImg} src="/stats/sun.png" />
         <span>Today's Noms</span>
       </div>
       <ul className={styles.foodList}>
@@ -16,7 +16,11 @@ const TodayFoodList = ({ currentDay }) => {
         ))}
       </ul>
       {!currentCount && (
-        <img className={styles.listImg} src="/pageBackgrounds/confused.png" />
+        <img
+          role="confused"
+          className={styles.listImg}
+          src="/pageBackgrounds/confused.png"
+        />
       )}
     </div>
   );
