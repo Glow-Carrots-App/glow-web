@@ -28,45 +28,38 @@ describe("SettingsEmailForm component", () => {
       expect(emailLabel).toBeInTheDocument();
     });
 
-    it("should render a buttonContainer", () => {
-      const buttonContainer = screen.getByRole("buttonContainer");
-      expect(buttonContainer).toBeInTheDocument();
+    it("should render an email input field", () => {
+      const emailInput = screen.getByDisplayValue(USER.email);
+      expect(emailInput).toBeInTheDocument();
     });
 
-    describe("buttonContainer", () => {
-      it("should render an email input field", () => {
-        const emailInput = screen.getByDisplayValue(USER.email);
-        expect(emailInput).toBeInTheDocument();
-      });
+    it("should render a submit button", () => {
+      const submitButton = screen.getByText(/^Save$/);
+      expect(submitButton).toBeInTheDocument();
+    });
 
-      it("should render a submit button", () => {
+    describe("submitButton", () => {
+      it("should render 'Save' and have inputButton style by default", () => {
         const submitButton = screen.getByText(/^Save$/);
-        expect(submitButton).toBeInTheDocument();
+        expect(submitButton).toHaveValue("Save");
+        expect(submitButton).toHaveClass("inputButton");
       });
 
-      describe("submitButton", () => {
-        it("should render 'Save' and have inputButton style by default", () => {
-          const submitButton = screen.getByText(/^Save$/);
-          expect(submitButton).toHaveValue("Save");
-          expect(submitButton).toHaveClass("inputButton");
+      it("should render 'Saved!' and have inputButtonSaved style when form is submitted", () => {
+        const submitButton = screen.getByText(/^Save$/);
+        const emailInput = screen.getByDisplayValue(USER.email);
+        const passwordInput = screen.getByPlaceholderText(/Confirm Password/);
+
+        fireEvent.change(emailInput, {
+          target: { value: "newtester@testing.com" },
         });
-
-        it("should render 'Saved!' and have inputButtonSaved style when form is submitted", () => {
-          const submitButton = screen.getByText(/^Save$/);
-          const emailInput = screen.getByDisplayValue(USER.email);
-          const passwordInput = screen.getByPlaceholderText(/Confirm Password/);
-
-          fireEvent.change(emailInput, {
-            target: { value: "newtester@testing.com" },
-          });
-          fireEvent.change(passwordInput, {
-            target: { value: "Password123!" },
-          });
-          fireEvent.click(submitButton);
-
-          expect(submitButton).toHaveValue("Saved!");
-          expect(submitButton).toHaveClass("inputButtonSaved");
+        fireEvent.change(passwordInput, {
+          target: { value: "Password123!" },
         });
+        fireEvent.click(submitButton);
+
+        expect(submitButton).toHaveValue("Saved!");
+        expect(submitButton).toHaveClass("inputButtonSaved");
       });
     });
 
@@ -95,17 +88,12 @@ describe("SettingsEmailForm component", () => {
       });
     });
 
-    it("should render a passwordContainer div", () => {
-      const passwordContainer = screen.getByRole("passwordContainer");
-      expect(passwordContainer).toBeInTheDocument();
+    it("should render a passwordInput field", () => {
+      const passwordInput = screen.getByPlaceholderText(/Confirm Password/);
+      expect(passwordInput).toBeInTheDocument();
     });
 
-    describe("passwordContainer", () => {
-      it("should render a passwordInput field", () => {
-        const passwordInput = screen.getByPlaceholderText(/Confirm Password/);
-        expect(passwordInput).toBeInTheDocument();
-      });
-
+    describe("passwordInput", () => {
       it("should be not visible by default", () => {
         const passwordInput = screen.getByPlaceholderText(/Confirm Password/);
         expect(passwordInput).not.toBeVisible();

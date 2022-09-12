@@ -50,7 +50,7 @@ const SettingsEmailForm = ({ user }) => {
       role="form"
     >
       <label htmlFor="email">Email</label>
-      <div className={styles.inputButtonPair} role="buttonContainer">
+      <div className={styles.inputButtonPair}>
         <input
           className={styles.input}
           id="email"
@@ -79,7 +79,7 @@ const SettingsEmailForm = ({ user }) => {
       >
         Confirm password to change email:
       </label>
-      <div className={styles.passwordContainer} role="passwordContainer">
+      <div className={styles.passwordContainer}>
         <input
           id="password"
           type="password"
