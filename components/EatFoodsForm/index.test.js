@@ -79,7 +79,7 @@ describe("EatFoodsForm", () => {
     fireEvent.focus(inputElement);
     const listElement = screen.getByText(/apricot/i);
     fireEvent.mouseDown(listElement);
-    expect(addButton).not.toBeDisabled();
+    expect(addButton).toBeEnabled();
   });
 
   it("should should remove value from input when Add button is clicked", () => {
