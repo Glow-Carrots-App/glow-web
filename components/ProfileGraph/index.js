@@ -6,9 +6,9 @@ const ProfileGraph = ({ lifetimeFoodHistory }) => {
   let colorCount = countColors(lifetimeFoodHistory);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <p>Total Color Breakdown</p>
-      <div className={styles.progressBar}>
+      <div className={styles.progressBar} role="progressBar">
         {colorCount ? (
           colorCount.map((color, index) => {
             if (index === 6 || color.count === 0) {
@@ -18,6 +18,7 @@ const ProfileGraph = ({ lifetimeFoodHistory }) => {
               <div
                 key={color + index}
                 className={styles.progressItem}
+                role="progressItem"
                 style={{
                   backgroundColor: color.fillHex,
                   width: color.percentage,
