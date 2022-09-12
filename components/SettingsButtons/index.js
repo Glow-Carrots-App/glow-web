@@ -1,12 +1,10 @@
-import Link from "next/link";
-
 import LargeLinkedButton from "../LargeLinkedButton";
 
 import styles from "./styles.module.css";
 
 const SettingsButtons = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="container">
       <LargeLinkedButton href="/settings/change-goal">
         Edit Daily Goal
       </LargeLinkedButton>
