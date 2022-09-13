@@ -12,9 +12,15 @@ const NUMBER_OF_DAYS = 7;
 const HEIGHT = "100%";
 
 describe("TodayVerticalBar", () => {
-  describe("test with no props", () => {
+  describe("test with empty day prop", () => {
     it("should render underscore when there are no props", () => {
-      render(<TodayVerticalBar />);
+      render(
+        <TodayVerticalBar
+          DAY={[]}
+          numberOfDays={NUMBER_OF_DAYS}
+          height={HEIGHT}
+        />
+      );
       const underscoreElement = screen.getByText("_");
       expect(underscoreElement).toBeInTheDocument();
     });
