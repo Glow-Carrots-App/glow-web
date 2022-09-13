@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
+
 import ChangeAvatarList from ".";
 import UserModel from "../../model/user";
 
@@ -49,12 +49,10 @@ describe("ChangeAvatarList", () => {
 describe("ChangeAvatarList with error", () => {
   it("should render an error if updateAvatar fails", async () => {
     UserModel.updateAvatar.mockImplementationOnce(() => {
-      console.log("throwing error");
       return Promise.reject(new Error());
     });
-    act(() => {
-      render(<ChangeAvatarList />);
-    });
+
+    render(<ChangeAvatarList />);
 
     const saveButton = screen.getByRole("saveButton");
     fireEvent.click(saveButton);
