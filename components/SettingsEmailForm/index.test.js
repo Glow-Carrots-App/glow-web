@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import SettingsEmailForm from ".";
 
@@ -7,10 +7,13 @@ const USER = {
   email: "tester@testing.com",
 };
 
+const mockReauth = jest.fn();
+const mockChangeEmail = jest.fn();
+
 jest.mock("../../context/AuthContext", () => ({
   useAuth: () => ({
-    changeEmail: jest.fn(),
-    reauthenticate: jest.fn(),
+    changeEmail: mockChangeEmail,
+    reauthenticate: mockReauth,
   }),
 }));
 
@@ -105,6 +108,36 @@ describe("SettingsEmailForm component", () => {
         fireEvent.focus(emailInput);
         expect(passwordInput).toBeVisible();
       });
+    });
+  });
+});
+
+describe("SettingsEmailForm with error", () => {
+  it("should render an error message upon handleNewEmail failure", async () => {
+    mockChangeEmail.mockImplementation(() => {
+      return Promise.reject(new Error());
+    });
+    mockReauth.mockImplementation(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<SettingsEmailForm user={USER} />);
+
+    const submitButton = screen.getByText(/^Save$/);
+    const emailInput = screen.getByDisplayValue(USER.email);
+    const passwordInput = screen.getByPlaceholderText(/Confirm Password/);
+
+    fireEvent.change(emailInput, {
+      target: { value: "newtester@testing.com" },
+    });
+    fireEvent.change(passwordInput, {
+      target: { value: "Password123!" },
+    });
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByText(/Something went wrong/);
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });
