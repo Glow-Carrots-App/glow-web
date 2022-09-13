@@ -6,7 +6,7 @@ import pickHighIcon from "../../utils/pickHighIcon";
 
 import styles from "./styles.module.css";
 
-const Statistics = ({ user, lifetimeFoodHistory }) => {
+const TodayStatistics = ({ user, lifetimeFoodHistory }) => {
   const lowestColor = checkLowestColor(lifetimeFoodHistory);
   const highestColor = checkHighestColor(lifetimeFoodHistory);
 
@@ -14,7 +14,7 @@ const Statistics = ({ user, lifetimeFoodHistory }) => {
   const highIcon = pickHighIcon(highestColor);
 
   return (
-    <div className={styles.container}>
+    <div role="statsGroup" className={styles.container}>
       <StatsCard
         src="/stats/dayStreak.png"
         title="Day Streak"
@@ -41,4 +41,4 @@ const Statistics = ({ user, lifetimeFoodHistory }) => {
   );
 };
 
-export default Statistics;
+export default TodayStatistics;
