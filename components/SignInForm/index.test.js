@@ -1,10 +1,12 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import SignInForm from ".";
 
+const mockLogin = jest.fn();
+
 jest.mock("../../context/AuthContext", () => ({
   useAuth: () => ({
-    login: jest.fn(),
+    login: mockLogin,
   }),
 }));
 
@@ -35,5 +37,27 @@ describe("SignInForm component", () => {
     fireEvent.change(emailInput, { target: { value: "test email" } });
     fireEvent.change(passwordInput, { target: { value: "test password" } });
     expect(signInButton).toBeEnabled();
+  });
+});
+
+describe("SignInForm with error", () => {
+  it("should display error message on handleSignIn failure", async () => {
+    mockLogin.mockImplementation(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<SignInForm />);
+
+    const form = screen.getByRole("form");
+    const emailInput = screen.getByPlaceholderText("Email");
+    const passwordInput = screen.getByPlaceholderText("Password");
+    fireEvent.change(emailInput, { target: { value: "test email" } });
+    fireEvent.change(passwordInput, { target: { value: "test password" } });
+    fireEvent.submit(form);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByRole("error");
+      expect(errorMessage).toBeInTheDocument();
+    });
   });
 });

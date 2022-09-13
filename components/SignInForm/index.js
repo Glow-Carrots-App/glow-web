@@ -13,22 +13,26 @@ const SignInForm = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
+      console.log("trying login");
       await login(email, password);
     } catch (error) {
+      console.log("handle sign in");
       setError("Invalid email or password.");
     }
   };
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
+      console.log("trying google");
       await googleLogin();
     } catch (error) {
+      console.log("handle google sign in");
       setError("Error. Try again.");
     }
   };
 
   return (
-    <form className={styles.container} onSubmit={handleSignIn}>
+    <form className={styles.container} onSubmit={handleSignIn} role="form">
       <input
         type="email"
         autoComplete="email"
@@ -45,7 +49,11 @@ const SignInForm = () => {
         className={styles.signInFields}
         onChange={(e) => setPassword(e.target.value)}
       />
-      {error && <p className={styles.error}>{error}</p>}
+      {error && (
+        <p className={styles.error} role="error">
+          {error}
+        </p>
+      )}
       <input
         type="submit"
         value="Sign In"
