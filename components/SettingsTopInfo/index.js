@@ -12,14 +12,14 @@ const SettingsTopInfo = ({ user }) => {
   return (
     <div className={styles.container}>
       <Link href="/profile">
-        <a className={styles.doneLink}>
-          <img src="/buttonIcons/back.png" />
+        <a className={styles.doneLink} role="anchor1">
+          <img src="/buttonIcons/back.png" role="image1" />
         </a>
       </Link>
       <Heading2>Your Profile</Heading2>
       <Link href="/settings/change-avatar">
-        <a className={styles.avatarContainer}>
-          <img src={avatar} className={styles.image} />
+        <a className={styles.avatarContainer} role="anchor2">
+          <img src={avatar} className={styles.image} role="image2" />
           <FontAwesomeIcon
             icon={faPenToSquare}
             size="lg"
