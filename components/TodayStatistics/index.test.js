@@ -17,8 +17,9 @@ describe("TodayStatistics component", () => {
     <TodayStatistics user={USER} lifetimeFoodHistory={LIFETIME_FOOD_HISTORY} />
   );
   it("should render four different stats cards", () => {
-    const titles = CARD_TITLES.map((title) => {
+    CARD_TITLES.map((title) => {
       const cardTitle = screen.getByText(title);
+      screen.debug(cardTitle);
       expect(cardTitle).toBeInTheDocument();
     });
   });
