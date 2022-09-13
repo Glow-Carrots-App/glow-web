@@ -13,13 +13,8 @@ const CARD_TITLES = [
 ];
 
 describe("TodayStatistics component", () => {
-  beforeEach(() =>
-    render(
-      <TodayStatistics
-        user={USER}
-        lifetimeFoodHistory={LIFETIME_FOOD_HISTORY}
-      />
-    )
+  render(
+    <TodayStatistics user={USER} lifetimeFoodHistory={LIFETIME_FOOD_HISTORY} />
   );
   it("should render four different stats cards", () => {
     const titles = CARD_TITLES.map((title) => {
