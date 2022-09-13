@@ -13,7 +13,7 @@ const HEIGHT = "100%";
 
 describe("TodayVerticalBar", () => {
   describe("test with empty day prop", () => {
-    it("should render underscore when there are no props", () => {
+    it("should render underscore when there is empty day prop", () => {
       render(
         <TodayVerticalBar
           DAY={[]}
