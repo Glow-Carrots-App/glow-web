@@ -19,13 +19,14 @@ const TodayVerticalBar = ({ day, numberOfDays, height }) => {
   }
 
   return (
-    <div className={className} style={{ height: height }}>
+    <div className={className} style={{ height: height }} role="entireBar">
       {colorCount.map((color, index) => {
         if (index === 6 || color.count === 0) {
           return null;
         }
         return (
           <div
+            role="progressItem"
             key={color + index}
             className={styles.progressItem}
             style={{
