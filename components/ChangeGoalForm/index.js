@@ -34,16 +34,13 @@ const ChangeGoalForm = ({ user }) => {
   };
 
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <Link href="/settings">
         <a className={styles.doneLink}>
           <img src="/buttonIcons/back.png" />
         </a>
       </Link>
-      <div
-        className={styles.numberPickerContainer}
-        role="numberPickerContainer"
-      >
+      <div className={styles.numberPickerContainer}>
         <Heading2>I want to eat:</Heading2>
         <div
           className={number === 60 ? styles.arrowUpDisabled : styles.arrowUp}

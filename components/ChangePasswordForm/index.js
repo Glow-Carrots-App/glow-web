@@ -76,7 +76,7 @@ const ChangePasswordForm = () => {
           {error}
         </p>
       )}
-      <div className={styles.buttonPair} role="buttonContainer">
+      <div className={styles.buttonPair}>
         <button type="button" className={styles.reset} onClick={handleReset}>
           Reset
         </button>

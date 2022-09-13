@@ -1,16 +1,16 @@
 import filterByDateRange from "../filterByDateRange";
 import dayjs from "dayjs";
 
-const daysBehind = 1;
+const DAYS_BEHIND = 1;
 
-const foodHistory = [
+const FOOD_HISTORY = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
     color: "White",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
-    date: dayjs().subtract(daysBehind, "day").format("YYYY/MM/DD"),
+    date: dayjs().subtract(DAYS_BEHIND, "day").format("YYYY/MM/DD"),
   },
   {
     product: "Cabbage",
@@ -54,14 +54,14 @@ const foodHistory = [
   },
 ];
 
-const filteredRangeOutput = [
+const FILTERED_RANGE_OUTPUT = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
     color: "White",
     textHex: "#479D45",
     fillHex: "#6AAB9C",
-    date: dayjs().subtract(daysBehind, "day").format("YYYY/MM/DD"),
+    date: dayjs().subtract(DAYS_BEHIND, "day").format("YYYY/MM/DD"),
   },
   {
     product: "Cabbage",
@@ -75,7 +75,7 @@ const filteredRangeOutput = [
 
 describe("filterByDateRange", () => {
   it("should return an array of food objects that have date within today and days behind", () => {
-    const filteredList = filterByDateRange(foodHistory, 1);
-    expect(filteredList).toStrictEqual(filteredRangeOutput);
+    const filteredList = filterByDateRange(FOOD_HISTORY, 1);
+    expect(filteredList).toStrictEqual(FILTERED_RANGE_OUTPUT);
   });
 });

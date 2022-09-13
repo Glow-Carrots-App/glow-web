@@ -1,6 +1,6 @@
 import alphabetizeFoods from "../alphabetizeFoods";
 
-const unorderedFoods = [
+const UNORDERED_FOOD = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -27,7 +27,7 @@ const unorderedFoods = [
   },
 ];
 
-const orderedFoods = [
+const ORDERED_FOOD = [
   {
     product: "Arugula",
     productSearch: "Arugula",
@@ -56,20 +56,19 @@ const orderedFoods = [
 
 describe("alphabetizeFoods", () => {
   it("should arrange foods alphabetically by productSearch property", () => {
-    const testRun = alphabetizeFoods(unorderedFoods);
-    expect(testRun).toStrictEqual(orderedFoods);
+    const testRun = alphabetizeFoods(UNORDERED_FOOD);
+    expect(testRun).toStrictEqual(ORDERED_FOOD);
   });
 
   it("should return an array with objects", () => {
-    const testRun = alphabetizeFoods(unorderedFoods);
+    const testRun = alphabetizeFoods(UNORDERED_FOOD);
     expect(Array.isArray(testRun)).toBe(true);
   });
 
   it("should return an array with ONLY objects", () => {
-    const testRun = alphabetizeFoods(unorderedFoods);
+    const testRun = alphabetizeFoods(UNORDERED_FOOD);
     expect(
       testRun.every((food) => {
-        console.log(food);
         expect(food).toEqual({
           product: expect.any(String),
           productSearch: expect.any(String),

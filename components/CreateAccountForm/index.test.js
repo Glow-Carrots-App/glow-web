@@ -20,11 +20,6 @@ describe("CreateAccountForm component", () => {
     render(<CreateAccountForm />);
   });
 
-  it("should render a createAccount form", () => {
-    const formElement = screen.getByRole("form");
-    expect(formElement).toBeInTheDocument();
-  });
-
   describe("createAccount form", () => {
     it("should render a first name input field", () => {
       const nameInput = screen.getByPlaceholderText(/First Name/);

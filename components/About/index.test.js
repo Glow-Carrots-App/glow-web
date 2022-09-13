@@ -5,23 +5,22 @@ import About from ".";
 describe("About component", () => {
   beforeEach(() => render(<About />));
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   it("should render the first paragraph tag", () => {
-    const paragraphElement = screen.getByRole("firstParagraph");
+    const paragraphElement = screen.getByText(
+      /Glow is a food tracker app inspired by/i
+    );
     expect(paragraphElement).toBeInTheDocument();
   });
 
   it("should render the second paragraph tag", () => {
-    const paragraphElement = screen.getByRole("secondParagraph");
+    const paragraphElement = screen.getByText(
+      /This app is intended for all ages/i
+    );
     expect(paragraphElement).toBeInTheDocument();
   });
 
   it("should render the third paragraph tag", () => {
-    const paragraphElement = screen.getByRole("thirdParagraph");
+    const paragraphElement = screen.getByText(/Icons are made by/i);
     expect(paragraphElement).toBeInTheDocument();
   });
 

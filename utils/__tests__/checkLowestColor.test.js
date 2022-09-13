@@ -1,6 +1,6 @@
 import checkLowestColor from "../checkLowestColor";
 
-const totalFoods = [
+const TOTAL_FOODS = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -53,7 +53,7 @@ const totalFoods = [
 
 describe("checkLowestColor", () => {
   it("should return lowest color object", () => {
-    const testRun = checkLowestColor(totalFoods);
+    const testRun = checkLowestColor(TOTAL_FOODS);
     expect(testRun.color).toBe("Purple");
   });
   it("should return empty string when no foods present", () => {

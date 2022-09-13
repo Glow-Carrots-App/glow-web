@@ -1,31 +1,31 @@
 import createNewUserDataModel from "../createNewUserDataModel";
 import dayjs from "dayjs";
 
-const email = "testEmail@email.com";
-const firstName = "tester";
-const uid = "test123";
+const EMAIL = "testEmail@email.com";
+const FIRST_NAME = "tester";
+const UID = "test123";
 
-const correctUser = {
+const CORRECT_USER = {
   avatar: "/avatars/camp.png",
   dailyGoalAmount: 5,
   dayStreak: 0,
-  email,
-  firstName,
+  email: EMAIL,
+  firstName: FIRST_NAME,
   goldenCarrots: 0,
   isDailyGoalComplete: false,
   joinDate: dayjs().format("MM/DD/YYYY"),
   lastGoalDate: dayjs().format("YYYY/MM/DD"),
-  uid,
+  uid: UID,
 };
 
 describe("createNewUserDataModel", () => {
   it("should return an object", () => {
-    const testUser = createNewUserDataModel(email, firstName, uid);
+    const testUser = createNewUserDataModel(EMAIL, FIRST_NAME, UID);
     expect(typeof testUser).toBe("object");
   });
 
   it("should return an object with desired properties", () => {
-    const testUser = createNewUserDataModel(email, firstName, uid);
-    expect(testUser).toMatchObject(correctUser);
+    const testUser = createNewUserDataModel(EMAIL, FIRST_NAME, UID);
+    expect(testUser).toMatchObject(CORRECT_USER);
   });
 });

@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 
 import FeedbackForm from ".";
 
@@ -10,14 +16,9 @@ describe("FeedbackForm component", () => {
   beforeEach(() => render(<FeedbackForm user={USER} />));
   afterEach(cleanup);
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   describe("container element", () => {
     it("should render a helper text", () => {
-      const paragraphCElement = screen.getByRole("helperText");
+      const paragraphCElement = screen.getByText(/send us your/i);
       expect(paragraphCElement).toBeInTheDocument();
     });
 
@@ -96,7 +97,7 @@ describe("FeedbackForm component", () => {
             expect(submitButton).toBeDisabled();
           });
 
-          it("should be enabled when both input fields are populated and change values when submitted", () => {
+          it("should be enabled when both input fields are populated and change values when submitted", async () => {
             const submitButton = screen.getByRole("submit");
             const subjectInput = screen.getByRole("subjectInput");
             const messageInput = screen.getByRole("messageInput");
@@ -107,7 +108,6 @@ describe("FeedbackForm component", () => {
             expect(submitButton).toBeEnabled();
 
             fireEvent.click(submitButton);
-
             expect(submitButton).toHaveValue("Submitted!");
           });
         });

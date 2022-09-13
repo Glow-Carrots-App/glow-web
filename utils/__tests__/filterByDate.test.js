@@ -1,9 +1,9 @@
 import filterByDate from "../filterByDate";
 import dayjs from "dayjs";
 
-const daysBehind = 0;
+const DAYS_BEHIND = 0;
 
-const foodList = [
+const FOOD_LIST = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -56,12 +56,12 @@ const foodList = [
 
 describe("filterByDate", () => {
   it("should return an array", () => {
-    const testFilteredDate = filterByDate(foodList, daysBehind);
+    const testFilteredDate = filterByDate(FOOD_LIST, DAYS_BEHIND);
     expect(Array.isArray(testFilteredDate)).toBe(true);
   });
 
   it("should return an array containing only objects with the specified date", () => {
-    const testFilteredDate = filterByDate(foodList, daysBehind);
+    const testFilteredDate = filterByDate(FOOD_LIST, DAYS_BEHIND);
     testFilteredDate.forEach((food) =>
       expect(food).toMatchObject({ date: dayjs().format("YYYY/MM/DD") })
     );

@@ -5,11 +5,6 @@ import AddButton from ".";
 describe("AddButton component", () => {
   beforeEach(() => render(<AddButton />));
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   it("should render an anchor tag", () => {
     const anchorElement = screen.getByRole("link");
     expect(anchorElement).toBeInTheDocument();

@@ -21,12 +21,12 @@ jest.mock("../../masterFoodLibrary/masterFoodLibrary", () => {
     },
   ];
 });
-const MOCKED_USER = { isGoalComplete: false, uid: "fake_id" };
-const MOCKED_CURRENT_DAY = [{}, {}, {}];
+const USER = { isGoalComplete: false, uid: "fake_id" };
+const CURRENT_DAY = [{}, {}, {}];
 
 describe("EatFoodsForm", () => {
   beforeEach(() =>
-    render(<EatFoodsForm currentDay={MOCKED_CURRENT_DAY} user={MOCKED_USER} />)
+    render(<EatFoodsForm currentDay={CURRENT_DAY} user={USER} />)
   );
 
   it("should render an input", () => {
@@ -73,7 +73,7 @@ describe("EatFoodsForm", () => {
     expect(foodListContainer).not.toBeInTheDocument();
   });
 
-  it("should enable Add button when user select food item from list", () => {
+  it("should enable Add button when user selects food item from list", () => {
     const inputElement = screen.getByPlaceholderText(/search food/i);
     const addButton = screen.getByText(/add/i);
     fireEvent.focus(inputElement);
@@ -82,7 +82,7 @@ describe("EatFoodsForm", () => {
     expect(addButton).toBeEnabled();
   });
 
-  it("should should remove value from input when Add button is clicked", () => {
+  it("should remove value from input when Add button is clicked", () => {
     const inputElement = screen.getByPlaceholderText(/search food/i);
     const addButton = screen.getByText(/add/i);
     fireEvent.focus(inputElement);

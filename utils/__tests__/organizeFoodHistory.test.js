@@ -1,7 +1,7 @@
 import organizeFoodHistory from "../organizeFoodHistory";
 import dayjs from "dayjs";
 
-const userHistorySnapshot = [
+const USER_HISTORY_SNAPSHOT = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -33,28 +33,28 @@ const EXPECTED_OBJECT = {
   days: expect.any(Array),
   percentages: expect.any(Array),
 };
-const percentageChar = "%";
+const PERCENTAGE_CHAR = "%";
 
 describe("organizeFoodHistory", () => {
   it("returns an object", () => {
-    const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);
+    const testOrganized = organizeFoodHistory(USER_HISTORY_SNAPSHOT, NUM_DAYS);
     expect(typeof testOrganized).toBe("object");
   });
 
   it("returns object that has the correct format", () => {
-    const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);
+    const testOrganized = organizeFoodHistory(USER_HISTORY_SNAPSHOT, NUM_DAYS);
     expect(testOrganized).toEqual(expect.objectContaining(EXPECTED_OBJECT));
   });
 
   it("returns an object where the percentages property is an array containing strings with %", () => {
-    const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);
+    const testOrganized = organizeFoodHistory(USER_HISTORY_SNAPSHOT, NUM_DAYS);
     testOrganized.percentages.forEach((percentage) =>
-      expect(percentage).toContain(percentageChar)
+      expect(percentage).toContain(PERCENTAGE_CHAR)
     );
   });
 
   it("returns an object where the days property is an array containing arrays containing objects with the appropriate day value", () => {
-    const testOrganized = organizeFoodHistory(userHistorySnapshot, NUM_DAYS);
+    const testOrganized = organizeFoodHistory(USER_HISTORY_SNAPSHOT, NUM_DAYS);
     testOrganized.days.forEach((day, i) =>
       day.forEach((food) =>
         expect(food.date).toEqual(

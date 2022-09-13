@@ -19,20 +19,10 @@ jest.mock("../../context/UserContext", () => ({
 describe("DeleteAccount component", () => {
   beforeEach(() => render(<DeleteAccount />));
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   describe("container element", () => {
     it("should render an h2 element", () => {
       const headingElement = screen.getByRole("heading");
       expect(headingElement).toBeInTheDocument();
-    });
-
-    it("should render a form element", () => {
-      const formElement = screen.getByRole("form");
-      expect(formElement).toBeInTheDocument();
     });
 
     describe("form element", () => {
@@ -44,11 +34,6 @@ describe("DeleteAccount component", () => {
       it("should render a password input field", () => {
         const passwordInput = screen.getByPlaceholderText(/Password/);
         expect(passwordInput).toBeInTheDocument();
-      });
-
-      it("should render a buttonContainer", () => {
-        const buttonContainer = screen.getByRole("buttonContainer");
-        expect(buttonContainer).toBeInTheDocument();
       });
 
       describe("buttonContainer", () => {

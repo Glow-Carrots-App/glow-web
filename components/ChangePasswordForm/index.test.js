@@ -49,11 +49,6 @@ describe("ChangePasswordForm component", () => {
     expect(confirmNewPassword).toBeInTheDocument();
   });
 
-  it("should render a buttonContainer", () => {
-    const containerElement = screen.getByRole("buttonContainer");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   describe("buttonContainer", () => {
     it("should render a Reset button", () => {
       const buttonElement = screen.getByText(/Reset/i);

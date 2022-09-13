@@ -1,6 +1,6 @@
 import filterFoodsForSearch from "../filterFoodsForSearch";
 
-const alphebetizedFoodList = [
+const ALPHABETIZED_FOOD_LIST = [
   {
     product: "Cherry",
     productSearch: "Cherry",
@@ -35,35 +35,35 @@ const COLOR_CONDITION = {
   color: "Red",
 };
 
-const testSearchInput = "che";
-const testSearchInput2 = "";
-const testColorFilter = null;
-const testColorFilter2 = "Red";
+const TEST_SEARCH_INPUTS = "che";
+const TEST_SEARCH_INPUTS_2 = "";
+const TEST_COLOR_FILTER = null;
+const TEST_COLOR_FILTER_2 = "Red";
 
 describe("filterFoodsForSearch", () => {
   it("returns an array", () => {
     const testSearch = filterFoodsForSearch(
-      alphebetizedFoodList,
-      testColorFilter,
-      testSearchInput
+      ALPHABETIZED_FOOD_LIST,
+      TEST_COLOR_FILTER,
+      TEST_SEARCH_INPUTS
     );
     expect(Array.isArray(testSearch)).toBe(true);
   });
 
-  it("returns an array that matches testSearchInput condition", () => {
+  it("returns an array that matches TEST_SEARCH_INPUTS condition", () => {
     const testSearch = filterFoodsForSearch(
-      alphebetizedFoodList,
-      testColorFilter,
-      testSearchInput
+      ALPHABETIZED_FOOD_LIST,
+      TEST_COLOR_FILTER,
+      TEST_SEARCH_INPUTS
     );
     testSearch.forEach((food) => expect(food).toMatchObject(INPUT_CONDITION));
   });
 
-  it("returns an array that matches testColorFilter condition", () => {
+  it("returns an array that matches TEST_COLOR_FILTER condition", () => {
     const testSearch = filterFoodsForSearch(
-      alphebetizedFoodList,
-      testColorFilter2,
-      testSearchInput2
+      ALPHABETIZED_FOOD_LIST,
+      TEST_COLOR_FILTER_2,
+      TEST_SEARCH_INPUTS_2
     );
     testSearch.forEach((food) => expect(food).toMatchObject(COLOR_CONDITION));
   });
