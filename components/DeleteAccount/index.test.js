@@ -1,11 +1,14 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import DeleteAccount from ".";
 
+const mockDeleteAccount = jest.fn();
+const mockReauth = jest.fn();
+
 jest.mock("../../context/AuthContext", () => ({
   useAuth: () => ({
-    deleteAccount: jest.fn(),
-    reauthenticate: jest.fn(),
+    deleteAccount: mockDeleteAccount,
+    reauthenticate: mockReauth,
     authedUser: { uid: "abc123" },
   }),
 }));
@@ -79,6 +82,32 @@ describe("DeleteAccount component", () => {
           });
         });
       });
+    });
+  });
+});
+
+describe("DeleteAccount component with error", () => {
+  it("should render an error on failed handleDelete", async () => {
+    mockReauth.mockImplementation(() => {
+      return Promise.reject(new Error());
+    });
+
+    mockDeleteAccount.mockImplementation(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<DeleteAccount />);
+
+    const submitButton = screen.getByRole("button");
+    const passwordInput = screen.getByPlaceholderText(/Password/);
+    fireEvent.change(passwordInput, {
+      target: { value: "Password123!" },
+    });
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByRole("error");
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });

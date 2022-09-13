@@ -129,11 +129,11 @@ describe("ChangePasswordForm component", () => {
 describe("ChangePasswordForm with error", () => {
   it("should render an error if handlePasswordUpdate fails", async () => {
     mockReauth.mockImplementation(() => {
-      return Promise.reject(new Error("Failed"));
+      return Promise.reject(new Error());
     });
 
     mockChangePassword.mockImplementation(() => {
-      return Promise.reject(new Error("Failed"));
+      return Promise.reject(new Error());
     });
 
     render(<ChangePasswordForm />);
