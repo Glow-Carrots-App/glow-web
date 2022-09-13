@@ -14,7 +14,7 @@ const TodayStatistics = ({ user, lifetimeFoodHistory }) => {
   const highIcon = pickHighIcon(highestColor);
 
   return (
-    <div role="statsGroup" className={styles.container}>
+    <div className={styles.container}>
       <StatsCard
         src="/stats/dayStreak.png"
         title="Day Streak"
