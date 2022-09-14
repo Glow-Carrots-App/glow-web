@@ -88,11 +88,11 @@ describe("DeleteAccount component", () => {
 
 describe("DeleteAccount component with error", () => {
   it("should render an error on failed handleDelete", async () => {
-    mockReauth.mockImplementation(() => {
+    mockReauth.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
 
-    mockDeleteAccount.mockImplementation(() => {
+    mockDeleteAccount.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
 

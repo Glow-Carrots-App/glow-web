@@ -13,20 +13,16 @@ const SignInForm = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      console.log("trying login");
       await login(email, password);
     } catch (error) {
-      console.log("handle sign in");
       setError("Invalid email or password.");
     }
   };
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
-      console.log("trying google");
       await googleLogin();
     } catch (error) {
-      console.log("handle google sign in");
       setError("Error. Try again.");
     }
   };

@@ -58,7 +58,7 @@ describe("SettingsNameForm component", () => {
 
 describe("SettingsNameForm with error", () => {
   it("should render an error message upon handleNewEmail failure", async () => {
-    UserModel.updateName.mockImplementation(() => {
+    UserModel.updateName.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
 

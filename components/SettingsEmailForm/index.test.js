@@ -114,10 +114,10 @@ describe("SettingsEmailForm component", () => {
 
 describe("SettingsEmailForm with error", () => {
   it("should render an error message upon handleNewEmail failure", async () => {
-    mockChangeEmail.mockImplementation(() => {
+    mockChangeEmail.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
-    mockReauth.mockImplementation(() => {
+    mockReauth.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
 

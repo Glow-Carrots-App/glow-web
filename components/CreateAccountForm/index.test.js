@@ -87,7 +87,7 @@ describe("CreateAccountForm component", () => {
 
 describe("CreateAccountForm with error", () => {
   it("should render an error on failed handleCreateAccount", async () => {
-    mockSignup.mockImplementation(() => {
+    mockSignup.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
     render(<CreateAccountForm />);

@@ -69,7 +69,6 @@ describe("alphabetizeFoods", () => {
     const testRun = alphabetizeFoods(unorderedFoods);
     expect(
       testRun.every((food) => {
-        console.log(food);
         expect(food).toEqual({
           product: expect.any(String),
           productSearch: expect.any(String),

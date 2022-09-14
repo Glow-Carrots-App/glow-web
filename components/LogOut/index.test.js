@@ -41,7 +41,7 @@ describe("LogOut component", () => {
 
 describe("LogOut component with error", () => {
   it("should render an error message on failed handleLogout", async () => {
-    mockLogout.mockImplementation(() => {
+    mockLogout.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
 

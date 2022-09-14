@@ -42,7 +42,7 @@ describe("SignInForm component", () => {
 
 describe("SignInForm with error", () => {
   it("should display error message on handleSignIn failure", async () => {
-    mockLogin.mockImplementation(() => {
+    mockLogin.mockImplementationOnce(() => {
       return Promise.reject(new Error());
     });
 
