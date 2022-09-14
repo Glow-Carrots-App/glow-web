@@ -65,7 +65,7 @@ describe("ProfileStatistics component", () => {
   });
 
   it("should render four different stats cards", () => {
-    CARD_TITLES.map((title) => {
+    CARD_TITLES.forEach((title) => {
       const cardTitle = screen.getByText(title);
       expect(cardTitle).toBeInTheDocument();
     });
