@@ -1,6 +1,6 @@
 import countColors from "../countColors";
 
-const totalFoods = [
+const TOTAL_FOODS = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -97,6 +97,6 @@ describe("countColors", () => {
     expect(countColors(undefined)).toBeNull();
   });
   it("should return array of objects with accurate counts of colors, percentage, and other color properties", () => {
-    expect(countColors(totalFoods)).toStrictEqual(counts);
+    expect(countColors(TOTAL_FOODS)).toStrictEqual(counts);
   });
 });

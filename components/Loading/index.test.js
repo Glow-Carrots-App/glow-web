@@ -3,14 +3,9 @@ import { screen, render } from "@testing-library/react";
 import Loading from ".";
 
 describe("Loading", () => {
-  beforeEach(() => render(<Loading />));
-  it("should render container for React Loading component", () => {
-    const loadingContainer = screen.getByRole("loadingContainer");
-    expect(loadingContainer).toBeInTheDocument();
-  });
-
+  render(<Loading />);
   it("should check to see that the Loading component is rendered", () => {
-    const loadingComponent = screen.getByTestId("loader");
+    const loadingComponent = screen.getByRole("loader");
     expect(loadingComponent).toBeInTheDocument();
   });
 });

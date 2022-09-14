@@ -37,13 +37,9 @@ const DeleteAccount = () => {
   };
 
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <Heading2>We're sad to see you go!</Heading2>
-      <form
-        onSubmit={handleDelete}
-        className={styles.deleteAccountForm}
-        role="form"
-      >
+      <form onSubmit={handleDelete} className={styles.deleteAccountForm}>
         <label
           className={styles.deleteAccountText}
           htmlFor="password"

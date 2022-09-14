@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 const AddButton = () => {
   return (
-    <div className={styles.buttonContainer} role="container">
+    <div className={styles.buttonContainer}>
       <Link href="/eat">
         <a>
           <img src="/buttonIcons/add.png" className={styles.button} />

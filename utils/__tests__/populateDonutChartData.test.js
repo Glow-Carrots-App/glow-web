@@ -1,8 +1,8 @@
 import populateDonutChartData from "../populateDonutChartData";
 
-const dailyGoal = 5;
+const DAILY_GOAL = 5;
 
-const todayFoods = [
+const TODAY_FOODS = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -45,7 +45,7 @@ const todayFoods = [
   },
 ];
 
-const expectedResult = [
+const EXPECTED_RESULT = [
   { x: " ", y: 1 },
   { x: " ", y: 1 },
   { x: " ", y: 1 },
@@ -56,9 +56,9 @@ const expectedResult = [
 ];
 
 describe("populateDonutChartData", () => {
-  it("should return an array with the expectedResult", () => {
-    expect(populateDonutChartData(todayFoods, dailyGoal)).toStrictEqual(
-      expectedResult
+  it("should return an array with the EXPECTED_RESULT", () => {
+    expect(populateDonutChartData(TODAY_FOODS, DAILY_GOAL)).toStrictEqual(
+      EXPECTED_RESULT
     );
   });
 });

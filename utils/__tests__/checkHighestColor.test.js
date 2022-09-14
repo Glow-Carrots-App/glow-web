@@ -1,6 +1,6 @@
 import checkHighestColor from "../checkHighestColor";
 
-const totalFoods = [
+const TOTAL_FOODS = [
   {
     product: "Cabbage",
     productSearch: "Cabbage (Green)",
@@ -29,7 +29,7 @@ const totalFoods = [
 
 describe("checkHighestColor", () => {
   it("should return highest color object", () => {
-    const testRun = checkHighestColor(totalFoods);
+    const testRun = checkHighestColor(TOTAL_FOODS);
     expect(testRun.color).toBe("Red");
   });
   it("should return empty string when no foods present", () => {

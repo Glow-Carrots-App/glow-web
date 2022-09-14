@@ -5,7 +5,7 @@ import TodayFoodList from ".";
 const IMAGE_SRC1 = "/stats/sun.png";
 const IMAGE_SRC2 = "/pageBackgrounds/confused.png";
 const CURRENT_DAY_EMPTY = [];
-const CURRENT_DAY_NOT_EMPTY = [
+const CURRENT_DAY = [
   {
     product: "Açai",
     productSearch: "Açai",
@@ -39,10 +39,12 @@ describe("TodayFoodList component", () => {
     expect(sunImage).toBeInTheDocument();
     expect(sunImage).toHaveAttribute("src", IMAGE_SRC1);
   });
+
   it("should render title span text", () => {
     const todaysNoms = screen.getByText(/Today's Noms/i);
     expect(todaysNoms).toBeInTheDocument();
   });
+
   it("should render a pineapple image if list is empty", () => {
     const confusedPineapple = screen.getByRole("confused");
     expect(confusedPineapple).toBeVisible();
@@ -51,9 +53,25 @@ describe("TodayFoodList component", () => {
 });
 
 describe("TodayFodoList when food is eaten", () => {
-  it("should receive all foods eaten today", () => {
-    render(<TodayFoodList currentDay={CURRENT_DAY_NOT_EMPTY} />);
+  beforeEach(() => render(<TodayFoodList currentDay={CURRENT_DAY} />));
+  it("should render a sun image", () => {
+    const sunImage = screen.getByRole("sunImage");
+    expect(sunImage).toBeInTheDocument();
+    expect(sunImage).toHaveAttribute("src", IMAGE_SRC1);
+  });
+
+  it("should render title span text", () => {
+    const todaysNoms = screen.getByText(/Today's Noms/i);
+    expect(todaysNoms).toBeInTheDocument();
+  });
+
+  it("should render a list", () => {
     const populatedList = screen.getByRole("list");
     expect(populatedList).toBeInTheDocument();
+  });
+
+  it("should render list with 3 text elements", () => {
+    const textElements = screen.getAllByRole("listitem");
+    expect(textElements.length).toBe(3);
   });
 });

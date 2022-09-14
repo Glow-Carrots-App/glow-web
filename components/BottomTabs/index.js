@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 
 const BottomTabs = ({ isToday = false, isEat = false, isProfile = false }) => {
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <Link href="/today">
         <a role="todayAnchor">
           <FontAwesomeIcon

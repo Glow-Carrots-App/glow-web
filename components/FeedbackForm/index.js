@@ -29,8 +29,8 @@ const FeedbackForm = ({ user }) => {
   };
 
   return (
-    <div className={styles.container} role="container">
-      <p role="helperText">Send us your feedback!</p>
+    <div className={styles.container}>
+      <p>Send us your feedback!</p>
       <form
         className={styles.formContainer}
         onSubmit={handleSendEmail}

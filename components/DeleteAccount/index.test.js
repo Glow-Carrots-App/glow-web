@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import DeleteAccount from ".";
+import UserModel from "../../model/user";
 
 const mockDeleteAccount = jest.fn();
 const mockReauth = jest.fn();
@@ -19,23 +20,16 @@ jest.mock("../../context/UserContext", () => ({
   }),
 }));
 
+jest.mock("../../model/user");
+
 describe("DeleteAccount component", () => {
   beforeEach(() => render(<DeleteAccount />));
-
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
+  UserModel.deleteUser.mockImplementation(() => jest.fn());
 
   describe("container element", () => {
     it("should render an h2 element", () => {
       const headingElement = screen.getByRole("heading");
       expect(headingElement).toBeInTheDocument();
-    });
-
-    it("should render a form element", () => {
-      const formElement = screen.getByRole("form");
-      expect(formElement).toBeInTheDocument();
     });
 
     describe("form element", () => {
@@ -47,11 +41,6 @@ describe("DeleteAccount component", () => {
       it("should render a password input field", () => {
         const passwordInput = screen.getByPlaceholderText(/Password/);
         expect(passwordInput).toBeInTheDocument();
-      });
-
-      it("should render a buttonContainer", () => {
-        const buttonContainer = screen.getByRole("buttonContainer");
-        expect(buttonContainer).toBeInTheDocument();
       });
 
       describe("buttonContainer", () => {

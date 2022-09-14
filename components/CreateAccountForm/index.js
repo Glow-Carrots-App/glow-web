@@ -31,7 +31,7 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleCreateAccount} role="form">
+    <form className={styles.form} onSubmit={handleCreateAccount}>
       <input
         className={styles.formInput}
         type="text"

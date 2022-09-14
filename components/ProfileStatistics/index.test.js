@@ -37,6 +37,13 @@ const LIFETIME_FOOD_HISTORY = [
   },
 ];
 
+const CARD_TITLES = [
+  "Day Streak",
+  "Golden Carrots",
+  "Highest Color",
+  "Lowest Color",
+];
+
 const USER = {
   dayStreak: 1,
   goldenCarrots: 7,
@@ -52,25 +59,15 @@ describe("ProfileStatistics component", () => {
     )
   );
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
+  it("should render Statistics text", () => {
+    const statisticsText = screen.getByText(/^Statistics$/);
+    expect(statisticsText).toBeInTheDocument();
   });
 
-  describe("containerElement", () => {
-    it("should render Statistics text", () => {
-      const statisticsText = screen.getByText(/^Statistics$/);
-      expect(statisticsText).toBeInTheDocument();
-    });
-
-    it("should render statsRow1 container", () => {
-      const statsRow = screen.getByRole("statsRow1");
-      expect(statsRow).toBeInTheDocument();
-    });
-
-    it("should render statsRow2 container", () => {
-      const statsRow = screen.getByRole("statsRow2");
-      expect(statsRow).toBeInTheDocument();
+  it("should render four different stats cards", () => {
+    CARD_TITLES.forEach((title) => {
+      const cardTitle = screen.getByText(title);
+      expect(cardTitle).toBeInTheDocument();
     });
   });
 });

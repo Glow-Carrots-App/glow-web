@@ -6,7 +6,7 @@ const ProfileGraph = ({ lifetimeFoodHistory }) => {
   let colorCount = countColors(lifetimeFoodHistory);
 
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <p>Total Color Breakdown</p>
       <div className={styles.progressBar} role="progressBar">
         {colorCount ? (

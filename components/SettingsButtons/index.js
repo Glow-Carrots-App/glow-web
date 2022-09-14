@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 const SettingsButtons = () => {
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <LargeLinkedButton href="/settings/change-goal">
         Edit Daily Goal
       </LargeLinkedButton>

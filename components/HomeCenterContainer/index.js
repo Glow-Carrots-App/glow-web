@@ -7,8 +7,8 @@ import styles from "./styles.module.css";
 const HomeCenterContainer = () => {
   return (
     <>
-      <div className={styles.centerContainer} role="container">
-        <div className={styles.headings} role="headingsContainer">
+      <div className={styles.centerContainer}>
+        <div className={styles.headings}>
           <Heading1 isLanding={true}>
             Welcome to <span className={styles.glowText}>Glow</span>
           </Heading1>
@@ -20,7 +20,7 @@ const HomeCenterContainer = () => {
             Start tracking your Rainbow Diet and collect Golden Carrots today!
           </Heading2>
         </div>
-        <div className={styles.buttonPair} role="buttonContainer">
+        <div className={styles.buttonPair}>
           <img className={styles.carrot3} src="/stats/goldenCarrot.png" />
           <img className={styles.carrot4} src="/stats/goldenCarrot.png" />
           <LargeLinkedButton href="/create-account" isLanding={true}>

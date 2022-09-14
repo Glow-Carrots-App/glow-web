@@ -1,6 +1,6 @@
 import pickHighIcon from "../pickHighIcon";
 
-let highestCount = {
+let HIGHEST_COLOR = {
   count: 8,
   color: "Red",
   fillHex: "#fc7790",
@@ -10,11 +10,11 @@ let highestCount = {
 
 describe("pickHighIcon", () => {
   it("returns the correct color icon", () => {
-    const testIcon = pickHighIcon(highestCount);
+    const testIcon = pickHighIcon(HIGHEST_COLOR);
     expect(testIcon).toBe("/colorIcons/red.png");
   });
   it("returns the correct file type of png", () => {
-    const testIcon = pickHighIcon(highestCount);
+    const testIcon = pickHighIcon(HIGHEST_COLOR);
     expect(testIcon).toContain(".png");
   });
 });

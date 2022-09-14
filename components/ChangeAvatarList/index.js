@@ -43,7 +43,7 @@ const ChangeAvatarList = () => {
   };
 
   return (
-    <div role="container" className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.avatarList}>
         <div role="avatarItemList1">
           {avatars1.map((avatar, index) => (

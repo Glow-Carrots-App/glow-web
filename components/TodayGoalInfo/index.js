@@ -21,9 +21,9 @@ const TodayGoalInfo = ({ currentDay, user }) => {
   ];
 
   return (
-    <div role="parentContainer" className={styles.container}>
-      <div role="piePTagContainer" className={styles.goalContainer}>
-        <div role="pieAndCarrotContainer">
+    <div className={styles.container}>
+      <div className={styles.goalContainer}>
+        <div>
           <VictoryPie
             data-testid="victory-chart"
             colorScale={today}
@@ -39,7 +39,7 @@ const TodayGoalInfo = ({ currentDay, user }) => {
             />
           )}
         </div>
-        <p role="pTag">
+        <p>
           {currentCount}/{dailyGoalAmount} Foods
         </p>
       </div>

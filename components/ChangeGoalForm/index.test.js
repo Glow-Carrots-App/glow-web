@@ -3,7 +3,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import ChangeGoalForm from ".";
 import UserModel from "../../model/user";
 
-const MOCK_USER = {
+const USER = {
   uid: "abc123",
   dailyGoalAmount: 10,
 };
@@ -12,13 +12,8 @@ const IMAGE_SRC = "/buttonIcons/back.png";
 jest.mock("../../model/user");
 
 describe("ChangeGoalForm component", () => {
-  beforeEach(() => render(<ChangeGoalForm user={MOCK_USER} />));
-
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
+  beforeEach(() => render(<ChangeGoalForm user={USER} />));
+  UserModel.updateDailyGoal.mockImplementation(() => jest.fn());
   it("should render a /settings anchor with /settings href", () => {
     const anchorElement = screen.getByRole("link");
     expect(anchorElement).toBeInTheDocument();
@@ -29,11 +24,6 @@ describe("ChangeGoalForm component", () => {
     const imageElement = screen.getByRole("img");
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute("src", IMAGE_SRC);
-  });
-
-  it("should render a numberPickerContainer", () => {
-    const containerElement = screen.getByRole("numberPickerContainer");
-    expect(containerElement).toBeInTheDocument();
   });
 
   it("should render a Save button", () => {
@@ -91,7 +81,7 @@ describe("ChangeGoalForm with error", () => {
       return Promise.reject(new Error());
     });
 
-    render(<ChangeGoalForm user={MOCK_USER} />);
+    render(<ChangeGoalForm user={USER} />);
 
     const saveButton = screen.getByText(/Save/);
     fireEvent.click(saveButton);

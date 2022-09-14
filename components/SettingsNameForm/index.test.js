@@ -77,7 +77,5 @@ describe("SettingsNameForm with error", () => {
       const errorMessage = screen.getByText(/Something went wrong/);
       expect(errorMessage).toBeInTheDocument();
     });
-
-    screen.debug();
   });
 });

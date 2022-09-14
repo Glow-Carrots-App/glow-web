@@ -10,11 +10,6 @@ const STATS_SRC = [
 describe("HomeStatsContainer component", () => {
   beforeEach(() => render(<HomeStatsContainer />));
 
-  it("should render a statsContainer", () => {
-    const statsContainer = screen.getByRole("statsContainer");
-    expect(statsContainer).toBeInTheDocument();
-  });
-
   describe("statsContainer", () => {
     it("should render 2 stats images", () => {
       const stats = screen.getAllByRole("img");

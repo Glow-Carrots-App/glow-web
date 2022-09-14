@@ -5,8 +5,8 @@ import FoodEntryModel from "../../model/foodEntry";
 
 jest.mock("../../model/foodEntry");
 
-const MOCKED_CURRENT_DAY = [{}, {}, {}];
-const MOCKED_USER = {
+const CURRENT_DAY = [{}, {}, {}];
+const USER = {
   isDailyGoalComplete: false,
   uid: "fake_id",
   dailyGoalAmount: 5,
@@ -17,9 +17,9 @@ describe("EatFormButtons", () => {
     it("should render the Add button that is disabled", () => {
       render(
         <EatFormButtons
-          currentDay={MOCKED_CURRENT_DAY}
+          currentDay={CURRENT_DAY}
           selectedFood={null}
-          user={MOCKED_USER}
+          user={USER}
         />
       );
       const addButtonElement = screen.getByText(/add/i);
@@ -30,9 +30,9 @@ describe("EatFormButtons", () => {
     it("should render enabled button when selectedFood", () => {
       render(
         <EatFormButtons
-          currentDay={MOCKED_CURRENT_DAY}
+          currentDay={CURRENT_DAY}
           selectedFood={{ product: "Apple" }}
-          user={MOCKED_USER}
+          user={USER}
         />
       );
       const addButtonElement = screen.getByText(/add/i);
@@ -44,9 +44,9 @@ describe("EatFormButtons", () => {
     it("should render the Cancel Button", () => {
       render(
         <EatFormButtons
-          currentDay={MOCKED_CURRENT_DAY}
+          currentDay={CURRENT_DAY}
           selectedFood={null}
-          user={MOCKED_USER}
+          user={USER}
         />
       );
       const cancelButtonElement = screen.getByText(/cancel/i);
@@ -56,9 +56,9 @@ describe("EatFormButtons", () => {
     it("should have href attribute and should be /today", () => {
       render(
         <EatFormButtons
-          currentDay={MOCKED_CURRENT_DAY}
+          currentDay={CURRENT_DAY}
           selectedFood={null}
-          user={MOCKED_USER}
+          user={USER}
         />
       );
       const linkElement = screen.getByRole("link");
@@ -75,9 +75,9 @@ describe("EatFormsButtons with error", () => {
 
     render(
       <EatFormButtons
-        currentDay={MOCKED_CURRENT_DAY}
+        currentDay={CURRENT_DAY}
         selectedFood={{ product: "Apple" }}
-        user={MOCKED_USER}
+        user={USER}
         setSearchInput={jest.fn()}
       />
     );

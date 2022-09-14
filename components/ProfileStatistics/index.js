@@ -14,7 +14,7 @@ const ProfileStatistics = ({ user, lifetimeFoodHistory }) => {
   const highIcon = pickHighIcon(highestColor);
 
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <p>Statistics</p>
       <div className={styles.statsRow} role="statsRow1">
         <StatsCard

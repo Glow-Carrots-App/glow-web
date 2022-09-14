@@ -5,11 +5,6 @@ import BottomTabs from ".";
 describe("BottomTabs component", () => {
   beforeEach(() => render(<BottomTabs />));
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   it("should render a /today anchor with a /today href", () => {
     const anchorElement = screen.getByRole("todayAnchor");
     expect(anchorElement).toBeInTheDocument();

@@ -44,11 +44,6 @@ describe("ProfileGraph component with data", () => {
     render(<ProfileGraph lifetimeFoodHistory={POPULATED_FOOD_HISTORY} />)
   );
 
-  it("should render a container", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   describe("container", () => {
     it("should render a graph text", () => {
       const graphText = screen.getByText(/Total Color Breakdown/);
@@ -76,11 +71,6 @@ describe("ProfileGraph component without data", () => {
   beforeEach(() =>
     render(<ProfileGraph lifetimeFoodHistory={UNPOPULATED_FOOD_HISTORY} />)
   );
-
-  it("should render a container", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
 
   describe("container", () => {
     it("should render a graph text", () => {
