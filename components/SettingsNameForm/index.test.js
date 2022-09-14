@@ -1,6 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import SettingsNameForm from ".";
+import UserModel from "../../model/user";
+
+jest.mock("../../model/user");
 
 const USER = {
   uid: "abc123",
@@ -9,6 +12,7 @@ const USER = {
 
 describe("SettingsNameForm component", () => {
   beforeEach(() => render(<SettingsNameForm user={USER} />));
+  UserModel.updateName.mockImplementation(() => jest.fn());
 
   it("should render a form", () => {
     const formElement = screen.getByRole("form");
@@ -27,7 +31,7 @@ describe("SettingsNameForm component", () => {
     });
 
     it("should render a submit button", () => {
-      const submitButton = screen.getByText("Save");
+      const submitButton = screen.getByText(/Save/);
       expect(submitButton).toBeInTheDocument();
     });
 
@@ -49,5 +53,31 @@ describe("SettingsNameForm component", () => {
         expect(submitButton).toHaveClass("inputButtonSaved");
       });
     });
+  });
+});
+
+describe("SettingsNameForm with error", () => {
+  it("should render an error message upon handleNewEmail failure", async () => {
+    UserModel.updateName.mockImplementationOnce(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<SettingsNameForm user={USER} />);
+
+    const submitButton = screen.getByText(/^Save$/);
+    const nameInput = screen.getByDisplayValue(USER.firstName);
+
+    fireEvent.change(nameInput, {
+      target: { value: "TesterBoo" },
+    });
+
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByText(/Something went wrong/);
+      expect(errorMessage).toBeInTheDocument();
+    });
+
+    screen.debug();
   });
 });

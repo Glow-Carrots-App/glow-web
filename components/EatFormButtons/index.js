@@ -17,7 +17,9 @@ const EatFormButtons = ({
   displayCheckmark,
 }) => {
   const [currentCount, setCurrentCount] = useState(currentDay.length);
-  const [isGoalComplete, setIsGoalComplete] = useState(user.isGoalComplete);
+  const [isGoalComplete, setIsGoalComplete] = useState(
+    user.isDailyGoalComplete
+  );
   const [error, setError] = useState("");
 
   let { dailyGoalAmount, uid } = user;
