@@ -1,11 +1,6 @@
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import emailjs from "emailjs-com";
+import { act } from "react-dom/test-utils";
 
 import FeedbackForm from ".";
 
@@ -17,7 +12,6 @@ jest.mock("emailjs-com");
 
 describe("FeedbackForm component", () => {
   beforeEach(() => render(<FeedbackForm user={USER} />));
-  afterEach(cleanup);
 
   describe("container element", () => {
     it("should render a helper text", () => {
@@ -79,7 +73,6 @@ describe("FeedbackForm component", () => {
             const resetButton = screen.getByText(/Reset/);
             const subjectInput = screen.getByRole("subjectInput");
             const messageInput = screen.getByRole("messageInput");
-
             fireEvent.change(subjectInput, { target: { value: "Subject" } });
             fireEvent.change(messageInput, { target: { value: "Message" } });
             fireEvent.click(resetButton);
@@ -104,7 +97,6 @@ describe("FeedbackForm component", () => {
             const submitButton = screen.getByRole("submit");
             const subjectInput = screen.getByRole("subjectInput");
             const messageInput = screen.getByRole("messageInput");
-
             fireEvent.change(subjectInput, { target: { value: "Subject" } });
             fireEvent.change(messageInput, { target: { value: "Message" } });
 
@@ -130,7 +122,6 @@ describe("FeedbackForm with error", () => {
     const submitButton = screen.getByRole("submit");
     const subjectInput = screen.getByRole("subjectInput");
     const messageInput = screen.getByRole("messageInput");
-
     fireEvent.change(subjectInput, { target: { value: "Subject" } });
     fireEvent.change(messageInput, { target: { value: "Message" } });
     fireEvent.click(submitButton);

@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import DeleteAccount from ".";
+import UserModel from "../../model/user";
 
 const mockDeleteAccount = jest.fn();
 const mockReauth = jest.fn();
@@ -19,8 +20,11 @@ jest.mock("../../context/UserContext", () => ({
   }),
 }));
 
+jest.mock("../../model/user");
+
 describe("DeleteAccount component", () => {
   beforeEach(() => render(<DeleteAccount />));
+  UserModel.deleteUser.mockImplementation(() => jest.fn());
 
   describe("container element", () => {
     it("should render an h2 element", () => {

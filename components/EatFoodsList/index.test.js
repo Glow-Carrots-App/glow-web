@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import EatFoodsList from ".";
 
-const MOCKED_DATA = [
+const DATA = [
   {
     productSearch: "Cabbage (Green)",
   },
@@ -21,7 +21,7 @@ const MOCKED_DATA = [
 ];
 
 describe("EatFoodsList", () => {
-  beforeEach(() => render(<EatFoodsList data={MOCKED_DATA} />));
+  beforeEach(() => render(<EatFoodsList data={DATA} />));
 
   it("should render a container div for food list", () => {
     const containerElement = screen.getByRole("listContainer");

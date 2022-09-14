@@ -1,15 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import TodayGoalInfo from ".";
 
-const MOCK_USER = { dailyGoalAmount: 10, isDailyGoalComplete: true };
-const MOCK_CURRENT_DAY = [
+const USER = { dailyGoalAmount: 10, isDailyGoalComplete: true };
+const CURRENT_DAY = [
   { color: "Green", product: "Kale" },
   { color: "Red", product: "Banana" },
 ];
 
 describe("TodayGoalInfo component", () => {
   beforeEach(() =>
-    render(<TodayGoalInfo user={MOCK_USER} currentDay={MOCK_CURRENT_DAY} />)
+    render(<TodayGoalInfo user={USER} currentDay={CURRENT_DAY} />)
   );
   it("should render the pie chart", () => {
     const pieChart = screen.getByTestId("victory-chart");

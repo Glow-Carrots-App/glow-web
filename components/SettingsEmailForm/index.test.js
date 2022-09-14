@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import SettingsEmailForm from ".";
+import UserModel from "../../model/user";
 
 const USER = {
   uid: "abc123",
@@ -17,9 +18,11 @@ jest.mock("../../context/AuthContext", () => ({
   }),
 }));
 
+jest.mock("../../model/user");
+
 describe("SettingsEmailForm component", () => {
   beforeEach(() => render(<SettingsEmailForm user={USER} />));
-
+  UserModel.updateEmail.mockImplementation(() => jest.fn());
   it("should render a form", () => {
     const formElement = screen.getByRole("form");
     expect(formElement).toBeInTheDocument();

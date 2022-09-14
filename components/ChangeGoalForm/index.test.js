@@ -13,7 +13,7 @@ jest.mock("../../model/user");
 
 describe("ChangeGoalForm component", () => {
   beforeEach(() => render(<ChangeGoalForm user={USER} />));
-
+  UserModel.updateDailyGoal.mockImplementation(() => jest.fn());
   it("should render a /settings anchor with /settings href", () => {
     const anchorElement = screen.getByRole("link");
     expect(anchorElement).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe("ChangeGoalForm with error", () => {
       return Promise.reject(new Error());
     });
 
-    render(<ChangeGoalForm user={MOCK_USER} />);
+    render(<ChangeGoalForm user={USER} />);
 
     const saveButton = screen.getByText(/Save/);
     fireEvent.click(saveButton);

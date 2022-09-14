@@ -11,10 +11,10 @@ const SettingsNameForm = ({ user }) => {
 
   const handleNewName = async (e) => {
     try {
+      setError("");
       setIsNameSaved(true);
       e.preventDefault();
       await UserModel.updateName(user.uid, newName);
-      setError("");
     } catch (err) {
       setIsNameSaved(false);
       setError("Something went wrong. Please try again.");

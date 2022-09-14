@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import CreateAccountForm from ".";
 
-const MOCK_USER = {
+const USER = {
   firstName: "Tester",
   email: "tester@testing.com",
   password: "Password123!",
@@ -64,14 +64,14 @@ describe("CreateAccountForm component", () => {
           screen.getByPlaceholderText(/^Confirm Password$/);
 
         fireEvent.change(nameInput, {
-          target: { value: MOCK_USER.firstName },
+          target: { value: USER.firstName },
         });
-        fireEvent.change(emailInput, { target: { value: MOCK_USER.email } });
+        fireEvent.change(emailInput, { target: { value: USER.email } });
         fireEvent.change(passwordInput, {
-          target: { value: MOCK_USER.password },
+          target: { value: USER.password },
         });
         fireEvent.change(confirmPasswordInput, {
-          target: { value: MOCK_USER.confirmPassword },
+          target: { value: USER.confirmPassword },
         });
 
         expect(submitButton).toBeEnabled();
@@ -95,14 +95,14 @@ describe("CreateAccountForm with error", () => {
       screen.getByPlaceholderText(/^Confirm Password$/);
 
     fireEvent.change(nameInput, {
-      target: { value: MOCK_USER.firstName },
+      target: { value: USER.firstName },
     });
-    fireEvent.change(emailInput, { target: { value: MOCK_USER.email } });
+    fireEvent.change(emailInput, { target: { value: USER.email } });
     fireEvent.change(passwordInput, {
-      target: { value: MOCK_USER.password },
+      target: { value: USER.password },
     });
     fireEvent.change(confirmPasswordInput, {
-      target: { value: MOCK_USER.confirmPassword },
+      target: { value: USER.confirmPassword },
     });
     fireEvent.click(submitButton);
 

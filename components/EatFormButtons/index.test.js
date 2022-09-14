@@ -5,8 +5,8 @@ import FoodEntryModel from "../../model/foodEntry";
 
 jest.mock("../../model/foodEntry");
 
-const MOCKED_CURRENT_DAY = [{}, {}, {}];
-const MOCKED_USER = {
+const CURRENT_DAY = [{}, {}, {}];
+const USER = {
   isDailyGoalComplete: false,
   uid: "fake_id",
   dailyGoalAmount: 5,
@@ -75,9 +75,9 @@ describe("EatFormsButtons with error", () => {
 
     render(
       <EatFormButtons
-        currentDay={MOCKED_CURRENT_DAY}
+        currentDay={CURRENT_DAY}
         selectedFood={{ product: "Apple" }}
-        user={MOCKED_USER}
+        user={USER}
         setSearchInput={jest.fn()}
       />
     );
