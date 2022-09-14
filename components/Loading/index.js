@@ -5,13 +5,8 @@ import styles from "./styles.module.css";
 
 const Loading = () => {
   return (
-    <div role="loadingContainer" className={styles.loadingContainer}>
-      <ReactLoading
-        data-testid="loader"
-        type="bubbles"
-        height="100px"
-        width="100px"
-      />
+    <div className={styles.loadingContainer}>
+      <ReactLoading role="loader" type="bubbles" height="100px" width="100px" />
     </div>
   );
 };

@@ -19,7 +19,6 @@ describe("TodayStatistics component", () => {
   it("should render four different stats cards", () => {
     CARD_TITLES.map((title) => {
       const cardTitle = screen.getByText(title);
-      screen.debug(cardTitle);
       expect(cardTitle).toBeInTheDocument();
     });
   });

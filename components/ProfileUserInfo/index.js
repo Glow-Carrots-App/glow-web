@@ -9,13 +9,13 @@ import styles from "./styles.module.css";
 const ProfileUserInfo = ({ user }) => {
   const { avatar, firstName, joinDate } = user;
   return (
-    <div className={styles.container} role="container">
+    <div className={styles.container}>
       <Link href="/settings">
         <a className={styles.settingsBtn}>
           <FontAwesomeIcon icon={faGear} size="xl" color="#9084ab" />
         </a>
       </Link>
-      <div className={styles.textContainer} role="textContainer">
+      <div className={styles.textContainer}>
         <Heading2>{firstName}</Heading2>
         <p className={styles.joinDateText}>{joinDate}</p>
       </div>

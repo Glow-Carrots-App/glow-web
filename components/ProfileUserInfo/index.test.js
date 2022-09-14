@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import ProfileUserInfo from ".";
 
@@ -11,21 +11,11 @@ const USER = {
 describe("ProfileUserInfo component", () => {
   beforeEach(() => render(<ProfileUserInfo user={USER} />));
 
-  it("should render a container div", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   describe("containerElement", () => {
     it("should render an anchor tag with a /settings href", () => {
       const anchorElement = screen.getByRole("link");
       expect(anchorElement).toBeInTheDocument();
       expect(anchorElement).toHaveAttribute("href", "/settings");
-    });
-
-    it("should render a textContainer", () => {
-      const textContainer = screen.getByRole("textContainer");
-      expect(textContainer).toBeInTheDocument();
     });
 
     describe("textContainer", () => {

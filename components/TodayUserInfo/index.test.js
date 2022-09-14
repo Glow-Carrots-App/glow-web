@@ -2,14 +2,14 @@ import { render, screen } from "@testing-library/react";
 
 import TodayUserInfo from ".";
 
-const MOCK_USER = {
+const USER = {
   avatar: "/avatars/camp.png",
   firstName: "Vince",
   joinDate: "08/12/2022",
 };
 
 describe("TodayUserInfo", () => {
-  beforeEach(() => render(<TodayUserInfo user={MOCK_USER} />));
+  beforeEach(() => render(<TodayUserInfo user={USER} />));
   it("should render the correct avatar", () => {
     const imgElement = screen.getByRole("img");
     expect(imgElement).toBeInTheDocument();

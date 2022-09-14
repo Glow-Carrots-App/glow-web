@@ -2,7 +2,7 @@ import { screen, render } from "@testing-library/react";
 
 import Sidebar from ".";
 
-const expectedHrefValues = [
+const EXPECTED_HREF_VALUES = [
   "/today",
   "/eat",
   "/profile",
@@ -10,7 +10,7 @@ const expectedHrefValues = [
   "/settings/logout",
 ];
 
-const expectedLinkText = ["Today", "Eat", "Profile", "Settings", "Logout"];
+const EXPECTED_TEXT_LINK = ["Today", "Eat", "Profile", "Settings", "Logout"];
 
 describe("Sidebar", () => {
   beforeEach(() => render(<Sidebar page="today" />));
@@ -36,12 +36,12 @@ describe("Sidebar", () => {
   it("should check that each link has the correct href", () => {
     const linkElements = screen.getAllByRole("link");
     linkElements.forEach((link, i) => {
-      expect(link).toHaveAttribute("href", expectedHrefValues[i]);
+      expect(link).toHaveAttribute("href", EXPECTED_HREF_VALUES[i]);
     });
   });
 
   it("should check that text for each link is rendered", () => {
-    expectedLinkText.forEach((text) => {
+    EXPECTED_TEXT_LINK.forEach((text) => {
       const linkText = screen.getByText(text);
       expect(linkText).toBeInTheDocument();
     });
