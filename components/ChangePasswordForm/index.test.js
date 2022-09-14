@@ -1,13 +1,16 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import ChangePasswordForm from ".";
 
 const IMAGE_SRC = "/buttonIcons/back.png";
 
+const mockReauth = jest.fn();
+const mockChangePassword = jest.fn();
+
 jest.mock("../../context/AuthContext", () => ({
   useAuth: () => ({
-    changePassword: jest.fn(),
-    reauthenticate: jest.fn(),
+    changePassword: mockChangePassword,
+    reauthenticate: mockReauth,
   }),
 }));
 
@@ -114,6 +117,39 @@ describe("ChangePasswordForm component", () => {
       });
       fireEvent.submit(formElement);
       expect(buttonElement).toHaveValue("Saved!");
+    });
+  });
+});
+
+describe("ChangePasswordForm with error", () => {
+  it("should render an error if handlePasswordUpdate fails", async () => {
+    mockReauth.mockImplementationOnce(() => {
+      return Promise.reject(new Error());
+    });
+
+    mockChangePassword.mockImplementationOnce(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<ChangePasswordForm />);
+
+    const oldPassword = screen.getByPlaceholderText(/Old Password/);
+    const newPassword = screen.getByPlaceholderText(/^New Password$/);
+    const confirmNewPassword =
+      screen.getByPlaceholderText(/Confirm New Password/);
+
+    fireEvent.change(oldPassword, { target: { value: "pass123" } });
+    fireEvent.change(newPassword, { target: { value: "Password123!" } });
+    fireEvent.change(confirmNewPassword, {
+      target: { value: "Password123!" },
+    });
+
+    const saveButton = screen.getByText(/Save/);
+    fireEvent.click(saveButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByRole("error");
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });

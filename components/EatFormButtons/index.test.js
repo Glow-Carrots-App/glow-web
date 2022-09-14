@@ -1,9 +1,16 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 import EatFormButtons from ".";
+import FoodEntryModel from "../../model/foodEntry";
 
-const CURRENT_DAY = [{}, {}, {}];
-const USER = { isGoalComplete: false, uid: "fake_id" };
+jest.mock("../../model/foodEntry");
+
+const MOCKED_CURRENT_DAY = [{}, {}, {}];
+const MOCKED_USER = {
+  isDailyGoalComplete: false,
+  uid: "fake_id",
+  dailyGoalAmount: 5,
+};
 
 describe("EatFormButtons", () => {
   describe("add button", () => {
@@ -17,7 +24,7 @@ describe("EatFormButtons", () => {
       );
       const addButtonElement = screen.getByText(/add/i);
       expect(addButtonElement).toBeInTheDocument();
-      expect(addButtonElement).toBeDisabled;
+      expect(addButtonElement).toBeDisabled();
     });
 
     it("should render enabled button when selectedFood", () => {
@@ -29,7 +36,7 @@ describe("EatFormButtons", () => {
         />
       );
       const addButtonElement = screen.getByText(/add/i);
-      expect(addButtonElement).not.toBeDisabled();
+      expect(addButtonElement).toBeEnabled();
     });
   });
 
@@ -56,6 +63,31 @@ describe("EatFormButtons", () => {
       );
       const linkElement = screen.getByRole("link");
       expect(linkElement).toHaveAttribute("href", "/today");
+    });
+  });
+});
+
+describe("EatFormsButtons with error", () => {
+  it("should render an error if handleEatFoods fails", async () => {
+    FoodEntryModel.createFoodEntry.mockImplementationOnce(() => {
+      throw new Error();
+    });
+
+    render(
+      <EatFormButtons
+        currentDay={MOCKED_CURRENT_DAY}
+        selectedFood={{ product: "Apple" }}
+        user={MOCKED_USER}
+        setSearchInput={jest.fn()}
+      />
+    );
+
+    const addButtonElement = screen.getByText(/add/i);
+    fireEvent.click(addButtonElement);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByText(/Something went wrong/);
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });

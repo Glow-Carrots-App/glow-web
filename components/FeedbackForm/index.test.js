@@ -1,10 +1,19 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
+import emailjs from "emailjs-com";
 
 import FeedbackForm from ".";
 
 const USER = {
   uid: "abc123",
 };
+
+jest.mock("emailjs-com");
 
 describe("FeedbackForm component", () => {
   beforeEach(() => render(<FeedbackForm user={USER} />));
@@ -106,6 +115,29 @@ describe("FeedbackForm component", () => {
           });
         });
       });
+    });
+  });
+});
+
+describe("FeedbackForm with error", () => {
+  it("should display an error message on handleSendEmail failure", async () => {
+    emailjs.sendForm.mockImplementationOnce(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<FeedbackForm user={USER} />);
+
+    const submitButton = screen.getByRole("submit");
+    const subjectInput = screen.getByRole("subjectInput");
+    const messageInput = screen.getByRole("messageInput");
+
+    fireEvent.change(subjectInput, { target: { value: "Subject" } });
+    fireEvent.change(messageInput, { target: { value: "Message" } });
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByText(/Something went wrong/);
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });

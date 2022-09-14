@@ -1,10 +1,12 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import LogOut from ".";
 
+const mockLogout = jest.fn();
+
 jest.mock("../../context/AuthContext", () => ({
   useAuth: () => ({
-    logout: jest.fn(),
+    logout: mockLogout,
   }),
 }));
 
@@ -33,6 +35,24 @@ describe("LogOut component", () => {
         const logOutButton = screen.getByText(/^Log Out$/);
         expect(logOutButton).toBeInTheDocument();
       });
+    });
+  });
+});
+
+describe("LogOut component with error", () => {
+  it("should render an error message on failed handleLogout", async () => {
+    mockLogout.mockImplementationOnce(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<LogOut />);
+
+    const logOutButton = screen.getByText(/^Log Out$/);
+    fireEvent.click(logOutButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByText(/Something went wrong/);
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });

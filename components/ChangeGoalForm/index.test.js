@@ -1,12 +1,15 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import ChangeGoalForm from ".";
+import UserModel from "../../model/user";
 
 const USER = {
   uid: "abc123",
   dailyGoalAmount: 10,
 };
 const IMAGE_SRC = "/buttonIcons/back.png";
+
+jest.mock("../../model/user");
 
 describe("ChangeGoalForm component", () => {
   beforeEach(() => render(<ChangeGoalForm user={USER} />));
@@ -68,6 +71,24 @@ describe("ChangeGoalForm component", () => {
       const expectedValue = Number(numberPicker.value) - 1;
       fireEvent.click(arrowDownElement);
       expect(Number(numberPicker.value)).toEqual(expectedValue);
+    });
+  });
+});
+
+describe("ChangeGoalForm with error", () => {
+  it("should render an error if updateDailyGoal fails", async () => {
+    UserModel.updateDailyGoal.mockImplementationOnce(() => {
+      return Promise.reject(new Error());
+    });
+
+    render(<ChangeGoalForm user={MOCK_USER} />);
+
+    const saveButton = screen.getByText(/Save/);
+    fireEvent.click(saveButton);
+
+    await waitFor(() => {
+      const errorMessage = screen.getByText(/Something went wrong/);
+      expect(errorMessage).toBeInTheDocument();
     });
   });
 });
