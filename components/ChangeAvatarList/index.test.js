@@ -12,11 +12,6 @@ jest.mock("../../model/user");
 describe("ChangeAvatarList", () => {
   beforeEach(() => render(<ChangeAvatarList />));
 
-  it("should render the avatar list", () => {
-    const containerElement = screen.getByRole("container");
-    expect(containerElement).toBeInTheDocument();
-  });
-
   it("should give avatars a default style", () => {
     const avatarItem = screen.getByRole("avatarItem1");
     expect(avatarItem).toHaveClass("avatarListItem");
