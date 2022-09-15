@@ -13,10 +13,15 @@ const PasswordPage = () => {
       <Heading1>Change Password</Heading1>
       <ChangePasswordForm />
       <img
+        role="images"
         src="/pageBackgrounds/passion-fruit.png"
         className={styles.passionFruit}
       />
-      <img src="/pageBackgrounds/guava.png" className={styles.guava} />
+      <img
+        role="images"
+        src="/pageBackgrounds/guava.png"
+        className={styles.guava}
+      />
       <BottomTabs />
     </div>
   );
