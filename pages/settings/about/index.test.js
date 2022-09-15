@@ -4,7 +4,7 @@ import AboutPage from ".";
 
 jest.mock("../../../context/AuthContext", () => ({
   useAuth: () => ({
-    authedUser: { uid: "fakeID" },
+    authedUser: {},
   }),
 }));
 
