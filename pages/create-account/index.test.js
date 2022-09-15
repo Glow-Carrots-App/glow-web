@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 
 import CreateAccountPage from ".";
 
@@ -23,10 +23,6 @@ describe("Create Account page", () => {
   it("should render a header", () => {
     const header = screen.getByText(/Create Account/i);
     expect(header).toBeInTheDocument();
-  });
-  it("should render the CreateAccountForm component", () => {
-    const emailInput = screen.getByPlaceholderText("Email");
-    expect(emailInput).toBeInTheDocument();
   });
   it("should render a pTag and a link", () => {
     const haveAccountText = screen.getByText(/Already have an account/i);
