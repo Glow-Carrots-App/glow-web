@@ -44,7 +44,7 @@ const ProfilePage = ({ user }) => {
 
   return (
     <div className={styles.container}>
-      <Sidebar page="profile" data-testid="Sidebar" />
+      <Sidebar page="profile" />
       <Heading1>Profile</Heading1>
       {hasError ? (
         <p className={styles.error}>
@@ -53,28 +53,21 @@ const ProfilePage = ({ user }) => {
       ) : (
         <>
           <div className={styles.leftColumn}>
-            <ProfileUserInfo user={user} data-testid="ProfileUserInfo" />
+            <ProfileUserInfo user={user} />
             <ProfileStatistics
               user={user}
               lifetimeFoodHistory={lifetimeFoodHistory}
-              data-testid="ProfileStatistics"
             />
-            <ProfileGraph
-              lifetimeFoodHistory={lifetimeFoodHistory}
-              data-testid="ProfileGraph"
-            />
+            <ProfileGraph lifetimeFoodHistory={lifetimeFoodHistory} />
           </div>
           <div className={styles.rightColumn}>
-            <TodayUserInfo user={user} data-testid="TodayUserInfo" />
-            <TodayFoodList
-              currentDay={currentDay}
-              data-testid="TodayFoodList"
-            />
-            <AddButton data-testid="AddButton" />
+            <TodayUserInfo user={user} />
+            <TodayFoodList currentDay={currentDay} />
+            <AddButton />
           </div>
         </>
       )}
-      <BottomTabs isProfile={true} data-testid="BottomTabs" />
+      <BottomTabs isProfile={true} />
     </div>
   );
 };
