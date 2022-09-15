@@ -6,7 +6,7 @@ import withUnprotected from "../../routers/withUnprotected";
 
 import styles from "./styles.module.css";
 
-const CreateAccountPage = () => {
+export const CreateAccountPage = () => {
   return (
     <PageContainer isLanding={true}>
       <div className={styles.container}>
