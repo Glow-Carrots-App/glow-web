@@ -30,6 +30,7 @@ const ProfilePage = ({ user }) => {
         setLifetimeFoodHistory(lifetimeResponse);
         setCurrentDay(currentDay);
       } catch (err) {
+        console.log("in error");
         setLifetimeFoodHistory([]);
         setCurrentDay([]);
         setHasError(true);
@@ -44,7 +45,7 @@ const ProfilePage = ({ user }) => {
 
   return (
     <div className={styles.container}>
-      <Sidebar page="profile" />
+      <Sidebar page="profile" data-testid="Sidebar" />
       <Heading1>Profile</Heading1>
       {hasError ? (
         <p className={styles.error}>
@@ -53,21 +54,28 @@ const ProfilePage = ({ user }) => {
       ) : (
         <>
           <div className={styles.leftColumn}>
-            <ProfileUserInfo user={user} />
+            <ProfileUserInfo user={user} data-testid="ProfileUserInfo" />
             <ProfileStatistics
               user={user}
               lifetimeFoodHistory={lifetimeFoodHistory}
+              data-testid="ProfileStatistics"
             />
-            <ProfileGraph lifetimeFoodHistory={lifetimeFoodHistory} />
+            <ProfileGraph
+              lifetimeFoodHistory={lifetimeFoodHistory}
+              data-testid="ProfileGraph"
+            />
           </div>
           <div className={styles.rightColumn}>
-            <TodayUserInfo user={user} />
-            <TodayFoodList currentDay={currentDay} />
-            <AddButton />
+            <TodayUserInfo user={user} data-testid="TodayUserInfo" />
+            <TodayFoodList
+              currentDay={currentDay}
+              data-testid="TodayFoodList"
+            />
+            <AddButton data-testid="AddButton" />
           </div>
         </>
       )}
-      <BottomTabs isProfile={true} />
+      <BottomTabs isProfile={true} data-testid="BottomTabs" />
     </div>
   );
 };
