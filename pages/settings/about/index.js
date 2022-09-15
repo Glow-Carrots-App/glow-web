@@ -8,21 +8,25 @@ import About from "../../../components/About";
 
 import styles from "./styles.module.css";
 
-const AboutUs = () => {
+const AboutPage = () => {
   return (
     <div className={styles.container}>
       <Sidebar />
       <Heading1>About Glow</Heading1>
       <Link href="/settings">
-        <a className={styles.doneLink}>
-          <img src="/buttonIcons/back.png" />
+        <a role="doneLink" className={styles.doneLink}>
+          <img role="images" src="/buttonIcons/back.png" />
         </a>
       </Link>
       <About />
-      <img src="/pageBackgrounds/wheat.png" className={styles.wheat} />
+      <img
+        role="images"
+        src="/pageBackgrounds/wheat.png"
+        className={styles.wheat}
+      />
       <BottomTabs />
     </div>
   );
 };
 
-export default withProtected(AboutUs);
+export default withProtected(AboutPage);

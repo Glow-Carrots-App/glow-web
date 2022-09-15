@@ -1,39 +1,27 @@
 import { render, screen } from "@testing-library/react";
 
-import About from ".";
+import AboutPage from ".";
 
-import { render, screen } from "@testing-library/react";
+jest.mock("../../../context/AuthContext", () => ({
+  useAuth: () => ({
+    authedUser: { uid: "fakeID" },
+  }),
+}));
 
-import About from ".";
+jest.mock("../../../context/UserContext", () => ({
+  useUser: () => ({
+    user: {},
+  }),
+}));
 
-describe("About page", () => {
-  beforeEach(() => render(<About />));
-  it("should render the first paragraph tag", () => {
-    const paragraphElement = screen.getByText(
-      /Glow is a food tracker app inspired by/i
-    );
-    expect(paragraphElement).toBeInTheDocument();
+describe("AboutPage page", () => {
+  beforeEach(() => render(<AboutPage />));
+  it("should render two images", () => {
+    const images = screen.getAllByRole("images");
+    expect(images.length).toBe(2);
   });
-
-  it("should render the second paragraph tag", () => {
-    const paragraphElement = screen.getByText(
-      /This app is intended for all ages/i
-    );
-    expect(paragraphElement).toBeInTheDocument();
-  });
-
-  it("should render the third paragraph tag", () => {
-    const paragraphElement = screen.getByText(/Icons are made by/i);
-    expect(paragraphElement).toBeInTheDocument();
-  });
-
-  it("should render a Freepik anchor tag", () => {
-    const anchorElement = screen.getByText(/Freepik/i);
-    expect(anchorElement).toBeInTheDocument();
-  });
-
-  it("should render a www.flaticon.com anchor tag", () => {
-    const anchorElement = screen.getByText(/www.flaticon.com/);
-    expect(anchorElement).toBeInTheDocument();
+  it("should render a 'done' link", () => {
+    const doneLink = screen.getByRole("doneLink");
+    expect(doneLink).toHaveAttribute("href", "/settings");
   });
 });
