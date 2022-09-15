@@ -30,7 +30,6 @@ const ProfilePage = ({ user }) => {
         setLifetimeFoodHistory(lifetimeResponse);
         setCurrentDay(currentDay);
       } catch (err) {
-        console.log("in error");
         setLifetimeFoodHistory([]);
         setCurrentDay([]);
         setHasError(true);
