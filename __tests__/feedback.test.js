@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 
-import FeedbackPage from ".";
+import FeedbackPage from "../pages/settings/feedback";
 
-jest.mock("../../../context/AuthContext", () => ({
+jest.mock("../context/AuthContext", () => ({
   useAuth: () => ({
     authedUser: {},
   }),
 }));
 
-jest.mock("../../../context/UserContext", () => ({
+jest.mock("../context/UserContext", () => ({
   useUser: () => ({
     user: {},
   }),
