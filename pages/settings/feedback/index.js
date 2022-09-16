@@ -11,7 +11,11 @@ const FeedbackPage = ({ user }) => {
   return (
     <PageContainer>
       <Sidebar />
-      <img src="/pageBackgrounds/artichoke.png" className={styles.artichoke} />
+      <img
+        role="image"
+        src="/pageBackgrounds/artichoke.png"
+        className={styles.artichoke}
+      />
       <Heading1>Feedback</Heading1>
       <FeedbackForm user={user} />
       <BottomTabs />
