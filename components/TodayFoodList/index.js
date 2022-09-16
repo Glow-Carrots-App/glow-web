@@ -6,7 +6,7 @@ const TodayFoodList = ({ currentDay }) => {
     <div className={styles.listContainer}>
       <div>
         <img role="sunImage" className={styles.sunImg} src="/stats/sun.png" />
-        <span>Today's Noms</span>
+        <span>Today&apos;s Noms</span>
       </div>
       <ul className={styles.foodList}>
         {currentDay.map((food, index) => (
