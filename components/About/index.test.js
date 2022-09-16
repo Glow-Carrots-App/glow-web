@@ -7,7 +7,7 @@ describe("About component", () => {
 
   it("should render the first paragraph tag", () => {
     const paragraphElement = screen.getByText(
-      /Glow is a food tracker app inspired by/i
+      /Glow is a food tracker app inspired/i
     );
     expect(paragraphElement).toBeInTheDocument();
   });
@@ -20,7 +20,7 @@ describe("About component", () => {
   });
 
   it("should render the third paragraph tag", () => {
-    const paragraphElement = screen.getByText(/Icons are made by/i);
+    const paragraphElement = screen.getByText(/Icons are made/i);
     expect(paragraphElement).toBeInTheDocument();
   });
 
