@@ -13,10 +13,12 @@ const LogOutPage = () => {
       <Sidebar page="logout" />
       <Heading1>Log Out</Heading1>
       <img
+        role="images"
         src="/pageBackgrounds/watermelon.png"
         className={styles.watermelon1}
       />
       <img
+        role="images"
         src="/pageBackgrounds/watermelon.png"
         className={styles.watermelon2}
       />
