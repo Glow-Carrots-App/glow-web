@@ -58,7 +58,7 @@ const SignIn = ({ authedUser }) => {
           </div>
           <SignInForm />
           <p className={styles.signInText}>
-            Don't have an account?
+            Don&apos;t have an account?
             <Link href="/create-account">
               <a className={styles.signUpLink}> Sign Up</a>
             </Link>
