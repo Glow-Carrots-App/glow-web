@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 
-import ProfilePage from ".";
+import Eat from ".";
 
 import FoodEntryModel from "../../model/foodEntry";
 
@@ -20,12 +20,12 @@ jest.mock("../../context/UserContext", () => ({
   }),
 }));
 
-describe("ProfilePage with error", () => {
-  it("should render an error text upon getLifetimeHistory failure", () => {
-    FoodEntryModel.getLifetimeHistory.mockImplementation(() => {
+describe("Eat Page with error", () => {
+  it("should render an error text upon getCurrentDayHistory failure", () => {
+    FoodEntryModel.getCurrentDayHistory.mockImplementation(() => {
       throw new Error();
     });
-    render(<ProfilePage user={USER} />);
+    render(<Eat user={USER} />);
 
     waitFor(() => {
       const error = screen.getByText(/Something went wrong/);
