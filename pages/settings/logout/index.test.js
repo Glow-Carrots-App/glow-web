@@ -15,8 +15,8 @@ jest.mock("../../../context/UserContext", () => ({
 }));
 
 describe("PasswordPage page", () => {
-  beforeEach(() => render(<LogOutPage />));
   it("should render two images", () => {
+    render(<LogOutPage />);
     const images = screen.getAllByRole("images");
     expect(images.length).toBe(2);
   });
