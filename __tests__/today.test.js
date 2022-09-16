@@ -1,21 +1,21 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import dayjs from "dayjs";
 
-import Today from ".";
+import Today from "../pages/today";
 
-import FoodEntryModel from "../../model/foodEntry";
-import UserModel from "../../model/user";
+import FoodEntryModel from "../model/foodEntry";
+import UserModel from "../model/user";
 
-jest.mock("../../model/foodEntry");
-jest.mock("../../model/user");
+jest.mock("../model/foodEntry");
+jest.mock("../model/user");
 
-jest.mock("../../context/AuthContext", () => ({
+jest.mock("../context/AuthContext", () => ({
   useAuth: () => ({
     authedUser: {},
   }),
 }));
 
-jest.mock("../../context/UserContext", () => ({
+jest.mock("../context/UserContext", () => ({
   useUser: () => ({
     user: {},
   }),
