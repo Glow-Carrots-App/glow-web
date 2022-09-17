@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 
-import CreateAccountPage from ".";
+import CreateAccountPage from "../pages/create-account";
 
-jest.mock("../../context/AuthContext", () => ({
+jest.mock("../context/AuthContext", () => ({
   useAuth: () => ({
     authedUser: null,
   }),
 }));
 
-jest.mock("../../context/UserContext", () => ({
+jest.mock("../context/UserContext", () => ({
   useUser: () => ({
     user: null,
   }),

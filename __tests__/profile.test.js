@@ -1,20 +1,20 @@
 import { render, screen, waitFor } from "@testing-library/react";
 
-import ProfilePage from ".";
+import ProfilePage from "../pages/profile";
 
-import FoodEntryModel from "../../model/foodEntry";
+import FoodEntryModel from "../model/foodEntry";
 
 const USER = { uid: "abc123" };
 
-jest.mock("../../model/foodEntry");
+jest.mock("../model/foodEntry");
 
-jest.mock("../../context/AuthContext", () => ({
+jest.mock("../context/AuthContext", () => ({
   useAuth: () => ({
     authedUser: {},
   }),
 }));
 
-jest.mock("../../context/UserContext", () => ({
+jest.mock("../context/UserContext", () => ({
   useUser: () => ({
     user: {},
   }),
