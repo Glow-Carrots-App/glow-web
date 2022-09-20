@@ -56,6 +56,8 @@ class FoodEntryModel {
     const lifetimeHistory = lifetimeHistorySnapshot.docs.map((doc) =>
       doc.data()
     );
+
+    console.log("lifetimeHistory: ", lifetimeHistory);
     return lifetimeHistory;
   };
 

@@ -16,6 +16,7 @@ const withUnprotected = (Component) => {
     }, [authedUser]);
 
     if (authedUser) {
+      console.log("withUnprotected loading...");
       return <Loading />;
     }
     return <Component authedUser={authedUser} />;

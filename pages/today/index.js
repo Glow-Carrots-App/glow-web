@@ -27,11 +27,13 @@ const Today = ({ user }) => {
   useEffect(() => {
     async function fetchData() {
       try {
+        console.log("today page fetching data...");
         const today = dayjs().format("YYYY/MM/DD");
         const { isDailyGoalComplete, lastGoalDate, uid } = user;
         const lifetimeHistoryResponse = await FoodEntryModel.getLifetimeHistory(
           uid
         );
+        console.log("lifetimeHistoryResponse: ", lifetimeHistoryResponse);
         const thirtyDayHistory = filterByDateRange(lifetimeHistoryResponse, 29);
         const currentDay = filterByDate(thirtyDayHistory, 0);
         if (dayjs(today).diff(lastGoalDate, "day") >= 2) {
@@ -44,6 +46,7 @@ const Today = ({ user }) => {
         setThirtyDayFoodHistory(thirtyDayHistory);
         setLifetimeFoodHistory(lifetimeHistoryResponse);
       } catch (err) {
+        console.log("today page error...");
         setHasError(true);
         setCurrentDay([]);
         setThirtyDayFoodHistory([]);
@@ -53,6 +56,15 @@ const Today = ({ user }) => {
   }, []);
 
   if (!currentDay || !thirtyDayFoodHistory || !user) {
+    console.log("today page loading...");
+    console.log(
+      "currentDay: ",
+      currentDay,
+      "|| thirtyDayFoodHistory: ",
+      thirtyDayFoodHistory,
+      "|| user: ",
+      user
+    );
     return <Loading />;
   }
 
