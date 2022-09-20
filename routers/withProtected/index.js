@@ -19,6 +19,7 @@ const withProtected = (Component) => {
 
     if (!authedUser || !user) {
       console.log("withProtected loading...");
+      console.log("authedUser: ", authedUser, "|| user: ", user);
       return <Loading />;
     }
     return <Component authedUser={authedUser} user={user} />;
