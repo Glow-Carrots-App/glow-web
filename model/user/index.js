@@ -10,6 +10,7 @@ import {
 
 class UserModel {
   static createUser = async (newUser) => {
+    console.log("creating new user...", newUser);
     return await setDoc(doc(db, "users", newUser.uid), newUser);
   };
 
